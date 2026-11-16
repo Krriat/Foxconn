@@ -1,0 +1,148 @@
+{
+  "sources": {
+    "part_left": {
+      "topic": "/vision/part_target",
+      "type": "std_msgs/msg/String",
+      "json_field": "data",
+      "require": {
+        "detected": true
+      },
+      "frame_path": "frame_id",
+      "expected_frame": "base_link",
+      "stamp_path": "stamp",
+      "xyz": [
+        "position.x",
+        "position.y",
+        "position.z"
+      ],
+      "metadata": {
+        "class": "class",
+        "confidence": "confidence"
+      },
+      "scale": 1.0,
+      "max_age_s": 5.0,
+      "reliability": "reliable",
+      "arm": "left",
+      "target_frame": "left_controller_external",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    "part_right": {
+      "topic": "/vision/part_target",
+      "type": "std_msgs/msg/String",
+      "json_field": "data",
+      "require": {
+        "detected": true
+      },
+      "frame_path": "frame_id",
+      "expected_frame": "base_link",
+      "stamp_path": "stamp",
+      "xyz": [
+        "position.x",
+        "position.y",
+        "position.z"
+      ],
+      "metadata": {
+        "class": "class",
+        "confidence": "confidence"
+      },
+      "scale": 1.0,
+      "max_age_s": 5.0,
+      "reliability": "reliable",
+      "arm": "right",
+      "target_frame": "right_controller_external",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    "material_pose": {
+      "topic": "/vision/material_coord",
+      "type": "geometry_msgs/msg/PoseStamped",
+      "frame_path": "header.frame_id",
+      "expected_frame": "base_link",
+      "stamp_path": "header.stamp",
+      "xyz": [
+        "pose.position.x",
+        "pose.position.y",
+        "pose.position.z"
+      ],
+      "scale": 1.0,
+      "max_age_s": 5.0,
+      "arm": "left",
+      "target_frame": "left_controller_external",
+      "transform": [
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ]
+      ]
+    }
+  }
+}

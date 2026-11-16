@@ -1,0 +1,66 @@
+{
+  "variant": "canonical",
+  "primary_reference": "Original successful desktop ACT FP32 outputs",
+  "stages": {
+    "far": {
+      "cases": 12,
+      "max_joint_delta_rad": 0.0003464221954345703,
+      "mean_joint_delta_rad": 3.0254601369961165e-05,
+      "max_suction_delta": 0.002288728952407837,
+      "first10_max_joint_delta_rad": 0.00021642446517944336,
+      "passed": true,
+      "hysteresis_threshold_crossings": 0,
+      "crossings_vs_jetson_pytorch": 0,
+      "max_joint_delta_vs_jetson_pytorch": 0.00025010108947753906,
+      "precision": "IEEE FP32, FP16/TF32 disabled",
+      "pytorch_vs_desktop": {
+        "max_joint_delta_rad": 0.0003362298011779785,
+        "mean_joint_delta_rad": 3.069420927204192e-05,
+        "max_suction_delta": 0.0034720897674560547
+      },
+      "tensorrt_vs_desktop": {
+        "max_joint_delta_rad": 0.0003464221954345703,
+        "mean_joint_delta_rad": 3.0254601369961165e-05,
+        "max_suction_delta": 0.002288728952407837
+      },
+      "timing": {
+        "median_ms": 102.13771949929651,
+        "p95_ms": 105.36145910227788,
+        "max_ms": 107.32375300722197,
+        "samples": 200
+      }
+    },
+    "near": {
+      "cases": 24,
+      "max_joint_delta_rad": 0.0003590583801269531,
+      "mean_joint_delta_rad": 3.266299609094858e-05,
+      "max_suction_delta": 0.0013927817344665527,
+      "first10_max_joint_delta_rad": 0.0002181529998779297,
+      "passed": true,
+      "hysteresis_threshold_crossings": 0,
+      "crossings_vs_jetson_pytorch": 0,
+      "max_joint_delta_vs_jetson_pytorch": 0.00023603439331054688,
+      "precision": "IEEE FP32, FP16/TF32 disabled",
+      "pytorch_vs_desktop": {
+        "max_joint_delta_rad": 0.0002753734588623047,
+        "mean_joint_delta_rad": 3.152788485749625e-05,
+        "max_suction_delta": 0.0049228668212890625
+      },
+      "tensorrt_vs_desktop": {
+        "max_joint_delta_rad": 0.0003590583801269531,
+        "mean_joint_delta_rad": 3.266299609094858e-05,
+        "max_suction_delta": 0.0013927817344665527
+      },
+      "timing": {
+        "median_ms": 102.07702900515869,
+        "p95_ms": 105.6858920448576,
+        "max_ms": 111.34982899238821,
+        "samples": 200
+      }
+    }
+  },
+  "hardware_commands": 0,
+  "passed": true,
+  "both_models_resident": true,
+  "timing": "RGB CPU preprocessing, GPU inference, native-unit postprocess, CPU result; excludes JPEG/ROS"
+}

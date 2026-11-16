@@ -1,0 +1,14 @@
+{
+  "physical_motion_paused_by_user": true,
+  "far_success_mode": "recorded successful trajectory via reference_actor.py (not ACT inference)",
+  "far_reference_path": "/home/jj/code/ACT/training_verification/success_2105_comparison_20261113/success_far_analysis.npz",
+  "far_reference_sha256": "9e75908e35e41f8f1336c2b9b361f87ff792a1a0c848dd7a3a1c4f1d72a53711",
+  "far_run": "8a801334-139f-43da-8052-94b77b2f7030",
+  "near_success_mode": "ACT inference, original near checkpoint",
+  "near_checkpoint": "model_outputs/act_near_success_20261112/pretrained_model",
+  "near_sha256": "ec6e21a2a4e8b1813f5e16926f1e1b15f27468627dd7e3841056f4c016174ad8",
+  "new_far_candidate_deployed": false,
+  "stages_run_separately": true,
+  "home_verified_before_each_stage": true,
+  "new_far_candidate_physical_test": "not run: user declined further physical retesting"
+}

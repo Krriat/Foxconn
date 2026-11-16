@@ -1,0 +1,35 @@
+# Single-arm mode: flatten N waypoints as [q1..q7, q1..q7, ...].
+# Dual-arm mode: fill left_joint_positions and right_joint_positions with the
+# same number of seven-joint waypoints. All values are radians.
+float64[] joint_positions
+float64[] left_joint_positions
+float64[] right_joint_positions
+# Optional single-arm Cartesian MoveJ. False keeps the original waypoint API.
+# With true, all joint-position arrays must be empty. Target is SDK endInRef.
+bool use_cartesian_target false
+geometry_msgs/Pose pose
+bool use_current_pose false
+bool use_current_orientation false
+bool use_elbow false
+float64 elbow
+int32[] conf_data
+string tcp_type "sdk_tcp"
+float64 joint_speed_scale 0.05
+float64 zone_mm 0.0
+bool is_async false
+float64 joint_tolerance_rad 0.01
+float64 position_tolerance_m 0.002
+float64 orientation_tolerance_rad 0.035
+uint32 stable_samples 3
+uint32 poll_interval_ms 100
+float64 timeout_s 120.0
+float64 resource_valid_until_unix_s 0.0
+# Optional observation of the selected TCP, checked against SDK before planning.
+bool check_current_pose false
+geometry_msgs/Pose expected_current_pose
+# Cartesian mode only: add pose.position to the current selected TCP position
+# in endInRef. pose.orientation remains an absolute target.
+bool position_is_relative false
+---
+bool success
+string message

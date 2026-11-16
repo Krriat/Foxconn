@@ -1,0 +1,90 @@
+{
+  "status": "verified_for_execution",
+  "data_root": "/home/jj/code/ACT/prepared_data/suction_20hz_v1",
+  "full_training_started": false,
+  "nominal_training_examples_per_model": 480000,
+  "models": {
+    "act": {
+      "script": "act/xcore_act/scripts/training/train_act.py",
+      "parameters": {
+        "batch_size": 8,
+        "steps": 60000,
+        "chunk_size": 50,
+        "learning_rate": 5e-05,
+        "backbone_learning_rate": 1e-05,
+        "weight_decay": 0.0001,
+        "mixed_precision": "bf16",
+        "num_workers": 4,
+        "save_freq": 5000,
+        "log_freq": 100,
+        "seed": 1000,
+        "eval_freq": 1000,
+        "eval_batches": 0,
+        "n_action_steps": 10,
+        "grad_clip_norm": 10,
+        "video_backend": "pyav",
+        "pretrained_backbone_weights": "ResNet18_Weights.IMAGENET1K_V1"
+      },
+      "architecture": {
+        "state_dim": 16,
+        "action_dim": 16,
+        "image_resolution": [
+          480,
+          640
+        ],
+        "vision_backbone": "resnet18",
+        "dim_model": 512,
+        "n_heads": 8,
+        "encoder_layers": 4,
+        "decoder_layers": 1,
+        "use_vae": true,
+        "latent_dim": 32,
+        "vae_encoder_layers": 4,
+        "kl_weight": 10,
+        "dropout": 0.1
+      },
+      "selection": "Batch 8 keeps the memory footprint near 6 GiB; batch 16 provides little throughput gain, with no better validation score. LR 5e-5 improved the short-probe validation score substantially."
+    },
+    "interact": {
+      "script": "act/xcroe_interACT/scripts/training/train_interact3d.py",
+      "parameters": {
+        "batch_size": 8,
+        "steps": 60000,
+        "chunk_size": 50,
+        "learning_rate": 0.0001,
+        "backbone_learning_rate": 1e-05,
+        "weight_decay": 0.0001,
+        "mixed_precision": "bf16",
+        "num_workers": 4,
+        "save_freq": 5000,
+        "log_freq": 100,
+        "seed": 1000,
+        "eval_freq": 1000,
+        "eval_batches": 0,
+        "grad_accum": 1,
+        "image_size": 224,
+        "d_model": 256,
+        "encoder_blocks": 3,
+        "grad_clip": 10
+      },
+      "architecture": {
+        "state_dim": 16,
+        "action_dim": 16,
+        "state_layout": "dual_arm_suction",
+        "use_point_cloud": false,
+        "cameras": 3,
+        "image_size": 224,
+        "d_model": 256,
+        "n_heads": 8,
+        "dim_feedforward": 1024,
+        "encoder_blocks": 3,
+        "pre_decoder_layers": 2,
+        "post_decoder_layers": 2,
+        "dropout": 0.1
+      },
+      "selection": "Batch 8 had better validation scores than batch 16 at the same sample budget. Keep LR 1e-4: its score differed from 5e-5 by only 0.3%, which is insufficient evidence to prefer the latter. Accumulation 1 avoids the overhead of 2x4 or 4x2."
+    }
+  },
+  "verification_report": "/home/jj/code/ACT/training_verification/final_report.json",
+  "validation_scope": "Runtime, resources, full validation, saving and resume verified. Hyperparameters compared with short probes; 60,000-step convergence and physical task success are not established."
+}

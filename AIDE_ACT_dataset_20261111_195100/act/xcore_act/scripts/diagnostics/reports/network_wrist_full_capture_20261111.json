@@ -1,0 +1,522 @@
+{
+  "started_utc": "2026-11-11T07:27:13.320206+00:00",
+  "status": "checks_passed",
+  "real_cameras": [
+    "head",
+    "left_wrist",
+    "right_wrist"
+  ],
+  "simulated_joint_feedback": true,
+  "simulated_suction_commands_and_feedback": true,
+  "physical_arm_connections": false,
+  "physical_suction_IO": false,
+  "ROS_domain": 232,
+  "dataset_for_training": false,
+  "protected_files_unchanged": true,
+  "startup_seconds": 6.004837435997615,
+  "camera_publishers": {
+    "head": 1,
+    "left_wrist": 1,
+    "right_wrist": 1
+  },
+  "recording_start_mono": 20261.95393861,
+  "recording_stop_mono": 20321.957385066,
+  "dataset_root": "/tmp/aide-wired-full-capture-m953qjdq/TEST_ONLY_NOT_FOR_TRAINING",
+  "episode": "/tmp/aide-wired-full-capture-m953qjdq/TEST_ONLY_NOT_FOR_TRAINING/episode_000000",
+  "quality": {
+    "status": "checks_passed",
+    "frames": 1195,
+    "target_fps": 20.0,
+    "saved_fps": 19.915522700454513,
+    "source_span_seconds": 59.706427812576294,
+    "source_span_fps": 19.997846860778047,
+    "segment_frames": [
+      313,
+      882
+    ],
+    "chunk_size": 50,
+    "full_chunk_start_frames": 1097,
+    "trailing_no_frame_seconds": 0.0,
+    "suction": {
+      "left": {
+        "observation_values": [
+          0,
+          1
+        ],
+        "action_values": [
+          0,
+          1
+        ],
+        "observation_transitions": 2,
+        "action_transitions": 2,
+        "final_observed": 0,
+        "final_requested": 0
+      },
+      "right": {
+        "observation_values": [
+          0,
+          1
+        ],
+        "action_values": [
+          0,
+          1
+        ],
+        "observation_transitions": 2,
+        "action_transitions": 2,
+        "final_observed": 0,
+        "final_requested": 0
+      }
+    },
+    "warnings": [],
+    "task_success_requires_review": true
+  },
+  "frames": 1195,
+  "images": 3585,
+  "max_source_skew_ms": 41.08476638793945,
+  "writer": {
+    "written_frames": 1195,
+    "written_bytes": 1121756657,
+    "queue_capacity_frames": 64,
+    "image_workers": 3,
+    "png_encoder": "libdeflate_sub_1",
+    "queue_full_count": 0,
+    "peak_queue": 1,
+    "write_ms_p50_p95_max": [
+      51.63106200052425,
+      69.63350330152024,
+      95.7802820012148
+    ],
+    "queue_wait_ms_p95": 1.4451560993620656
+  },
+  "capture_diagnostics": {
+    "receive": {
+      "left": {
+        "messages": 430,
+        "source_hz": 86.08712099447051,
+        "receive_hz": 86.08716301574384,
+        "latency_ms_p95": 0.0,
+        "decode_ms_p95": 0.0,
+        "source_max_interval_ms": 29.51216697692871
+      },
+      "right": {
+        "messages": 430,
+        "source_hz": 86.08712099447051,
+        "receive_hz": 86.08716301574384,
+        "latency_ms_p95": 0.0,
+        "decode_ms_p95": 0.0,
+        "source_max_interval_ms": 29.51216697692871
+      },
+      "head": {
+        "messages": 150,
+        "source_hz": 29.978370526998464,
+        "receive_hz": 30.01436443970524,
+        "latency_ms_p95": 55.54887056350707,
+        "decode_ms_p95": 1.954421501795872,
+        "source_max_interval_ms": 33.358097076416016
+      },
+      "left_wrist": {
+        "messages": 150,
+        "source_hz": 29.99296506972636,
+        "receive_hz": 30.02900691222864,
+        "latency_ms_p95": 51.10005140304564,
+        "decode_ms_p95": 1.6073032986241729,
+        "source_max_interval_ms": 33.391714096069336
+      },
+      "right_wrist": {
+        "messages": 150,
+        "source_hz": 29.992885900906053,
+        "receive_hz": 30.005532599314268,
+        "latency_ms_p95": 54.75662946701048,
+        "decode_ms_p95": 1.6592568517808086,
+        "source_max_interval_ms": 33.391475677490234
+      }
+    },
+    "wait_reason_counts": {
+      "图像/关节跳过了采集周期：right_wrist=100.0ms": 1
+    },
+    "scheduler_delay_count": 0,
+    "max_poll_interval_ms": 42.98522200042498,
+    "write_backpressure_seconds": 0.0,
+    "pending_samples_discarded_on_control_change": 0
+  },
+  "capture_gaps": [
+    {
+      "after_frame": 313,
+      "reasons": [
+        "图像/关节跳过了采集周期：right_wrist=100.0ms"
+      ],
+      "start_elapsed_seconds": 15.910346725999261,
+      "end_elapsed_seconds": 15.930086788997869
+    }
+  ],
+  "state_shape": [
+    1195,
+    16
+  ],
+  "all_saved_images_and_array_validation": "passed",
+  "ROS_camera_receive": {
+    "head": {
+      "frames": 1799,
+      "receive_hz": 29.976932151670486,
+      "source_interval_ms_p50_p95_max": [
+        33.35738182067871,
+        33.358097076416016,
+        33.35857391357422
+      ],
+      "source_intervals_over_53_3ms": 0,
+      "timestamp_regressions": 0,
+      "source_age_ms_p50_p95_max": [
+        48.5532283782959,
+        55.16345500946045,
+        66.91217422485352
+      ]
+    },
+    "left_wrist": {
+      "frames": 1798,
+      "receive_hz": 29.95633148834324,
+      "source_interval_ms_p50_p95_max": [
+        33.3409309387207,
+        33.341407775878906,
+        66.6811466217041
+      ],
+      "source_intervals_over_53_3ms": 2,
+      "timestamp_regressions": 0,
+      "source_age_ms_p50_p95_max": [
+        46.92578315734863,
+        51.087820529937744,
+        69.3514347076416
+      ]
+    },
+    "right_wrist": {
+      "frames": 1800,
+      "receive_hz": 29.993474653497884,
+      "source_interval_ms_p50_p95_max": [
+        33.3409309387207,
+        33.34188461303711,
+        33.391475677490234
+      ],
+      "source_intervals_over_53_3ms": 0,
+      "timestamp_regressions": 0,
+      "source_age_ms_p50_p95_max": [
+        48.86603355407715,
+        53.41707468032837,
+        75.28352737426758
+      ]
+    }
+  },
+  "protected_files_changed": [],
+  "finished_utc": "2026-11-11T07:29:00.529641+00:00",
+  "source_gap_analysis": {
+    "head": {
+      "saved_source_intervals_over_80ms": [],
+      "raw_ROS_source_intervals_over_53_3ms": [],
+      "saved_source_interval_ms_p50_p95_max": [
+        33.35857391357422,
+        66.71571731567383,
+        66.71690940856934
+      ]
+    },
+    "left_wrist": {
+      "saved_source_intervals_over_80ms": [],
+      "raw_ROS_source_intervals_over_53_3ms": [
+        66.6811466217041,
+        66.6811466217041
+      ],
+      "saved_source_interval_ms_p50_p95_max": [
+        50.03535747528076,
+        66.68233871459961,
+        66.72477722167969
+      ]
+    },
+    "right_wrist": {
+      "saved_source_intervals_over_80ms": [
+        {
+          "after_saved_frame": 312,
+          "saved_source_interval_ms": 100.02303123474121,
+          "raw_ROS_source_timestamps": [
+            1794382055.0355737,
+            1794382055.0689158,
+            1794382055.1022563,
+            1794382055.1355968
+          ],
+          "raw_ROS_source_interval_ms": [
+            33.34212303161621,
+            33.3404541015625,
+            33.3404541015625
+          ],
+          "raw_receive_intervals_ms": [
+            37.29470499820309,
+            30.22017799958121,
+            38.80700200170395
+          ],
+          "source_frames_present_between_selected_endpoints": 2,
+          "classification": "selection_gap_with_continuous_ROS_source"
+        }
+      ],
+      "raw_ROS_source_intervals_over_53_3ms": [],
+      "saved_source_interval_ms_p50_p95_max": [
+        33.37550163269043,
+        66.68329238891602,
+        100.02303123474121
+      ]
+    }
+  },
+  "simulated_suction_labels": {
+    "left": {
+      "action_values": [
+        0.0,
+        1.0
+      ],
+      "observation_values": [
+        0.0,
+        1.0
+      ],
+      "action_transitions": 2,
+      "observation_transitions": 2
+    },
+    "right": {
+      "action_values": [
+        0.0,
+        1.0
+      ],
+      "observation_values": [
+        0.0,
+        1.0
+      ],
+      "action_transitions": 2,
+      "observation_transitions": 2
+    }
+  },
+  "resources_during_recording": {
+    "samples": 20,
+    "total_CPU_busy_pct_p50_max": [
+      60.46901172529313,
+      63.5
+    ],
+    "memory_available_MiB_min": 4412.19921875
+  },
+  "bridge_to_ROS_count_comparison": {
+    "left_wrist": {
+      "matched_one_second_snapshots": 103,
+      "published_minus_ROS_received_count_discrepancies": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "notes": "Each matched snapshot uses an identical published source timestamp; zero count difference indicates every bridge-published frame between those endpoints was received by the test ROS subscriber."
+    },
+    "right_wrist": {
+      "matched_one_second_snapshots": 103,
+      "published_minus_ROS_received_count_discrepancies": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "notes": "Each matched snapshot uses an identical published source timestamp; zero count difference indicates every bridge-published frame between those endpoints was received by the test ROS subscriber."
+    }
+  },
+  "camera_gap_interpretation": {
+    "left_wrist": "Two ~66.68ms source gaps were present at ROS reception. Bridge-to-ROS count comparison is included; native PC camera frame counters were not logged, so camera capture vs timestamp guard vs compression needs a PC-side trace to distinguish.",
+    "right_wrist": "The one ~100.02ms saved interval spans four raw ROS frames with ~33.34ms source intervals; it is a frame-selection discontinuity, not missing received right-wrist images.",
+    "write_path": "No queue full or backpressure; cannot attribute these source/selection gaps to disk queue saturation."
+  },
+  "test_startup_note": "The first isolated-domain attempt (233) was rejected by Fast DDS before cameras started; actual recording used supported domain 232. Production ROS/network configuration was not changed."
+}

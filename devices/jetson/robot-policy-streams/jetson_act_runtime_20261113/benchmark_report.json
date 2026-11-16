@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "both_models_resident": true,
+  "precision": "fp32",
+  "torch": "2.8.0",
+  "cuda": "12.6",
+  "results": {
+    "far": {
+      "shape": [
+        50,
+        16
+      ],
+      "passed": true,
+      "max_abs_delta_from_desktop": 8.928775787353516e-05,
+      "median_ms": 90.99432500079274,
+      "p95_ms": 99.5426396963012,
+      "maximum_ms": 107.20098699675873
+    },
+    "near": {
+      "shape": [
+        50,
+        16
+      ],
+      "passed": true,
+      "max_abs_delta_from_desktop": 0.00024586915969848633,
+      "median_ms": 92.82802999950945,
+      "p95_ms": 103.49281614544451,
+      "maximum_ms": 122.04067900893278
+    }
+  },
+  "hardware_commands": 0,
+  "timing": "CPU RGB preprocessing + H2D + forward + native-unit postprocess + D2H; excludes JPEG/ROS"
+}

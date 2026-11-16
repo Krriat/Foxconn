@@ -1,0 +1,16 @@
+# Absolute joint target for one seven-axis arm, in radians (J1..J7).
+float64[7] joint_positions
+# SDK MoveAbsJ speed parameter, in mm/s.
+float64 speed_mm_s
+# Blending radius in mm; use 0 for an exact stop.
+float64 zone_mm
+# Optional per-command joint speed fraction; 0 keeps the node parameter.
+float64 joint_speed_scale 0.0
+# Zero keeps the node monitor settings; exact-stop stable feedback samples.
+float64 joint_tolerance_rad 0.0
+uint32 stable_samples 3
+uint32 poll_interval_ms 100
+float64 timeout_s 0.0
+---
+bool success
+string message

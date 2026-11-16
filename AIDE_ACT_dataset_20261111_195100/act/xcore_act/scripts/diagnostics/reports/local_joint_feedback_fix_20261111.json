@@ -1,0 +1,188 @@
+{
+  "generated_utc": "2026-11-11T10:28:16.587667+00:00",
+  "status": "implemented_compiled_and_isolated_tests_passed_actual_arm_teaching_return_verification_pending",
+  "implementation_zh": [
+    "SDK采样回调先将实测位置及原始时间戳发送到回环UDP通道，再交给独立、有界ROS发布队列。",
+    "回位/静止采样改用独立回调组和非阻塞SDK锁尝试，避免普通状态DDS发布阻塞采样回调。",
+    "一键入口仅向双臂子进程传递本机端口，启动时确认双臂本机反馈，释放启动探测socket后由采集器独占绑定。",
+    "采集接收独立线程保存SDK采样时刻、数据包序号和传输计数；保留ROS兼容选项、原20Hz图像配对、16维标签与真实缺帧分段。"
+  ],
+  "modified_files": [
+    "hardware/arm/xCoreROS/src/rokae_driver/include/rokae_driver/shared_arm_hardware.hpp",
+    "hardware/arm/xCoreROS/src/rokae_driver/src/ros_cartesian_drag_safe_service.cpp",
+    "hardware/arm/xCoreROS/src/rokae_driver/src/ros_pos_publisher.cpp",
+    "hardware/arm/xCoreROS/src/rokae_driver/CMakeLists.txt",
+    "software/vla/act/xcore_act/scripts/recording/record_xcore_teach_suction.py",
+    "software/vla/act/xcore_act/scripts/recording/launch_xcore_teach_suction.py",
+    "software/vla/act/xcore_act/scripts/diagnostics/analyze_teach_feedback.py",
+    "software/vla/act/xcore_act/README_ACT_XCORE.md",
+    "hardware/arm/xCoreROS/src/rokae_driver/include/rokae_driver/local_joint_feedback.hpp",
+    "hardware/arm/xCoreROS/src/rokae_driver/test/test_local_joint_feedback.cpp",
+    "software/vla/act/xcore_act/src/xcore_teach_recording/local_feedback.py",
+    "software/vla/act/xcore_act/src/xcore_teach_recording/quality.py",
+    "software/vla/act/xcore_act/tests/test_local_joint_feedback.py",
+    "software/vla/act/xcore_act/tests/test_keyboard_teach_bringup.py",
+    "software/vla/act/xcore_act/tests/test_keyboard_teach_quality.py"
+  ],
+  "source_sha256": {
+    "hardware/arm/xCoreROS/src/rokae_driver/include/rokae_driver/shared_arm_hardware.hpp": "dfe0267e724671715dcda45c1f41e0deea96f26b160b02e903977cf80e8b3729",
+    "hardware/arm/xCoreROS/src/rokae_driver/src/ros_cartesian_drag_safe_service.cpp": "260d95955e1d1127bc6750c961c8f1f1753662277bf4a22f75a99c7bbc87438c",
+    "hardware/arm/xCoreROS/src/rokae_driver/src/ros_pos_publisher.cpp": "3a5d124a32a18b51e6b7d8743679e184af773ba6aa9839cf2fc6e3b378c94bff",
+    "hardware/arm/xCoreROS/src/rokae_driver/CMakeLists.txt": "989fc0cfe06716e22f9bc9e16afad30d33bc8decb2718dd8f70282097d5adb5f",
+    "software/vla/act/xcore_act/scripts/recording/record_xcore_teach_suction.py": "07b939df77d3a966f2139e271a03183a5304f15a1941607ed77b9b49a1318d90",
+    "software/vla/act/xcore_act/scripts/recording/launch_xcore_teach_suction.py": "612d10421c8d83d5d940ce143a40848dba4e6710e14797a8cad162c6dc133226",
+    "software/vla/act/xcore_act/scripts/diagnostics/analyze_teach_feedback.py": "912ea59f167a048dd09e87dfbb0a1957d34cecaf973e61ae9d6d1c5fc0a55377",
+    "software/vla/act/xcore_act/README_ACT_XCORE.md": "c89280a93c4f9f2b8118f08f5ae84d257afb3f59cc8b4e50740e9998a230b556",
+    "hardware/arm/xCoreROS/src/rokae_driver/include/rokae_driver/local_joint_feedback.hpp": "ddcbaf9a63753751fb567361b50c3ee629de933ee487fa33b05cd3b7b926e368",
+    "hardware/arm/xCoreROS/src/rokae_driver/test/test_local_joint_feedback.cpp": "54b7030b11a5b4075c176da6db75c582b3f1446bfb9c3858bfaafd28da0869d0",
+    "software/vla/act/xcore_act/src/xcore_teach_recording/local_feedback.py": "e4e1afd33fe088889e1f04e2174ed8a444ce778337e4180c77104e969478e32b",
+    "software/vla/act/xcore_act/src/xcore_teach_recording/quality.py": "f9107ed0228b1f51be3f6a17869dc31875bd2df0aeee1aef2fe58982e79237f9",
+    "software/vla/act/xcore_act/tests/test_local_joint_feedback.py": "81c2c1eae62616b8388b2bd698404f43e61dda0d0285785ff4416c316c59f269",
+    "software/vla/act/xcore_act/tests/test_keyboard_teach_bringup.py": "0cd6ea10341c05f792fc348b03072953af0e6ec71b0405f620285177d81e0dbb",
+    "software/vla/act/xcore_act/tests/test_keyboard_teach_quality.py": "1121128af7ae4222583be3d2205e1845f563b9f602f2262bed58b440c4f78718"
+  },
+  "tests": {
+    "python_passed": 112,
+    "python_skipped": 1,
+    "python_log": "/tmp/aide-local-feedback-fix-wwk3aigy/python_release_tests.log",
+    "Cplusplus_CTest_passed": [
+      "local_joint_feedback_backpressure",
+      "cartesian_drag_safe_session"
+    ],
+    "self_test": "passed without hardware",
+    "ROS_adapter_integration": {
+      "status": "pass",
+      "startup_receiver_ready": true,
+      "port_handoff": true,
+      "recorder_callback_received_both_arms": true,
+      "return_mode_and_original_timestamp_preserved": true,
+      "robot_service_calls": 0,
+      "SDK_robot_connections": 0,
+      "physical_IO": false
+    },
+    "three_real_cameras_with_simulated_joints_and_IO": {
+      "seconds": 180,
+      "simulated_publication_block_ms": 1100,
+      "frames": 3595,
+      "images_fully_decoded": 10785,
+      "saved_fps": 19.972171850851392,
+      "source_span_fps": 19.998787914664483,
+      "segments": [
+        3595
+      ],
+      "full_chunk_starts": 3546,
+      "max_source_skew_ms": 22.855758666992188,
+      "quality_status": "checks_passed",
+      "queue_full_count": 0,
+      "local_feedback": {
+        "transport": "loopback_udp_v1",
+        "port": 45405,
+        "producer": [
+          43571,
+          1794392338629361635
+        ],
+        "error": null,
+        "invalid_packets": 0,
+        "stale_packets": 0,
+        "streams": {
+          "left.drag": {
+            "received": 18625,
+            "missing_sequences": 0,
+            "out_of_order": 0,
+            "max_latency_ms": 30.452116,
+            "last_sequence": 18625,
+            "initial_sender_send_errors": 0,
+            "last_stamp_ns": 1794392524870213896,
+            "last_received_ns": 30747386448359,
+            "sender_send_errors": 0,
+            "ros_queue_overwrites": 21481,
+            "sender_send_errors_since_first": 0
+          },
+          "right.drag": {
+            "received": 18625,
+            "missing_sequences": 0,
+            "out_of_order": 0,
+            "max_latency_ms": 38.439517,
+            "last_sequence": 18625,
+            "initial_sender_send_errors": 0,
+            "last_stamp_ns": 1794392524870328491,
+            "last_received_ns": 30747387672522,
+            "sender_send_errors": 0,
+            "ros_queue_overwrites": 21482,
+            "sender_send_errors_since_first": 0
+          }
+        }
+      },
+      "camera_receive": {
+        "head": {
+          "frames": 5396,
+          "receive_hz": 29.980532543359427,
+          "source_interval_ms_p50_p95_max": [
+            33.35738182067871,
+            33.358097076416016,
+            33.36024284362793
+          ],
+          "source_intervals_over_53_3ms": 0,
+          "timestamp_regressions": 0,
+          "source_age_ms_p50_p95_max": [
+            36.51762008666992,
+            39.3185019493103,
+            62.2556209564209
+          ]
+        },
+        "left_wrist": {
+          "frames": 5399,
+          "receive_hz": 29.996448553358032,
+          "source_interval_ms_p50_p95_max": [
+            33.3409309387207,
+            33.341407775878906,
+            33.41078758239746
+          ],
+          "source_intervals_over_53_3ms": 0,
+          "timestamp_regressions": 0,
+          "source_age_ms_p50_p95_max": [
+            47.715187072753906,
+            51.85995101928711,
+            127.2587776184082
+          ]
+        },
+        "right_wrist": {
+          "frames": 5398,
+          "receive_hz": 29.99293066057433,
+          "source_interval_ms_p50_p95_max": [
+            33.341169357299805,
+            33.34164619445801,
+            66.68281555175781
+          ],
+          "source_intervals_over_53_3ms": 1,
+          "timestamp_regressions": 0,
+          "source_age_ms_p50_p95_max": [
+            49.097537994384766,
+            53.5388708114624,
+            120.45812606811523
+          ]
+        }
+      },
+      "report": "/tmp/aide-local-feedback-live-pm71o_3m/report.json",
+      "fixture_data_for_training": false
+    }
+  },
+  "preservation": {
+    "SDK_session_monitor_and_guard_code_identical": true,
+    "keyboard_logic_identical": true,
+    "return_controller_logic_identical": true,
+    "protected_configuration_changes": []
+  },
+  "physical_arm_SDK_connections_opened_by_agent": 0,
+  "robot_motion_or_teaching_commands_sent_by_agent": 0,
+  "physical_IO_accessed": false,
+  "production_dataset_modified": false,
+  "PC_camera_package_changed": false,
+  "all_agent_tests_stopped": true,
+  "limitations_zh": [
+    "真实机械臂示教、控制器模式切换和B回位需要用户操作再测；本轮没有连接SDK或操作机械臂。",
+    "本机通道绕开已定位的DDS发布堵塞，尚未单独修复DDS内部阻塞的具体原因；其他ROS订阅工具仍可能看到延迟/队列覆盖。",
+    "180秒测试中右腕30Hz源时间戳有一次约66.7ms间隔，20Hz保存仍为一个连续片段；没有声称相机原生30Hz绝对不丢帧。",
+    "控制器SDK本身查询阻塞、模式切换中的真实反馈暂停、相机USB故障仍会如实暂停/分段，不补造样本。"
+  ]
+}

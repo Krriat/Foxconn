@@ -1,0 +1,28 @@
+# LeRobot 0.4.3 runtime dependencies for the existing Jetson PyTorch install.
+# Install this file with --no-deps, then install lerobot and rerun with
+# --no-deps as shown in install_env.sh. NVIDIA torch/torchvision are reused.
+numpy==1.26.4
+datasets==4.1.1
+diffusers==0.35.2
+huggingface-hub==0.35.3
+accelerate==1.14.0
+einops==0.8.1
+opencv-python-headless==4.11.0.86
+av==15.1.0
+jsonlines==4.0.0
+packaging==25.0
+pynput==1.8.1
+pyserial==3.5
+wandb==0.24.1
+draccus==0.10.0
+gymnasium==1.2.1
+deepdiff==8.6.1
+imageio[ffmpeg]==2.37.2
+termcolor==3.2.0
+Pillow==12.0.0
+typing_extensions==4.15.0
+filelock==3.20.0
+evdev==1.6.1
+python-xlib==0.33
+cmake==4.1.2
+setuptools==80.9.0

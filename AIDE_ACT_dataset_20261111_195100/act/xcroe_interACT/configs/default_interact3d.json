@@ -1,0 +1,21 @@
+{
+  "use_point_cloud": false,
+  "state_dim": 16,
+  "action_dim": 16,
+  "chunk_size": 50,
+  "image_size": 224,
+  "head_point_count": 1024,
+  "point_tokens": 128,
+  "d_model": 256,
+  "n_heads": 8,
+  "encoder_blocks": 3,
+  "pre_decoder_layers": 2,
+  "post_decoder_layers": 2,
+  "batch_size": 2,
+  "gradient_accumulation": 4,
+  "left_gripper_enabled": true,
+  "right_gripper_enabled": true,
+  "record_fps": 10,
+  "deploy_fps": 10,
+  "execution_horizon": 10
+}

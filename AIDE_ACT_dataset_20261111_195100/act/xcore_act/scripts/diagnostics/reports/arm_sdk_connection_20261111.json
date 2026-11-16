@@ -1,0 +1,48 @@
+{
+  "generated_utc": "2026-11-11T09:16:20.063354+00:00",
+  "reported_failures": [
+    "/tmp/aide-teach-suction-17cw_wqh/arms.log",
+    "/tmp/aide-teach-suction-dt4hts9b/arms.log"
+  ],
+  "failure_stage": "left ArRobot initial SDK connection; NetworkException",
+  "left_ping": {
+    "sent": 5,
+    "received": 5,
+    "average_ms": 0.254
+  },
+  "right_first_ping": {
+    "sent": 5,
+    "received": 2,
+    "note": "Initial short probe; insufficient to establish persistent loss."
+  },
+  "user_pos_result": "Both arm joints and poses read successfully",
+  "isolated_read_only_SDK_probe": "Both arms connected; TCP 6666 and 7777 had SO_ERROR=0",
+  "production_environment_read_only_result": {
+    "read_only": true,
+    "motion_features_disabled": [
+      "start_hand_service",
+      "start_cartesian_drag_safe_service",
+      "start_cartesian_teach_service",
+      "start_go_home_service",
+      "start_initializer_service",
+      "start_kinematics_service",
+      "start_move_server",
+      "start_moveabsj_service",
+      "start_movel_service",
+      "start_movej_by_path_service",
+      "start_servoj",
+      "start_servol"
+    ],
+    "ROS_DOMAIN_ID": "0",
+    "mode_changed": false,
+    "both_connected": true,
+    "startup_seconds": 9.431538706001447,
+    "exit_code": 0
+  },
+  "active_dual_arm_driver_pids": [],
+  "protected_files_changed": [],
+  "production_code_changed": false,
+  "mode_or_power_or_motion_commands_sent": false,
+  "root_cause": "Not established: the reported connection failure did not recur in the successful read-only probes.",
+  "intermediate_short_probe": "A 6s diagnostic deadline was too short for ROS domain 0 startup and interrupted initialization; superseded by the 25s readiness probe, which succeeded in 9.43s."
+}

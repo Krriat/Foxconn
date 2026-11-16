@@ -1,0 +1,201 @@
+{
+  "generated_utc": "2026-11-11T10:33:42.253526+00:00",
+  "status": "automated_and_three_camera_test_passed_real_arm_teaching_pending",
+  "test_directory": "/tmp/aide-feedback-retest-3ti6fh9o",
+  "compile": "ros_dual_arm_driver and two standalone test targets passed",
+  "python_tests": {
+    "passed": 112,
+    "skipped": 1,
+    "log": "/tmp/aide-feedback-retest-3ti6fh9o/python_tests.log"
+  },
+  "Cplusplus_CTest": {
+    "passed": 2,
+    "failed": 0,
+    "log": "/tmp/aide-feedback-retest-3ti6fh9o/ctest.log"
+  },
+  "ROS_startup_port_handoff": {
+    "status": "pass",
+    "startup_receiver_ready": true,
+    "port_handoff": true,
+    "recorder_callback_received_both_arms": true,
+    "return_mode_and_original_timestamp_preserved": true,
+    "robot_service_calls": 0,
+    "SDK_robot_connections": 0,
+    "physical_IO": false
+  },
+  "capture": {
+    "seconds": 60,
+    "real_cameras": [
+      "head",
+      "left_wrist",
+      "right_wrist"
+    ],
+    "simulated_joints": true,
+    "simulated_suction": true,
+    "injected_publication_block_ms": 1100,
+    "frames": 1195,
+    "images_fully_decoded": 3585,
+    "quality": {
+      "status": "checks_passed",
+      "frames": 1195,
+      "target_fps": 20.0,
+      "saved_fps": 19.915724170621555,
+      "source_span_seconds": 59.70767521858215,
+      "source_span_fps": 19.997429068020466,
+      "segment_frames": [
+        1195
+      ],
+      "chunk_size": 50,
+      "full_chunk_start_frames": 1146,
+      "trailing_no_frame_seconds": 0.0,
+      "suction": {
+        "left": {
+          "observation_values": [
+            0,
+            1
+          ],
+          "action_values": [
+            0,
+            1
+          ],
+          "observation_transitions": 2,
+          "action_transitions": 2,
+          "final_observed": 0,
+          "final_requested": 0
+        },
+        "right": {
+          "observation_values": [
+            0,
+            1
+          ],
+          "action_values": [
+            0,
+            1
+          ],
+          "observation_transitions": 2,
+          "action_transitions": 2,
+          "final_observed": 0,
+          "final_requested": 0
+        }
+      },
+      "warnings": [],
+      "task_success_requires_review": true
+    },
+    "max_source_skew_ms": 28.388023376464844,
+    "local_joint_feedback": {
+      "transport": "loopback_udp_v1",
+      "port": 43573,
+      "producer": [
+        44819,
+        1794393081762640363
+      ],
+      "error": null,
+      "invalid_packets": 0,
+      "stale_packets": 0,
+      "streams": {
+        "left.drag": {
+          "received": 6614,
+          "missing_sequences": 0,
+          "out_of_order": 0,
+          "max_latency_ms": 32.658195,
+          "last_sequence": 6614,
+          "initial_sender_send_errors": 0,
+          "last_stamp_ns": 1794393147892641411,
+          "last_received_ns": 31370408785952,
+          "sender_send_errors": 0,
+          "ros_queue_overwrites": 7659,
+          "sender_send_errors_since_first": 0
+        },
+        "right.drag": {
+          "received": 6614,
+          "missing_sequences": 0,
+          "out_of_order": 0,
+          "max_latency_ms": 33.690097,
+          "last_sequence": 6614,
+          "initial_sender_send_errors": 0,
+          "last_stamp_ns": 1794393147892692837,
+          "last_received_ns": 31370408988998,
+          "sender_send_errors": 0,
+          "ros_queue_overwrites": 7660,
+          "sender_send_errors_since_first": 0
+        }
+      }
+    },
+    "camera_receive": {
+      "head": {
+        "frames": 1799,
+        "receive_hz": 29.991622301695216,
+        "source_interval_ms_p50_p95_max": [
+          33.35738182067871,
+          33.35833549499512,
+          33.36048126220703
+        ],
+        "source_intervals_over_53_3ms": 0,
+        "timestamp_regressions": 0,
+        "source_age_ms_p50_p95_max": [
+          36.54313087463379,
+          39.22832012176514,
+          63.932180404663086
+        ]
+      },
+      "left_wrist": {
+        "frames": 1800,
+        "receive_hz": 30.003104522625634,
+        "source_interval_ms_p50_p95_max": [
+          33.341169357299805,
+          33.341407775878906,
+          33.402442932128906
+        ],
+        "source_intervals_over_53_3ms": 0,
+        "timestamp_regressions": 0,
+        "source_age_ms_p50_p95_max": [
+          47.90174961090088,
+          52.01296806335449,
+          84.02204513549805
+        ]
+      },
+      "right_wrist": {
+        "frames": 1800,
+        "receive_hz": 30.006649394610655,
+        "source_interval_ms_p50_p95_max": [
+          33.341407775878906,
+          33.34188461303711,
+          33.40291976928711
+        ],
+        "source_intervals_over_53_3ms": 0,
+        "timestamp_regressions": 0,
+        "source_age_ms_p50_p95_max": [
+          49.05235767364502,
+          52.96440124511719,
+          89.27512168884277
+        ]
+      }
+    },
+    "writer": {
+      "written_frames": 1195,
+      "written_bytes": 1135326355,
+      "queue_capacity_frames": 64,
+      "image_workers": 3,
+      "png_encoder": "libdeflate_sub_1",
+      "queue_full_count": 0,
+      "peak_queue": 1,
+      "write_ms_p50_p95_max": [
+        53.78325399942696,
+        76.4064609989873,
+        100.00805100207799
+      ],
+      "queue_wait_ms_p95": 1.3732656007050537
+    },
+    "full_report": "/tmp/aide-feedback-retest-3ti6fh9o/report.json",
+    "dataset_for_training": false
+  },
+  "source_and_protected_configuration_changes": [],
+  "test_processes_active": [],
+  "physical_arm_SDK_connections": 0,
+  "robot_motion_or_teaching_commands_sent": 0,
+  "physical_suction_IO": false,
+  "limitations_zh": [
+    "本轮测试没有连接机械臂SDK，关节和吸盘使用模拟数据；真实示教和B回位仍需用户操作复测。",
+    "模拟数据仅保存在/tmp测试目录，不应参与训练。"
+  ]
+}

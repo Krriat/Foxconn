@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "connected": false,
+  "vendor": {
+    "value": "ROKAE",
+    "source": "README.md",
+    "note": null
+  },
+  "model": {
+    "value": "AR5 intended; runtime type unverified",
+    "source": "test.md; robot.h: ArRobot",
+    "note": null
+  },
+  "sdk_version": {
+    "value": "0.7.1.ar_6 directory / project 0.7.1",
+    "source": "CMakeLists.txt; BaseRobot::sdkVersion",
+    "note": null
+  },
+  "controller_version": {
+    "value": null,
+    "source": "include/rokae/robot.h: Info.version / robotInfo",
+    "note": null
+  },
+  "firmware_version": {
+    "value": null,
+    "source": "include/rokae/robot.h: Info.version",
+    "note": "No separate firmware getter identified"
+  },
+  "connection": {
+    "value": null,
+    "source": "include/rokae/robot.h: ArRobot::connectToRobot; cxl/pos.cpp",
+    "note": "Explicit --connect only; no port guessed"
+  },
+  "streaming": {
+    "value": [
+      "JointPosition",
+      "CartesianPosition",
+      "Torque",
+      "joint/cartesian impedance"
+    ],
+    "source": "include/rokae/motion_control_rt.h: sendCommand, startMove",
+    "note": "Advertised API; AR5/firmware support needs verification"
+  },
+  "velocity_and_position_feedforward": {
+    "value": null,
+    "source": "include/rokae/data_types.h: JointPosition",
+    "note": "No verified joint velocity or position+velocity+effort command; never emulate using torque mode"
+  },
+  "servo_period": {
+    "value": 0.02,
+    "source": "example/rt/servoj_demo.cpp: planPeriod",
+    "note": "50Hz ServoJ example; generic sendCommand documentation requires 1ms. Verify actual ServoJ firmware semantics"
+  },
+  "interpolation": {
+    "value": null,
+    "source": "include/rokae/motion_control_rt.h: setServoJoint(T, Lookahead, Kp)",
+    "note": "Lookahead and gain configurable; active values/getter not identified"
+  },
+  "command_completion": {
+    "value": null,
+    "source": "include/rokae/motion_control_rt.h: sendCommand returns void",
+    "note": "Return is not proof of execution; queue semantics and applied timestamp unavailable"
+  },
+  "feedback_intervals_ms": {
+    "value": [
+      1,
+      2,
+      4,
+      8,
+      1000
+    ],
+    "source": "include/rokae/robot.h: startReceiveRobotState",
+    "note": "Requested packet intervals, not measured native sensor sampling rates"
+  },
+  "device_timestamp_and_sequence": {
+    "value": null,
+    "source": "include/rokae/data_types.h: RtSupportedFields",
+    "note": "Not exposed. updateRobotState > 0 identifies received data only; identical values do not prove duplicate samples"
+  },
+  "position": {
+    "value": "q_m [rad]",
+    "source": "include/rokae/data_types.h: RtSupportedFields::jointPos_m",
+    "note": null
+  },
+  "velocity": {
+    "value": "dq_m [rad/s]",
+    "source": "include/rokae/data_types.h: RtSupportedFields::jointVel_m",
+    "note": null
+  },
+  "torque": {
+    "value": "tau_m [Nm], provenance unverified",
+    "source": "include/rokae/data_types.h: RtSupportedFields::tau_m",
+    "note": "jointTorque() separately documents joint force sensor; do not assume streaming tau_m is identical without verification"
+  },
+  "motor_torque": {
+    "value": "motor_tau; units and output conversion unknown",
+    "source": "include/rokae/data_types.h: RtSupportedFields::motorTau",
+    "note": "Not collected or converted"
+  },
+  "current": {
+    "value": null,
+    "source": "include/rokae/data_types.h: RtSupportedFields",
+    "note": "Iq/phase/RMS/bus current not exposed"
+  },
+  "temperature_voltage_derating": {
+    "value": null,
+    "source": "include/rokae/data_types.h: RtSupportedFields",
+    "note": "No motor/drive temperature, bus voltage or full derating flag fields found"
+  },
+  "fault_mode": {
+    "value": "operationState / operateMode / powerState; updateRobotState exceptions",
+    "source": "include/rokae/robot.h",
+    "note": "Not a complete protection/ownership snapshot; no motion-control-mode getter identified"
+  },
+  "limits": {
+    "value": "getSoftLimit: enabled, per-axis lower/upper [rad]",
+    "source": "include/rokae/robot.h: Robot_T::getSoftLimit",
+    "note": "J4 mapping, J6/J7 coupling, dynamic and workspace limits require site evidence"
+  },
+  "tool": {
+    "value": "toolset().load: mass, cog, inertia",
+    "source": "include/rokae/robot.h: toolset; data_types.h: Load",
+    "note": null
+  },
+  "ownership": {
+    "value": null,
+    "source": "include/rokae/robot.h: connectToRobot / disconnectFromRobot",
+    "note": "No verified acquire/release token; disconnect explicitly stops motion, so inspection is only for an idle robot with other clients exited"
+  },
+  "controlled_stop": {
+    "value": "RtMotionControl::stopMove; then read operationState and velocity",
+    "source": "include/rokae/motion_control_rt.h: stopMove",
+    "note": "Stop trajectory, duration and failure behavior must be verified; this release contains no hardware motion backend"
+  },
+  "watchdog": {
+    "value": null,
+    "source": "include/rokae/robot.h: setRtNetworkTolerance",
+    "note": "Packet-loss tolerance is not a validated watchdog timeout; do not change it"
+  },
+  "sdk_timeout": {
+    "value": "startReceiveRobotState first packet 3s; updateRobotState(timeout)",
+    "source": "include/rokae/robot.h; 1.pdf §3.3.2",
+    "note": "No bounded send/stop/connect timeout guarantee identified; parent timeout cannot establish physical stop"
+  },
+  "hardware_execution": {
+    "supported": false,
+    "reasons": [
+      "运动后端尚未开放：缺少经验证的独立保护/SDK调用超时和控制器watchdog停止链路",
+      "公开接口无原生设备采样序号/时间戳；只能区分SDK新收包，不能证明设备采样去重",
+      "未取得实际控制权、保护设置、温度/电流限额及停止轨迹的完整核验方案"
+    ]
+  },
+  "available_torque_envelope": {
+    "status": "unavailable",
+    "source": null,
+    "joint_output_units": "Nm, rad/s",
+    "continuous_curves": null,
+    "peak_curves": null,
+    "peak_duration_s": null,
+    "temperature_and_voltage_conditions": null,
+    "reason": "本地SDK及需求摘录未提供逐轴输出端连续/峰值转速曲线；未进行厂商许可台架试验。"
+  },
+  "source_sha256": {
+    "include/rokae/robot.h": "3290809591f0806ad679cb88deb19e456961cace4605e0b555e8c7d96dc1a966",
+    "include/rokae/data_types.h": "dbf716c1e310c95ac7cfd7ba6b469fc4e5c8bca6b123f26c8fc95ccae3ee9cb9",
+    "include/rokae/motion_control_rt.h": "cc83f500a22e6d96a679147f15d6785f268c488af6c83706104155ad59707ef1",
+    "example/rt/servoj_demo.cpp": "b28ffb5d37da90fbae23bb613db2ea030a3d7b2ffdb287d8673d1bcde67a2441"
+  }
+}

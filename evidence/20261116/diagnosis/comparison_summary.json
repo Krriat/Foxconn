@@ -1,0 +1,72 @@
+{
+  "current_failed_far": {
+    "checkpoint_sha256": [
+      "af60ccd4cfca37c420d1107e440c8fcb78904d22a28e802d39b4b5925a9055f9"
+    ],
+    "home_measured": [
+      0.7948962608461886,
+      0.4117110558256636,
+      -0.5856973538955522,
+      1.9054776185663065,
+      0.5304289848460251,
+      0.24644503906074117,
+      0.19850214732686222,
+      -0.6706524057219672,
+      0.3094796252705193,
+      0.32699413054811804,
+      1.877935233204318,
+      -0.44161940681588396,
+      0.3126607578768135,
+      -0.4534562257549047
+    ],
+    "inference_median_ms": 10.651721,
+    "tracking_p95_deg": 0.22651834995987274,
+    "tracking_max_deg": 0.5380006119664522,
+    "suction_changes_after_native_start_seconds": [
+      {
+        "seconds": 0.203791832,
+        "on": true
+      },
+      {
+        "seconds": 14.347353304,
+        "on": false
+      }
+    ]
+  },
+  "previous_successful_far": {
+    "checkpoint_sha256": [
+      "af60ccd4cfca37c420d1107e440c8fcb78904d22a28e802d39b4b5925a9055f9"
+    ],
+    "home_measured": [
+      0.7948978587428427,
+      0.41170945792900954,
+      -0.5856961554730618,
+      1.9054783376198008,
+      0.5304270673700402,
+      0.2464498327507033,
+      0.19849951079738304,
+      -0.6706496094028226,
+      0.3094898118616889,
+      0.3269924527566313,
+      1.877934753835322,
+      -0.4416297132493026,
+      0.31267274210171886,
+      -0.45348570694817186
+    ],
+    "inference_median_ms": 9.114527,
+    "tracking_p95_deg": 0.18434005819868926,
+    "tracking_max_deg": 0.5152139798470513,
+    "suction_changes_after_native_start_seconds": [
+      {
+        "seconds": 0.275486775,
+        "on": true
+      },
+      {
+        "seconds": 39.503717175,
+        "on": false
+      }
+    ]
+  },
+  "home_max_difference_deg": 0.0016891479492187925,
+  "causal_limits": "Same source images reproduce original predictions exactly (10 saved samples). Image substitution demonstrates sensitivity, not sole-cause proof. User reports suction airflow without attachment in failed run. Recorded successful reference opened far; near ACT opened near. Candidate physical validation paused by user."
+}

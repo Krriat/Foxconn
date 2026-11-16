@@ -1,0 +1,10 @@
+{
+  "onnx_sha256": "ff9b44a3f7eef05e39ea08a43c485db3efb8044439732b8e462f3eacf8e803c6",
+  "weights_sha256": "ec6e21a2a4e8b1813f5e16926f1e1b15f27468627dd7e3841056f4c016174ad8",
+  "inputs": "Three normalized FP32 1x3x480x640 RGB tensors and normalized FP32 1x16 state",
+  "output": "FP32 normalized 1x50x16 actions; zero VAE latent; unchanged network",
+  "tensorrt_version": "10.3.0",
+  "precision": "IEEE FP32, FP16/TF32 disabled",
+  "engine_sha256": "5563d783ffde0bdb3a0b835c79fea59bb6c28c9e927c07e211394be5945dc907",
+  "build_seconds": 161.87201813900901
+}

@@ -1,0 +1,61 @@
+act_root: /home/jj/code/ACT
+robot_root: /home/jetson/AIDE_robot_main
+model: act
+checkpoint_sha256:
+  act: 0d71f2e37a180b2e829bc7bf423bbe8171945c3afa327f8d08f2a72297d00d93
+  interact: d6f39045798973cff4d1a0f06f3e1fd2ed8d9054a3b1cd5f85b1e31486a3c3f7
+action_hz: 20.0
+prediction_hz: 20.0
+chunk_steps: 50
+temporal_ensemble_coefficient: 0.01
+servo_hz: 100.0
+driver_node_name: joint_servo
+max_round_seconds: null
+command_timeout_seconds: 0.25
+heartbeat_timeout_seconds: 0.4
+feedback_timeout_seconds: 0.25
+input_max_age_seconds: 0.3
+input_max_skew_seconds: 0.1
+max_joint_speed_rad_s: 0.5
+max_joint_acceleration_rad_s2: 1.0
+trajectory_response_seconds: 0.1
+execution_lead_seconds: 0.0
+max_relative_target_rad: 0.035
+max_tracking_error_rad: 0.15
+joint_limit_margin_rad: 0.20943951023931956
+home_tolerance_rad: 0.01
+home_timeout_seconds: 65.0
+home_speed_mm_s: 50.0
+home_joint_speed_scale: 0.05
+home_left:
+- 0.795451
+- 0.412276
+- -0.585123
+- 1.905242
+- 0.530428
+- 0.246453
+- 0.198464
+home_right:
+- -0.671164
+- 0.310045
+- 0.326427
+- 1.877737
+- -0.441627
+- 0.312674
+- -0.45345
+home_source: software/vla/act/xcore_act/scripts/recording/teach_suction_return_pose.json
+enable_motion: true
+suction_enabled: true
+suction_on_threshold: 0.6
+suction_off_threshold: 0.4
+io_timeout_ms: 250
+joint_upper_limits_rad:
+  left_joint_4: 2.38237442897226
+  right_joint_4: 2.447824275922047
+act_stage_checkpoints:
+  far:
+    path: /home/jj/code/ACT/model_outputs/act_suction_20261111_213453/checkpoints/014000/pretrained_model
+    sha256: 0d71f2e37a180b2e829bc7bf423bbe8171945c3afa327f8d08f2a72297d00d93
+  near:
+    path: /home/jj/code/ACT/model_outputs/act_near_success_20261112/pretrained_model
+    sha256: ec6e21a2a4e8b1813f5e16926f1e1b15f27468627dd7e3841056f4c016174ad8

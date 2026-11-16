@@ -1,0 +1,24 @@
+robot:
+  right_arm_ip: "192.168.2.160"
+  local_ip: "192.168.2.10"
+  left_hand_enable: false
+  right_hand_enable: true
+
+can:
+  right_frame_id: 0x27
+  loop_count: 1
+
+  open_frames:
+    - [0x01, 0xCD, 0x00, 0x00, 0x00, 0x00, 0x00]
+
+  close_frames:
+    - [0x01, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF]
+
+sequence:
+  - left_hand_action: "none"
+    right_hand_action: "open"
+    wait_ms: 2000
+
+  - left_hand_action: "none"
+    right_hand_action: "close"
+    wait_ms: 2000

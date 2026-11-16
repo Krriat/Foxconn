@@ -1,0 +1,94 @@
+{
+  "checked_at_beijing": "2026-11-10T17:24:38.949897+08:00",
+  "reported_problem": "B return initialization failure -513 on left; A drag preparation power-off General failure on left",
+  "read_only_live_states": {
+    "left": {
+      "operationState": {
+        "value": 0,
+        "meaning": "idle",
+        "error_code": 0
+      },
+      "operateMode": {
+        "value": 0,
+        "meaning": "manual",
+        "error_code": 0
+      },
+      "powerState": {
+        "value": 1,
+        "meaning": "off",
+        "error_code": 0
+      }
+    },
+    "right": {
+      "operationState": {
+        "value": 0,
+        "meaning": "idle",
+        "error_code": 0
+      },
+      "operateMode": {
+        "value": 0,
+        "meaning": "manual",
+        "error_code": 0
+      },
+      "powerState": {
+        "value": 1,
+        "meaning": "off",
+        "error_code": 0
+      }
+    }
+  },
+  "observed_failures": [
+    {
+      "line": 44,
+      "text": "[ros_dual_arm_driver-1] [ERROR] [1794302334.993770944] [robot_02.upperlimb.initializer]: left: setOperateMode(automatic) failed: code=-513, message=switch mode failed; right: initialized and powered on; model=AR5-5_0.8R-W4C5C11, controller=3.2.1.C224.20260731"
+    },
+    {
+      "line": 48,
+      "text": "[ros_dual_arm_driver-1] [ERROR] [1794302343.546701478] [robot_02.upperlimb.initializer]: left: setOperateMode(automatic) failed: code=-513, message=switch mode failed; right: initialized and powered on; model=AR5-5_0.8R-W4C5C11, controller=3.2.1.C224.20260731"
+    },
+    {
+      "line": 51,
+      "text": "[ros_dual_arm_driver-1] [ERROR] [1794302353.656547689] [robot_02.upperlimb.pico_cartesian_drag_safe]: left drag failed: power off: General failure"
+    },
+    {
+      "line": 59,
+      "text": "[ros_dual_arm_driver-1] [INFO] [1794302353.740257899] [robot_02.upperlimb.pico_cartesian_drag_safe]: right drag ended: cancelled before enabling drag"
+    },
+    {
+      "line": 62,
+      "text": "[ros_dual_arm_driver-1] [ERROR] [1794302378.082588277] [robot_02.upperlimb.pico_cartesian_drag_safe]: left drag failed: power off: General failure"
+    },
+    {
+      "line": 70,
+      "text": "[ros_dual_arm_driver-1] [INFO] [1794302378.559342567] [robot_02.upperlimb.pico_cartesian_drag_safe]: right drag ended: cancelled during mode switching"
+    }
+  ],
+  "moveabsj_started_in_this_run": false,
+  "left_controller_log_clock_zh": "左控制器日志显示2021年，与主机和右臂日志时间不同；不能直接按日期判定记录是否当前活动故障。",
+  "controller_log_interpretation_zh": "只读接口能读取历史日志；左臂包含驱动器直流母线欠压记录，但这不是当前活动报警的证明。未读到明确解释本次-513/General failure的新增控制器日志。",
+  "sdk_reference": {
+    "url": "https://docs.rokae.com/en/docs/SDK--0-7-x-AR/cpp/cpp_error/",
+    "version_note": "已核对厂商公开0.7.x-AR错误码文档，版本系列与现场SDK一致。",
+    "minus_513": "切换手动/自动操作模式失败；不能仅凭错误码确定唯一根因。"
+  },
+  "hardware_commands_issued": {
+    "mode_setters": false,
+    "power_setters": false,
+    "motion": false,
+    "stop": false,
+    "recovery": false,
+    "sdk_disconnect": false
+  },
+  "query_method": "Standalone temporary SDK getter-only executable, no other repository robot control processes were active; explicit no-destructor exit avoids documented SDK disconnect stop path.",
+  "files_modified_in_repository": [],
+  "logs": {
+    "bringup": "/tmp/aide-teach-suction-yjpd087n/arms.log",
+    "left_controller": "/tmp/aide-left-arm-diagnosis-tniuzg83/left_controller_readonly.log",
+    "right_controller": "/tmp/aide-left-arm-diagnosis-tniuzg83/right_controller_readonly.log",
+    "diagnostic_source": "/tmp/aide-left-arm-diagnosis-tniuzg83/read_controller.cpp"
+  },
+  "protected_files_sha256_at_review": {
+    "software/vla/act/xcore_act/scripts/recording/teach_suction_return_pose.json": "b1e76bd2cb9469e08f96aba74b2f8ab8f870427966b5797f8984fa3a4a50027a",
+    "hardware/robot_vision_ws/src/robot_vision_bringup/config/cameras_30hz.yaml": "555c078804bd3148472c42f31c28a0d03074a0fef0fffb98b17f468582efb637"
+  }
+}

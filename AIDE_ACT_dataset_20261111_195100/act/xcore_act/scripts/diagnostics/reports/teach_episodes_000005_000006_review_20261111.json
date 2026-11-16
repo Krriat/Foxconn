@@ -1,0 +1,914 @@
+{
+  "generated_utc": "2026-11-11T10:39:33.836632+00:00",
+  "root": "/home/jetson/AIDE_robot_main/assets/dataset/act_teach_keyboard_suction_30hz",
+  "episodes": [
+    {
+      "episode": "episode_000005",
+      "files": "/home/jetson/AIDE_robot_main/assets/dataset/act_teach_keyboard_suction_30hz/episode_000005",
+      "images_fully_decoded": 1509,
+      "validation": "passed",
+      "validation_seconds": 15.859033806998923,
+      "state_shape": [
+        503,
+        16
+      ],
+      "source_start_utc": "2026-11-11T10:35:52.241682+00:00",
+      "source_end_utc": "2026-11-11T10:36:19.181504+00:00",
+      "quality": {
+        "status": "needs_review",
+        "frames": 503,
+        "target_fps": 20.0,
+        "saved_fps": 16.468713349373648,
+        "source_span_seconds": 26.939821243286133,
+        "source_span_fps": 18.63412512898938,
+        "segment_frames": [
+          447,
+          2,
+          1,
+          2,
+          4,
+          47
+        ],
+        "chunk_size": 50,
+        "full_chunk_start_frames": 398,
+        "trailing_no_frame_seconds": 0.0,
+        "suction": {
+          "left": {
+            "observation_values": [
+              0,
+              1
+            ],
+            "action_values": [
+              0,
+              1
+            ],
+            "observation_transitions": 1,
+            "action_transitions": 1,
+            "final_observed": 0,
+            "final_requested": 0
+          },
+          "right": {
+            "observation_values": [
+              0
+            ],
+            "action_values": [
+              0
+            ],
+            "observation_transitions": 0,
+            "action_transitions": 0,
+            "final_observed": 0,
+            "final_requested": 0
+          }
+        },
+        "warnings": [
+          "整段保存 16.47/20 帧/秒，低于目标90%；检查等待和间断"
+        ],
+        "task_success_requires_review": true
+      },
+      "segments": [
+        {
+          "index": 0,
+          "start_zero_based": 0,
+          "end_exclusive": 447,
+          "frames": 447,
+          "source_span_seconds": 22.272018909454346,
+          "fps": 20.025126676355125,
+          "source_max_interval_ms": 78.70221138000488,
+          "max_joint_step_rad": 0.04760932922363281,
+          "pause_reason": "键盘结束示教，等待下次 A 开启示教"
+        },
+        {
+          "index": 1,
+          "start_zero_based": 447,
+          "end_exclusive": 449,
+          "frames": 2,
+          "source_span_seconds": 0.03334164619445801,
+          "fps": 29.992520290321426,
+          "source_max_interval_ms": 41.089534759521484,
+          "max_joint_step_rad": 1.2874603271484375e-05,
+          "pause_reason": "right teaching: stopped"
+        },
+        {
+          "index": 2,
+          "start_zero_based": 449,
+          "end_exclusive": 450,
+          "frames": 1,
+          "source_span_seconds": 0.0,
+          "fps": null,
+          "source_max_interval_ms": null,
+          "max_joint_step_rad": null,
+          "pause_reason": "left 反馈停止"
+        },
+        {
+          "index": 3,
+          "start_zero_based": 450,
+          "end_exclusive": 452,
+          "frames": 2,
+          "source_span_seconds": 0.051529645919799805,
+          "fps": 19.40630450976491,
+          "source_max_interval_ms": 66.71619415283203,
+          "max_joint_step_rad": 5.4836273193359375e-06,
+          "pause_reason": "图像/关节跳过了采集周期：left=210.5ms, right=290.3ms, head=200.1ms, left_wrist=233.4ms, right_wrist=233.4ms"
+        },
+        {
+          "index": 4,
+          "start_zero_based": 452,
+          "end_exclusive": 456,
+          "frames": 4,
+          "source_span_seconds": 0.11807632446289062,
+          "fps": 25.407294931024456,
+          "source_max_interval_ms": 70.36089897155762,
+          "max_joint_step_rad": 1.3679265975952148e-05,
+          "pause_reason": "图像/关节跳过了采集周期：left=200.0ms, right=200.7ms, head=166.8ms, left_wrist=166.7ms, right_wrist=166.7ms"
+        },
+        {
+          "index": 5,
+          "start_zero_based": 456,
+          "end_exclusive": 503,
+          "frames": 47,
+          "source_span_seconds": 2.300551414489746,
+          "fps": 19.995206240675405,
+          "source_max_interval_ms": 79.20646667480469,
+          "max_joint_step_rad": 0.016362547874450684,
+          "pause_reason": "keyboard save"
+        }
+      ],
+      "source_breaks": [
+        {
+          "next_frame_zero_based": 449,
+          "source_intervals_ms": [
+            1458.9240550994873,
+            1465.9314155578613,
+            1434.363842010498,
+            1433.6907863616943,
+            1433.7000846862793
+          ],
+          "ros_interval_ms": 1433.7000846862793
+        },
+        {
+          "next_frame_zero_based": 450,
+          "source_intervals_ms": [
+            280.05099296569824,
+            250.81682205200195,
+            266.8638229370117,
+            300.06885528564453,
+            300.07100105285645
+          ],
+          "ros_interval_ms": 281.88252449035645
+        },
+        {
+          "next_frame_zero_based": 452,
+          "source_intervals_ms": [
+            210.4787826538086,
+            290.25793075561523,
+            200.1478672027588,
+            233.38627815246582,
+            233.38747024536133
+          ],
+          "ros_interval_ms": 215.33441543579102
+        },
+        {
+          "next_frame_zero_based": 456,
+          "source_intervals_ms": [
+            199.9819278717041,
+            200.69575309753418,
+            166.78977012634277,
+            166.70560836791992,
+            166.70489311218262
+          ],
+          "ros_interval_ms": 166.70489311218262
+        }
+      ],
+      "max_source_skew_ms": 46.39005661010742,
+      "suction": {
+        "left": {
+          "state": {
+            "initial": 1,
+            "final": 0,
+            "transitions": [
+              {
+                "frame_zero_based": 202,
+                "seconds_from_first_saved_frame": 10.102421522140503,
+                "value": 0
+              }
+            ]
+          },
+          "action": {
+            "initial": 1,
+            "final": 0,
+            "transitions": [
+              {
+                "frame_zero_based": 198,
+                "seconds_from_first_saved_frame": 9.902374267578125,
+                "value": 0
+              }
+            ]
+          }
+        },
+        "right": {
+          "state": {
+            "initial": 0,
+            "final": 0,
+            "transitions": []
+          },
+          "action": {
+            "initial": 0,
+            "final": 0,
+            "transitions": []
+          }
+        }
+      },
+      "local_feedback_error": null,
+      "local_feedback_packet_deltas": {
+        "right.recording": {
+          "received": 389,
+          "missing_sequences": 0,
+          "out_of_order": 0,
+          "sender_send_errors": 0,
+          "ros_queue_overwrites": 0
+        },
+        "left.recording": {
+          "received": 486,
+          "missing_sequences": 0,
+          "out_of_order": 0,
+          "sender_send_errors": 0,
+          "ros_queue_overwrites": 0
+        },
+        "right.drag": {
+          "received": 2156,
+          "missing_sequences": 0,
+          "out_of_order": 0,
+          "sender_send_errors": 0,
+          "ros_queue_overwrites": 0
+        },
+        "left.drag": {
+          "received": 2158,
+          "missing_sequences": 0,
+          "out_of_order": 0,
+          "sender_send_errors": 0,
+          "ros_queue_overwrites": 0
+        }
+      },
+      "writer": {
+        "written_frames": 503,
+        "written_bytes": 518954428,
+        "queue_capacity_frames": 64,
+        "image_workers": 3,
+        "png_encoder": "libdeflate_sub_1",
+        "queue_full_count": 0,
+        "peak_queue": 1,
+        "write_ms_p50_p95_max": [
+          55.67306900047697,
+          77.6926734000881,
+          110.69453500022064
+        ],
+        "queue_wait_ms_p95": 1.8203601011919088
+      },
+      "capture_gaps": [
+        {
+          "after_frame": 0,
+          "reasons": [
+            "左右臂都必须处于 teaching 状态",
+            "切换回拖动示教关节反馈",
+            "left teaching: starting",
+            "right teaching: starting",
+            "图像/关节跳过了采集周期：left=3356.7ms, right=3353.0ms, head=3320.1ms, left_wrist=3322.3ms, right_wrist=3316.6ms"
+          ],
+          "start_elapsed_seconds": 0.0,
+          "end_elapsed_seconds": 3.5601158940007736
+        },
+        {
+          "after_frame": 447,
+          "reasons": [
+            "键盘结束示教，等待下次 A 开启示教"
+          ],
+          "start_elapsed_seconds": 25.896180944000662,
+          "end_elapsed_seconds": 25.913518383000337
+        },
+        {
+          "after_frame": 449,
+          "reasons": [
+            "right teaching: stopped",
+            "left teaching: stopped",
+            "左右臂都必须处于 teaching 状态",
+            "B 回位：等待示教退出及回位反馈就绪，随后继续同一条录制",
+            "等待 left 数据",
+            "图像/关节跳过了采集周期：left=1458.9ms, right=1465.9ms, head=1434.4ms, left_wrist=1433.7ms, right_wrist=1433.7ms"
+          ],
+          "start_elapsed_seconds": 25.960773192000488,
+          "end_elapsed_seconds": 27.38152303100287
+        },
+        {
+          "after_frame": 450,
+          "reasons": [
+            "left 反馈停止",
+            "图像/关节时间戳超过同步容差",
+            "right 反馈停止",
+            "图像/关节跳过了采集周期：left=280.1ms, right=250.8ms, head=266.9ms, left_wrist=300.1ms, right_wrist=300.1ms"
+          ],
+          "start_elapsed_seconds": 27.416075648001424,
+          "end_elapsed_seconds": 27.802543453999533
+        },
+        {
+          "after_frame": 452,
+          "reasons": [
+            "图像/关节跳过了采集周期：left=210.5ms, right=290.3ms, head=200.1ms, left_wrist=233.4ms, right_wrist=233.4ms"
+          ],
+          "start_elapsed_seconds": 27.864661884999805,
+          "end_elapsed_seconds": 27.91240887800086
+        },
+        {
+          "after_frame": 456,
+          "reasons": [
+            "图像/关节跳过了采集周期：left=200.0ms, right=200.7ms, head=166.8ms, left_wrist=166.7ms, right_wrist=166.7ms"
+          ],
+          "start_elapsed_seconds": 28.096859396999207,
+          "end_elapsed_seconds": 28.2082602340015
+        }
+      ],
+      "control_events": [
+        {
+          "key": "b",
+          "ros_timestamp": 1794393376.0876746,
+          "after_frame": 449,
+          "action": "return_to_saved_joints",
+          "joint_targets": {
+            "left": [
+              0.795451,
+              0.412276,
+              -0.585123,
+              1.905242,
+              0.530428,
+              0.246453,
+              0.198464
+            ],
+            "right": [
+              -0.671164,
+              0.310045,
+              0.326427,
+              1.877737,
+              -0.441627,
+              0.312674,
+              -0.45345
+            ]
+          }
+        }
+      ],
+      "final_return_target_max_error_rad": {
+        "left": 0.0005743528862000025,
+        "right": 0.000563306377410866
+      },
+      "network_camera_metric_window": {
+        "left_wrist": {
+          "metric_samples": 30,
+          "received_delta": 904,
+          "published_delta": 904,
+          "rejected_delta": 0,
+          "skipped_sequences_delta": 0,
+          "receive_hz_min_median_max": [
+            29.781079086422316,
+            29.995257039321082,
+            30.103088985503923
+          ],
+          "max_sampled_capture_age_ms": 81.403388,
+          "max_sampled_clock_error_bound_ms": 1.305937
+        },
+        "right_wrist": {
+          "metric_samples": 30,
+          "received_delta": 904,
+          "published_delta": 904,
+          "rejected_delta": 0,
+          "skipped_sequences_delta": 0,
+          "receive_hz_min_median_max": [
+            29.89790983658145,
+            30.00008931289096,
+            30.129119419892305
+          ],
+          "max_sampled_capture_age_ms": 58.271499,
+          "max_sampled_clock_error_bound_ms": 1.311489
+        }
+      },
+      "logged_actual_return_motion": {
+        "log_start_utc_seconds": 1794393376.9124324,
+        "log_last_arm_completed_utc_seconds": 1794393378.7167215,
+        "first_saved_frame_zero_based": 457,
+        "last_saved_frame_zero_based": 493,
+        "saved_frames_during_motion": 37,
+        "max_anchor_interval_ms": 66.68329238891602,
+        "all_motion_samples_in_final_continuous_segment": true
+      },
+      "contact_sheets": [
+        "/tmp/aide-latest-two-review-q7pjpioe/episode_000005_main.jpg",
+        "/tmp/aide-latest-two-review-q7pjpioe/episode_000005_return.jpg"
+      ]
+    },
+    {
+      "episode": "episode_000006",
+      "files": "/home/jetson/AIDE_robot_main/assets/dataset/act_teach_keyboard_suction_30hz/episode_000006",
+      "images_fully_decoded": 1761,
+      "validation": "passed",
+      "validation_seconds": 18.275586294999812,
+      "state_shape": [
+        587,
+        16
+      ],
+      "source_start_utc": "2026-11-11T10:36:27.822406+00:00",
+      "source_end_utc": "2026-11-11T10:37:09.326941+00:00",
+      "quality": {
+        "status": "needs_review",
+        "frames": 587,
+        "target_fps": 20.0,
+        "saved_fps": 14.031723616266472,
+        "source_span_seconds": 41.50453495979309,
+        "source_span_fps": 14.118939064554727,
+        "segment_frames": [
+          12,
+          205,
+          1,
+          320,
+          1,
+          1,
+          1,
+          2,
+          44
+        ],
+        "chunk_size": 50,
+        "full_chunk_start_frames": 427,
+        "trailing_no_frame_seconds": 0.0,
+        "suction": {
+          "left": {
+            "observation_values": [
+              0,
+              1
+            ],
+            "action_values": [
+              0,
+              1
+            ],
+            "observation_transitions": 2,
+            "action_transitions": 2,
+            "final_observed": 0,
+            "final_requested": 0
+          },
+          "right": {
+            "observation_values": [
+              0
+            ],
+            "action_values": [
+              0
+            ],
+            "observation_transitions": 0,
+            "action_transitions": 0,
+            "final_observed": 0,
+            "final_requested": 0
+          }
+        },
+        "warnings": [
+          "整段保存 14.03/20 帧/秒，低于目标90%；检查等待和间断"
+        ],
+        "task_success_requires_review": true
+      },
+      "segments": [
+        {
+          "index": 0,
+          "start_zero_based": 0,
+          "end_exclusive": 12,
+          "frames": 12,
+          "source_span_seconds": 0.5667977333068848,
+          "fps": 19.407275918028773,
+          "source_max_interval_ms": 66.71690940856934,
+          "max_joint_step_rad": 9.179115295410156e-06,
+          "pause_reason": "切换回拖动示教关节反馈"
+        },
+        {
+          "index": 1,
+          "start_zero_based": 12,
+          "end_exclusive": 217,
+          "frames": 205,
+          "source_span_seconds": 10.207345247268677,
+          "fps": 19.985607918433754,
+          "source_max_interval_ms": 75.47497749328613,
+          "max_joint_step_rad": 0.03069901466369629,
+          "pause_reason": "键盘结束示教，等待下次 A 开启示教"
+        },
+        {
+          "index": 2,
+          "start_zero_based": 217,
+          "end_exclusive": 218,
+          "frames": 1,
+          "source_span_seconds": 0.0,
+          "fps": null,
+          "source_max_interval_ms": null,
+          "max_joint_step_rad": null,
+          "pause_reason": "left teaching: stopped"
+        },
+        {
+          "index": 3,
+          "start_zero_based": 218,
+          "end_exclusive": 538,
+          "frames": 320,
+          "source_span_seconds": 15.90615439414978,
+          "fps": 20.05513036622648,
+          "source_max_interval_ms": 78.33361625671387,
+          "max_joint_step_rad": 0.04171490669250488,
+          "pause_reason": "键盘结束示教，等待下次 A 开启示教"
+        },
+        {
+          "index": 4,
+          "start_zero_based": 538,
+          "end_exclusive": 539,
+          "frames": 1,
+          "source_span_seconds": 0.0,
+          "fps": null,
+          "source_max_interval_ms": null,
+          "max_joint_step_rad": null,
+          "pause_reason": "right teaching: stopped"
+        },
+        {
+          "index": 5,
+          "start_zero_based": 539,
+          "end_exclusive": 540,
+          "frames": 1,
+          "source_span_seconds": 0.0,
+          "fps": null,
+          "source_max_interval_ms": null,
+          "max_joint_step_rad": null,
+          "pause_reason": "left 反馈停止"
+        },
+        {
+          "index": 6,
+          "start_zero_based": 540,
+          "end_exclusive": 541,
+          "frames": 1,
+          "source_span_seconds": 0.0,
+          "fps": null,
+          "source_max_interval_ms": null,
+          "max_joint_step_rad": null,
+          "pause_reason": "图像/关节跳过了采集周期：left=210.0ms, right=289.7ms, head=233.5ms, left_wrist=233.4ms, right_wrist=266.7ms"
+        },
+        {
+          "index": 7,
+          "start_zero_based": 541,
+          "end_exclusive": 543,
+          "frames": 2,
+          "source_span_seconds": 0.033341407775878906,
+          "fps": 29.99273476159149,
+          "source_max_interval_ms": 40.276288986206055,
+          "max_joint_step_rad": 2.9206275939941406e-06,
+          "pause_reason": "图像/关节跳过了采集周期：left=220.2ms, right=189.9ms, head=200.1ms, left_wrist=200.0ms, right_wrist=166.7ms"
+        },
+        {
+          "index": 8,
+          "start_zero_based": 543,
+          "end_exclusive": 587,
+          "frames": 44,
+          "source_span_seconds": 2.133864402770996,
+          "fps": 20.151233576117118,
+          "source_max_interval_ms": 75.0277042388916,
+          "max_joint_step_rad": 0.011828184127807617,
+          "pause_reason": "keyboard save"
+        }
+      ],
+      "source_breaks": [
+        {
+          "next_frame_zero_based": 12,
+          "source_intervals_ms": [
+            3050.1580238342285,
+            3059.3268871307373,
+            3035.4955196380615,
+            3067.380428314209,
+            3034.0657234191895
+          ],
+          "ros_interval_ms": 3050.999402999878
+        },
+        {
+          "next_frame_zero_based": 218,
+          "source_intervals_ms": [
+            7670.5522537231445,
+            7673.16460609436,
+            7638.87357711792,
+            7635.1306438446045,
+            7635.179281234741
+          ],
+          "ros_interval_ms": 7638.87357711792
+        },
+        {
+          "next_frame_zero_based": 539,
+          "source_intervals_ms": [
+            1170.1562404632568,
+            1176.8271923065186,
+            1134.1514587402344,
+            1133.6033344268799,
+            1133.603811264038
+          ],
+          "ros_interval_ms": 1133.603811264038
+        },
+        {
+          "next_frame_zero_based": 540,
+          "source_intervals_ms": [
+            280.0455093383789,
+            247.89881706237793,
+            300.2192974090576,
+            300.1086711883545,
+            300.1079559326172
+          ],
+          "ros_interval_ms": 300.1079559326172
+        },
+        {
+          "next_frame_zero_based": 541,
+          "source_intervals_ms": [
+            209.95783805847168,
+            289.73984718322754,
+            233.504056930542,
+            233.38913917541504,
+            266.73150062561035
+          ],
+          "ros_interval_ms": 238.62576484680176
+        },
+        {
+          "next_frame_zero_based": 543,
+          "source_intervals_ms": [
+            220.2322483062744,
+            189.85700607299805,
+            200.14548301696777,
+            200.01792907714844,
+            166.67509078979492
+          ],
+          "ros_interval_ms": 194.78082656860352
+        }
+      ],
+      "max_source_skew_ms": 48.82025718688965,
+      "suction": {
+        "left": {
+          "state": {
+            "initial": 0,
+            "final": 0,
+            "transitions": [
+              {
+                "frame_zero_based": 12,
+                "seconds_from_first_saved_frame": 3.6177971363067627,
+                "value": 1
+              },
+              {
+                "frame_zero_based": 218,
+                "seconds_from_first_saved_frame": 21.497373342514038,
+                "value": 0
+              }
+            ]
+          },
+          "action": {
+            "initial": 0,
+            "final": 0,
+            "transitions": [
+              {
+                "frame_zero_based": 12,
+                "seconds_from_first_saved_frame": 3.6177971363067627,
+                "value": 1
+              },
+              {
+                "frame_zero_based": 218,
+                "seconds_from_first_saved_frame": 21.497373342514038,
+                "value": 0
+              }
+            ]
+          }
+        },
+        "right": {
+          "state": {
+            "initial": 0,
+            "final": 0,
+            "transitions": []
+          },
+          "action": {
+            "initial": 0,
+            "final": 0,
+            "transitions": []
+          }
+        }
+      },
+      "local_feedback_error": null,
+      "local_feedback_packet_deltas": {
+        "right.recording": {
+          "received": 743,
+          "missing_sequences": 0,
+          "out_of_order": 0,
+          "sender_send_errors": 0,
+          "ros_queue_overwrites": 0
+        },
+        "left.recording": {
+          "received": 919,
+          "missing_sequences": 0,
+          "out_of_order": 0,
+          "sender_send_errors": 0,
+          "ros_queue_overwrites": 0
+        },
+        "right.drag": {
+          "received": 2566,
+          "missing_sequences": 0,
+          "out_of_order": 0,
+          "sender_send_errors": 0,
+          "ros_queue_overwrites": 0
+        },
+        "left.drag": {
+          "received": 2567,
+          "missing_sequences": 0,
+          "out_of_order": 0,
+          "sender_send_errors": 0,
+          "ros_queue_overwrites": 0
+        }
+      },
+      "writer": {
+        "written_frames": 587,
+        "written_bytes": 598791407,
+        "queue_capacity_frames": 64,
+        "image_workers": 3,
+        "png_encoder": "libdeflate_sub_1",
+        "queue_full_count": 0,
+        "peak_queue": 3,
+        "write_ms_p50_p95_max": [
+          56.370882000919664,
+          80.17598410006026,
+          108.97509400092531
+        ],
+        "queue_wait_ms_p95": 1.4581070001440817
+      },
+      "capture_gaps": [
+        {
+          "after_frame": 12,
+          "reasons": [
+            "切换回拖动示教关节反馈",
+            "左右臂都必须处于 teaching 状态",
+            "left teaching: starting",
+            "right teaching: starting",
+            "图像/关节跳过了采集周期：left=3050.2ms, right=3059.3ms, head=3035.5ms, left_wrist=3067.4ms, right_wrist=3034.1ms"
+          ],
+          "start_elapsed_seconds": 0.8796723359992029,
+          "end_elapsed_seconds": 4.068988651000836
+        },
+        {
+          "after_frame": 217,
+          "reasons": [
+            "键盘结束示教，等待下次 A 开启示教"
+          ],
+          "start_elapsed_seconds": 14.119123307998962,
+          "end_elapsed_seconds": 14.138213748999988
+        },
+        {
+          "after_frame": 218,
+          "reasons": [
+            "left teaching: stopped",
+            "right teaching: stopped",
+            "左右臂都必须处于 teaching 状态",
+            "切换回拖动示教关节反馈",
+            "right teaching: starting",
+            "left teaching: starting",
+            "图像/关节跳过了采集周期：left=7670.6ms, right=7673.2ms, head=7638.9ms, left_wrist=7635.1ms, right_wrist=7635.2ms"
+          ],
+          "start_elapsed_seconds": 14.17569381100111,
+          "end_elapsed_seconds": 21.780854296001053
+        },
+        {
+          "after_frame": 538,
+          "reasons": [
+            "键盘结束示教，等待下次 A 开启示教"
+          ],
+          "start_elapsed_seconds": 37.73822928200025,
+          "end_elapsed_seconds": 37.75312639399999
+        },
+        {
+          "after_frame": 539,
+          "reasons": [
+            "right teaching: stopped",
+            "左右臂都必须处于 teaching 状态",
+            "left teaching: stopped",
+            "B 回位：等待示教退出及回位反馈就绪，随后继续同一条录制",
+            "等待 left 数据",
+            "图像/关节跳过了采集周期：left=1170.2ms, right=1176.8ms, head=1134.2ms, left_wrist=1133.6ms, right_wrist=1133.6ms"
+          ],
+          "start_elapsed_seconds": 37.793927480001,
+          "end_elapsed_seconds": 38.888509723001334
+        },
+        {
+          "after_frame": 540,
+          "reasons": [
+            "left 反馈停止",
+            "right 反馈停止",
+            "图像/关节跳过了采集周期：left=280.0ms, right=247.9ms, head=300.2ms, left_wrist=300.1ms, right_wrist=300.1ms"
+          ],
+          "start_elapsed_seconds": 38.93850972300061,
+          "end_elapsed_seconds": 39.2397907170016
+        },
+        {
+          "after_frame": 541,
+          "reasons": [
+            "图像/关节跳过了采集周期：left=210.0ms, right=289.7ms, head=233.5ms, left_wrist=233.4ms, right_wrist=266.7ms"
+          ],
+          "start_elapsed_seconds": 39.28979071700087,
+          "end_elapsed_seconds": 39.42673690200172
+        },
+        {
+          "after_frame": 543,
+          "reasons": [
+            "图像/关节跳过了采集周期：left=220.2ms, right=189.9ms, head=200.1ms, left_wrist=200.0ms, right_wrist=166.7ms"
+          ],
+          "start_elapsed_seconds": 39.51075638299881,
+          "end_elapsed_seconds": 39.65819336799905
+        }
+      ],
+      "control_events": [
+        {
+          "key": "b",
+          "ros_timestamp": 1794393426.4691918,
+          "after_frame": 539,
+          "action": "return_to_saved_joints",
+          "joint_targets": {
+            "left": [
+              0.795451,
+              0.412276,
+              -0.585123,
+              1.905242,
+              0.530428,
+              0.246453,
+              0.198464
+            ],
+            "right": [
+              -0.671164,
+              0.310045,
+              0.326427,
+              1.877737,
+              -0.441627,
+              0.312674,
+              -0.45345
+            ]
+          }
+        }
+      ],
+      "final_return_target_max_error_rad": {
+        "left": 0.0005736376304626978,
+        "right": 0.0005630679588317644
+      },
+      "network_camera_metric_window": {
+        "left_wrist": {
+          "metric_samples": 42,
+          "received_delta": 1263,
+          "published_delta": 1264,
+          "rejected_delta": 0,
+          "skipped_sequences_delta": 0,
+          "receive_hz_min_median_max": [
+            29.612053210058267,
+            29.984898928205908,
+            30.06220712394858
+          ],
+          "max_sampled_capture_age_ms": 66.113542,
+          "max_sampled_clock_error_bound_ms": 1.32129
+        },
+        "right_wrist": {
+          "metric_samples": 42,
+          "received_delta": 1266,
+          "published_delta": 1266,
+          "rejected_delta": 0,
+          "skipped_sequences_delta": 0,
+          "receive_hz_min_median_max": [
+            29.825180194704867,
+            29.99231722039414,
+            30.118801008325043
+          ],
+          "max_sampled_capture_age_ms": 73.531903,
+          "max_sampled_clock_error_bound_ms": 1.320608
+        }
+      },
+      "logged_actual_return_motion": {
+        "log_start_utc_seconds": 1794393427.2004564,
+        "log_last_arm_completed_utc_seconds": 1794393428.9509113,
+        "first_saved_frame_zero_based": 544,
+        "last_saved_frame_zero_based": 578,
+        "saved_frames_during_motion": 35,
+        "max_anchor_interval_ms": 66.68353080749512,
+        "all_motion_samples_in_final_continuous_segment": true
+      },
+      "contact_sheets": [
+        "/tmp/aide-latest-two-review-q7pjpioe/episode_000006_overview.jpg"
+      ]
+    }
+  ],
+  "read_only": true,
+  "source_files_changed": [],
+  "findings_zh": [
+    "最新两条为episode_000005与episode_000006，503/587帧；两条的数组、时间戳、16维格式及3270张图片均校验通过。",
+    "第一条主示教段0..446（零基）447帧、22.272秒、约20.03Hz，未出现超过80ms而未分段的采样缺口，可保留作为连续训练片段。",
+    "第一条整体16.47Hz主要包含R后等待示教3.56秒，以及示教退出、B自动模式初始化/运动准备阶段的间断。",
+    "第一条449帧前1.434秒间隔、450帧前约282ms、452帧前约215ms、456帧前约167ms，均在MoveAbsJ实际启动日志之前。",
+    "第一条最后连续段456..502为47帧，涵盖真实回位动作与到位后画面，末帧目标最大关节误差小于0.000575rad。不能将这些初始化间断误判为回位运动未录到。",
+    "第一条左吸盘起始1，索引198动作转0、202读回转0（约200ms延迟）；没有左吸盘0到1开启示范，右吸盘全程0。",
+    "第二条587帧分9段，205/320帧示教段均约20Hz，整段14.03Hz主要包含重新开示教3.19秒、7.61秒等待，以及B初始化准备间断。",
+    "第二条左吸盘0到1、1到0只在索引12与218（分段边界）可见；开关过程发生在暂停期间，不能当作已录到连续的吸盘开闭示范。右吸盘仍全程0。",
+    "两条本机关节通道新增序号丢失、乱序、发送错误均0，写盘满队列/背压/调度延迟计数均0；腕部网络日志对应窗口新增序列跳跃与拒收均0。",
+    "现有证据指向示教启停和模式初始化时的反馈/采集暂停；没有将问题归因于相机或USB硬件的证据。本轮未采集逐SDK调用trace，不能精确量化每个SDK调用的占用。",
+    "训练应遵守已保存的分段边界；保留良好连续段。要学习完整自主双吸盘操作，需补录在持续示教录制期间发生的0到1到0过程。",
+    "后续先A并等待双臂teaching，再R；录制中完成吸盘开闭；B回位后多等约0.5到1秒再S，使最终连续回位段达到50帧。"
+  ],
+  "motion_logs": "/tmp/aide-teach-suction-y7bptnl4/arms.log",
+  "network_camera_logs": "/tmp/aide-teach-suction-y7bptnl4/network_cameras.jsonl",
+  "image_samples_reviewed": true,
+  "robot_services_or_sdk_called": false
+}

@@ -1,0 +1,215 @@
+{
+  "generated_beijing": "2026-11-11T14:38:30.684860+08:00",
+  "pc": "172.16.12.45",
+  "jetson": "172.16.12.95",
+  "pc_cameras_identified_from_user_log": {
+    "left_wrist": "352122274013",
+    "right_wrist": "261122274758",
+    "USB": "3.2"
+  },
+  "jetson_network": {
+    "interface": "wlP1p1s0",
+    "frequency_MHz": 2412,
+    "reported_RX_Mbps": 130,
+    "reported_TX_Mbps": 130,
+    "power_save": "on"
+  },
+  "baseline_clock_samples": [
+    {
+      "rtt_ms": 8.366385,
+      "pc_minus_jetson_ms": -18.2724405,
+      "local_wall_monotonic_error_ms": -0.003808
+    },
+    {
+      "rtt_ms": 4.585236,
+      "pc_minus_jetson_ms": -20.257325,
+      "local_wall_monotonic_error_ms": -0.006688
+    },
+    {
+      "rtt_ms": 3.755296,
+      "pc_minus_jetson_ms": -20.564664,
+      "local_wall_monotonic_error_ms": -0.005152
+    },
+    {
+      "rtt_ms": 5.06342,
+      "pc_minus_jetson_ms": -20.351423,
+      "local_wall_monotonic_error_ms": -0.002752
+    },
+    {
+      "rtt_ms": 7.7392,
+      "pc_minus_jetson_ms": -18.924777,
+      "local_wall_monotonic_error_ms": -0.006784
+    },
+    {
+      "rtt_ms": 6.277625,
+      "pc_minus_jetson_ms": -20.4420925,
+      "local_wall_monotonic_error_ms": -0.007585
+    },
+    {
+      "rtt_ms": 4.676315,
+      "pc_minus_jetson_ms": -20.6241585,
+      "local_wall_monotonic_error_ms": -0.009152
+    },
+    {
+      "rtt_ms": 5.993627,
+      "pc_minus_jetson_ms": -20.1834275,
+      "local_wall_monotonic_error_ms": -0.006816
+    },
+    {
+      "rtt_ms": 4.518427,
+      "pc_minus_jetson_ms": -20.9289325,
+      "local_wall_monotonic_error_ms": -0.0088
+    },
+    {
+      "rtt_ms": 5.472239,
+      "pc_minus_jetson_ms": -21.0142105,
+      "local_wall_monotonic_error_ms": -0.00496
+    },
+    {
+      "rtt_ms": 7.879483,
+      "pc_minus_jetson_ms": -19.4408575,
+      "local_wall_monotonic_error_ms": -0.009792
+    },
+    {
+      "rtt_ms": 4.39722,
+      "pc_minus_jetson_ms": -20.615865,
+      "local_wall_monotonic_error_ms": -0.006912
+    },
+    {
+      "rtt_ms": 4.274144,
+      "pc_minus_jetson_ms": -20.84208,
+      "local_wall_monotonic_error_ms": -0.009633
+    },
+    {
+      "rtt_ms": 4.181625,
+      "pc_minus_jetson_ms": -20.7796305,
+      "local_wall_monotonic_error_ms": -0.009313
+    },
+    {
+      "rtt_ms": 3.055564,
+      "pc_minus_jetson_ms": -20.667143,
+      "local_wall_monotonic_error_ms": -0.007552
+    },
+    {
+      "rtt_ms": 3.471988,
+      "pc_minus_jetson_ms": -20.835177,
+      "local_wall_monotonic_error_ms": -0.006945
+    },
+    {
+      "rtt_ms": 6.950303,
+      "pc_minus_jetson_ms": -21.5073365,
+      "local_wall_monotonic_error_ms": -0.007808
+    },
+    {
+      "rtt_ms": 7.958927,
+      "pc_minus_jetson_ms": -20.1748765,
+      "local_wall_monotonic_error_ms": -0.004257
+    },
+    {
+      "rtt_ms": 5.948798,
+      "pc_minus_jetson_ms": -20.396366,
+      "local_wall_monotonic_error_ms": -0.007425
+    },
+    {
+      "rtt_ms": 4.285367,
+      "pc_minus_jetson_ms": -20.6933325,
+      "local_wall_monotonic_error_ms": -0.008512
+    }
+  ],
+  "clock_only_rtt_ms_median": 4.8698675,
+  "actual_PNG_receive_check": {
+    "seconds": 20,
+    "exit_code": 1,
+    "last_stats": {
+      "utc_ns": 1794378915783773039,
+      "cameras": {
+        "left_wrist": {
+          "received": 370,
+          "published": 0,
+          "rejected": 370,
+          "skipped_sequences": 0,
+          "last_error": "waiting for reliable clock comparison",
+          "fresh": false,
+          "receive_hz": 0.0,
+          "capture_age_p95_ms": null
+        },
+        "right_wrist": {
+          "received": 375,
+          "published": 0,
+          "rejected": 375,
+          "skipped_sequences": 0,
+          "last_error": "waiting for reliable clock comparison",
+          "fresh": false,
+          "receive_hz": 0.0,
+          "capture_age_p95_ms": null
+        }
+      }
+    },
+    "accepted_frames": 0
+  },
+  "load_comparison": [
+    {
+      "cameras": [
+        "left_wrist"
+      ],
+      "seconds": 5.105673763999221,
+      "images": {
+        "left_wrist": {
+          "frames": 157,
+          "bytes": 59081315,
+          "receive_fps": 30.75010415021573,
+          "MiB_per_second": 11.035631201566119,
+          "payload_KiB_median": 367.8193359375
+        }
+      },
+      "clock_rtt_ms_min_median_max": [
+        2.89675,
+        20.991046,
+        100.576619
+      ],
+      "clock_samples_under_20ms": 10,
+      "clock_samples": 23,
+      "errors": []
+    },
+    {
+      "cameras": [
+        "left_wrist",
+        "right_wrist"
+      ],
+      "seconds": 8.216031779000332,
+      "images": {
+        "left_wrist": {
+          "frames": 174,
+          "bytes": 65481525,
+          "receive_fps": 21.17810698404712,
+          "MiB_per_second": 7.600755482863042,
+          "payload_KiB_median": 367.81005859375
+        },
+        "right_wrist": {
+          "frames": 131,
+          "bytes": 48469976,
+          "receive_fps": 15.944436867299842,
+          "MiB_per_second": 5.626143188269364,
+          "payload_KiB_median": 361.8154296875
+        }
+      },
+      "clock_rtt_ms_min_median_max": [
+        13.455508,
+        40.6637165,
+        63.921316
+      ],
+      "clock_samples_under_20ms": 1,
+      "clock_samples": 34,
+      "errors": []
+    }
+  ],
+  "conclusion": "PC camera capture and connectivity work. Dual PNG stream load exceeds the measured current WLAN throughput; clock comparison also degrades under image load. Stable dual-camera 20Hz recording has not passed.",
+  "next_options": [
+    "Use a higher-throughput link and retain lossless PNG, then remeasure.",
+    "If accepting lossy images, restart PC sender with --codec jpeg --jpeg-quality 95 and remeasure."
+  ],
+  "physical_arm_connections": false,
+  "physical_suction_IO": false,
+  "head_camera_started": false,
+  "training_dataset_modified": false
+}

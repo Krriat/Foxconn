@@ -1,0 +1,286 @@
+{
+  "checked_at_utc": "2026-11-10T08:35:34.502698+00:00",
+  "scope_zh": "仅优化键盘双臂双吸盘采集的图像编码、写入队列和队列满重试；共享写入器只增加可选参数且原默认行为保持。",
+  "changes": {
+    "png": "Lossless RGB8 PNG Sub filter + optional system libdeflate level 1; one encoder per worker, reused buffers; existing zlib stored fallback if unavailable.",
+    "writer_workers_all_fps": 3,
+    "bounded_queue_frames": 64,
+    "bounded_raw_queue_bytes_at_640x480_rgb_three_cameras": 176947200,
+    "queue_full": "Hold one immutable aligned bundle and retry without marking a data gap; keep true source gaps and mode transitions. Stop saves enqueued rows and reports any pending sample discarded.",
+    "data_schema": "Unchanged 16D: left arm 7 + right arm 7 + measured/requested left/right binary suction; original timestamp and causality checks retained."
+  },
+  "real_static_hardware_capture": {
+    "duration_seconds": 60.00205171699781,
+    "accepted_frames": 1770,
+    "saved_fps": 29.498991273636427,
+    "queue_full": 0,
+    "peak_write_queue": 13,
+    "cameras": {
+      "head": {
+        "messages": 1797,
+        "receive_hz": 29.942066625732036,
+        "source_timestamp_hz": 29.943746252892716,
+        "source_intervals_over_50ms": 2,
+        "source_max_interval_ms": 66.71881675720215,
+        "receive_lag_ms_p50_p95_max": [
+          57.58953094482422,
+          101.19781494140621,
+          221.3153839111328
+        ],
+        "decode_ms_p50_p95_max": [
+          0.7105779986886773,
+          5.902864399831734,
+          24.84373900006176
+        ],
+        "metadata_receive_hz": 29.957573127693806,
+        "metadata_without_image": 1
+      },
+      "left_wrist": {
+        "messages": 1785,
+        "receive_hz": 29.74107855160391,
+        "source_timestamp_hz": 29.74174796921177,
+        "source_intervals_over_50ms": 13,
+        "source_max_interval_ms": 100.02851486206055,
+        "receive_lag_ms_p50_p95_max": [
+          31.076669692993164,
+          81.12592697143552,
+          182.54947662353516
+        ],
+        "decode_ms_p50_p95_max": [
+          0.8202179997169878,
+          7.050290001643587,
+          36.01035799874808
+        ],
+        "metadata_receive_hz": 29.789977540973254,
+        "metadata_without_image": 3
+      },
+      "right_wrist": {
+        "messages": 1787,
+        "receive_hz": 29.78679628572856,
+        "source_timestamp_hz": 29.79140509402004,
+        "source_intervals_over_50ms": 12,
+        "source_max_interval_ms": 66.69116020202637,
+        "receive_lag_ms_p50_p95_max": [
+          25.51889419555664,
+          68.6256408691406,
+          167.47307777404785
+        ],
+        "decode_ms_p50_p95_max": [
+          0.8064889989327639,
+          6.543543899169878,
+          24.620700998639222
+        ],
+        "metadata_receive_hz": 29.853355168623878,
+        "metadata_without_image": 4
+      }
+    },
+    "writer": {
+      "written_frames": 1770,
+      "written_bytes": 1569380909,
+      "queue_capacity_frames": 64,
+      "image_workers": 3,
+      "png_encoder": "libdeflate_sub_1",
+      "queue_full_count": 0,
+      "peak_queue": 13,
+      "write_ms_p50_p95_max": [
+        91.02735749911517,
+        144.342705701456,
+        238.9743769999768
+      ],
+      "queue_wait_ms_p95": 280.2793716004089
+    },
+    "validation": "all_arrays_and_images_pass",
+    "max_source_skew_ms": 33.294677734375,
+    "real_arm_and_DO_feedback": true,
+    "synthetic_arm_and_DO": false,
+    "real_robot_or_DO_commands": false,
+    "disk_writes_use_os_cache": true,
+    "fsync_measured": false,
+    "writer_drain_seconds": 0.20731661100217025,
+    "segments": 39,
+    "source_skew_limit_ms": 33.333333333333336,
+    "notes_zh": "使用真实三路相机、真实高频双臂关节反馈及只读 M050 DO 反馈；机械臂静止，未调用示教、初始化、运动或吸盘写入。仍存在实际源时间戳跳帧/同步等待，未伪造连续性。相机和双臂服务仅在测试期间由本次脚本启动，现已结束。"
+  },
+  "existing_episodes_replay": [
+    {
+      "source": "/home/jetson/AIDE_robot_main/assets/dataset/act_teach_keyboard_suction_30hz/episode_000005",
+      "frames": 915,
+      "replay_elapsed_seconds": 34.78032947700194,
+      "original_source_span_seconds": 34.774856090545654,
+      "original_segments": 125,
+      "replay_segments": 51,
+      "original_image_bytes": 2531488410,
+      "injected_full_queue_retries": 98,
+      "arrays": "all_exact",
+      "pixels": "all_exact",
+      "writer": {
+        "written_frames": 915,
+        "written_bytes": 897612132,
+        "queue_capacity_frames": 64,
+        "image_workers": 3,
+        "png_encoder": "libdeflate_sub_1",
+        "queue_full_count": 0,
+        "peak_queue": 1,
+        "write_ms_p50_p95_max": [
+          49.14208999980474,
+          58.576618600272916,
+          86.57506800227566
+        ],
+        "queue_wait_ms_p95": 0.40215040207840486
+      },
+      "real_robot_or_DO_commands": false,
+      "temporary_output_removed": true,
+      "image_size_reduction_percent": 64.5421196299295
+    },
+    {
+      "source": "/home/jetson/AIDE_robot_main/assets/dataset/act_teach_keyboard_suction_30hz/episode_000006",
+      "frames": 768,
+      "replay_elapsed_seconds": 33.62036982199788,
+      "original_source_span_seconds": 33.61471152305603,
+      "original_segments": 340,
+      "replay_segments": 102,
+      "original_image_bytes": 2124790272,
+      "injected_full_queue_retries": 323,
+      "arrays": "all_exact",
+      "pixels": "all_exact",
+      "writer": {
+        "written_frames": 768,
+        "written_bytes": 751552914,
+        "queue_capacity_frames": 64,
+        "image_workers": 3,
+        "png_encoder": "libdeflate_sub_1",
+        "queue_full_count": 0,
+        "peak_queue": 1,
+        "write_ms_p50_p95_max": [
+          49.22183500093524,
+          59.672245899673726,
+          70.46007400276721
+        ],
+        "queue_wait_ms_p95": 0.39774939741619164
+      },
+      "real_robot_or_DO_commands": false,
+      "temporary_output_removed": true,
+      "image_size_reduction_percent": 64.62931311839138
+    }
+  ],
+  "cached_real_image_writer_rate_tests_after": [
+    {
+      "requested_fps": 20,
+      "attempted_frames": 240,
+      "accepted_frames": 240,
+      "accepted_fps": 19.999986736677787,
+      "workers": 3,
+      "recording_seconds": 12.000007957998605,
+      "flush_included_seconds": 12.002807665998262,
+      "cpu_seconds": 11.692686432,
+      "writer": {
+        "written_frames": 240,
+        "written_bytes": 233568960,
+        "queue_capacity_frames": 64,
+        "image_workers": 3,
+        "png_encoder": "libdeflate_sub_1",
+        "queue_full_count": 0,
+        "peak_queue": 1,
+        "write_ms_p50_p95_max": [
+          47.83942549875064,
+          60.722899550091824,
+          66.14506100231665
+        ],
+        "queue_wait_ms_p95": 0.3158065988827729
+      },
+      "real_images_cached": true,
+      "real_cameras_during_test": false,
+      "robot_or_DO_commands": false,
+      "training_dataset_modified": false,
+      "fsync_measured": false
+    },
+    {
+      "requested_fps": 30,
+      "attempted_frames": 360,
+      "accepted_frames": 360,
+      "accepted_fps": 29.999685060807014,
+      "workers": 3,
+      "recording_seconds": 12.000125976999698,
+      "flush_included_seconds": 12.018753849999484,
+      "cpu_seconds": 18.253290432,
+      "writer": {
+        "written_frames": 360,
+        "written_bytes": 350353440,
+        "queue_capacity_frames": 64,
+        "image_workers": 3,
+        "png_encoder": "libdeflate_sub_1",
+        "queue_full_count": 0,
+        "peak_queue": 1,
+        "write_ms_p50_p95_max": [
+          52.250038001147914,
+          58.63800819897733,
+          62.058600000455044
+        ],
+        "queue_wait_ms_p95": 0.36390174846019363
+      },
+      "real_images_cached": true,
+      "real_cameras_during_test": false,
+      "robot_or_DO_commands": false,
+      "training_dataset_modified": false,
+      "fsync_measured": false
+    }
+  ],
+  "tests": {
+    "keyboard_collector": {
+      "tests": 67,
+      "result": "pass",
+      "log": "/tmp/aide-capture-optimization-vzokexw_/tests_first.log"
+    },
+    "shared_recording": {
+      "tests": 38,
+      "result": "pass",
+      "log": "/tmp/aide-capture-optimization-vzokexw_/shared_writer_tests.log"
+    },
+    "self_test": "pass",
+    "isolated_ROS_A_R_B_S": {
+      "result": "pass",
+      "domain": 232,
+      "frames": 96,
+      "arms_cameras_DO": "simulated",
+      "single_episode_contains": "drag + moving return + hold + both binary suction labels",
+      "log": "/tmp/aide-capture-optimization-vzokexw_/ros_keys_after.log"
+    },
+    "python_compile_files": 6
+  },
+  "preservation": {
+    "real_training_episodes_modified": false,
+    "protected_files_checked": 17,
+    "protected_files_changed": [],
+    "protected_hashes_before_and_after": {
+      "/home/jetson/AIDE_robot_main/software/vla/act/xcore_act/scripts/recording/teach_suction_return_pose.json": "b1e76bd2cb9469e08f96aba74b2f8ab8f870427966b5797f8984fa3a4a50027a",
+      "/home/jetson/AIDE_robot_main/hardware/robot_vision_ws/src/robot_vision_bringup/config/cameras_30hz.yaml": "555c078804bd3148472c42f31c28a0d03074a0fef0fffb98b17f468582efb637",
+      "/home/jetson/AIDE_robot_main/software/vla/act/xcore_act/scripts/recording/launch_xcore_teach_suction.py": "3ce918aab09f2f893fe5871f9d34d48e2bb6e6b01685a237c3d717f17f06a511",
+      "/home/jetson/AIDE_robot_main/assets/dataset/act_teach_keyboard_suction_30hz/episode_000003/episode.json": "37e10a32f652201e8c07a6776d3318e6c81ff3aaf0d85b1c895d71e477b1f3ae",
+      "/home/jetson/AIDE_robot_main/assets/dataset/act_teach_keyboard_suction_30hz/episode_000003/trajectory.npz": "c839bbfa3a8200c392071a8e9dfe34053ef7d9769e11d2d5cae18ab2a3237b4c",
+      "/home/jetson/AIDE_robot_main/assets/dataset/act_teach_keyboard_suction_30hz/episode_000001/episode.json": "f49cb0644d7719d14f15b189ae56113091ae9288c4b0aa2bb62b6f65185a6728",
+      "/home/jetson/AIDE_robot_main/assets/dataset/act_teach_keyboard_suction_30hz/episode_000001/trajectory.npz": "3f32a7ffcc0bf87cac7fb1c671fcdfce29944848c7a61ac27a73bc514ffdf4ea",
+      "/home/jetson/AIDE_robot_main/assets/dataset/act_teach_keyboard_suction_30hz/episode_000004/episode.json": "b878bacb129f4056348f73d574ba46b366bcc38c8ec9d548df8039c0a83b6f27",
+      "/home/jetson/AIDE_robot_main/assets/dataset/act_teach_keyboard_suction_30hz/episode_000004/trajectory.npz": "5e19154431bdcf1a7efad88aa587735e791c8f037a1ce552f6257919f5007651",
+      "/home/jetson/AIDE_robot_main/assets/dataset/act_teach_keyboard_suction_30hz/episode_000002/episode.json": "1f14c36ca0b4fcfc398b9823a2eabb49c9f1a1b333406ea8b52403708b2b195c",
+      "/home/jetson/AIDE_robot_main/assets/dataset/act_teach_keyboard_suction_30hz/episode_000002/trajectory.npz": "7712093a371e80e9e23762d3c11e7e6135f6a6e5fa1359c07d1ef96407810724",
+      "/home/jetson/AIDE_robot_main/assets/dataset/act_teach_keyboard_suction_30hz/episode_000006/episode.json": "a1a50ae76c81dca74975c884208e8562fc570b61fc525f282f45ffa7ee3330a3",
+      "/home/jetson/AIDE_robot_main/assets/dataset/act_teach_keyboard_suction_30hz/episode_000006/trajectory.npz": "08414a2ea1301b6e501ea282e697176cb970155ab529b837b5fdf95b24a025d9",
+      "/home/jetson/AIDE_robot_main/assets/dataset/act_teach_keyboard_suction_30hz/episode_000005/episode.json": "5efe6a2fcfd9c408574336cbdd8de7c19a4063b92156e444e8c4f0499765f91a",
+      "/home/jetson/AIDE_robot_main/assets/dataset/act_teach_keyboard_suction_30hz/episode_000005/trajectory.npz": "1c107c245ce7fb418d04a8f993de9a7c87a864011ab13054dccc5e5667539a34",
+      "/home/jetson/AIDE_robot_main/assets/dataset/act_teach_keyboard_suction_30hz/episode_000000/episode.json": "12e4cdc37c8d18feca38f4b89df19fe234710b5d0b979f9ad352c9ac86ba9c24",
+      "/home/jetson/AIDE_robot_main/assets/dataset/act_teach_keyboard_suction_30hz/episode_000000/trajectory.npz": "5a49a6ebea3eea277f5a7ad851e768233a00d955643d9a1e496ac3b02930f35e"
+    },
+    "motion_commands_speeds_targets_return_pose_camera_configuration_changed": false,
+    "unrelated_BT_and_execution_configuration_edited": false,
+    "temporary_dataset_outputs_removed": true
+  },
+  "limits_zh": [
+    "真实硬件测试为静止反馈采集，不等同于完整拖拽、吸取、回位任务的长时间测试；下一条正式示教仍应核对实际保存帧率和间断。",
+    "回放检查逐项比较所有原始数组及每张图像的解码像素；回放结果只存在于已删除的临时副本，现有两条原始数据未重写。",
+    "回放按原始样本时间推进，并在原有满队列分段边界注入一次临时满队列错误；回放分段数量用于验证队列满不再误切段，不表示恢复了原先已经缺失的帧。",
+    "无损压缩减少磁盘流量但会增加部分编码 CPU 工作；缓存容量有上限，不能弥补持续性上游缺帧或长期写盘吞吐不足。",
+    "写入测试包含操作系统缓存，未逐帧 fsync；不作为断电落盘保证。",
+    "此次未修改 ROS 图像同步容差、相机频率、CPU 亲和性、供电模式或任何机器人运动配置。"
+  ],
+  "artifacts_directory": "/tmp/aide-capture-optimization-vzokexw_"
+}

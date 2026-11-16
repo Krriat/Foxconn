@@ -1,0 +1,309 @@
+{
+  "generated_beijing": "2026-11-11T14:14:44.926607+08:00",
+  "topology": {
+    "pc": "172.16.12.45",
+    "jetson": "172.16.12.95",
+    "port": 9800,
+    "pc_cameras": [
+      "left_wrist",
+      "right_wrist"
+    ],
+    "jetson_cameras": [
+      "head"
+    ]
+  },
+  "alignment": {
+    "source": "RealSense SDK GLOBAL_TIME capture timestamp, never image receipt time",
+    "clock_comparison": "RFC5905 four timestamp offset/delay, recent minimum RTT plus clock aging allowance",
+    "conversion": "capture_jetson_utc_ns = capture_pc_utc_ns - estimated_pc_minus_jetson_offset_ns",
+    "camera_lookahead_ms": 200,
+    "max_clock_comparison_uncertainty_ms": 10,
+    "max_image_age_ms": 350,
+    "camera_skew_limit_ms": 50,
+    "recording_fps": 20,
+    "camera_source_fps": 30,
+    "camera_global_time_mapping_error_included_in_comparison_bound": false,
+    "hardware_exposure_sync": false
+  },
+  "scope": {
+    "actual_arm_connections": false,
+    "actual_arm_services_started": false,
+    "actual_suction_IO": false,
+    "actual_cameras_started": false,
+    "production_dataset_changed": false,
+    "protected_files_checked": 18,
+    "protected_files_changed": [],
+    "implementation_files_changed": [
+      "software/vla/act/xcore_act/scripts/recording/record_xcore_teach_suction.py",
+      "software/vla/act/xcore_act/scripts/recording/launch_xcore_teach_suction.py"
+    ],
+    "original_motion_targets_and_parameters_unchanged": true
+  },
+  "unit_tests": "92 passed, 1 skipped in 7.14s",
+  "integration": {
+    "physical_robot_connections": false,
+    "physical_IO_access": false,
+    "synthetic_images": true,
+    "simulated_PC_clock_ahead_ms": 250,
+    "simulated_image_transport_delay_ms": 120,
+    "loopback_clock_and_delay": {
+      "frames": 207,
+      "offset_ms_p50": 250.006896,
+      "frame_age_ms_p50": 145.514783,
+      "stats": {
+        "left_wrist": {
+          "received": 110,
+          "published": 102,
+          "rejected": 8,
+          "skipped_sequences": 0,
+          "last_error": "",
+          "camera": "left_wrist",
+          "sequence": 110,
+          "capture_pc_utc_ns": 1794377064115186058,
+          "clock_epoch": "a961b10f41134bce84d70f2b23085cc3",
+          "capture_jetson_utc_ns": 1794377063865179162,
+          "pc_minus_jetson_ms": 250.006896,
+          "clock_error_bound_ms": 1.094551,
+          "clock_rtt_ms": 0.551978,
+          "capture_age_ms": 144.236519,
+          "codec": "png",
+          "fresh": true,
+          "receive_hz": 29.99965748411122,
+          "capture_age_p95_ms": 147.77384765
+        },
+        "right_wrist": {
+          "received": 110,
+          "published": 105,
+          "rejected": 5,
+          "skipped_sequences": 0,
+          "last_error": "",
+          "camera": "right_wrist",
+          "sequence": 110,
+          "capture_pc_utc_ns": 1794377064115767797,
+          "clock_epoch": "a961b10f41134bce84d70f2b23085cc3",
+          "capture_jetson_utc_ns": 1794377063865760901,
+          "pc_minus_jetson_ms": 250.006896,
+          "clock_error_bound_ms": 1.095552,
+          "clock_rtt_ms": 0.551978,
+          "capture_age_ms": 149.862193,
+          "codec": "png",
+          "fresh": true,
+          "receive_hz": 30.614080376082182,
+          "capture_age_p95_ms": 151.95383560000002
+        }
+      }
+    },
+    "normal_mode_rejects_synthetic": true,
+    "ROS_and_original_recorder": {
+      "frames": 296,
+      "images": 888,
+      "quality": {
+        "status": "checks_passed",
+        "frames": 296,
+        "target_fps": 20.0,
+        "saved_fps": 19.73050829416343,
+        "source_span_seconds": 14.733603715896606,
+        "source_span_fps": 20.022256990780473,
+        "segment_frames": [
+          275,
+          3,
+          18
+        ],
+        "chunk_size": 50,
+        "full_chunk_start_frames": 226,
+        "trailing_no_frame_seconds": 0.0,
+        "suction": {
+          "left": {
+            "observation_values": [
+              0,
+              1
+            ],
+            "action_values": [
+              0,
+              1
+            ],
+            "observation_transitions": 2,
+            "action_transitions": 2,
+            "final_observed": 0,
+            "final_requested": 0
+          },
+          "right": {
+            "observation_values": [
+              0,
+              1
+            ],
+            "action_values": [
+              0,
+              1
+            ],
+            "observation_transitions": 2,
+            "action_transitions": 2,
+            "final_observed": 0,
+            "final_requested": 0
+          }
+        },
+        "warnings": [],
+        "task_success_requires_review": true
+      },
+      "writer": {
+        "written_frames": 296,
+        "written_bytes": 1851254,
+        "queue_capacity_frames": 64,
+        "image_workers": 3,
+        "png_encoder": "libdeflate_sub_1",
+        "queue_full_count": 0,
+        "peak_queue": 1,
+        "write_ms_p50_p95_max": [
+          13.900933499826351,
+          22.60325700035537,
+          33.673177000309806
+        ],
+        "queue_wait_ms_p95": 0.3551670001797902
+      },
+      "raw_validation": "all_arrays_and_images_pass",
+      "max_source_skew_ms": 27.491092681884766,
+      "wrist_received": {
+        "left_wrist": 604,
+        "right_wrist": 604
+      },
+      "root": "/tmp/aide-network-wrists-f_1fqj7l/TEST_ONLY_network_dataset"
+    }
+  },
+  "reconnect": {
+    "disconnect_detected": true,
+    "reconnect_recovers": true,
+    "synthetic_PC_clock_before_ms": 250,
+    "synthetic_PC_clock_after_ms": 700,
+    "no_published_timestamp_regressions": true,
+    "published_frames": 142,
+    "final": {
+      "left_wrist": {
+        "received": 108,
+        "published": 71,
+        "rejected": 43,
+        "skipped_sequences": 0,
+        "last_error": "",
+        "camera": "left_wrist",
+        "sequence": 63,
+        "capture_pc_utc_ns": 1794376682592801013,
+        "capture_jetson_utc_ns": 1794376681892797301,
+        "pc_minus_jetson_ms": 700.003712,
+        "clock_error_bound_ms": 0.624744,
+        "clock_rtt_ms": 0.348359,
+        "capture_age_ms": 2.095303,
+        "codec": "png",
+        "fresh": true,
+        "receive_hz": 15.100661682756394,
+        "capture_age_p95_ms": 2.3203955
+      },
+      "right_wrist": {
+        "received": 109,
+        "published": 71,
+        "rejected": 44,
+        "skipped_sequences": 0,
+        "last_error": "",
+        "camera": "right_wrist",
+        "sequence": 63,
+        "capture_pc_utc_ns": 1794376682593051289,
+        "capture_jetson_utc_ns": 1794376681893047577,
+        "pc_minus_jetson_ms": 700.003712,
+        "clock_error_bound_ms": 0.624717,
+        "clock_rtt_ms": 0.348359,
+        "capture_age_ms": 1.682432,
+        "codec": "png",
+        "fresh": true,
+        "receive_hz": 15.102768960795963,
+        "capture_age_p95_ms": 1.926372
+      }
+    },
+    "physical_robot_or_camera_access": false
+  },
+  "stale_frames": {
+    "injected_image_delay_ms": 400,
+    "max_frame_age_ms": 350,
+    "all_stale_images_rejected": true,
+    "stats": {
+      "left_wrist": {
+        "received": 105,
+        "published": 0,
+        "rejected": 105,
+        "skipped_sequences": 0,
+        "last_error": "frame capture age 401.9ms exceeds bounds",
+        "fresh": false,
+        "receive_hz": 0.0,
+        "capture_age_p95_ms": null
+      },
+      "right_wrist": {
+        "received": 105,
+        "published": 0,
+        "rejected": 105,
+        "skipped_sequences": 0,
+        "last_error": "frame capture age 401.7ms exceeds bounds",
+        "fresh": false,
+        "receive_hz": 0.0,
+        "capture_age_p95_ms": null
+      }
+    },
+    "physical_robot_access": false
+  },
+  "package_smoke": {
+    "unpacked_package_passed": true,
+    "check_exit": 0,
+    "state": {
+      "utc_ns": 1794377512420697560,
+      "cameras": {
+        "left_wrist": {
+          "received": 124,
+          "published": 102,
+          "rejected": 22,
+          "skipped_sequences": 0,
+          "last_error": "",
+          "camera": "left_wrist",
+          "sequence": 131,
+          "capture_pc_utc_ns": 1794377512631140334,
+          "clock_epoch": "a913face47bd4df99ce8c18e11503944",
+          "capture_jetson_utc_ns": 1794377512381096890,
+          "pc_minus_jetson_ms": 250.043444,
+          "clock_error_bound_ms": 1.045975,
+          "clock_rtt_ms": 0.379271,
+          "capture_age_ms": 26.076205,
+          "codec": "png",
+          "fresh": true,
+          "receive_hz": 30.957102516233896,
+          "capture_age_p95_ms": 33.73109349999997
+        },
+        "right_wrist": {
+          "received": 124,
+          "published": 102,
+          "rejected": 22,
+          "skipped_sequences": 0,
+          "last_error": "",
+          "camera": "right_wrist",
+          "sequence": 131,
+          "capture_pc_utc_ns": 1794377512631834070,
+          "clock_epoch": "a913face47bd4df99ce8c18e11503944",
+          "capture_jetson_utc_ns": 1794377512381790626,
+          "pc_minus_jetson_ms": 250.043444,
+          "clock_error_bound_ms": 1.046101,
+          "clock_rtt_ms": 0.379271,
+          "capture_age_ms": 26.249471,
+          "codec": "png",
+          "fresh": true,
+          "receive_hz": 30.95040908006604,
+          "capture_age_p95_ms": 31.1348834
+        }
+      }
+    },
+    "real_hardware_access": false
+  },
+  "package": {
+    "path": "/home/jetson/AIDE_robot_main/software/vla/act/xcore_act/scripts/recording/network_cameras/dist/aide_pc_wrist_cameras.zip",
+    "bytes": 11728,
+    "sha256": "c395a0a5c40afded87bbe53d33ff61c76f7756672a62dd05eb7970a26019256a"
+  },
+  "actual_two_host_wifi_throughput_tested": false,
+  "pc_RealSense_hardware_tested": false,
+  "timing_note": "S stops available data immediately as before; hold final demonstrated state for about 0.5s before S to allow network matching buffer to settle.",
+  "residual_test_processes": [],
+  "work_dir": "/tmp/aide-network-wrists-f_1fqj7l"
+}

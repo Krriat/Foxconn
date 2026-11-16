@@ -1,0 +1,89 @@
+{
+  "generated_utc": "2026-11-11T09:42:44.640148+00:00",
+  "status": "diagnostics_compiled_offline_tests_passed_waiting_for_user_enabled_teaching",
+  "robot_SDK_connections_opened_by_agent": 0,
+  "robot_teaching_or_motion_commands_sent_by_agent": 0,
+  "physical_IO_accessed": false,
+  "production_dataset_modified": false,
+  "findings_zh": [
+    "示教专用关节发布与SDK位姿查询、力矩查询和控制台打印在同一线程串行执行。",
+    "示教持有SDK锁直到退出，普通状态发布与回位关节发布会等待该锁。",
+    "模拟力矩查询延迟120ms时，实测同线程关节样本最大间隔130.331ms；这不是现场SDK阻塞的测量结果。",
+    "现有数据证明采集端反馈不连续，尚缺真实示教期间每次SDK调用的耗时来确定具体阻塞点。"
+  ],
+  "instrumentation": {
+    "enabled_by": "AIDE_FEEDBACK_TRACE_DIR",
+    "default": "disabled",
+    "SDK": "per-call begin/end, SDK lock wait/hold, drag/ordinary/return publishing timestamps",
+    "recorder": "joint/image callback timestamps, accepted source selection, decode/callback durations, executor heartbeat",
+    "writes": "asynchronous bounded metadata queues; diagnostic overflow never fabricates or drops recorded robot/camera samples"
+  },
+  "tests": {
+    "python_unique_passed": 103,
+    "python_skipped": 1,
+    "Cplusplus_mock_session": "pass with opt-in trace; includes existing guards and a slow-query fault injection",
+    "recorder_self_test": "pass, no hardware",
+    "trace_rows_final_mock": 307,
+    "trace_rows_final_benchmark": 1601,
+    "trace_rows_dropped_final": 0,
+    "compile": "ros_dual_arm_driver and test_cartesian_drag_safe_session both built",
+    "shell_syntax": "pass"
+  },
+  "trace_overhead_mock_only": {
+    "two_threads_100hz_each_4seconds": true,
+    "disabled_p95_microseconds": [
+      0.576,
+      0.448
+    ],
+    "enabled_p95_microseconds": [
+      12.481,
+      9.984
+    ],
+    "enabled_max_microseconds": [
+      789.11,
+      775.575
+    ],
+    "limitation": "Synthetic timing workload; not a real-arm no-drop guarantee"
+  },
+  "authorized_implementation_changes": [
+    "hardware/arm/xCoreROS/src/rokae_driver/include/rokae_driver/shared_arm_hardware.hpp",
+    "hardware/arm/xCoreROS/src/rokae_driver/src/ros_cartesian_drag_safe_service.cpp",
+    "hardware/arm/xCoreROS/src/rokae_driver/src/ros_pos_publisher.cpp",
+    "software/vla/act/xcore_act/scripts/recording/record_xcore_teach_suction.py",
+    "hardware/arm/xCoreROS/src/rokae_driver/include/rokae_driver/feedback_trace.hpp",
+    "hardware/arm/xCoreROS/src/rokae_driver/test/test_cartesian_drag_safe_session.cpp",
+    "software/vla/act/xcore_act/src/xcore_teach_recording/feedback_trace.py",
+    "software/vla/act/xcore_act/scripts/diagnostics/analyze_teach_feedback.py",
+    "software/vla/act/xcore_act/scripts/recording/diagnose_xcore_teach_feedback.sh",
+    "software/vla/act/xcore_act/tests/test_teach_feedback_trace.py"
+  ],
+  "original_motion_constants_and_duration_unchanged": true,
+  "protected_reference_file_count": 19,
+  "protected_reference_changed": [
+    "hardware/arm/xCoreROS/src/rokae_driver/src/ros_cartesian_drag_safe_service.cpp",
+    "hardware/arm/xCoreROS/src/rokae_driver/src/ros_pos_publisher.cpp"
+  ],
+  "protected_unexpected_changed": [],
+  "source_sha256": {
+    "hardware/arm/xCoreROS/src/rokae_driver/include/rokae_driver/shared_arm_hardware.hpp": "6c3ae84bd8734fd1bb66aa39cc94de6999d862868d81617d0cc703a6056ffb5a",
+    "hardware/arm/xCoreROS/src/rokae_driver/src/ros_cartesian_drag_safe_service.cpp": "d2f6f321e2c292e8af550e8b64ca4bf8ca5f90de8ea87f33edee690646860685",
+    "hardware/arm/xCoreROS/src/rokae_driver/src/ros_pos_publisher.cpp": "0aaa2f5605e5ea03a099812003c83324a956ec072a6091984de55c9a348ce464",
+    "software/vla/act/xcore_act/scripts/recording/record_xcore_teach_suction.py": "3f38be31ae12d6c0b5c3a3aaa048c99f0d61844fc6c3d56de3314f0179e71284",
+    "hardware/arm/xCoreROS/src/rokae_driver/include/rokae_driver/feedback_trace.hpp": "08895a17fa80e2a1eea702756bc5e021ec4fc4c06accd58c456a85f35948ba7e",
+    "hardware/arm/xCoreROS/src/rokae_driver/test/test_cartesian_drag_safe_session.cpp": "8bf880f0be13f3ff6840f544c58bd3f077ac8f7320e15285b17497686ea04ac8",
+    "software/vla/act/xcore_act/src/xcore_teach_recording/feedback_trace.py": "7fe5260137bd4ca55512787eb2183d4837265314c326fede2a499dd2e964ed0f",
+    "software/vla/act/xcore_act/scripts/diagnostics/analyze_teach_feedback.py": "6ac57fc8638dad4131edcd70d73717aaeefde10f96cef62c7b66b1d59515cb5b",
+    "software/vla/act/xcore_act/scripts/recording/diagnose_xcore_teach_feedback.sh": "6219aacdf76492c3089c4a45ecde58500b921831e68ce358f2464677aa733400",
+    "software/vla/act/xcore_act/tests/test_teach_feedback_trace.py": "a95689b6a32d2fd8cbefccfae3a04088c14870158fafd47b53144c0baf8ab866"
+  },
+  "artifacts": "/tmp/aide-teach-feedback-instrument-_jjrsdcb",
+  "user_run_command": "bash /home/jetson/AIDE_robot_main/software/vla/act/xcore_act/scripts/recording/diagnose_xcore_teach_feedback.sh --fps 20 --task \"双臂吸盘抓取\"",
+  "pending": "User starts normal PC camera sender and Jetson diagnostic launcher, presses A and holds stationary for 60 seconds, then records one normal teaching episode, S save and Q exit. No such live trace is present yet.",
+  "recommended_directions_zh": [
+    "若慢点是SDK位姿/力矩查询，优先评估周期状态流与带时间戳缓存，让数采发布脱离同步查询与控制台输出；按SDK手册与现场兼容性验证，保留原有运动约束和坐标定义。",
+    "若SDK和发布连续而接收停顿，结合心跳延迟，将图像转换/预览与关节接收分开调度；使用有界队列并保留曝光时间。",
+    "示教与回位的数据源切换有已知等待，R前应等待双臂teaching；完整回位连续采集需要进一步统一跨模式的实测反馈来源。",
+    "相机继续电脑采集、有线传输；用硬件帧号与PC USB日志判断上游相机问题，网络序号正常不能单独排除上游取帧丢失。"
+  ],
+  "acceptance_zh": "修复后做至少180秒真实示教与正常回位录制；检查20Hz保存率、SDK耗时与发布/接收最大间隔、三相机源帧号、无真实缺帧跨段、16维数据与吸盘标签。"
+}

@@ -1,0 +1,318 @@
+{
+  "status": "completed",
+  "started_utc": "2026-11-11T08:59:27.141476+00:00",
+  "mode_reported_by_user": "manual; arms stationary",
+  "mode_changed": false,
+  "teaching_enabled": false,
+  "arm_motion_commands_sent": 0,
+  "physical_IO_accessed": false,
+  "real_joint_feedback": true,
+  "real_cameras": [
+    "head",
+    "left_wrist",
+    "right_wrist"
+  ],
+  "synthetic_IO_only_for_sampler": true,
+  "training_data_written": false,
+  "ROS_domain": 232,
+  "startup_state_publisher_only": true,
+  "disabled_startup_features": [
+    "start_hand_service",
+    "start_cartesian_drag_safe_service",
+    "start_cartesian_teach_service",
+    "start_go_home_service",
+    "start_initializer_service",
+    "start_kinematics_service",
+    "start_move_server",
+    "start_moveabsj_service",
+    "start_movel_service",
+    "start_movej_by_path_service",
+    "start_servoj",
+    "start_servol"
+  ],
+  "actuation_service_names_present": [],
+  "publisher_counts": {
+    "head": 1,
+    "left_wrist": 1,
+    "right_wrist": 1
+  },
+  "seconds": 180.00031461500112,
+  "accepted_20Hz_samples": 3595,
+  "saved_sample_hz": 19.97218731361259,
+  "wait_reasons": {},
+  "max_sampler_poll_interval_ms": 40.24052300155745,
+  "sampling": {
+    "source_order": [
+      "left",
+      "right",
+      "head",
+      "left_wrist",
+      "right_wrist"
+    ],
+    "max_source_skew_ms": 28.073787689208984,
+    "intervals_over_80ms": 0,
+    "segment_frames": [
+      3595
+    ]
+  },
+  "streams": {
+    "left_ordinary": {
+      "messages": 3600,
+      "receive_hz": 19.99972818485567,
+      "source_interval_ms_p50_p95_max": [
+        49.98779296875,
+        51.22690200805664,
+        53.975582122802734
+      ],
+      "receipt_interval_ms_p50_p95_max": [
+        49.994075001450256,
+        55.028598500575754,
+        86.5571810027177
+      ],
+      "source_intervals_over_80ms": 0,
+      "receipt_intervals_over_250ms": 0,
+      "source_time_regressions": 0,
+      "joint_range_degrees": [
+        0.00019454956054740566,
+        0.00013732910156418423,
+        0.00010986328125134738,
+        0.0001098632812640696,
+        0.00015106201171901238,
+        0.00017852783203025895,
+        0.00012359619140617554
+      ],
+      "diagnostic_source_gap_threshold_ms": 80.0,
+      "diagnostic_source_gap_count": 0,
+      "source_age_ms_p50_p95_max": [
+        1.8124580383300781,
+        6.039392948150635,
+        36.622047424316406
+      ]
+    },
+    "left_recording": {
+      "messages": 18000,
+      "receive_hz": 99.99724246284242,
+      "source_interval_ms_p50_p95_max": [
+        10.015249252319336,
+        12.034010887145994,
+        17.055511474609375
+      ],
+      "receipt_interval_ms_p50_p95_max": [
+        10.007120999944163,
+        14.741895300539905,
+        46.00564100110205
+      ],
+      "source_intervals_over_80ms": 0,
+      "receipt_intervals_over_250ms": 0,
+      "source_time_regressions": 0,
+      "joint_range_degrees": [
+        0.00021743774414196648,
+        0.00014877319336146464,
+        0.00013732910156100367,
+        0.00013732910155464257,
+        0.00016479492187702107,
+        0.00017852783203025895,
+        0.00013732910156259395
+      ],
+      "diagnostic_source_gap_threshold_ms": 80.0,
+      "diagnostic_source_gap_count": 0,
+      "source_age_ms_p50_p95_max": [
+        1.3496875762939453,
+        5.106735229492183,
+        63.606977462768555
+      ]
+    },
+    "right_recording": {
+      "messages": 17999,
+      "receive_hz": 99.99291304367681,
+      "source_interval_ms_p50_p95_max": [
+        10.004997253417969,
+        13.097190856933592,
+        19.506454467773438
+      ],
+      "receipt_interval_ms_p50_p95_max": [
+        10.029682502135984,
+        14.872365250084838,
+        45.59167800107389
+      ],
+      "source_intervals_over_80ms": 0,
+      "receipt_intervals_over_250ms": 0,
+      "source_time_regressions": 0,
+      "joint_range_degrees": [
+        0.00016021728515556449,
+        0.00018310546875012528,
+        0.0001785278320350298,
+        9.613037107425536e-05,
+        0.00015106201171901238,
+        0.00017852783203184923,
+        0.00013732910156100367
+      ],
+      "diagnostic_source_gap_threshold_ms": 80.0,
+      "diagnostic_source_gap_count": 0,
+      "source_age_ms_p50_p95_max": [
+        1.8830299377441406,
+        5.81905841827392,
+        71.21920585632324
+      ]
+    },
+    "right_ordinary": {
+      "messages": 3600,
+      "receive_hz": 19.999690742097922,
+      "source_interval_ms_p50_p95_max": [
+        50.000905990600586,
+        51.05736255645752,
+        57.28030204772949
+      ],
+      "receipt_interval_ms_p50_p95_max": [
+        50.00537099840585,
+        55.381776902868296,
+        71.74483999915537
+      ],
+      "source_intervals_over_80ms": 0,
+      "receipt_intervals_over_250ms": 0,
+      "source_time_regressions": 0,
+      "joint_range_degrees": [
+        0.00014877319335828408,
+        0.00018310546875012528,
+        0.00015106201171583182,
+        8.239746093532999e-05,
+        0.00013732910156418423,
+        0.00017852783203184923,
+        0.00010986328125134738
+      ],
+      "diagnostic_source_gap_threshold_ms": 80.0,
+      "diagnostic_source_gap_count": 0,
+      "source_age_ms_p50_p95_max": [
+        1.520395278930664,
+        6.13812208175659,
+        38.022518157958984
+      ]
+    },
+    "right_wrist": {
+      "messages": 5398,
+      "receive_hz": 29.993495272000175,
+      "source_interval_ms_p50_p95_max": [
+        33.341169357299805,
+        33.34164619445801,
+        33.414602279663086
+      ],
+      "receipt_interval_ms_p50_p95_max": [
+        33.31127899946296,
+        38.86334779963363,
+        84.21398499922361
+      ],
+      "source_intervals_over_80ms": 0,
+      "receipt_intervals_over_250ms": 0,
+      "source_time_regressions": 0,
+      "diagnostic_source_gap_threshold_ms": 53.3334,
+      "diagnostic_source_gap_count": 0,
+      "source_age_ms_p50_p95_max": [
+        49.88062381744385,
+        55.364930629730225,
+        161.10563278198242
+      ]
+    },
+    "left_wrist": {
+      "messages": 5398,
+      "receive_hz": 29.988012996914442,
+      "source_interval_ms_p50_p95_max": [
+        33.3409309387207,
+        33.341407775878906,
+        66.6818618774414
+      ],
+      "receipt_interval_ms_p50_p95_max": [
+        33.3446910008206,
+        38.14629899934516,
+        70.58676900123828
+      ],
+      "source_intervals_over_80ms": 0,
+      "receipt_intervals_over_250ms": 0,
+      "source_time_regressions": 0,
+      "diagnostic_source_gap_threshold_ms": 53.3334,
+      "diagnostic_source_gap_count": 1,
+      "source_age_ms_p50_p95_max": [
+        49.29828643798828,
+        53.579092025756836,
+        122.30968475341797
+      ]
+    },
+    "head": {
+      "messages": 5396,
+      "receive_hz": 29.97968992531043,
+      "source_interval_ms_p50_p95_max": [
+        33.35738182067871,
+        33.35833549499512,
+        33.36000442504883
+      ],
+      "receipt_interval_ms_p50_p95_max": [
+        33.404756999516394,
+        39.333432300190914,
+        72.21682100134785
+      ],
+      "source_intervals_over_80ms": 0,
+      "receipt_intervals_over_250ms": 0,
+      "source_time_regressions": 0,
+      "diagnostic_source_gap_threshold_ms": 53.3334,
+      "diagnostic_source_gap_count": 0,
+      "source_age_ms_p50_p95_max": [
+        49.538612365722656,
+        55.79698085784912,
+        107.20372200012207
+      ]
+    }
+  },
+  "protected_files_changed": [],
+  "finished_utc": "2026-11-11T09:02:36.581751+00:00",
+  "first_attempt_excluded": {
+    "directory": "/tmp/aide-manual-static-probe-ow9k7mb6",
+    "reason": "Isolated ROS_DOMAIN_ID=232 / ROS_LOCALHOST_ONLY=1 experiment used different DDS participant transport configurations. Joint topics were not received. After aligning only the test DDS configurations, both joint streams were received.",
+    "not_counted_as_arm_feedback_dropout": true
+  },
+  "comparison_with_real_episodes": {
+    "episode_000000": {
+      "saved_fps": 15.227119922983219,
+      "segments": 11
+    },
+    "episode_000001": {
+      "saved_fps": 14.197291327768047,
+      "segments": 12
+    },
+    "real_episode_report": "/home/jetson/AIDE_robot_main/software/vla/act/xcore_act/scripts/diagnostics/reports/teach_latest_two_review_20261111.json"
+  },
+  "limitations": [
+    "The controller manual mode was reported by the user; the probe never switched modes.",
+    "No Cartesian drag session was enabled. Static ordinary/recording state publishing does not exercise the drag-monitor SDK query loop.",
+    "DDS transport settings were matched in an isolated ROS domain; this is not the complete production launch configuration.",
+    "JointState does not provide a native frame counter. These measurements identify message rates and long timestamp intervals, not exact controller-side lost packet counts.",
+    "The 20Hz test aligned real joint feedback and real images with simulated IO; it did not poll physical suction or write image datasets."
+  ],
+  "read_only_test_processes_finished": true,
+  "protected_files_unchanged": true,
+  "finalized_utc": "2026-11-11T09:02:40.704232+00:00",
+  "left_wrist_gap_details": [
+    {
+      "source_utc": 1794387723.6470585,
+      "source_interval_ms": 66.6818618774414,
+      "receipt_interval_ms": 70.58676900123828
+    }
+  ],
+  "network_metrics_last": {
+    "left_wrist": {
+      "received": 5576,
+      "published": 5554,
+      "rejected": 22,
+      "skipped_sequences": 0,
+      "clock_rtt_ms": 0.482148,
+      "clock_error_bound_ms": 0.613334
+    },
+    "right_wrist": {
+      "received": 5577,
+      "published": 5555,
+      "rejected": 22,
+      "skipped_sequences": 0,
+      "clock_rtt_ms": 0.482148,
+      "clock_error_bound_ms": 0.61212
+    }
+  },
+  "real_episode_files_unchanged": true
+}

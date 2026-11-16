@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+build/
+install/
+log/
+data/datasets/*
+!data/datasets/.gitkeep
+artifacts/model_outputs/*
+!artifacts/model_outputs/.gitkeep
+logs/*
+!logs/.gitkeep
+

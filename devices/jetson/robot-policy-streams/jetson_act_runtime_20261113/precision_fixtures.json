@@ -1,0 +1,158 @@
+[
+  {
+    "stage": "far",
+    "cases": 12,
+    "rows": [
+      {
+        "raw_episode": 18,
+        "frame": 0
+      },
+      {
+        "raw_episode": 18,
+        "frame": 109
+      },
+      {
+        "raw_episode": 18,
+        "frame": 218
+      },
+      {
+        "raw_episode": 18,
+        "frame": 327
+      },
+      {
+        "raw_episode": 18,
+        "frame": 436
+      },
+      {
+        "raw_episode": 18,
+        "frame": 545
+      },
+      {
+        "raw_episode": 20,
+        "frame": 0
+      },
+      {
+        "raw_episode": 20,
+        "frame": 106
+      },
+      {
+        "raw_episode": 20,
+        "frame": 213
+      },
+      {
+        "raw_episode": 20,
+        "frame": 320
+      },
+      {
+        "raw_episode": 20,
+        "frame": 427
+      },
+      {
+        "raw_episode": 20,
+        "frame": 534
+      }
+    ]
+  },
+  {
+    "stage": "near",
+    "cases": 24,
+    "rows": [
+      {
+        "raw_episode": 21,
+        "frame": 0
+      },
+      {
+        "raw_episode": 21,
+        "frame": 104
+      },
+      {
+        "raw_episode": 21,
+        "frame": 208
+      },
+      {
+        "raw_episode": 21,
+        "frame": 313
+      },
+      {
+        "raw_episode": 21,
+        "frame": 417
+      },
+      {
+        "raw_episode": 21,
+        "frame": 522
+      },
+      {
+        "raw_episode": 35,
+        "frame": 0
+      },
+      {
+        "raw_episode": 35,
+        "frame": 90
+      },
+      {
+        "raw_episode": 35,
+        "frame": 180
+      },
+      {
+        "raw_episode": 35,
+        "frame": 270
+      },
+      {
+        "raw_episode": 35,
+        "frame": 360
+      },
+      {
+        "raw_episode": 35,
+        "frame": 451
+      },
+      {
+        "raw_episode": 39,
+        "frame": 0
+      },
+      {
+        "raw_episode": 39,
+        "frame": 85
+      },
+      {
+        "raw_episode": 39,
+        "frame": 170
+      },
+      {
+        "raw_episode": 39,
+        "frame": 255
+      },
+      {
+        "raw_episode": 39,
+        "frame": 340
+      },
+      {
+        "raw_episode": 39,
+        "frame": 426
+      },
+      {
+        "raw_episode": 47,
+        "frame": 0
+      },
+      {
+        "raw_episode": 47,
+        "frame": 66
+      },
+      {
+        "raw_episode": 47,
+        "frame": 132
+      },
+      {
+        "raw_episode": 47,
+        "frame": 198
+      },
+      {
+        "raw_episode": 47,
+        "frame": 264
+      },
+      {
+        "raw_episode": 47,
+        "frame": 330
+      }
+    ]
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "hardware/arm/bo_project/ago/\u884c\u4e3a\u6811.yaml": "5bdc509a347c67dde909a12d2a6eec0a22a2ad94a9fb8dd492efc5c03d5afec0",
+  "hardware/arm/bo_project/ago/scripts/control.py": "a13fcd65622919e273ab034963dcd61da0c6857f09c09f76fe1aee8cdb6faee0",
+  "hardware/arm/bo_project/open_box/\u8fd0\u52a8\u7c7b\u578b\u6f14\u793a.yaml": "e8ddd533301b621536df525f8605ad8c8b5cad2cb14d38c100ee8d4e1aa7b446",
+  "hardware/arm/bo_project/open_box/mode_resources.yaml": "0b37a8b9fff69330b323453f39c331ac2c82a528b2b7ffe1f3ae2e4c22c7b68c",
+  "hardware/arm/bo_project/open_box/BT_fixed.yaml": "4e01fed4701da6ac0b5663795033b6b59d9384fdfcacbc0166253be31ef68f35",
+  "hardware/arm/bo_project/open_box/BT.yaml": "f117ebe8df0eb14f6d4e18d7694b72a29c6a2aae3190075462e053765ce70b79",
+  "hardware/arm/bo_project/open_box/scripts/control.py": "f08681a8fc34bd755369dfe306bdf467b46277e80a4939901d0490300f09ee7c",
+  "hardware/arm/xCoreROS/src/rokae_motion/rokae_motion/control.py": "009cf40ebab488fb73716577492b8ac54a512842a39ed770985996dbc5d993ac"
+}

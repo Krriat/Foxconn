@@ -1,0 +1,120 @@
+{
+  "checked_at_beijing": "2026-11-10T18:32:11.400486+08:00",
+  "scope_zh": "采集数据正确性、保存前校验、双吸盘导出兼容、训练前质量检查及离线ACT链路验证。",
+  "implementation_changes": [
+    "按行输入模式补上B键，保留原回位目标及运动参数。",
+    "S正式保存前检查数据维度、关节动作一致性、二值吸盘、IO因果时间、源时间戳和分段；失败不提升为正式episode。",
+    "拒绝连续片段内未标记的真实源缺帧、采样时刻与源时间不匹配、非RGB8原始图像；导出拒绝截断非整数fps。",
+    "保存元数据加入training_quality，并在S保存或validate-only后提示需复核项。",
+    "通用export_teach_lerobot.py识别并正确路由键盘双吸盘schema，保留原头腰导出路径。",
+    "LeRobot 0.4.3视频编码器参数由不受支持的libx264改为h264。",
+    "新增只读check_teach_training.py：逐图校验、帧率、分段与chunk上下文、尾部缺帧、未录到回位、左右吸盘覆盖。",
+    "新增smoke_teach_act.py及11项故障/导出/CLI回归测试，更新当前键盘采集和训练说明。"
+  ],
+  "tests": {
+    "keyboard_tests_release.log": {
+      "tests": 78,
+      "result": "pass",
+      "log": "/tmp/aide-training-readiness-aj2gcd93/keyboard_tests_release.log"
+    },
+    "shared_tests_release.log": {
+      "tests": 38,
+      "result": "pass",
+      "log": "/tmp/aide-training-readiness-aj2gcd93/shared_tests_release.log"
+    }
+  },
+  "unique_unit_tests_passed": 116,
+  "self_test": "pass",
+  "act_end_to_end_smoke": {
+    "result": "pass",
+    "raw_frames": 70,
+    "lerobot_episodes": 2,
+    "three_video_streams_decoded": true,
+    "state_shape": [
+      2,
+      16
+    ],
+    "action_chunk_shape": [
+      2,
+      10,
+      16
+    ],
+    "binary_suction_labels_preserved": true,
+    "action_chunks_do_not_cross_segments": true,
+    "normalization_finite": true,
+    "training_steps": 2,
+    "losses": [
+      26.96292495727539,
+      27.892126083374023
+    ],
+    "suction_head_gradient_sum": 3.374458074569702,
+    "checkpoint_reloaded": true,
+    "model_device": "cpu",
+    "model_size": "small smoke model; no task training",
+    "synthetic_data_only": true,
+    "robot_or_DO_commands": false,
+    "temporary_dataset_removed": true,
+    "torch_version": "2.7.1+cpu",
+    "torchvision_version": "0.22.1"
+  },
+  "existing_raw_dataset": {
+    "root": "/home/jetson/AIDE_robot_main/assets/dataset/act_teach_keyboard_suction_30hz",
+    "status": "needs_review",
+    "episodes": 8,
+    "frames": 2469,
+    "images_decoded": 7407,
+    "invalid_episodes": [],
+    "dataset_warnings": [
+      "数据集缺少右吸盘完整0/1动作或反馈覆盖"
+    ],
+    "suction_coverage": {
+      "left": {
+        "action": [
+          0,
+          1
+        ],
+        "observation": [
+          0,
+          1
+        ]
+      },
+      "right": {
+        "action": [
+          0
+        ],
+        "observation": [
+          0
+        ]
+      }
+    },
+    "full_quality_report": "/tmp/aide-training-readiness-aj2gcd93/existing_data_quality_final.json"
+  },
+  "current_default_training_environment": {
+    "lerobot_installed": false,
+    "torch": "2.14.1",
+    "torchvision": "0.29.2",
+    "cuda_usable": false,
+    "observed_cuda_driver_version": 12060,
+    "observed_torchvision_VideoReader_present": false,
+    "notes_zh": "系统默认环境缺少LeRobot，现有torch CUDA13与CUDA12.6驱动不匹配，torchvision0.29缺少LeRobot pyav解码所需VideoReader。实际链路验证使用临时隔离的CPU Torch2.7.1+torchvision0.22.1及LeRobot0.4.3；未改系统安装。正式GPU训练环境尚未就绪。"
+  },
+  "preservation": {
+    "protected_files_checked": 33,
+    "protected_files_changed": [],
+    "original_datasets_modified": false,
+    "return_pose_motion_parameters_and_execution_configuration_changed": false,
+    "robot_or_DO_commands_sent": false,
+    "temporary_synthetic_dataset_removed": true
+  },
+  "limits_zh": [
+    "自动检查通过不等于任务或吸取成功；仍需看三路画面确认完整成功示范。",
+    "原始数据中的吸盘反馈是逻辑DO读回，不是压力/吸附成功检测。",
+    "CPU模型为小模型、合成数据、2次更新，用于确认格式、标签、时序边界和梯度链路，不代表机器人任务训练效果。",
+    "物理相机、USB、机器人控制器后续故障不能靠静态代码检查预先保证；每批训练前运行只读质量检查。",
+    "现有目录8条是此前调试/故障数据，右吸盘动作与反馈仅0，不能直接当作完整双吸盘训练集。"
+  ],
+  "artifacts_directory": "/tmp/aide-training-readiness-aj2gcd93",
+  "reference_urls": [
+    "https://pytorch.org/get-started/previous-versions/"
+  ]
+}

@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xcore-interact3d"
+version = "0.1.0"
+description = "Bimanual RGB InterACT with an optional head-camera point-cloud encoder for xCore robots"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+  "torch>=2.2",
+  "torchvision>=0.17",
+  "lerobot>=0.4,<0.5",
+  "opencv-python",
+  "pyarrow",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

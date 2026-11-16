@@ -1,0 +1,12 @@
+{
+  "candidate_path": "/home/jj/code/ACT/model_outputs/act_far_wired_contact_20261116_01/checkpoints/000500/pretrained_model",
+  "sha256": "02f86aaf1bfdb4ed0dd22d134c1dcb771c3395fdc281fd2da369f5726243a940",
+  "deployed": false,
+  "physical_test_completed": false,
+  "new_demo_training_fit_left_mae_deg_before": 0.40677279233932495,
+  "new_demo_training_fit_left_mae_deg_after": 0.165080264210701,
+  "new_demo_training_fit_suction_on_left_mae_deg_before": 0.5447791218757629,
+  "new_demo_training_fit_suction_on_left_mae_deg_after": 0.17080534994602203,
+  "sampled_bound_violations": 0,
+  "limitations": "Fit on newly added training observations is not a held-out success rate. User declined further far physical testing. Near retest separately authorized."
+}

@@ -1,0 +1,289 @@
+{
+  "default_capture_fps": 20,
+  "source_gap_threshold_ms": 80.0,
+  "source_max_skew_ms": 50.0,
+  "camera_source_fps_unchanged": 30,
+  "recorder_root": "/home/jetson/AIDE_robot_main/assets/dataset/act_teach_keyboard_suction_30hz",
+  "directory_migration": {
+    "original_root": "/home/jetson/AIDE_robot_main/assets/dataset/act_teach_keyboard_suction_30hz",
+    "archive": "/home/jetson/AIDE_robot_main/assets/dataset/act_teach_keyboard_suction_30hz/archive_30hz_20261111_102851",
+    "old_fps": 30,
+    "new_fps": 20,
+    "archived_episodes": [
+      "episode_000000",
+      "episode_000001",
+      "episode_000002",
+      "episode_000003",
+      "episode_000004",
+      "episode_000005",
+      "episode_000006",
+      "episode_000007",
+      "episode_000008",
+      "episode_000009"
+    ],
+    "new_schema": {
+      "version": 2,
+      "schema_id": "keyboard_dual_arm_suction_v1",
+      "fps": 20.0,
+      "width": 640,
+      "height": 480,
+      "cameras": [
+        "head",
+        "left_wrist",
+        "right_wrist"
+      ],
+      "state_names": [
+        "left_joint_1.pos",
+        "left_joint_2.pos",
+        "left_joint_3.pos",
+        "left_joint_4.pos",
+        "left_joint_5.pos",
+        "left_joint_6.pos",
+        "left_joint_7.pos",
+        "right_joint_1.pos",
+        "right_joint_2.pos",
+        "right_joint_3.pos",
+        "right_joint_4.pos",
+        "right_joint_5.pos",
+        "right_joint_6.pos",
+        "right_joint_7.pos",
+        "left_suction.on",
+        "right_suction.on"
+      ],
+      "action_names": [
+        "left_joint_1.pos",
+        "left_joint_2.pos",
+        "left_joint_3.pos",
+        "left_joint_4.pos",
+        "left_joint_5.pos",
+        "left_joint_6.pos",
+        "left_joint_7.pos",
+        "right_joint_1.pos",
+        "right_joint_2.pos",
+        "right_joint_3.pos",
+        "right_joint_4.pos",
+        "right_joint_5.pos",
+        "right_joint_6.pos",
+        "right_joint_7.pos",
+        "left_suction.on",
+        "right_suction.on"
+      ],
+      "units": [
+        "radian",
+        "radian",
+        "radian",
+        "radian",
+        "radian",
+        "radian",
+        "radian",
+        "radian",
+        "radian",
+        "radian",
+        "radian",
+        "radian",
+        "radian",
+        "radian",
+        "binary",
+        "binary"
+      ],
+      "source_order": [
+        "left",
+        "right",
+        "head",
+        "left_wrist",
+        "right_wrist"
+      ],
+      "suction_channels": {
+        "left": 1,
+        "right": 2
+      },
+      "source_max_skew_seconds": 0.05,
+      "joint_action_source": "same_sample_measured_joint_positions",
+      "suction_observation_source": "verified_logical_DO_readback_not_vacuum_detection",
+      "suction_action_source": "keyboard_requested_binary_target",
+      "suction_max_age_seconds": 0.5,
+      "suction_time_alignment": "latest_IO_and_command_at_or_before_image_time"
+    },
+    "original_episode_bytes_modified": false,
+    "actual_robot_commands": false
+  },
+  "single_left_camera_probe": {
+    "started_beijing": "2026-11-11T10:23:24.780592+08:00",
+    "finished_beijing": "2026-11-11T10:25:02.459889+08:00",
+    "camera": "left_wrist",
+    "configured_sdk_serial": "352122274013",
+    "config": {
+      "schema_version": "1.3",
+      "api_version": "v1",
+      "camera_namespace": "robot/sensors/cameras",
+      "cameras": {
+        "left_wrist": {
+          "enabled": true,
+          "verified": false,
+          "camera_name": "left_wrist",
+          "semantic_location": "left_wrist",
+          "model": "D405",
+          "serial_no": "352122274013",
+          "streams": {
+            "enable_color": true,
+            "enable_depth": true,
+            "align_depth": true,
+            "pointcloud": false,
+            "enable_sync": true
+          },
+          "profiles": {
+            "color": "640x480x30",
+            "depth": "640x480x30"
+          },
+          "diagnostics_period": 1.0,
+          "interface": {
+            "primary_usage": "left_arm_close_range_perception",
+            "consumers": [
+              "vision",
+              "control",
+              "manipulation"
+            ],
+            "topics": {
+              "color_image": "color/image_raw",
+              "color_info": "color/camera_info",
+              "depth_image": "depth/image_rect_raw",
+              "depth_info": "depth/camera_info",
+              "aligned_depth": "aligned_depth_to_color/image_raw",
+              "aligned_depth_info": "aligned_depth_to_color/camera_info",
+              "color_metadata": "color/metadata",
+              "depth_metadata": "depth/metadata",
+              "depth_to_color_extrinsics": "extrinsics/depth_to_color"
+            },
+            "planned_target_frames": [
+              "base_link"
+            ]
+          },
+          "frames": {
+            "color_optical": "left_wrist_color_optical_frame",
+            "aligned_depth_optical": "left_wrist_color_optical_frame",
+            "depth_optical": "left_wrist_depth_optical_frame"
+          },
+          "depth": {
+            "encoding": "16UC1",
+            "scale_m_per_unit": 0.001,
+            "invalid_value": 0,
+            "window_size": 5,
+            "minimum_valid_pixels": 5
+          },
+          "extrinsics": {
+            "calibrated": false,
+            "mounting_parent_frame": "",
+            "available_target_frames": []
+          }
+        }
+      }
+    },
+    "measurement_seconds": 90.00870527499978,
+    "publishers": {
+      "head": 0,
+      "left_wrist": 1,
+      "right_wrist": 0
+    },
+    "only_camera_test": true,
+    "robot_or_DO_commands": false,
+    "decode_every_image": true,
+    "environment": {
+      "ROS_DOMAIN_ID": "232",
+      "ROS_LOCALHOST_ONLY": "1",
+      "RMW_IMPLEMENTATION": "rmw_fastrtps_cpp"
+    },
+    "frames": 2699,
+    "receive_hz": 29.992763363064192,
+    "source_hz": 29.992833413046213,
+    "source_interval_ms_p50_p95_max": [
+      33.341407775878906,
+      33.34212303161621,
+      33.342838287353516
+    ],
+    "receive_interval_ms_p50_p95_max": [
+      33.33796449987858,
+      33.863899000130004,
+      38.24412900030438
+    ],
+    "receive_intervals_over_50ms": 0,
+    "source_intervals_over_50ms": 0,
+    "source_gaps": [],
+    "receive_lag_ms_p50_p95_max": [
+      30.424118041992188,
+      30.8652400970459,
+      32.285451889038086
+    ],
+    "decode_ms_p50_p95_max": [
+      0.2915329996540095,
+      0.3266188001362024,
+      0.9952720001820126
+    ],
+    "metadata_frames_in_image_window": 2699,
+    "metadata_missing_frame_numbers": 0,
+    "metadata_duplicate_or_backward_numbers": 0,
+    "metadata_without_image": 0,
+    "metadata_first": {
+      "frame_number": 156,
+      "clock_domain": "global_time",
+      "frame_timestamp": 1794363812439.3582,
+      "hw_timestamp": 30623248,
+      "time_of_arrival": 1794363812447,
+      "backend_timestamp": 1794363812439,
+      "actual_fps": 29994,
+      "raw_frame_size": 614400
+    },
+    "publisher_diagnostics": {
+      "left_wrist: Temperatures": {
+        "Asic Temperature": "25"
+      },
+      "left_wrist: color": {
+        "Events in window": "300",
+        "Events since startup": "2853",
+        "Duration of window (s)": "10.000175",
+        "Actual frequency (Hz)": "29.999476",
+        "Target frequency (Hz)": "30.000000",
+        "Minimum acceptable frequency (Hz)": "27.000000",
+        "Maximum acceptable frequency (Hz)": "33.000000"
+      },
+      "left_wrist: depth": {
+        "Events in window": "300",
+        "Events since startup": "2868",
+        "Duration of window (s)": "10.000151",
+        "Actual frequency (Hz)": "29.999547",
+        "Target frequency (Hz)": "30.000000",
+        "Minimum acceptable frequency (Hz)": "27.000000",
+        "Maximum acceptable frequency (Hz)": "33.000000"
+      }
+    },
+    "image_decode_errors": [],
+    "metadata_image_match_tolerance_us": 5.0,
+    "metadata_image_max_timestamp_difference_us": 0.0,
+    "metadata_unique_image_matches": 2699,
+    "actual_sdk_serial": "352122274013",
+    "actual_usb_port": "/sys/devices/platform/bus@0/3610000.usb/usb2/2-1/2-1.2/2-1.2:1.0/video4linux/video0",
+    "compared_to_last_two_episodes": {
+      "previous_usb_port": "2-1.1",
+      "current_usb_port": "2-1.2",
+      "same_sdk_serial": true,
+      "usb_path_changed": true
+    }
+  },
+  "tests": {
+    "keyboard_tests_passed": 79,
+    "log": "/tmp/aide-20hz-left-camera-lwfim12o/keyboard_tests.log",
+    "twenty_hz_66ms_contiguous_100ms_split": "passed",
+    "thirty_hz_to_twenty_hz_no_duplicate_sources_single_segment": "passed"
+  },
+  "preservation": {
+    "protected_files_checked": 37,
+    "mismatches": [],
+    "archived_episodes": 10,
+    "archived_pngs": 12447,
+    "movement_and_return_targets_unchanged": true
+  },
+  "limitations": [
+    "Single camera at the current USB port; three-camera simultaneous capture and dragging have not been remeasured.",
+    "No missing frames observed during this 90-second window; this does not establish long-term stability."
+  ],
+  "artifacts_directory": "/tmp/aide-20hz-left-camera-lwfim12o"
+}

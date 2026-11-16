@@ -1,0 +1,808 @@
+{
+  "updated_beijing": "2026-11-11T11:10:15.202493+08:00",
+  "hardware_scope": "Cameras only; no robot connections, teaching or physical IO",
+  "native_RGB8_120_seconds": {
+    "head": {
+      "RGB": {
+        "frames": 3598,
+        "hz": 29.978568099139355,
+        "source_interval_ms_p50_p95_max": [
+          33.357177734375,
+          33.357666015625,
+          33.35888671875
+        ],
+        "source_intervals_over50ms": 0,
+        "sdk_counter_missing": 0,
+        "hardware_counter_supported": false,
+        "hardware_counter_missing": null,
+        "receive_max_interval_ms": 34.21342499996172,
+        "clock_domains": [
+          2.0
+        ],
+        "unique_frame_sizes": [
+          921600.0
+        ]
+      },
+      "depth": {
+        "frames": 3597,
+        "hz": 29.978569846189494,
+        "source_interval_ms_p50_p95_max": [
+          33.357177734375,
+          33.357666015625,
+          33.35888671875
+        ],
+        "source_intervals_over50ms": 0,
+        "sdk_counter_missing": 0,
+        "hardware_counter_supported": false,
+        "hardware_counter_missing": null,
+        "receive_max_interval_ms": 35.01602599999387,
+        "clock_domains": [
+          2.0
+        ],
+        "unique_frame_sizes": [
+          614400.0
+        ]
+      }
+    },
+    "left_wrist": {
+      "RGB": {
+        "frames": 3599,
+        "hz": 29.984963789727402,
+        "source_interval_ms_p50_p95_max": [
+          33.3408203125,
+          33.34130859375,
+          66.681884765625
+        ],
+        "source_intervals_over50ms": 1,
+        "sdk_counter_missing": 0,
+        "hardware_counter_supported": false,
+        "hardware_counter_missing": null,
+        "receive_max_interval_ms": 67.02047399994626,
+        "clock_domains": [
+          2.0
+        ],
+        "unique_frame_sizes": [
+          921600.0
+        ]
+      },
+      "depth": {
+        "frames": 3600,
+        "hz": 29.993246343966668,
+        "source_interval_ms_p50_p95_max": [
+          33.3408203125,
+          33.34130859375,
+          33.34521484375
+        ],
+        "source_intervals_over50ms": 0,
+        "sdk_counter_missing": 0,
+        "hardware_counter_supported": false,
+        "hardware_counter_missing": null,
+        "receive_max_interval_ms": 35.349503999896115,
+        "clock_domains": [
+          2.0
+        ],
+        "unique_frame_sizes": [
+          614400.0
+        ]
+      }
+    },
+    "right_wrist": {
+      "RGB": {
+        "frames": 3599,
+        "hz": 29.993078865726556,
+        "source_interval_ms_p50_p95_max": [
+          33.341064453125,
+          33.341552734375,
+          33.343017578125
+        ],
+        "source_intervals_over50ms": 0,
+        "sdk_counter_missing": 0,
+        "hardware_counter_supported": false,
+        "hardware_counter_missing": null,
+        "receive_max_interval_ms": 37.0341540001391,
+        "clock_domains": [
+          2.0
+        ],
+        "unique_frame_sizes": [
+          921600.0
+        ]
+      },
+      "depth": {
+        "frames": 3599,
+        "hz": 29.993035268681204,
+        "source_interval_ms_p50_p95_max": [
+          33.341064453125,
+          33.341552734375,
+          33.343017578125
+        ],
+        "source_intervals_over50ms": 0,
+        "sdk_counter_missing": 0,
+        "hardware_counter_supported": false,
+        "hardware_counter_missing": null,
+        "receive_max_interval_ms": 34.54459499971563,
+        "clock_domains": [
+          2.0
+        ],
+        "unique_frame_sizes": [
+          614400.0
+        ]
+      }
+    }
+  },
+  "native_RGB8_host": {
+    "cpu_busy_percent": {
+      "cpu": {
+        "mean": 6.845259048895765,
+        "p95": 8.898237157340205,
+        "max": 24.33774834437086
+      },
+      "cpu0": {
+        "mean": 12.820767456541015,
+        "p95": 18.582238720731013,
+        "max": 21.568627450980394
+      },
+      "cpu1": {
+        "mean": 7.331134983666595,
+        "p95": 14.563106796116509,
+        "max": 27.27272727272727
+      },
+      "cpu2": {
+        "mean": 6.665612052104685,
+        "p95": 16.021820628664813,
+        "max": 25.25252525252525
+      },
+      "cpu3": {
+        "mean": 6.384288361508876,
+        "p95": 12.0,
+        "max": 23.529411764705888
+      },
+      "cpu4": {
+        "mean": 3.744246092782426,
+        "p95": 10.1010101010101,
+        "max": 25.742574257425744
+      },
+      "cpu5": {
+        "mean": 4.04028874899515,
+        "p95": 14.141414141414144,
+        "max": 24.752475247524753
+      }
+    },
+    "max_temperatures_C": {
+      "cpu-thermal": 45.656,
+      "soc2-thermal": 44.906,
+      "soc0-thermal": 46.656,
+      "gpu-thermal": 46.656,
+      "tj-thermal": 47.468,
+      "soc1-thermal": 47.593
+    },
+    "frequency_samples_available": 127
+  },
+  "ROS_receive_only_60_seconds": {
+    "head": {
+      "messages": 1800,
+      "source_hz": 29.978635662804592,
+      "receive_hz": 29.984539575878856,
+      "source_interval_ms_p50_p95_max": [
+        33.35714340209961,
+        33.35833549499512,
+        33.359527587890625
+      ],
+      "source_intervals_over_50ms": 0,
+      "receive_interval_ms_p50_p95_max": [
+        33.4025750003093,
+        38.965155300229526,
+        60.37564799999018
+      ],
+      "receive_intervals_over_50ms": 1,
+      "receive_lag_ms_p50_p95_max": [
+        51.61583423614502,
+        56.2172532081604,
+        84.14220809936523
+      ],
+      "decode_ms_p50_p95_max": [
+        0.26893350013779127,
+        0.45381859993085516,
+        3.0746849997740355
+      ],
+      "metadata_frames_in_image_window": 1800,
+      "metadata_missing_frame_numbers": 0,
+      "metadata_duplicate_or_backward_numbers": 0,
+      "metadata_without_image_with_5us_tolerance": 0,
+      "metadata_image_max_timestamp_difference_us": 0.0,
+      "source_gaps": []
+    },
+    "left_wrist": {
+      "messages": 1801,
+      "source_hz": 29.993366635613288,
+      "receive_hz": 30.004723805194125,
+      "source_interval_ms_p50_p95_max": [
+        33.3406925201416,
+        33.34212303161621,
+        33.342838287353516
+      ],
+      "source_intervals_over_50ms": 0,
+      "receive_interval_ms_p50_p95_max": [
+        33.31983850011966,
+        37.41750774975117,
+        60.11564299979
+      ],
+      "receive_intervals_over_50ms": 1,
+      "receive_lag_ms_p50_p95_max": [
+        26.488542556762695,
+        31.08501434326172,
+        86.8990421295166
+      ],
+      "decode_ms_p50_p95_max": [
+        0.26298100010535563,
+        0.3893520001838624,
+        1.8271720000484493
+      ],
+      "metadata_frames_in_image_window": 1801,
+      "metadata_missing_frame_numbers": 0,
+      "metadata_duplicate_or_backward_numbers": 0,
+      "metadata_without_image_with_5us_tolerance": 0,
+      "metadata_image_max_timestamp_difference_us": 0.0,
+      "source_gaps": []
+    },
+    "right_wrist": {
+      "messages": 1801,
+      "source_hz": 29.993125941257023,
+      "receive_hz": 30.010550100849898,
+      "source_interval_ms_p50_p95_max": [
+        33.3409309387207,
+        33.34188461303711,
+        33.342838287353516
+      ],
+      "source_intervals_over_50ms": 0,
+      "receive_interval_ms_p50_p95_max": [
+        33.359485500113806,
+        36.9015128000683,
+        60.14146699999401
+      ],
+      "receive_intervals_over_50ms": 1,
+      "receive_lag_ms_p50_p95_max": [
+        19.607067108154297,
+        23.333072662353516,
+        53.98821830749512
+      ],
+      "decode_ms_p50_p95_max": [
+        0.26707699998951284,
+        0.3998469996986387,
+        1.92221299994344
+      ],
+      "metadata_frames_in_image_window": 1801,
+      "metadata_missing_frame_numbers": 0,
+      "metadata_duplicate_or_backward_numbers": 0,
+      "metadata_without_image_with_5us_tolerance": 0,
+      "metadata_image_max_timestamp_difference_us": 0.0,
+      "source_gaps": []
+    }
+  },
+  "ROS_publish_and_two_subscriber_comparison": {
+    "head": {
+      "recording_window_seconds": 119.9853937625885,
+      "publisher_RGB_calls": 3598,
+      "publisher_metadata_calls": 3598,
+      "publisher_failures": 0,
+      "publisher_call_ms_p50_p95_max": [
+        0.176227,
+        0.26873299999999994,
+        9.828512
+      ],
+      "published_RGB_not_received_by_recorder": [],
+      "published_RGB_not_received_by_independent_observer": [],
+      "published_metadata_without_matching_RGB_publish": [],
+      "recorder": {
+        "messages": 3598,
+        "source_hz": 29.97864896053328,
+        "receive_hz": 29.978999545796132,
+        "source_interval_ms_p50_p95_max": [
+          33.35714340209961,
+          33.357858657836914,
+          33.36048126220703
+        ],
+        "source_intervals_over_50ms": 0,
+        "receive_interval_ms_p50_p95_max": [
+          33.33277600040674,
+          38.394603799952165,
+          57.59248499998648
+        ],
+        "receive_intervals_over_50ms": 3,
+        "receive_lag_ms_p50_p95_max": [
+          52.43110656738281,
+          56.59579038619995,
+          77.11267471313477
+        ],
+        "decode_ms_p50_p95_max": [
+          0.4888100002062856,
+          1.5811286002190148,
+          9.943714000200998
+        ],
+        "metadata_frames_in_image_window": 3598,
+        "metadata_missing_frame_numbers": 0,
+        "metadata_duplicate_or_backward_numbers": 0,
+        "metadata_without_image_with_5us_tolerance": 0,
+        "metadata_image_max_timestamp_difference_us": 0.0,
+        "source_gaps": []
+      }
+    },
+    "left_wrist": {
+      "recording_window_seconds": 119.95989990234375,
+      "publisher_RGB_calls": 3596,
+      "publisher_metadata_calls": 3596,
+      "publisher_failures": 0,
+      "publisher_call_ms_p50_p95_max": [
+        0.179747,
+        0.273597,
+        6.76394
+      ],
+      "published_RGB_not_received_by_recorder": [],
+      "published_RGB_not_received_by_independent_observer": [],
+      "published_metadata_without_matching_RGB_publish": [],
+      "recorder": {
+        "messages": 3596,
+        "source_hz": 29.96834778060499,
+        "receive_hz": 29.96680828559116,
+        "source_interval_ms_p50_p95_max": [
+          33.3406925201416,
+          33.34188461303711,
+          66.68233871459961
+        ],
+        "source_intervals_over_50ms": 3,
+        "receive_interval_ms_p50_p95_max": [
+          33.38420299996869,
+          38.20955589985714,
+          65.88628000008612
+        ],
+        "receive_intervals_over_50ms": 3,
+        "receive_lag_ms_p50_p95_max": [
+          27.36222743988037,
+          31.338155269622803,
+          48.93827438354492
+        ],
+        "decode_ms_p50_p95_max": [
+          0.4830650002531911,
+          1.5524462500025038,
+          7.137707000310911
+        ],
+        "metadata_frames_in_image_window": 3596,
+        "metadata_missing_frame_numbers": 0,
+        "metadata_duplicate_or_backward_numbers": 0,
+        "metadata_without_image_with_5us_tolerance": 0,
+        "metadata_image_max_timestamp_difference_us": 0.0,
+        "source_gaps": [
+          {
+            "after_message": 727,
+            "elapsed_seconds": 24.305426836013794,
+            "source_interval_ms": 66.6801929473877
+          },
+          {
+            "after_message": 865,
+            "elapsed_seconds": 28.939751625061035,
+            "source_interval_ms": 66.67900085449219
+          },
+          {
+            "after_message": 903,
+            "elapsed_seconds": 30.240029335021973,
+            "source_interval_ms": 66.68233871459961
+          }
+        ]
+      }
+    },
+    "right_wrist": {
+      "recording_window_seconds": 44.21011567115784,
+      "publisher_RGB_calls": 1309,
+      "publisher_metadata_calls": 1309,
+      "publisher_failures": 0,
+      "publisher_call_ms_p50_p95_max": [
+        0.173475,
+        0.27971739999999995,
+        5.814098
+      ],
+      "published_RGB_not_received_by_recorder": [
+        1794365783.7133427,
+        1794365785.7471573,
+        1794365788.9479673
+      ],
+      "published_RGB_not_received_by_independent_observer": [
+        1794365783.7133427,
+        1794365785.7471573,
+        1794365788.9479673
+      ],
+      "published_metadata_without_matching_RGB_publish": [],
+      "recorder": {
+        "messages": 1306,
+        "source_hz": 29.518131318787,
+        "receive_hz": 29.519669268270253,
+        "source_interval_ms_p50_p95_max": [
+          33.3409309387207,
+          33.342838287353516,
+          66.68353080749512
+        ],
+        "source_intervals_over_50ms": 21,
+        "receive_interval_ms_p50_p95_max": [
+          33.2715949998601,
+          44.17132019980269,
+          138.1147960000817
+        ],
+        "receive_intervals_over_50ms": 56,
+        "receive_lag_ms_p50_p95_max": [
+          19.394636154174805,
+          29.85560894012451,
+          90.60025215148926
+        ],
+        "decode_ms_p50_p95_max": [
+          0.33883899982356525,
+          2.4780882502000168,
+          8.515973999692505
+        ],
+        "metadata_frames_in_image_window": 1309,
+        "metadata_missing_frame_numbers": 0,
+        "metadata_duplicate_or_backward_numbers": 0,
+        "metadata_without_image_with_5us_tolerance": 3,
+        "metadata_image_max_timestamp_difference_us": 33341.169357299805,
+        "source_gaps": [
+          {
+            "after_message": 743,
+            "elapsed_seconds": 24.838950395584106,
+            "source_interval_ms": 66.6806697845459
+          },
+          {
+            "after_message": 777,
+            "elapsed_seconds": 26.00588059425354,
+            "source_interval_ms": 66.68257713317871
+          },
+          {
+            "after_message": 860,
+            "elapsed_seconds": 28.806524753570557,
+            "source_interval_ms": 66.6816234588623
+          },
+          {
+            "after_message": 873,
+            "elapsed_seconds": 29.273294687271118,
+            "source_interval_ms": 66.6816234588623
+          },
+          {
+            "after_message": 877,
+            "elapsed_seconds": 29.440000772476196,
+            "source_interval_ms": 66.68281555175781
+          },
+          {
+            "after_message": 921,
+            "elapsed_seconds": 30.94035053253174,
+            "source_interval_ms": 66.6816234588623
+          },
+          {
+            "after_message": 922,
+            "elapsed_seconds": 31.00703239440918,
+            "source_interval_ms": 66.6818618774414
+          },
+          {
+            "after_message": 979,
+            "elapsed_seconds": 32.94082808494568,
+            "source_interval_ms": 66.68353080749512
+          },
+          {
+            "after_message": 994,
+            "elapsed_seconds": 33.474292278289795,
+            "source_interval_ms": 66.6818618774414
+          },
+          {
+            "after_message": 1006,
+            "elapsed_seconds": 33.90772843360901,
+            "source_interval_ms": 66.6816234588623
+          },
+          {
+            "after_message": 1007,
+            "elapsed_seconds": 33.97441101074219,
+            "source_interval_ms": 66.68257713317871
+          },
+          {
+            "after_message": 1020,
+            "elapsed_seconds": 34.44118666648865,
+            "source_interval_ms": 66.6816234588623
+          },
+          {
+            "after_message": 1030,
+            "elapsed_seconds": 34.80793476104736,
+            "source_interval_ms": 66.6806697845459
+          },
+          {
+            "after_message": 1038,
+            "elapsed_seconds": 35.10800218582153,
+            "source_interval_ms": 66.6816234588623
+          },
+          {
+            "after_message": 1043,
+            "elapsed_seconds": 35.308046102523804,
+            "source_interval_ms": 66.6816234588623
+          },
+          {
+            "after_message": 1050,
+            "elapsed_seconds": 35.574777364730835,
+            "source_interval_ms": 66.68281555175781
+          },
+          {
+            "after_message": 1059,
+            "elapsed_seconds": 35.90819001197815,
+            "source_interval_ms": 66.68281555175781
+          },
+          {
+            "after_message": 1101,
+            "elapsed_seconds": 37.34186029434204,
+            "source_interval_ms": 66.6818618774414
+          },
+          {
+            "after_message": 1104,
+            "elapsed_seconds": 37.47522234916687,
+            "source_interval_ms": 66.6804313659668
+          },
+          {
+            "after_message": 1115,
+            "elapsed_seconds": 37.87531089782715,
+            "source_interval_ms": 66.6813850402832
+          },
+          {
+            "after_message": 1194,
+            "elapsed_seconds": 40.5426709651947,
+            "source_interval_ms": 66.68257713317871
+          }
+        ]
+      }
+    }
+  },
+  "ROS_host_before_USB_failure": {
+    "cpu_busy_percent": {
+      "cpu": {
+        "mean": 58.09042567623441,
+        "p95": 66.03172729367984,
+        "max": 69.9831365935919
+      },
+      "cpu0": {
+        "mean": 61.30082724435549,
+        "p95": 72.86274509803921,
+        "max": 89.10891089108911
+      },
+      "cpu1": {
+        "mean": 56.137700946007556,
+        "p95": 67.7037319116527,
+        "max": 99.00990099009901
+      },
+      "cpu2": {
+        "mean": 54.165328145832525,
+        "p95": 65.25,
+        "max": 72.72727272727273
+      },
+      "cpu3": {
+        "mean": 54.33938220154103,
+        "p95": 63.94957983193276,
+        "max": 69.0
+      },
+      "cpu4": {
+        "mean": 62.492333309427195,
+        "p95": 83.48089751364452,
+        "max": 100.0
+      },
+      "cpu5": {
+        "mean": 60.02890933437376,
+        "p95": 71.34370579915134,
+        "max": 74.25742574257426
+      }
+    },
+    "max_temperatures_C": {
+      "cpu-thermal": 49.375,
+      "soc2-thermal": 48.125,
+      "soc0-thermal": 49.593,
+      "gpu-thermal": 49.75,
+      "tj-thermal": 50.437,
+      "soc1-thermal": 50.468
+    },
+    "min_mem_available_kB": 4428896
+  },
+  "raw_YUYV_120_seconds": {
+    "head": {
+      "YUYV": {
+        "frames": 3597,
+        "received_span_seconds": 119.9563802749999,
+        "source_interval_ms_p50_p95_max": [
+          33.3583984375,
+          33.35888671875,
+          33.3623046875
+        ],
+        "source_intervals_over50ms": 0,
+        "sdk_counter_missing": 0,
+        "hardware_counter_supported": false,
+        "receive_max_interval_ms": 33.87171299982583,
+        "unique_frame_sizes": [
+          614400.0
+        ]
+      },
+      "depth": {
+        "frames": 3598,
+        "received_span_seconds": 119.98946858599993,
+        "source_interval_ms_p50_p95_max": [
+          33.3583984375,
+          33.35888671875,
+          33.362060546875
+        ],
+        "source_intervals_over50ms": 0,
+        "sdk_counter_missing": 0,
+        "hardware_counter_supported": false,
+        "receive_max_interval_ms": 33.88343100050406,
+        "unique_frame_sizes": [
+          614400.0
+        ]
+      }
+    },
+    "left_wrist": {
+      "YUYV": {
+        "frames": 3598,
+        "received_span_seconds": 119.96418157400058,
+        "source_interval_ms_p50_p95_max": [
+          33.342041015625,
+          33.34228515625,
+          66.68408203125
+        ],
+        "source_intervals_over50ms": 1,
+        "sdk_counter_missing": 0,
+        "hardware_counter_supported": false,
+        "receive_max_interval_ms": 66.78281799941033,
+        "unique_frame_sizes": [
+          614400.0
+        ]
+      },
+      "depth": {
+        "frames": 3598,
+        "received_span_seconds": 119.96424608800044,
+        "source_interval_ms_p50_p95_max": [
+          33.342041015625,
+          33.34228515625,
+          66.68408203125
+        ],
+        "source_intervals_over50ms": 1,
+        "sdk_counter_missing": 0,
+        "hardware_counter_supported": false,
+        "receive_max_interval_ms": 66.63528900025995,
+        "unique_frame_sizes": [
+          614400.0
+        ]
+      }
+    },
+    "right_wrist": {
+      "YUYV": {
+        "frames": 2201,
+        "received_span_seconds": 73.51951219300008,
+        "source_interval_ms_p50_p95_max": [
+          33.34228515625,
+          33.3427734375,
+          66.6845703125
+        ],
+        "source_intervals_over50ms": 5,
+        "sdk_counter_missing": 0,
+        "hardware_counter_supported": false,
+        "receive_max_interval_ms": 66.80009699994116,
+        "unique_frame_sizes": [
+          614400.0
+        ]
+      },
+      "depth": {
+        "frames": 2197,
+        "received_span_seconds": 73.51972791600019,
+        "source_interval_ms_p50_p95_max": [
+          33.34228515625,
+          33.3427734375,
+          66.684814453125
+        ],
+        "source_intervals_over50ms": 9,
+        "sdk_counter_missing": 0,
+        "hardware_counter_supported": false,
+        "receive_max_interval_ms": 67.07708699923387,
+        "unique_frame_sizes": [
+          614400.0
+        ]
+      }
+    }
+  },
+  "raw_YUYV_host_before_USB_failure": {
+    "cpu_busy_percent": {
+      "cpu": {
+        "mean": 3.859436936207759,
+        "p95": 6.31302865385876,
+        "max": 17.656765676567655
+      },
+      "cpu0": {
+        "mean": 9.702170236773343,
+        "p95": 12.079207920792063,
+        "max": 18.000000000000004
+      },
+      "cpu1": {
+        "mean": 3.247098964541199,
+        "p95": 6.750565610859725,
+        "max": 16.346153846153843
+      },
+      "cpu2": {
+        "mean": 4.229157884996497,
+        "p95": 10.065841584158404,
+        "max": 40.19607843137255
+      },
+      "cpu3": {
+        "mean": 3.5780661110008656,
+        "p95": 7.976190476190451,
+        "max": 16.666666666666664
+      },
+      "cpu4": {
+        "mean": 0.9882313766968084,
+        "p95": 3.107276747092179,
+        "max": 9.999999999999998
+      },
+      "cpu5": {
+        "mean": 1.3351748565007189,
+        "p95": 3.132524271844655,
+        "max": 15.000000000000002
+      }
+    },
+    "max_temperatures_C": {
+      "cpu-thermal": 47.593,
+      "soc2-thermal": 46.781,
+      "soc0-thermal": 48.656,
+      "gpu-thermal": 48.437,
+      "tj-thermal": 49.468,
+      "soc1-thermal": 49.468
+    },
+    "sample_count_before_USB_failure": 79
+  },
+  "sampler_phase_switch": [
+    {
+      "saved_frame": 1031,
+      "camera": "left_wrist",
+      "previous_camera_offset_to_head_ms": -16.661882400512695,
+      "next_camera_offset_to_head_ms": 16.646623611450195,
+      "head_interval_ms": 66.71524047851562,
+      "saved_camera_interval_ms": 100.02374649047852,
+      "native_received_intermediate_images": 2
+    },
+    {
+      "saved_frame": 1179,
+      "camera": "right_wrist",
+      "previous_camera_offset_to_head_ms": -16.64566993713379,
+      "next_camera_offset_to_head_ms": 16.65973663330078,
+      "head_interval_ms": 66.71333312988281,
+      "saved_camera_interval_ms": 100.01873970031738,
+      "native_received_intermediate_images": 2
+    }
+  ],
+  "USB_resets_beijing": [
+    "2026-11-11 10:56:33",
+    "2026-11-11 10:57:49",
+    "2026-11-11 11:00:11"
+  ],
+  "USB_reset_path": "2-1.1",
+  "USB_reset_camera_SDK_serial": "261122274758",
+  "hardware_frame_counter_supported": false,
+  "conclusions": {
+    "software_sampling_phase_switch_confirmed": true,
+    "USB_layer_failure_reproduced_without_ROS_or_RGB_conversion": true,
+    "specific_failed_camera_or_cable_or_HUB_or_host_controller_not_yet_determined": true,
+    "Jetson_CPU_exhaustion_not_supported_by_low_load_native_test": true,
+    "RCL_publish_success_with_both_observers_missing_three_RGB_images": true
+  },
+  "manual_cross_swap": {
+    "status": "awaiting_verified_wrist_camera_port_swap",
+    "attempt_not_accepted": "D405 paths remained left=2-1.2 and right=2-1.1; head path changed. The attempted cross test was stopped and is excluded as cross evidence."
+  },
+  "preservation": {
+    "protected_files_checked": 39,
+    "changed_files": [],
+    "production_data_and_robot_execution_files_unchanged": true
+  },
+  "artifacts_directory": "/tmp/aide-camera-isolation-1uejwkqc",
+  "kernel_log": "/tmp/aide-camera-isolation-1uejwkqc/kernel_window.log",
+  "references": [
+    "https://cdn.kernel.org/doc/html/latest/driver-api/usb/power-management.html"
+  ],
+  "diagnostic_limitations": [
+    "SDK sequence numbers are not hardware exposure counters on this installation.",
+    "The ROS capture test failed its expected final simulated OFF check because USB loss prevented recording after 44.2 seconds; that dataset is diagnostic only.",
+    "An initial tracing-instrumentation startup failure was corrected and self-tested; it is not classified as a camera failure."
+  ]
+}

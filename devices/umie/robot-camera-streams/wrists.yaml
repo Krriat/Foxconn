@@ -1,0 +1,20 @@
+node_name: robot_wrist_cameras
+cameras:
+  - name: left_wrist
+    backend: realsense
+    serial: "352122274013"
+    capture_depth: true  # D405 profile used in dataset capture; publish only RGB.
+    width: 640
+    height: 480
+    fps: 30
+    publish_fps: 20
+    jpeg_quality: 80
+  - name: right_wrist
+    backend: realsense
+    serial: "261122274758"
+    capture_depth: true
+    width: 640
+    height: 480
+    fps: 30
+    publish_fps: 20
+    jpeg_quality: 80

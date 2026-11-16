@@ -1,0 +1,67 @@
+{
+  "checked_at_beijing": "2026-11-10T17:39:26.108118+08:00",
+  "mode": "getters only, no state changes",
+  "arms": {
+    "left": {
+      "exit_code": 0,
+      "stdout_first_lines": [
+        "SIDE=left ADDRESS=192.168.1.160",
+        "operationState=0 ec=0 success",
+        "operateMode=0 ec=0 success",
+        "powerState=1 ec=0 success",
+        "model=AR5-5_0.8L-W4C5C11 controller=3.2.1.C224.20260731 ec=0 success",
+        "LOG_FILTER=2",
+        "logCount=10 ec=0 success"
+      ],
+      "network_trace": "CONNECT fd=18 peer=192.168.1.160:6666 rc=-1 errno=115\nSO_ERROR fd=18 value=0\nCONNECT fd=20 peer=192.168.1.160:7777 rc=-1 errno=115\nSO_ERROR fd=20 value=0\n"
+    },
+    "right": {
+      "exit_code": 0,
+      "stdout_first_lines": [
+        "SIDE=right ADDRESS=192.168.2.160",
+        "operationState=0 ec=0 success",
+        "operateMode=0 ec=0 success",
+        "powerState=1 ec=0 success",
+        "model=AR5-5_0.8R-W4C5C11 controller=3.2.1.C224.20260731 ec=0 success",
+        "LOG_FILTER=2",
+        "logCount=10 ec=0 success"
+      ],
+      "network_trace": "CONNECT fd=18 peer=192.168.2.160:6666 rc=-1 errno=115\nSO_ERROR fd=18 value=0\nCONNECT fd=20 peer=192.168.2.160:7777 rc=-1 errno=115\nSO_ERROR fd=20 value=0\n"
+    }
+  },
+  "original_failure_log": "/tmp/aide-teach-suction-z7zxuqg0/arms.log",
+  "arms_startup_probe": {
+    "checked_at_beijing": "2026-11-10T17:40:36.070547+08:00",
+    "robot_or_DO_services_called": false,
+    "started_only_arm_service_process": true,
+    "result": "ready_and_alive_5_seconds",
+    "owned_probe_process_stopped": true
+  },
+  "network_checks": {
+    "local_ipv4_addresses": [
+      "192.168.1.10/24",
+      "192.168.2.10/24"
+    ],
+    "interface": "enP8p1s0",
+    "left_ping": {
+      "sent": 3,
+      "received": 3,
+      "loss_percent": 0
+    },
+    "right_ping": {
+      "sent": 3,
+      "received": 3,
+      "loss_percent": 0
+    },
+    "sdk_observed_tcp_ports": [
+      6666,
+      7777
+    ],
+    "sdk_connections_and_getters_succeeded_both_arms": true
+  },
+  "motion_service_calls_in_probe_log": false,
+  "conclusion_zh": "原日志证明左臂SDK连接阶段失败，但具体当时原因未能重现。当前IP连通、双方SDK getter和原双臂服务启动检查均通过；只启动服务并观察5秒后结束本次进程，未调用示教、上下电初始化、回位或吸盘服务。",
+  "limits_zh": "此次验证启动连接恢复，不代表之前的左臂-513和下电失败已解决；未测试示教或运动。",
+  "implementation_or_execution_configuration_changes": [],
+  "artifacts_directory": "/tmp/aide-arm-sdk-network-l6rh4f1q"
+}

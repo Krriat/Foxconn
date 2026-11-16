@@ -1,0 +1,610 @@
+{
+  "started_beijing": "2026-11-11T10:34:02.948869+08:00",
+  "measurement_seconds": 60.00336875699986,
+  "camera_source_fps": 30,
+  "recording_fps": 20,
+  "source_gap_threshold_ms": 80,
+  "synthetic_joints_and_suction": true,
+  "physical_arm_connections": false,
+  "physical_arm_services": false,
+  "physical_DO_access": false,
+  "production_dataset_modified": false,
+  "raw_dataset": "/tmp/aide-camera-full-dataset-62csrxkh/TEST_ONLY_raw_simulated_joints_and_suction",
+  "publishers": {
+    "head": 1,
+    "left_wrist": 1,
+    "right_wrist": 1
+  },
+  "cameras": {
+    "head": {
+      "messages": 1800,
+      "source_hz": 29.978400669038678,
+      "receive_hz": 29.99597615484744,
+      "source_interval_ms_p50_p95_max": [
+        33.35738182067871,
+        33.35881233215332,
+        33.36191177368164
+      ],
+      "source_intervals_over_50ms": 0,
+      "receive_interval_ms_p50_p95_max": [
+        33.426944999973784,
+        40.3639609000038,
+        63.33027300024696
+      ],
+      "receive_intervals_over_50ms": 3,
+      "receive_lag_ms_p50_p95_max": [
+        50.21548271179199,
+        57.690465450286865,
+        81.22491836547852
+      ],
+      "decode_ms_p50_p95_max": [
+        0.42175499993390986,
+        1.7491698500862185,
+        9.094959999856655
+      ],
+      "metadata_frames_in_image_window": 1800,
+      "metadata_missing_frame_numbers": 0,
+      "metadata_duplicate_or_backward_numbers": 0,
+      "metadata_without_image_with_5us_tolerance": 0,
+      "metadata_image_max_timestamp_difference_us": 0.0,
+      "source_gaps": []
+    },
+    "left_wrist": {
+      "messages": 1800,
+      "source_hz": 29.97645451914459,
+      "receive_hz": 29.998799913100708,
+      "source_interval_ms_p50_p95_max": [
+        33.3409309387207,
+        33.34212303161621,
+        66.68281555175781
+      ],
+      "source_intervals_over_50ms": 1,
+      "receive_interval_ms_p50_p95_max": [
+        33.462221000263526,
+        39.365364000059344,
+        77.31778700008363
+      ],
+      "receive_intervals_over_50ms": 1,
+      "receive_lag_ms_p50_p95_max": [
+        26.69227123260498,
+        32.30403661727905,
+        74.45764541625977
+      ],
+      "decode_ms_p50_p95_max": [
+        0.5504939997535985,
+        1.840496949989756,
+        5.861046000063652
+      ],
+      "metadata_frames_in_image_window": 1801,
+      "metadata_missing_frame_numbers": 0,
+      "metadata_duplicate_or_backward_numbers": 0,
+      "metadata_without_image_with_5us_tolerance": 1,
+      "metadata_image_max_timestamp_difference_us": 33341.407775878906,
+      "source_gaps": [
+        {
+          "after_message": 887,
+          "elapsed_seconds": 29.640050411224365,
+          "source_interval_ms": 66.68281555175781
+        }
+      ]
+    },
+    "right_wrist": {
+      "messages": 1801,
+      "source_hz": 29.992958053272822,
+      "receive_hz": 30.00435927685105,
+      "source_interval_ms_p50_p95_max": [
+        33.341169357299805,
+        33.342599868774414,
+        33.344268798828125
+      ],
+      "source_intervals_over_50ms": 0,
+      "receive_interval_ms_p50_p95_max": [
+        33.37134599996716,
+        39.990761600301994,
+        53.57913599982567
+      ],
+      "receive_intervals_over_50ms": 4,
+      "receive_lag_ms_p50_p95_max": [
+        19.210100173950195,
+        26.061534881591797,
+        40.89713096618652
+      ],
+      "decode_ms_p50_p95_max": [
+        0.43953199974566814,
+        2.271579000080237,
+        13.14565099983156
+      ],
+      "metadata_frames_in_image_window": 1801,
+      "metadata_missing_frame_numbers": 0,
+      "metadata_duplicate_or_backward_numbers": 0,
+      "metadata_without_image_with_5us_tolerance": 0,
+      "metadata_image_max_timestamp_difference_us": 0.0,
+      "source_gaps": []
+    }
+  },
+  "simulated_command_events": [
+    {
+      "side": "left",
+      "value": 1,
+      "elapsed_seconds": 5.000527918999978,
+      "ros_timestamp": 1794364455.6982465
+    },
+    {
+      "side": "right",
+      "value": 1,
+      "elapsed_seconds": 10.001518784999917,
+      "ros_timestamp": 1794364460.6992393
+    },
+    {
+      "side": "left",
+      "value": 0,
+      "elapsed_seconds": 20.000524585999756,
+      "ros_timestamp": 1794364470.6982372
+    },
+    {
+      "side": "right",
+      "value": 0,
+      "elapsed_seconds": 25.00192131299991,
+      "ros_timestamp": 1794364475.6996472
+    },
+    {
+      "side": "left",
+      "value": 1,
+      "elapsed_seconds": 35.00214489500013,
+      "ros_timestamp": 1794364485.6998606
+    },
+    {
+      "side": "right",
+      "value": 1,
+      "elapsed_seconds": 40.00333786700003,
+      "ros_timestamp": 1794364490.7010815
+    },
+    {
+      "side": "left",
+      "value": 0,
+      "elapsed_seconds": 45.00010789099997,
+      "ros_timestamp": 1794364495.6978312
+    },
+    {
+      "side": "right",
+      "value": 0,
+      "elapsed_seconds": 50.00245212499976,
+      "ros_timestamp": 1794364500.7001686
+    }
+  ],
+  "image_decode_errors": [],
+  "publisher_diagnostics": {
+    "right_wrist: Temperatures": {
+      "Asic Temperature": "24"
+    },
+    "left_wrist: Temperatures": {
+      "Asic Temperature": "26"
+    },
+    "head: Temperatures": {
+      "Asic Temperature": "26",
+      "Projector Temperature": "21"
+    },
+    "left_wrist: color": {
+      "Events in window": "300",
+      "Events since startup": "1954",
+      "Duration of window (s)": "10.000212",
+      "Actual frequency (Hz)": "29.999365",
+      "Target frequency (Hz)": "30.000000",
+      "Minimum acceptable frequency (Hz)": "27.000000",
+      "Maximum acceptable frequency (Hz)": "33.000000"
+    },
+    "left_wrist: depth": {
+      "Events in window": "300",
+      "Events since startup": "1968",
+      "Duration of window (s)": "10.000211",
+      "Actual frequency (Hz)": "29.999368",
+      "Target frequency (Hz)": "30.000000",
+      "Minimum acceptable frequency (Hz)": "27.000000",
+      "Maximum acceptable frequency (Hz)": "33.000000"
+    },
+    "right_wrist: depth": {
+      "Events in window": "300",
+      "Events since startup": "1968",
+      "Duration of window (s)": "9.999880",
+      "Actual frequency (Hz)": "30.000361",
+      "Target frequency (Hz)": "30.000000",
+      "Minimum acceptable frequency (Hz)": "27.000000",
+      "Maximum acceptable frequency (Hz)": "33.000000"
+    },
+    "head: depth": {
+      "Events in window": "300",
+      "Events since startup": "1960",
+      "Duration of window (s)": "9.999856",
+      "Actual frequency (Hz)": "30.000433",
+      "Target frequency (Hz)": "30.000000",
+      "Minimum acceptable frequency (Hz)": "27.000000",
+      "Maximum acceptable frequency (Hz)": "33.000000"
+    },
+    "head: color": {
+      "Events in window": "300",
+      "Events since startup": "1955",
+      "Duration of window (s)": "9.999859",
+      "Actual frequency (Hz)": "30.000423",
+      "Target frequency (Hz)": "30.000000",
+      "Minimum acceptable frequency (Hz)": "27.000000",
+      "Maximum acceptable frequency (Hz)": "33.000000"
+    },
+    "right_wrist: color": {
+      "Events in window": "300",
+      "Events since startup": "1953",
+      "Duration of window (s)": "9.999876",
+      "Actual frequency (Hz)": "30.000373",
+      "Target frequency (Hz)": "30.000000",
+      "Minimum acceptable frequency (Hz)": "27.000000",
+      "Maximum acceptable frequency (Hz)": "33.000000"
+    }
+  },
+  "schema": {
+    "version": 2,
+    "schema_id": "keyboard_dual_arm_suction_v1",
+    "fps": 20.0,
+    "width": 640,
+    "height": 480,
+    "cameras": [
+      "head",
+      "left_wrist",
+      "right_wrist"
+    ],
+    "state_names": [
+      "left_joint_1.pos",
+      "left_joint_2.pos",
+      "left_joint_3.pos",
+      "left_joint_4.pos",
+      "left_joint_5.pos",
+      "left_joint_6.pos",
+      "left_joint_7.pos",
+      "right_joint_1.pos",
+      "right_joint_2.pos",
+      "right_joint_3.pos",
+      "right_joint_4.pos",
+      "right_joint_5.pos",
+      "right_joint_6.pos",
+      "right_joint_7.pos",
+      "left_suction.on",
+      "right_suction.on"
+    ],
+    "action_names": [
+      "left_joint_1.pos",
+      "left_joint_2.pos",
+      "left_joint_3.pos",
+      "left_joint_4.pos",
+      "left_joint_5.pos",
+      "left_joint_6.pos",
+      "left_joint_7.pos",
+      "right_joint_1.pos",
+      "right_joint_2.pos",
+      "right_joint_3.pos",
+      "right_joint_4.pos",
+      "right_joint_5.pos",
+      "right_joint_6.pos",
+      "right_joint_7.pos",
+      "left_suction.on",
+      "right_suction.on"
+    ],
+    "units": [
+      "radian",
+      "radian",
+      "radian",
+      "radian",
+      "radian",
+      "radian",
+      "radian",
+      "radian",
+      "radian",
+      "radian",
+      "radian",
+      "radian",
+      "radian",
+      "radian",
+      "binary",
+      "binary"
+    ],
+    "source_order": [
+      "left",
+      "right",
+      "head",
+      "left_wrist",
+      "right_wrist"
+    ],
+    "suction_channels": {
+      "left": 1,
+      "right": 2
+    },
+    "source_max_skew_seconds": 0.05,
+    "joint_action_source": "same_sample_measured_joint_positions",
+    "suction_observation_source": "verified_logical_DO_readback_not_vacuum_detection",
+    "suction_action_source": "keyboard_requested_binary_target",
+    "suction_max_age_seconds": 0.5,
+    "suction_time_alignment": "latest_IO_and_command_at_or_before_image_time"
+  },
+  "writer": {
+    "written_frames": 1197,
+    "written_bytes": 1129651942,
+    "queue_capacity_frames": 64,
+    "image_workers": 3,
+    "png_encoder": "libdeflate_sub_1",
+    "queue_full_count": 0,
+    "peak_queue": 1,
+    "write_ms_p50_p95_max": [
+      57.56632900011027,
+      75.70422819981104,
+      94.36751800012644
+    ],
+    "queue_wait_ms_p95": 1.665815799788107
+  },
+  "environment": {
+    "ROS_DOMAIN_ID": "232",
+    "ROS_LOCALHOST_ONLY": "1",
+    "RMW_IMPLEMENTATION": "rmw_fastrtps_cpp"
+  },
+  "raw_validation": "all_arrays_and_images_pass",
+  "frames": 1197,
+  "images": 3591,
+  "segments": [
+    {
+      "start": 0,
+      "end": 590,
+      "pause_reason": "图像/关节跳过了采集周期：left_wrist=100.0ms"
+    },
+    {
+      "start": 590,
+      "end": 1031,
+      "pause_reason": "图像/关节跳过了采集周期：left_wrist=100.0ms"
+    },
+    {
+      "start": 1031,
+      "end": 1101,
+      "pause_reason": "图像/关节跳过了采集周期：left=80.8ms, right=80.8ms"
+    },
+    {
+      "start": 1101,
+      "end": 1179,
+      "pause_reason": "图像/关节跳过了采集周期：right_wrist=100.0ms"
+    },
+    {
+      "start": 1179,
+      "end": 1197,
+      "pause_reason": "keyboard save"
+    }
+  ],
+  "capture_gaps": [
+    {
+      "after_frame": 590,
+      "reasons": [
+        "图像/关节跳过了采集周期：left_wrist=100.0ms"
+      ],
+      "start_elapsed_seconds": 29.62727278300008,
+      "end_elapsed_seconds": 29.65965716699975
+    },
+    {
+      "after_frame": 1031,
+      "reasons": [
+        "图像/关节跳过了采集周期：left_wrist=100.0ms"
+      ],
+      "start_elapsed_seconds": 51.67580177900027,
+      "end_elapsed_seconds": 51.69898570999976
+    },
+    {
+      "after_frame": 1101,
+      "reasons": [
+        "图像/关节跳过了采集周期：left=80.8ms, right=80.8ms"
+      ],
+      "start_elapsed_seconds": 55.184309115999895,
+      "end_elapsed_seconds": 55.199207550999745
+    },
+    {
+      "after_frame": 1179,
+      "reasons": [
+        "图像/关节跳过了采集周期：right_wrist=100.0ms"
+      ],
+      "start_elapsed_seconds": 59.08217449499989,
+      "end_elapsed_seconds": 59.09681371999977
+    }
+  ],
+  "capture_diagnostics": {
+    "receive": {
+      "left": {
+        "messages": 421,
+        "source_hz": 84.34838142884271,
+        "receive_hz": 84.34873068361055,
+        "latency_ms_p95": 0.0,
+        "decode_ms_p95": 0.0,
+        "source_max_interval_ms": 35.38012504577637
+      },
+      "right": {
+        "messages": 421,
+        "source_hz": 84.34838142884271,
+        "receive_hz": 84.34873068361055,
+        "latency_ms_p95": 0.0,
+        "decode_ms_p95": 0.0,
+        "source_max_interval_ms": 35.38012504577637
+      },
+      "head": {
+        "messages": 150,
+        "source_hz": 29.97863800415167,
+        "receive_hz": 29.9847632868097,
+        "latency_ms_p95": 53.79301309585571,
+        "decode_ms_p95": 1.5489344998059087,
+        "source_max_interval_ms": 33.35833549499512
+      },
+      "left_wrist": {
+        "messages": 150,
+        "source_hz": 29.992649836359348,
+        "receive_hz": 29.992007144187145,
+        "latency_ms_p95": 32.828080654144266,
+        "decode_ms_p95": 2.1558315501351895,
+        "source_max_interval_ms": 33.342838287353516
+      },
+      "right_wrist": {
+        "messages": 150,
+        "source_hz": 29.993739506772346,
+        "receive_hz": 30.017405393071382,
+        "latency_ms_p95": 25.93305110931396,
+        "decode_ms_p95": 3.4591493499419803,
+        "source_max_interval_ms": 33.34236145019531
+      }
+    },
+    "wait_reason_counts": {
+      "图像/关节跳过了采集周期：left_wrist=100.0ms": 2,
+      "图像/关节跳过了采集周期：left=80.8ms, right=80.8ms": 1,
+      "图像/关节跳过了采集周期：right_wrist=100.0ms": 1
+    },
+    "scheduler_delay_count": 0,
+    "max_poll_interval_ms": 35.362955999971746,
+    "write_backpressure_seconds": 0.0,
+    "pending_samples_discarded_on_control_change": 0
+  },
+  "quality": {
+    "status": "checks_passed",
+    "frames": 1197,
+    "target_fps": 20.0,
+    "saved_fps": 19.948878525583897,
+    "source_span_seconds": 59.80972695350647,
+    "source_span_fps": 19.99674736735915,
+    "segment_frames": [
+      590,
+      441,
+      70,
+      78,
+      18
+    ],
+    "chunk_size": 50,
+    "full_chunk_start_frames": 983,
+    "trailing_no_frame_seconds": 0.0,
+    "suction": {
+      "left": {
+        "observation_values": [
+          0,
+          1
+        ],
+        "action_values": [
+          0,
+          1
+        ],
+        "observation_transitions": 4,
+        "action_transitions": 4,
+        "final_observed": 0,
+        "final_requested": 0
+      },
+      "right": {
+        "observation_values": [
+          0,
+          1
+        ],
+        "action_values": [
+          0,
+          1
+        ],
+        "observation_transitions": 4,
+        "action_transitions": 4,
+        "final_observed": 0,
+        "final_requested": 0
+      }
+    },
+    "warnings": [],
+    "task_success_requires_review": true
+  },
+  "max_source_skew_ms": 30.53760528564453,
+  "completed_episode_promoted": true,
+  "partial_directories": [],
+  "saved_image_bytes": 1129651942,
+  "finished_beijing": "2026-11-11T10:35:47.896268+08:00",
+  "gap_analysis": [
+    {
+      "after_saved_frame": 590,
+      "elapsed_from_first_saved_source_seconds": 29.518961429595947,
+      "reason": "图像/关节跳过了采集周期：left_wrist=100.0ms",
+      "sources": {
+        "left_wrist": {
+          "saved_source_interval_ms": 100.02374649047852,
+          "received_but_unselected_images_between_saved_samples": 1,
+          "expected_native_frames_between_saved_samples": 2,
+          "missing_received_images_in_interval": 1
+        }
+      }
+    },
+    {
+      "after_saved_frame": 1031,
+      "elapsed_from_first_saved_source_seconds": 51.55742931365967,
+      "reason": "图像/关节跳过了采集周期：left_wrist=100.0ms",
+      "sources": {
+        "left_wrist": {
+          "saved_source_interval_ms": 100.02374649047852,
+          "received_but_unselected_images_between_saved_samples": 2,
+          "expected_native_frames_between_saved_samples": 2,
+          "missing_received_images_in_interval": 0
+        }
+      }
+    },
+    {
+      "after_saved_frame": 1101,
+      "elapsed_from_first_saved_source_seconds": 55.058308839797974,
+      "reason": "图像/关节跳过了采集周期：left=80.8ms, right=80.8ms",
+      "sources": {
+        "left": {
+          "saved_source_interval_ms": 80.75451850891113,
+          "source_is_simulated_not_real_robot": true
+        },
+        "right": {
+          "saved_source_interval_ms": 80.75451850891113,
+          "source_is_simulated_not_real_robot": true
+        }
+      }
+    },
+    {
+      "after_saved_frame": 1179,
+      "elapsed_from_first_saved_source_seconds": 58.975809812545776,
+      "reason": "图像/关节跳过了采集周期：right_wrist=100.0ms",
+      "sources": {
+        "right_wrist": {
+          "saved_source_interval_ms": 100.01873970031738,
+          "received_but_unselected_images_between_saved_samples": 2,
+          "expected_native_frames_between_saved_samples": 2,
+          "missing_received_images_in_interval": 0
+        }
+      }
+    }
+  ],
+  "metadata_with_no_matching_received_RGB": [
+    {
+      "camera": "left_wrist",
+      "metadata_frame_number": 1043,
+      "source_timestamp": 1794364480.23528,
+      "elapsed_from_first_camera_image_seconds": 29.606709003448486
+    }
+  ],
+  "simulated_suction_command_label_mismatches": {
+    "left": 0,
+    "right": 0
+  },
+  "preservation": {
+    "protected_files_checked": 39,
+    "changed_files": [],
+    "production_schema_and_dataset_unchanged": true,
+    "robot_execution_files_unchanged": true
+  },
+  "test_scope": {
+    "real_three_camera_RGBD_at_30Hz": true,
+    "real_20Hz_recorder_alignment_and_PNG_writer": true,
+    "complete_raw_episode_saved": true,
+    "all_PNGs_and_arrays_validated": true,
+    "simulated_14_joint_positions_and_both_suction_labels": true,
+    "real_arm_or_teaching_started": false,
+    "real_IO_read_or_write": false,
+    "real_LeRobot_export_or_ACT_training_executed": false
+  },
+  "assessment": {
+    "raw_format_and_label_checks": "pass",
+    "throughput": "19.95 / 20 Hz",
+    "complete_no_frame_loss_claim": false,
+    "received_left_RGB_images_missing": 1,
+    "selected_wrist_100ms_intervals_with_all_native_RGB_received": 2,
+    "simulated_joint_source_80ms_intervals": 1,
+    "note": "Camera reception and sampler selection both caused segmentation. Simulated joints do not establish physical arm feedback behavior."
+  }
+}

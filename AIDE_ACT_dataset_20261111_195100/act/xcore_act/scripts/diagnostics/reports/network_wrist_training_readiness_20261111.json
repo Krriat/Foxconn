@@ -1,0 +1,336 @@
+{
+  "status": "capture_pipeline_and_format_checks_passed_real_demonstration_required",
+  "camera_only_test": true,
+  "physical_arms": false,
+  "physical_suction_IO": false,
+  "production_dataset_modified": false,
+  "ROS_domain": 232,
+  "duration_requested_seconds": 180,
+  "save_fps": 20,
+  "camera_fps": 30,
+  "real_camera_count": 3,
+  "simulated_labels": "both arms and both suction outputs",
+  "automated_regressions_passed": 59,
+  "changes": [
+    "Prefer available continuous camera samples before nearest-time score",
+    "Apply the same continuity preference to measured joint samples",
+    "Retain 50ms synchronization tolerance and 80ms source gap threshold at 20Hz"
+  ],
+  "baseline_report": "/tmp/aide-final-capture-k93bgo6a/report.json",
+  "final_artifacts": "/tmp/aide-final-verified-capture-tzu0efxf",
+  "training_environment": {
+    "system_python_has_lerobot": false,
+    "actual_ACT_training_run": false
+  },
+  "scope_limitation": "Final real-arm demonstration, actual IO feedback and grasp success are not tested because physical arms/IO remain forbidden.",
+  "finished_utc": "2026-11-11T08:42:04.802818+00:00",
+  "full_live_result": {
+    "started_utc": "2026-11-11T08:36:25.338510+00:00",
+    "status": "checks_passed",
+    "real_cameras": [
+      "head",
+      "left_wrist",
+      "right_wrist"
+    ],
+    "simulated_joint_feedback": true,
+    "simulated_suction_commands_and_feedback": true,
+    "physical_arm_connections": false,
+    "physical_suction_IO": false,
+    "ROS_domain": 232,
+    "dataset_for_training": false,
+    "protected_files_unchanged": true,
+    "startup_seconds": 6.007286919000762,
+    "camera_publishers": {
+      "head": 1,
+      "left_wrist": 1,
+      "right_wrist": 1
+    },
+    "recording_start_mono": 24413.984273355,
+    "recording_stop_mono": 24593.985481024,
+    "dataset_root": "/tmp/aide-final-verified-capture-tzu0efxf/TEST_ONLY_NOT_FOR_TRAINING",
+    "episode": "/tmp/aide-final-verified-capture-tzu0efxf/TEST_ONLY_NOT_FOR_TRAINING/episode_000000",
+    "quality": {
+      "status": "checks_passed",
+      "frames": 3595,
+      "target_fps": 20.0,
+      "saved_fps": 19.972088224045482,
+      "source_span_seconds": 179.71997570991516,
+      "source_span_fps": 19.997777018404744,
+      "segment_frames": [
+        3595
+      ],
+      "chunk_size": 50,
+      "full_chunk_start_frames": 3546,
+      "trailing_no_frame_seconds": 0.0,
+      "suction": {
+        "left": {
+          "observation_values": [
+            0,
+            1
+          ],
+          "action_values": [
+            0,
+            1
+          ],
+          "observation_transitions": 2,
+          "action_transitions": 2,
+          "final_observed": 0,
+          "final_requested": 0
+        },
+        "right": {
+          "observation_values": [
+            0,
+            1
+          ],
+          "action_values": [
+            0,
+            1
+          ],
+          "observation_transitions": 2,
+          "action_transitions": 2,
+          "final_observed": 0,
+          "final_requested": 0
+        }
+      },
+      "warnings": [],
+      "task_success_requires_review": true
+    },
+    "frames": 3595,
+    "images": 10785,
+    "max_source_skew_ms": 33.82539749145508,
+    "writer": {
+      "written_frames": 3595,
+      "written_bytes": 3305456740,
+      "queue_capacity_frames": 64,
+      "image_workers": 3,
+      "png_encoder": "libdeflate_sub_1",
+      "queue_full_count": 0,
+      "peak_queue": 1,
+      "write_ms_p50_p95_max": [
+        51.31525249998958,
+        70.19109340053546,
+        121.02996799876564
+      ],
+      "queue_wait_ms_p95": 1.462111399814603
+    },
+    "capture_diagnostics": {
+      "receive": {
+        "left": {
+          "messages": 426,
+          "source_hz": 85.22046403098454,
+          "receive_hz": 85.2208050947979,
+          "latency_ms_p95": 0.0,
+          "decode_ms_p95": 0.0,
+          "source_max_interval_ms": 30.389785766601562
+        },
+        "right": {
+          "messages": 426,
+          "source_hz": 85.22046403098454,
+          "receive_hz": 85.2208050947979,
+          "latency_ms_p95": 0.0,
+          "decode_ms_p95": 0.0,
+          "source_max_interval_ms": 30.389785766601562
+        },
+        "head": {
+          "messages": 150,
+          "source_hz": 29.978449619208043,
+          "receive_hz": 29.935874894815196,
+          "latency_ms_p95": 54.12728786468505,
+          "decode_ms_p95": 2.1041678013716587,
+          "source_max_interval_ms": 33.35833549499512
+        },
+        "left_wrist": {
+          "messages": 150,
+          "source_hz": 29.993031283969756,
+          "receive_hz": 29.97780546896007,
+          "latency_ms_p95": 54.95418310165403,
+          "decode_ms_p95": 1.2579151005411393,
+          "source_max_interval_ms": 33.35976600646973
+        },
+        "right_wrist": {
+          "messages": 150,
+          "source_hz": 29.992813929613906,
+          "receive_hz": 29.98387758050121,
+          "latency_ms_p95": 57.524275779724114,
+          "decode_ms_p95": 1.7210294496180711,
+          "source_max_interval_ms": 33.36048126220703
+        }
+      },
+      "wait_reason_counts": {},
+      "scheduler_delay_count": 0,
+      "max_poll_interval_ms": 46.057964998908574,
+      "write_backpressure_seconds": 0.0,
+      "pending_samples_discarded_on_control_change": 0
+    },
+    "capture_gaps": [],
+    "state_shape": [
+      3595,
+      16
+    ],
+    "all_saved_images_and_array_validation": "passed",
+    "ROS_camera_receive": {
+      "head": {
+        "frames": 5396,
+        "receive_hz": 29.97811574657116,
+        "source_interval_ms_p50_p95_max": [
+          33.35738182067871,
+          33.35833549499512,
+          33.36024284362793
+        ],
+        "source_intervals_over_53_3ms": 0,
+        "timestamp_regressions": 0,
+        "source_age_ms_p50_p95_max": [
+          49.00932312011719,
+          55.43959140777588,
+          96.01449966430664
+        ]
+      },
+      "left_wrist": {
+        "frames": 5399,
+        "receive_hz": 29.993780590728754,
+        "source_interval_ms_p50_p95_max": [
+          33.341169357299805,
+          33.34188461303711,
+          33.36977958679199
+        ],
+        "source_intervals_over_53_3ms": 0,
+        "timestamp_regressions": 0,
+        "source_age_ms_p50_p95_max": [
+          50.4302978515625,
+          55.44736385345458,
+          99.34473037719727
+        ]
+      },
+      "right_wrist": {
+        "frames": 5399,
+        "receive_hz": 29.993730442197812,
+        "source_interval_ms_p50_p95_max": [
+          33.341407775878906,
+          33.34212303161621,
+          33.36977958679199
+        ],
+        "source_intervals_over_53_3ms": 0,
+        "timestamp_regressions": 0,
+        "source_age_ms_p50_p95_max": [
+          52.763938903808594,
+          57.22191333770752,
+          126.12533569335938
+        ]
+      }
+    },
+    "protected_files_changed": [],
+    "finished_utc": "2026-11-11T08:41:31.280333+00:00"
+  },
+  "dataset_facts": {
+    "frames": 3595,
+    "state_shape": [
+      3595,
+      16
+    ],
+    "action_shape": [
+      3595,
+      16
+    ],
+    "images_expected": 10785,
+    "images_present": 10785,
+    "max_source_skew_ms": 33.82539749145508,
+    "source_intervals_over_80ms": {
+      "left": 0,
+      "right": 0,
+      "head": 0,
+      "left_wrist": 0,
+      "right_wrist": 0
+    },
+    "suction_feedback_age_ms_p50_p95_max": [
+      55.6187629699707,
+      96.8717098236084,
+      119.85301971435547
+    ],
+    "training_quality": {
+      "status": "checks_passed",
+      "frames": 3595,
+      "target_fps": 20.0,
+      "saved_fps": 19.972088224045482,
+      "source_span_seconds": 179.71997570991516,
+      "source_span_fps": 19.997777018404744,
+      "segment_frames": [
+        3595
+      ],
+      "chunk_size": 50,
+      "full_chunk_start_frames": 3546,
+      "trailing_no_frame_seconds": 0.0,
+      "suction": {
+        "left": {
+          "observation_values": [
+            0,
+            1
+          ],
+          "action_values": [
+            0,
+            1
+          ],
+          "observation_transitions": 2,
+          "action_transitions": 2,
+          "final_observed": 0,
+          "final_requested": 0
+        },
+        "right": {
+          "observation_values": [
+            0,
+            1
+          ],
+          "action_values": [
+            0,
+            1
+          ],
+          "observation_transitions": 2,
+          "action_transitions": 2,
+          "final_observed": 0,
+          "final_requested": 0
+        }
+      },
+      "warnings": [],
+      "task_success_requires_review": true
+    },
+    "writer_diagnostics": {
+      "written_frames": 3595,
+      "written_bytes": 3305456740,
+      "queue_capacity_frames": 64,
+      "image_workers": 3,
+      "png_encoder": "libdeflate_sub_1",
+      "queue_full_count": 0,
+      "peak_queue": 1,
+      "write_ms_p50_p95_max": [
+        51.31525249998958,
+        70.19109340053546,
+        121.02996799876564
+      ],
+      "queue_wait_ms_p95": 1.462111399814603
+    }
+  },
+  "protected_files_checked": 19,
+  "protected_files_unchanged": true,
+  "code_fingerprints_match_tested_version": true,
+  "training_readiness": {
+    "capture_pipeline": true,
+    "raw_structure_and_timestamps": true,
+    "all_saved_RGB_images": true,
+    "continuous_50_frame_chunks": 3546,
+    "simulated_suction_binary_label_coverage": true,
+    "real_arm_demonstration_tested": false,
+    "real_suction_IO_tested": false,
+    "physical_task_success_verified": false,
+    "actual_lerobot_export_or_ACT_training_run": false
+  },
+  "test_data_must_not_be_used_for_training": true,
+  "source_changes": [
+    "scripts/recording/record_xcore_teach_suction.py: continuity-aware camera and joint sample selection, without changing skew/gap tolerances",
+    "tests/test_keyboard_teach_throughput.py: camera phase and joint selection regressions",
+    "README_ACT_XCORE.md: selection behavior and wired network entrypoint"
+  ],
+  "required_for_real_training": [
+    "Collect complete successful real demonstrations with both arms and the required suction operations.",
+    "Run check_teach_training.py with chunk-size 50, review images and IO timing, and exclude failed/incomplete demonstrations.",
+    "Export approved continuous segments to a new LeRobot dataset in the project training environment before running train_act.py."
+  ]
+}

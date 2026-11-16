@@ -1,0 +1,113 @@
+{
+  "scope": "Training-demonstration fit, NOT independent accuracy or live task success",
+  "checkpoints": [
+    {
+      "checkpoint": "/home/jj/code/ACT/model_outputs/act_far_current_recovery_20261113_03/checkpoints/001000/pretrained_model",
+      "sha256": "af60ccd4cfca37c420d1107e440c8fcb78904d22a28e802d39b4b5925a9055f9",
+      "datasets": [
+        {
+          "source": "/home/jj/code/ACT/prepared_data/far_current_success_recovery_20261113",
+          "samples": 153,
+          "valid_targets": 7458,
+          "left_joint_mae_deg": 0.16998958587646484,
+          "right_joint_mae_deg": 0.13172416388988495,
+          "joint_p95_deg": 0.5018375515937805,
+          "suction_error_fraction": [
+            0.019710378117457763,
+            0.0
+          ],
+          "suction_on_left_joint_mae_deg": 0.19869619607925415,
+          "joint_bound_violations": 0,
+          "nonfinite_predictions": 0
+        },
+        {
+          "source": "/home/jj/code/ACT/prepared_data/far_wired_contact_20261116",
+          "samples": 155,
+          "valid_targets": 7550,
+          "left_joint_mae_deg": 0.40677279233932495,
+          "right_joint_mae_deg": 0.34320899844169617,
+          "joint_p95_deg": 1.4864506721496582,
+          "suction_error_fraction": [
+            0.01695364238410596,
+            0.0
+          ],
+          "suction_on_left_joint_mae_deg": 0.5447791218757629,
+          "joint_bound_violations": 0,
+          "nonfinite_predictions": 0
+        }
+      ]
+    },
+    {
+      "checkpoint": "/home/jj/code/ACT/model_outputs/act_far_wired_contact_20261116_01/checkpoints/000250/pretrained_model",
+      "sha256": "4ba6798c4bbdc73aee52412a54e0e4cb507cb2ba2cfee928cafff05f809b3a6c",
+      "datasets": [
+        {
+          "source": "/home/jj/code/ACT/prepared_data/far_current_success_recovery_20261113",
+          "samples": 153,
+          "valid_targets": 7458,
+          "left_joint_mae_deg": 0.14241938292980194,
+          "right_joint_mae_deg": 0.1261625587940216,
+          "joint_p95_deg": 0.45930910110473633,
+          "suction_error_fraction": [
+            0.02064896755162242,
+            0.0
+          ],
+          "suction_on_left_joint_mae_deg": 0.14465835690498352,
+          "joint_bound_violations": 0,
+          "nonfinite_predictions": 0
+        },
+        {
+          "source": "/home/jj/code/ACT/prepared_data/far_wired_contact_20261116",
+          "samples": 155,
+          "valid_targets": 7550,
+          "left_joint_mae_deg": 0.17114552855491638,
+          "right_joint_mae_deg": 0.15615354478359222,
+          "joint_p95_deg": 0.5893427133560181,
+          "suction_error_fraction": [
+            0.01695364238410596,
+            0.0
+          ],
+          "suction_on_left_joint_mae_deg": 0.18768297135829926,
+          "joint_bound_violations": 0,
+          "nonfinite_predictions": 0
+        }
+      ]
+    },
+    {
+      "checkpoint": "/home/jj/code/ACT/model_outputs/act_far_wired_contact_20261116_01/checkpoints/000500/pretrained_model",
+      "sha256": "02f86aaf1bfdb4ed0dd22d134c1dcb771c3395fdc281fd2da369f5726243a940",
+      "datasets": [
+        {
+          "source": "/home/jj/code/ACT/prepared_data/far_current_success_recovery_20261113",
+          "samples": 153,
+          "valid_targets": 7458,
+          "left_joint_mae_deg": 0.14097273349761963,
+          "right_joint_mae_deg": 0.14211349189281464,
+          "joint_p95_deg": 0.502419650554657,
+          "suction_error_fraction": [
+            0.02038079914186109,
+            0.0
+          ],
+          "suction_on_left_joint_mae_deg": 0.12663137912750244,
+          "joint_bound_violations": 0,
+          "nonfinite_predictions": 0
+        },
+        {
+          "source": "/home/jj/code/ACT/prepared_data/far_wired_contact_20261116",
+          "samples": 155,
+          "valid_targets": 7550,
+          "left_joint_mae_deg": 0.165080264210701,
+          "right_joint_mae_deg": 0.1537199765443802,
+          "joint_p95_deg": 0.5947368741035461,
+          "suction_error_fraction": [
+            0.016556291390728478,
+            0.0
+          ],
+          "suction_on_left_joint_mae_deg": 0.17080534994602203,
+          "joint_bound_violations": 0,
+          "nonfinite_predictions": 0
+        }
+      ]
+    }
+  ]
+}

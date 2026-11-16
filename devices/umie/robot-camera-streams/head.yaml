@@ -1,0 +1,13 @@
+node_name: robot_head_camera
+cameras:
+  - name: head
+    backend: v4l2
+    # The D435i RGB module is USB interface 03. Its by-id links collide with
+    # the depth module on this controller, so resolve its sysfs identity.
+    usb_serial: "262923063591"
+    usb_interface: "03"
+    width: 640
+    height: 480
+    fps: 30
+    publish_fps: 20
+    jpeg_quality: 80

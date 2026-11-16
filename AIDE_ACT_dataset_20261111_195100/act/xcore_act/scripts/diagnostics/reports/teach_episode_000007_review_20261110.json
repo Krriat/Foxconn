@@ -1,0 +1,442 @@
+{
+  "path": "/home/jetson/AIDE_robot_main/assets/dataset/act_teach_keyboard_suction_30hz/episode_000007",
+  "saved_utc": "2026-11-10T08:43:05.678583+00:00",
+  "all_validation": "pass",
+  "frames": 262,
+  "images": {
+    "head": 262,
+    "left_wrist": 262,
+    "right_wrist": 262
+  },
+  "recording_summary": {
+    "elapsed_seconds": 68.74194255400289,
+    "frames": 262,
+    "target_fps": 30,
+    "saved_fps": 3.811355778812561,
+    "nominal_data_seconds": 8.733333333333333,
+    "gap_count": 6,
+    "stopped_reason": "keyboard save"
+  },
+  "first_sample_utc": "2026-11-10T08:42:00.873284+00:00",
+  "last_sample_utc": "2026-11-10T08:42:09.812484+00:00",
+  "saved_source_span_seconds": 8.939199209213257,
+  "source_span_fps": 29.197246184087525,
+  "sample_interval_ms_p50_p95_max": [
+    33.3554744720459,
+    33.3559513092041,
+    133.4223747253418
+  ],
+  "source_intervals_over_50ms": 4,
+  "max_source_skew_ms": 16.512155532836914,
+  "suction_feedback_age_ms_p50_p95_max": [
+    75.00195503234863,
+    147.54624366760248,
+    191.28870964050293
+  ],
+  "global_source_strictly_increasing": {
+    "left": true,
+    "right": true,
+    "head": true,
+    "left_wrist": true,
+    "right_wrist": true
+  },
+  "segments": [
+    {
+      "start": 0,
+      "end": 88,
+      "pause_reason": "图像/关节跳过了采集周期：left=73.6ms, right=73.6ms, head=66.7ms, left_wrist=66.7ms, right_wrist=66.7ms"
+    },
+    {
+      "start": 88,
+      "end": 102,
+      "pause_reason": "图像/关节跳过了采集周期：left=104.3ms, right=100.3ms, head=100.1ms, left_wrist=100.0ms, right_wrist=100.0ms"
+    },
+    {
+      "start": 102,
+      "end": 206,
+      "pause_reason": "图像/关节跳过了采集周期：left=66.2ms, right=66.5ms, head=66.7ms, left_wrist=66.7ms, right_wrist=66.7ms"
+    },
+    {
+      "start": 206,
+      "end": 261,
+      "pause_reason": "图像/关节跳过了采集周期：left=129.0ms, right=127.5ms, head=133.4ms, left_wrist=133.4ms, right_wrist=133.4ms"
+    },
+    {
+      "start": 261,
+      "end": 262,
+      "pause_reason": "right_wrist 反馈停止"
+    }
+  ],
+  "gaps": [
+    {
+      "after_frame": 0,
+      "reasons": [
+        "左右臂都必须处于 teaching 状态",
+        "切换回拖动示教关节反馈",
+        "left teaching: starting",
+        "right teaching: starting",
+        "图像/关节跳过了采集周期：left=3981.1ms, right=3976.8ms, head=3978.8ms, left_wrist=3990.4ms, right_wrist=3985.8ms"
+      ],
+      "start_elapsed_seconds": 0.0,
+      "end_elapsed_seconds": 4.067899286001193
+    },
+    {
+      "after_frame": 88,
+      "reasons": [
+        "图像/关节跳过了采集周期：left=73.6ms, right=73.6ms, head=66.7ms, left_wrist=66.7ms, right_wrist=66.7ms"
+      ],
+      "start_elapsed_seconds": 7.004809342335648,
+      "end_elapsed_seconds": 7.046903165002732
+    },
+    {
+      "after_frame": 102,
+      "reasons": [
+        "图像/关节跳过了采集周期：left=104.3ms, right=100.3ms, head=100.1ms, left_wrist=100.0ms, right_wrist=100.0ms"
+      ],
+      "start_elapsed_seconds": 7.520566933333612,
+      "end_elapsed_seconds": 7.578858132001187
+    },
+    {
+      "after_frame": 206,
+      "reasons": [
+        "图像/关节跳过了采集周期：left=66.2ms, right=66.5ms, head=66.7ms, left_wrist=66.7ms, right_wrist=66.7ms"
+      ],
+      "start_elapsed_seconds": 11.059568639335339,
+      "end_elapsed_seconds": 11.070524991999264
+    },
+    {
+      "after_frame": 261,
+      "reasons": [
+        "图像/关节跳过了采集周期：left=129.0ms, right=127.5ms, head=133.4ms, left_wrist=133.4ms, right_wrist=133.4ms"
+      ],
+      "start_elapsed_seconds": 12.921119904334773,
+      "end_elapsed_seconds": 13.011254708002525
+    },
+    {
+      "after_frame": 262,
+      "reasons": [
+        "right_wrist 反馈停止",
+        "键盘结束示教，等待下次 A 开启示教",
+        "left teaching: stopped",
+        "right teaching: stopped",
+        "左右臂都必须处于 teaching 状态",
+        "B 回位：等待示教退出及回位反馈就绪，随后继续同一条录制",
+        "等待 right 数据",
+        "left 反馈停止",
+        "right 反馈停止",
+        "head 反馈停止"
+      ],
+      "start_elapsed_seconds": 13.044588041335373,
+      "end_elapsed_seconds": 68.74194255400289
+    }
+  ],
+  "control_events": [
+    {
+      "key": "b",
+      "ros_timestamp": 1794300145.7523541,
+      "after_frame": 262,
+      "action": "return_to_saved_joints",
+      "joint_targets": {
+        "left": [
+          0.795451,
+          0.412276,
+          -0.585123,
+          1.905242,
+          0.530428,
+          0.246453,
+          0.198464
+        ],
+        "right": [
+          -0.671164,
+          0.310045,
+          0.326427,
+          1.877737,
+          -0.441627,
+          0.312674,
+          -0.45345
+        ]
+      }
+    },
+    {
+      "key": "b",
+      "ros_timestamp": 1794300158.0335877,
+      "after_frame": 262,
+      "action": "return_to_saved_joints",
+      "joint_targets": {
+        "left": [
+          0.795451,
+          0.412276,
+          -0.585123,
+          1.905242,
+          0.530428,
+          0.246453,
+          0.198464
+        ],
+        "right": [
+          -0.671164,
+          0.310045,
+          0.326427,
+          1.877737,
+          -0.441627,
+          0.312674,
+          -0.45345
+        ]
+      }
+    },
+    {
+      "key": "b",
+      "ros_timestamp": 1794300181.7964165,
+      "after_frame": 262,
+      "action": "return_to_saved_joints",
+      "joint_targets": {
+        "left": [
+          0.795451,
+          0.412276,
+          -0.585123,
+          1.905242,
+          0.530428,
+          0.246453,
+          0.198464
+        ],
+        "right": [
+          -0.671164,
+          0.310045,
+          0.326427,
+          1.877737,
+          -0.441627,
+          0.312674,
+          -0.45345
+        ]
+      }
+    }
+  ],
+  "writer": {
+    "written_frames": 262,
+    "written_bytes": 258822166,
+    "queue_capacity_frames": 64,
+    "image_workers": 3,
+    "png_encoder": "libdeflate_sub_1",
+    "queue_full_count": 0,
+    "peak_queue": 4,
+    "write_ms_p50_p95_max": [
+      72.70742450054968,
+      131.90930254786505,
+      178.2477460001246
+    ],
+    "queue_wait_ms_p95": 73.78243690072846
+  },
+  "suction": {
+    "left": {
+      "state": {
+        "initial": 1.0,
+        "last": 1.0,
+        "counts": {
+          "1": 262
+        },
+        "transitions": []
+      },
+      "action": {
+        "initial": 1.0,
+        "last": 0.0,
+        "counts": {
+          "0": 1,
+          "1": 261
+        },
+        "transitions": [
+          {
+            "frame": 261,
+            "source_elapsed_seconds": 8.939199209213257,
+            "value": 0.0
+          }
+        ]
+      },
+      "mismatch_frames": 1
+    },
+    "right": {
+      "state": {
+        "initial": 0.0,
+        "last": 0.0,
+        "counts": {
+          "0": 262
+        },
+        "transitions": []
+      },
+      "action": {
+        "initial": 0.0,
+        "last": 0.0,
+        "counts": {
+          "0": 262
+        },
+        "transitions": []
+      },
+      "mismatch_frames": 0
+    }
+  },
+  "joint_range_degrees": {
+    "left": [
+      29.105825424194336,
+      35.87754821777344,
+      12.403922080993652,
+      28.38824462890625,
+      26.315467834472656,
+      3.1336982250213623,
+      25.945627212524414
+    ],
+    "right": [
+      18.469974517822266,
+      27.22905158996582,
+      6.224922180175781,
+      10.277446746826172,
+      16.684221267700195,
+      9.464006423950195,
+      13.763300895690918
+    ]
+  },
+  "source_file_hashes_before": {
+    "episode.json": "c8f453ae3f62066b80c7ff55c761e9451f408ae7da7752213045811147d1c702",
+    "trajectory.npz": "9c68044768cdec576eeb08cdb200378b45c331e481727e59ef9584d84aa00b18"
+  },
+  "source_files_modified": false,
+  "workdir": "/tmp/aide-episode7-review-wqnn8jo0",
+  "segments_frames": [
+    88,
+    14,
+    104,
+    55,
+    1
+  ],
+  "diagnosis_zh": "作为完整双臂双吸盘任务示范不合格：实际只保存前8.94秒，录制末尾55.70秒无新帧。写盘队列未满。内核确认右腕USB 2-1.2先重置，后USB主控制器无响应并清理设备；具体线缆/HUB/供电/驱动原因未确定。",
+  "initial_wait_seconds": 4.067899286001193,
+  "final_no_new_frame_seconds": 55.697354512667516,
+  "all_control_events_after_last_saved_frame": true,
+  "return_motion_frames_saved": 0,
+  "suction_note_zh": "左吸盘state全1；action最后一帧由1变0，随后相机中断，未录到关断反馈；右吸盘state/action全0。command与反馈1帧不同可以是正常硬件响应延迟，本条没有后续帧验证，不能提供完整双吸盘开关示范。",
+  "visual_check_zh": "抽样查看8组同步三相机图，画面正常，覆盖手持末端接近/操作箱盖的前半程；不能据此证明完整任务完成。全部786张图已逐张解码并检查尺寸。",
+  "evidence": {
+    "camera_log": "/tmp/aide-teach-suction-si58a2vz/cameras.log",
+    "camera_events": [
+      {
+        "line": 103,
+        "text": "[realsense2_camera_node-3] [INFO] [1794300103.981517974] [robot.sensors.cameras.right_wrist]: Device Serial No: 261122274758"
+      },
+      {
+        "line": 6166,
+        "text": "[realsense2_camera_node-3] [ERROR] [1794300130.229760331] [robot.sensors.cameras.right_wrist]: The device has been disconnected!"
+      },
+      {
+        "line": 6185,
+        "text": "[realsense2_camera_node-3] [INFO] [1794300131.502862296] [robot.sensors.cameras.right_wrist]: Device Serial No: 261122274758"
+      },
+      {
+        "line": 6195,
+        "text": "[camera_manager-4] \u001b[0m[INFO] [1794300131.923223957] [robot.vision.camera_manager]: [right_wrist] state: STALE (stale streams: color, depth, aligned_depth)\u001b[0m"
+      },
+      {
+        "line": 6197,
+        "text": "[realsense2_camera_node-3] [WARN] [1794300136.791944174] [robot.sensors.cameras.right_wrist]: XXX Hardware Notification:Frames didn't arrived within 5 seconds,1.7943e+12,Warn,Frames Timeout"
+      },
+      {
+        "line": 6198,
+        "text": "[realsense2_camera_node-3]  10/11 08:42:16,861 ERROR [281472667908320] (librealsense-exception.h:53) xioctl(VIDIOC_STREAMON) failed for buf_type=1 Last Error: Input/output error"
+      },
+      {
+        "line": 6263,
+        "text": "[camera_manager-4] \u001b[0m[INFO] [1794300148.417854709] [robot.vision.camera_manager]: [head] state: STALE (stale streams: color, depth, aligned_depth)\u001b[0m"
+      },
+      {
+        "line": 6264,
+        "text": "[camera_manager-4] \u001b[0m[INFO] [1794300148.420214595] [robot.vision.camera_manager]: [left_wrist] state: STALE (stale streams: color, depth, aligned_depth)\u001b[0m"
+      },
+      {
+        "line": 6271,
+        "text": "[realsense2_camera_node-1] [WARN] [1794300151.032410139] [robot.sensors.cameras.head]: XXX Hardware Notification:Frames didn't arrived within 5 seconds,1.7943e+12,Warn,Frames Timeout"
+      },
+      {
+        "line": 6272,
+        "text": "[realsense2_camera_node-2] [WARN] [1794300151.032652787] [robot.sensors.cameras.left_wrist]: XXX Hardware Notification:Frames didn't arrived within 5 seconds,1.7943e+12,Warn,Frames Timeout"
+      },
+      {
+        "line": 6274,
+        "text": "[realsense2_camera_node-1] [WARN] [1794300151.039992149] [robot.sensors.cameras.head]: XXX Hardware Notification:Frames didn't arrived within 5 seconds,1.7943e+12,Warn,Frames Timeout"
+      },
+      {
+        "line": 6276,
+        "text": "[realsense2_camera_node-2] [WARN] [1794300151.045646354] [robot.sensors.cameras.left_wrist]: XXX Hardware Notification:Frames didn't arrived within 5 seconds,1.7943e+12,Warn,Frames Timeout"
+      },
+      {
+        "line": 6278,
+        "text": "[realsense2_camera_node-2] [WARN] [1794300156.037059284] [robot.sensors.cameras.left_wrist]: XXX Hardware Notification:Frames didn't arrived within 5 seconds,1.7943e+12,Warn,Frames Timeout"
+      },
+      {
+        "line": 6280,
+        "text": "[realsense2_camera_node-1] [WARN] [1794300156.037250510] [robot.sensors.cameras.head]: XXX Hardware Notification:Frames didn't arrived within 5 seconds,1.7943e+12,Warn,Frames Timeout"
+      },
+      {
+        "line": 6282,
+        "text": "[realsense2_camera_node-1] [WARN] [1794300156.041704983] [robot.sensors.cameras.head]: XXX Hardware Notification:Frames didn't arrived within 5 seconds,1.7943e+12,Warn,Frames Timeout"
+      },
+      {
+        "line": 6284,
+        "text": "[realsense2_camera_node-2] [WARN] [1794300156.049666889] [robot.sensors.cameras.left_wrist]: XXX Hardware Notification:Frames didn't arrived within 5 seconds,1.7943e+12,Warn,Frames Timeout"
+      },
+      {
+        "line": 6294,
+        "text": "[realsense2_camera_node-2] [WARN] [1794300161.041625661] [robot.sensors.cameras.left_wrist]: XXX Hardware Notification:Frames didn't arrived within 5 seconds,1.7943e+12,Warn,Frames Timeout"
+      },
+      {
+        "line": 6295,
+        "text": "[realsense2_camera_node-1] [WARN] [1794300161.043919153] [robot.sensors.cameras.head]: XXX Hardware Notification:Frames didn't arrived within 5 seconds,1.7943e+12,Warn,Frames Timeout"
+      },
+      {
+        "line": 6297,
+        "text": "[realsense2_camera_node-1] [WARN] [1794300161.045656663] [robot.sensors.cameras.head]: XXX Hardware Notification:Frames didn't arrived within 5 seconds,1.7943e+12,Warn,Frames Timeout"
+      },
+      {
+        "line": 6299,
+        "text": "[realsense2_camera_node-2] [WARN] [1794300161.053869894] [robot.sensors.cameras.left_wrist]: XXX Hardware Notification:Frames didn't arrived within 5 seconds,1.7943e+12,Warn,Frames Timeout"
+      },
+      {
+        "line": 37305,
+        "text": "[realsense2_camera_node-3] [ERROR] [1794300164.333054550] [robot.sensors.cameras.right_wrist]: The device has been disconnected!"
+      },
+      {
+        "line": 38920,
+        "text": "[realsense2_camera_node-2] [ERROR] [1794300164.365390768] [robot.sensors.cameras.left_wrist]: The device has been disconnected!"
+      },
+      {
+        "line": 39315,
+        "text": "[realsense2_camera_node-1] [ERROR] [1794300164.393038468] [robot.sensors.cameras.head]: The device has been disconnected!"
+      }
+    ],
+    "kernel_log": "/tmp/aide-episode7-review-wqnn8jo0/kernel.log",
+    "kernel_events": [
+      "2026-11-10T08:42:09+0000 tegra-ubuntu kernel: usb 2-1.2: Disable of device-initiated U1 failed.",
+      "2026-11-10T08:42:09+0000 tegra-ubuntu kernel: usb 2-1.2: Disable of device-initiated U2 failed.",
+      "2026-11-10T08:42:10+0000 tegra-ubuntu kernel: usb 2-1.2: reset SuperSpeed USB device number 8 using tegra-xusb",
+      "2026-11-10T08:42:43+0000 tegra-ubuntu kernel: tegra-xusb 3610000.usb: xHCI host not responding to stop endpoint command.",
+      "2026-11-10T08:42:43+0000 tegra-ubuntu kernel: tegra-xusb 3610000.usb: xHCI host controller not responding, assume dead",
+      "2026-11-10T08:42:43+0000 tegra-ubuntu kernel: tegra-xusb 3610000.usb: HC died; cleaning up",
+      "2026-11-10T08:42:43+0000 tegra-ubuntu kernel: usb 1-2: USB disconnect, device number 2",
+      "2026-11-10T08:42:43+0000 tegra-ubuntu kernel: usb 1-2.3: USB disconnect, device number 4",
+      "2026-11-10T08:42:43+0000 tegra-ubuntu kernel: usb 1-2.3.1: USB disconnect, device number 6",
+      "2026-11-10T08:42:43+0000 tegra-ubuntu kernel: pcan: err -108 when reading: is PCAN-USB #0 usb cable disconnected?",
+      "2026-11-10T08:42:43+0000 tegra-ubuntu kernel: pcan: err -108 when reading: is PCAN-USB #1 usb cable disconnected?",
+      "2026-11-10T08:42:43+0000 tegra-ubuntu kernel: usb 2-1: USB disconnect, device number 2",
+      "2026-11-10T08:42:43+0000 tegra-ubuntu kernel: usb 2-1.1: USB disconnect, device number 3",
+      "2026-11-10T08:42:43+0000 tegra-ubuntu kernel: usb 1-2.3.2: USB disconnect, device number 7",
+      "2026-11-10T08:42:43+0000 tegra-ubuntu kernel: cp210x ttyUSB0: cp210x converter now disconnected from ttyUSB0",
+      "2026-11-10T08:42:43+0000 tegra-ubuntu kernel: cp210x 1-2.3.2:1.0: device disconnected",
+      "2026-11-10T08:42:43+0000 tegra-ubuntu kernel: usb 1-2.3.3: USB disconnect, device number 8",
+      "2026-11-10T08:42:43+0000 tegra-ubuntu kernel: usb 1-2.4: USB disconnect, device number 5",
+      "2026-11-10T08:42:43+0000 tegra-ubuntu kernel: usb 1-3: USB disconnect, device number 3",
+      "2026-11-10T08:42:43+0000 tegra-ubuntu kernel: usb 2-1.2: USB disconnect, device number 8",
+      "2026-11-10T08:42:43+0000 tegra-ubuntu kernel: usb 2-1.3: USB disconnect, device number 5",
+      "2026-11-10T08:42:43+0000 tegra-ubuntu kernel: usb 2-1.4: USB disconnect, device number 6",
+      "2026-11-10T08:42:43+0000 tegra-ubuntu kernel: usb 2-1.4.1: USB disconnect, device number 7"
+    ],
+    "contact_sheet": "/tmp/aide-episode7-review-wqnn8jo0/contact.jpg",
+    "reviewed_source_modified": false,
+    "robot_or_DO_commands_sent": false,
+    "repository_implementation_modified": false
+  }
+}

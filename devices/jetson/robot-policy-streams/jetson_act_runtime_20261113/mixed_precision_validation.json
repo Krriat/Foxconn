@@ -1,0 +1,39 @@
+{
+  "precision": "TensorRT mixed precision",
+  "stages": {
+    "far": {
+      "cases": 12,
+      "max_joint_delta_rad": 0.0030825138092041016,
+      "mean_joint_delta_rad": 0.0001545052364235744,
+      "max_suction_delta": 0.00479242205619812,
+      "first10_max_joint_delta_rad": 0.0018492937088012695,
+      "passed": false,
+      "hysteresis_threshold_crossings": 0,
+      "timing": {
+        "median_ms": 33.4102695051115,
+        "p95_ms": 38.379705154511605,
+        "max_ms": 44.57815201021731,
+        "samples": 200
+      }
+    },
+    "near": {
+      "cases": 24,
+      "max_joint_delta_rad": 0.001958012580871582,
+      "mean_joint_delta_rad": 0.0001488711714046076,
+      "max_suction_delta": 0.009351491928100586,
+      "first10_max_joint_delta_rad": 0.0015431642532348633,
+      "passed": false,
+      "hysteresis_threshold_crossings": 0,
+      "timing": {
+        "median_ms": 33.99931199965067,
+        "p95_ms": 37.370197202108095,
+        "max_ms": 41.6676940076286,
+        "samples": 200
+      }
+    }
+  },
+  "hardware_commands": 0,
+  "passed": false,
+  "both_models_resident": true,
+  "timing": "RGB CPU preprocessing, GPU inference, native-unit postprocess, CPU result; excludes JPEG/ROS"
+}

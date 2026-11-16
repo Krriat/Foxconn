@@ -1,0 +1,1085 @@
+{
+  "generated_utc": "2026-11-11T07:46:00.490197+00:00",
+  "status": "native_cold_reconnect_180s_no_source_or_transport_gaps_PC_USB_log_pending",
+  "baseline_direct_wire_trace": {
+    "host": "192.168.50.20",
+    "source_fps": 30.0,
+    "seconds": 180.0106895880017,
+    "errors": [],
+    "cameras": {
+      "left_wrist": {
+        "frames": 5382,
+        "connections": 1,
+        "gaps": [
+          {
+            "capture_pc_utc_ns": 1794382703445221632,
+            "source_interval_ms": 66.68288,
+            "camera_counter_delta": 2,
+            "encoded_sequence_delta": 1,
+            "receipt_interval_ms": 67.228402,
+            "receive_elapsed_seconds": 0.6309905640009674
+          },
+          {
+            "capture_pc_utc_ns": 1794382719248851712,
+            "source_interval_ms": 66.6816,
+            "camera_counter_delta": 2,
+            "encoded_sequence_delta": 1,
+            "receipt_interval_ms": 66.544703,
+            "receive_elapsed_seconds": 16.4345204520032
+          },
+          {
+            "capture_pc_utc_ns": 1794382719615603712,
+            "source_interval_ms": 66.683136,
+            "camera_counter_delta": 2,
+            "encoded_sequence_delta": 1,
+            "receipt_interval_ms": 68.0395,
+            "receive_elapsed_seconds": 16.80226059800043
+          },
+          {
+            "capture_pc_utc_ns": 1794382720715868416,
+            "source_interval_ms": 100.022272,
+            "camera_counter_delta": 3,
+            "encoded_sequence_delta": 1,
+            "receipt_interval_ms": 99.846912,
+            "receive_elapsed_seconds": 17.901927523002087
+          },
+          {
+            "capture_pc_utc_ns": 1794382743221020672,
+            "source_interval_ms": 66.681344,
+            "camera_counter_delta": 2,
+            "encoded_sequence_delta": 1,
+            "receipt_interval_ms": 66.707719,
+            "receive_elapsed_seconds": 40.40736911100248
+          },
+          {
+            "capture_pc_utc_ns": 1794382759391365376,
+            "source_interval_ms": 66.682368,
+            "camera_counter_delta": 2,
+            "encoded_sequence_delta": 1,
+            "receipt_interval_ms": 67.306139,
+            "receive_elapsed_seconds": 56.57782352800132
+          },
+          {
+            "capture_pc_utc_ns": 1794382775795111680,
+            "source_interval_ms": 66.679808,
+            "camera_counter_delta": 2,
+            "encoded_sequence_delta": 1,
+            "receipt_interval_ms": 66.32528,
+            "receive_elapsed_seconds": 72.98101138000129
+          },
+          {
+            "capture_pc_utc_ns": 1794382793599224064,
+            "source_interval_ms": 66.680832,
+            "camera_counter_delta": 2,
+            "encoded_sequence_delta": 1,
+            "receipt_interval_ms": 66.676333,
+            "receive_elapsed_seconds": 90.78582636600186
+          },
+          {
+            "capture_pc_utc_ns": 1794382793799269888,
+            "source_interval_ms": 66.682112,
+            "camera_counter_delta": 2,
+            "encoded_sequence_delta": 1,
+            "receipt_interval_ms": 67.065913,
+            "receive_elapsed_seconds": 90.98584371600009
+          },
+          {
+            "capture_pc_utc_ns": 1794382794065996032,
+            "source_interval_ms": 133.362688,
+            "camera_counter_delta": 4,
+            "encoded_sequence_delta": 1,
+            "receipt_interval_ms": 132.717127,
+            "receive_elapsed_seconds": 91.25220842900308
+          },
+          {
+            "capture_pc_utc_ns": 1794382813003638784,
+            "source_interval_ms": 66.682112,
+            "camera_counter_delta": 2,
+            "encoded_sequence_delta": 1,
+            "receipt_interval_ms": 67.054842,
+            "receive_elapsed_seconds": 110.19096041100056
+          },
+          {
+            "capture_pc_utc_ns": 1794382813903841792,
+            "source_interval_ms": 66.681856,
+            "camera_counter_delta": 2,
+            "encoded_sequence_delta": 1,
+            "receipt_interval_ms": 66.171232,
+            "receive_elapsed_seconds": 111.0941318740006
+          },
+          {
+            "capture_pc_utc_ns": 1794382816737841920,
+            "source_interval_ms": 66.683136,
+            "camera_counter_delta": 2,
+            "encoded_sequence_delta": 1,
+            "receipt_interval_ms": 66.63931,
+            "receive_elapsed_seconds": 113.92518748400107
+          },
+          {
+            "capture_pc_utc_ns": 1794382830674353152,
+            "source_interval_ms": 66.682624,
+            "camera_counter_delta": 2,
+            "encoded_sequence_delta": 1,
+            "receipt_interval_ms": 66.413961,
+            "receive_elapsed_seconds": 127.8608635260025
+          },
+          {
+            "capture_pc_utc_ns": 1794382843210612480,
+            "source_interval_ms": 66.682624,
+            "camera_counter_delta": 2,
+            "encoded_sequence_delta": 1,
+            "receipt_interval_ms": 67.514956,
+            "receive_elapsed_seconds": 140.39851194600124
+          },
+          {
+            "capture_pc_utc_ns": 1794382866049210624,
+            "source_interval_ms": 66.682112,
+            "camera_counter_delta": 2,
+            "encoded_sequence_delta": 1,
+            "receipt_interval_ms": 66.552177,
+            "receive_elapsed_seconds": 163.23670232800214
+          },
+          {
+            "capture_pc_utc_ns": 1794382866515990528,
+            "source_interval_ms": 100.02176,
+            "camera_counter_delta": 3,
+            "encoded_sequence_delta": 1,
+            "receipt_interval_ms": 99.867611,
+            "receive_elapsed_seconds": 163.70358043000306
+          }
+        ],
+        "receive_hz": 29.895164338104887,
+        "source_interval_ms_p50_p95_max": [
+          33.340928,
+          33.341696,
+          133.362688
+        ],
+        "missing_native_frame_counters": 21,
+        "missing_encoded_sequences": 0
+      },
+      "right_wrist": {
+        "frames": 5403,
+        "connections": 1,
+        "gaps": [],
+        "receive_hz": 30.01245374223923,
+        "source_interval_ms_p50_p95_max": [
+          33.341184,
+          33.34144,
+          33.341952
+        ],
+        "missing_native_frame_counters": 0,
+        "missing_encoded_sequences": 0
+      }
+    },
+    "physical_arms": false,
+    "physical_IO": false,
+    "image_files_written": false
+  },
+  "right_selection_explanation": {
+    "saved_frame_1_based": 314,
+    "head_step_ms": 66.71619415283203,
+    "previous_selected_right_utc": 1794382055.0355737,
+    "head_reference_utc": 1794382055.1189342,
+    "candidates": [
+      {
+        "right_capture_utc": 1794382055.1022563,
+        "difference_to_head_ms": 16.6778564453125,
+        "step_from_previous_selected_ms": 66.68257713317871,
+        "combined_source_skew_ms": 16.6778564453125,
+        "alignment_score_ms": 36.141157150268555,
+        "actually_selected": false
+      },
+      {
+        "right_capture_utc": 1794382055.1355968,
+        "difference_to_head_ms": 16.66259765625,
+        "step_from_previous_selected_ms": 100.02303123474121,
+        "combined_source_skew_ms": 25.633573532104492,
+        "alignment_score_ms": 36.125898361206055,
+        "actually_selected": true
+      }
+    ],
+    "cause": "Nearest-time score changes which side of a 30Hz exposure is preferred as camera phases drift. A 66.7ms head step crosses the midpoint, so the chosen right source advances 100ms even though the intervening source frames were received. The alternative continuous source satisfies the unchanged 50ms synchronization bound."
+  },
+  "PC_package_smoke_test": {
+    "status": "passed",
+    "synthetic_only": true,
+    "images_received": {
+      "left_wrist": 12,
+      "right_wrist": 12
+    },
+    "trace_summary": {
+      "stage": "trace_summary",
+      "written": 100,
+      "dropped": 0
+    },
+    "work": "/tmp/aide-pc-diag-package-smoke-134piw7p"
+  },
+  "unit_tests_passed": 13,
+  "code_changes": [
+    "diagnostics/trace_network_wrists.py: read-only raw wire counter trace",
+    "recording/network_cameras/pc_camera_server.py: optional capture/encode/send timing diagnostics",
+    "recording/network_cameras/capture_trace.py: bounded asynchronous metadata logging",
+    "recording/network_cameras/diagnose_pc_cameras.sh: PC diagnostic launch and USB/kernel logs",
+    "recording/network_cameras/README.md: diagnostic instructions",
+    "tests/test_network_wrist_cameras.py: trace bounds, draining and optional timing coverage",
+    "recording/network_cameras/dist/aide_pc_wrist_cameras.zip: updated PC bundle"
+  ],
+  "physical_arm_connections": false,
+  "physical_suction_IO": false,
+  "production_dataset_modified": false,
+  "recorder_matching_logic_modified": false,
+  "limitations": [
+    "Need new PC sender timing fields and PC kernel logs to distinguish USB, SDK synchronization and delayed frame retrieval.",
+    "Camera native counter jumps do not establish physical camera or cable failure."
+  ],
+  "protected_files_unchanged": 19,
+  "camera_timestamp_only_replay": {
+    "current_nearest_camera_score": {
+      "frames": 1195,
+      "max_source_skew_ms": 41.08476638793945,
+      "intervals_over_80ms": {
+        "head": 0,
+        "left_wrist": 0,
+        "right_wrist": 1
+      },
+      "source_max_interval_ms": {
+        "head": 66.71690940856934,
+        "left_wrist": 66.72477722167969,
+        "right_wrist": 100.02303123474121
+      }
+    },
+    "continuity_preference_prototype": {
+      "frames": 1195,
+      "max_source_skew_ms": 41.08476638793945,
+      "intervals_over_80ms": {
+        "head": 0,
+        "left_wrist": 0,
+        "right_wrist": 0
+      },
+      "source_max_interval_ms": {
+        "head": 66.71690940856934,
+        "left_wrist": 66.72477722167969,
+        "right_wrist": 66.73216819763184
+      }
+    },
+    "scope": "Offline camera-timestamp-only counterfactual on recorded input. No images or joint/IO labels were changed, and production matching code was not modified. A full recorder regression and live test would be required before adopting a change."
+  },
+  "PC_startup_error_from_user": "start_pc_cameras.sh preflight: virtual environment incomplete; setup_pc.sh repair requested. No PC capture trace has started.",
+  "latest_PC_diagnostics_directory_from_user": "/home/umie/aide_pc_wrist_cameras/diagnostics/camera-trace-6giUAiQy",
+  "instrumented_PC_wire_trace": {
+    "host": "192.168.50.20",
+    "source_fps": 30.0,
+    "seconds": 180.02250438400006,
+    "errors": [],
+    "cameras": {
+      "left_wrist": {
+        "frames": 5397,
+        "connections": 1,
+        "gaps": [
+          {
+            "capture_pc_utc_ns": 1794383475331011840,
+            "source_interval_ms": 66.682368,
+            "camera_counter_delta": 2,
+            "encoded_sequence_delta": 1,
+            "receipt_interval_ms": 67.214953,
+            "receive_elapsed_seconds": 5.67993588399986
+          },
+          {
+            "capture_pc_utc_ns": 1794383546283986176,
+            "source_interval_ms": 66.684928,
+            "camera_counter_delta": 2,
+            "encoded_sequence_delta": 1,
+            "receipt_interval_ms": 66.122121,
+            "receive_elapsed_seconds": 76.62874264399943
+          },
+          {
+            "capture_pc_utc_ns": 1794383565622593280,
+            "source_interval_ms": 66.68544,
+            "camera_counter_delta": 2,
+            "encoded_sequence_delta": 1,
+            "receipt_interval_ms": 66.989989,
+            "receive_elapsed_seconds": 95.96800043599796
+          },
+          {
+            "capture_pc_utc_ns": 1794383565722621184,
+            "source_interval_ms": 66.68544,
+            "camera_counter_delta": 2,
+            "encoded_sequence_delta": 1,
+            "receipt_interval_ms": 66.329777,
+            "receive_elapsed_seconds": 96.06735877699975
+          },
+          {
+            "capture_pc_utc_ns": 1794383565889333504,
+            "source_interval_ms": 66.684672,
+            "camera_counter_delta": 2,
+            "encoded_sequence_delta": 1,
+            "receipt_interval_ms": 67.220492,
+            "receive_elapsed_seconds": 96.23462243099857
+          },
+          {
+            "capture_pc_utc_ns": 1794383638408846592,
+            "source_interval_ms": 66.68544,
+            "camera_counter_delta": 2,
+            "encoded_sequence_delta": 1,
+            "receipt_interval_ms": 66.066955,
+            "receive_elapsed_seconds": 168.75099743800092
+          },
+          {
+            "capture_pc_utc_ns": 1794383638875643648,
+            "source_interval_ms": 66.68544,
+            "camera_counter_delta": 2,
+            "encoded_sequence_delta": 1,
+            "receipt_interval_ms": 67.084617,
+            "receive_elapsed_seconds": 169.2186885819974
+          }
+        ],
+        "receive_hz": 29.976315616203028,
+        "source_interval_ms_p50_p95_max": [
+          33.342464,
+          33.343232,
+          66.68544
+        ]
+      },
+      "right_wrist": {
+        "frames": 5403,
+        "connections": 1,
+        "gaps": [],
+        "receive_hz": 30.010194278335327,
+        "source_interval_ms_p50_p95_max": [
+          33.34272,
+          33.343232,
+          33.344256
+        ]
+      }
+    },
+    "physical_arms": false,
+    "physical_IO": false,
+    "image_files_written": false
+  },
+  "PC_capture_stage_analysis": {
+    "left_wrist": {
+      "frames": 5397,
+      "instrumented_frames": 5397,
+      "native_gap_events": [
+        {
+          "capture_pc_utc_ns": 1794383475331011840,
+          "native_counter_step": 2,
+          "encoded_sequence_step": 1,
+          "source_interval_ms": 66.682368,
+          "receipt_interval_ms": 67.214953,
+          "previous_encode_ms": 14.066646,
+          "previous_processing_ms": 14.116041,
+          "current_wait_ms": 52.507381,
+          "current_encode_ms": 14.597031,
+          "SDK_return_counter_delta": 2,
+          "capture_return_interval_ms": 66.623422,
+          "interpretation": "SDK returned nonconsecutive native frames despite prompt next wait; inspect SDK/USB/source"
+        },
+        {
+          "capture_pc_utc_ns": 1794383546283986176,
+          "native_counter_step": 2,
+          "encoded_sequence_step": 1,
+          "source_interval_ms": 66.684928,
+          "receipt_interval_ms": 66.122121,
+          "previous_encode_ms": 13.746955,
+          "previous_processing_ms": 13.80213,
+          "current_wait_ms": 52.902609,
+          "current_encode_ms": 13.190613,
+          "SDK_return_counter_delta": 2,
+          "capture_return_interval_ms": 66.704739,
+          "interpretation": "SDK returned nonconsecutive native frames despite prompt next wait; inspect SDK/USB/source"
+        },
+        {
+          "capture_pc_utc_ns": 1794383565622593280,
+          "native_counter_step": 2,
+          "encoded_sequence_step": 1,
+          "source_interval_ms": 66.68544,
+          "receipt_interval_ms": 66.989989,
+          "previous_encode_ms": 13.907184,
+          "previous_processing_ms": 13.958281,
+          "current_wait_ms": 52.735524,
+          "current_encode_ms": 14.463303,
+          "SDK_return_counter_delta": 2,
+          "capture_return_interval_ms": 66.693805,
+          "interpretation": "SDK returned nonconsecutive native frames despite prompt next wait; inspect SDK/USB/source"
+        },
+        {
+          "capture_pc_utc_ns": 1794383565722621184,
+          "native_counter_step": 2,
+          "encoded_sequence_step": 1,
+          "source_interval_ms": 66.68544,
+          "receipt_interval_ms": 66.329777,
+          "previous_encode_ms": 14.066366,
+          "previous_processing_ms": 14.121812,
+          "current_wait_ms": 52.560641,
+          "current_encode_ms": 13.559189,
+          "SDK_return_counter_delta": 2,
+          "capture_return_interval_ms": 66.682453,
+          "interpretation": "SDK returned nonconsecutive native frames despite prompt next wait; inspect SDK/USB/source"
+        },
+        {
+          "capture_pc_utc_ns": 1794383565889333504,
+          "native_counter_step": 2,
+          "encoded_sequence_step": 1,
+          "source_interval_ms": 66.684672,
+          "receipt_interval_ms": 67.220492,
+          "previous_encode_ms": 13.529523,
+          "previous_processing_ms": 13.581252,
+          "current_wait_ms": 53.098837,
+          "current_encode_ms": 14.059213,
+          "SDK_return_counter_delta": 2,
+          "capture_return_interval_ms": 66.680089,
+          "interpretation": "SDK returned nonconsecutive native frames despite prompt next wait; inspect SDK/USB/source"
+        },
+        {
+          "capture_pc_utc_ns": 1794383638408846592,
+          "native_counter_step": 2,
+          "encoded_sequence_step": 1,
+          "source_interval_ms": 66.68544,
+          "receipt_interval_ms": 66.066955,
+          "previous_encode_ms": 13.576833,
+          "previous_processing_ms": 13.629845,
+          "current_wait_ms": 53.023522,
+          "current_encode_ms": 13.217751,
+          "SDK_return_counter_delta": 2,
+          "capture_return_interval_ms": 66.653367,
+          "interpretation": "SDK returned nonconsecutive native frames despite prompt next wait; inspect SDK/USB/source"
+        },
+        {
+          "capture_pc_utc_ns": 1794383638875643648,
+          "native_counter_step": 2,
+          "encoded_sequence_step": 1,
+          "source_interval_ms": 66.68544,
+          "receipt_interval_ms": 67.084617,
+          "previous_encode_ms": 13.130064,
+          "previous_processing_ms": 13.153358,
+          "current_wait_ms": 53.738133,
+          "current_encode_ms": 13.330696,
+          "SDK_return_counter_delta": 2,
+          "capture_return_interval_ms": 66.891491,
+          "interpretation": "SDK returned nonconsecutive native frames despite prompt next wait; inspect SDK/USB/source"
+        }
+      ],
+      "missing_native_frames": 7,
+      "missing_encoded_sequences": 0,
+      "encode_ms_p50_p95_max": [
+        13.571019,
+        14.4639818,
+        18.442196
+      ],
+      "wait_ms_p50_p95_max": [
+        19.71085,
+        20.2021652,
+        53.738133
+      ],
+      "previous_processing_ms_p50_p95_max": [
+        13.616463,
+        14.509644,
+        18.511297
+      ],
+      "capture_return_interval_ms_p50_p95_max": [
+        33.34152,
+        33.5973276,
+        66.891491
+      ]
+    },
+    "right_wrist": {
+      "frames": 5403,
+      "instrumented_frames": 5403,
+      "native_gap_events": [],
+      "missing_native_frames": 0,
+      "missing_encoded_sequences": 0,
+      "encode_ms_p50_p95_max": [
+        13.532402,
+        14.2549934,
+        19.070135
+      ],
+      "wait_ms_p50_p95_max": [
+        19.7501,
+        20.3032177,
+        21.042556
+      ],
+      "previous_processing_ms_p50_p95_max": [
+        13.579945,
+        14.306509299999998,
+        19.137434
+      ],
+      "capture_return_interval_ms_p50_p95_max": [
+        33.340687,
+        33.697609199999995,
+        34.526045
+      ]
+    }
+  },
+  "PC_diagnostic_trace_from_user": "/home/umie/aide_pc_wrist_cameras/diagnostics/camera-trace-ajxtuJ09/capture_20261111T075013Z_1b2d094f.jsonl",
+  "PC_USB_topology_from_user": {
+    "kernel": "6.8.0-124-generic Ubuntu 22.04 x86_64",
+    "D405_devices": [
+      "Bus 006 Device 003",
+      "Bus 006 Device 004"
+    ],
+    "D405_negotiated_Mbps": 5000,
+    "shared_hub": {
+      "id": "05e3:0626",
+      "name": "Genesys Logic USB3.1 Hub",
+      "bus_device": "Bus 006 Device 002",
+      "upstream_Mbps": 5000
+    },
+    "USB_paths": [
+      "6-2.1",
+      "6-2.2"
+    ],
+    "serial_to_USB_path_mapping": "not yet available"
+  },
+  "PC_kernel_errors_from_user": [
+    {
+      "monotonic_seconds": 27040.707423,
+      "path": "6-2.1:1.1",
+      "status": -71,
+      "UTC": "2026-11-11T07:50:14.227082+00:00"
+    },
+    {
+      "monotonic_seconds": 27040.715547,
+      "path": "6-2.1:1.3",
+      "status": -71,
+      "UTC": "2026-11-11T07:50:14.235185+00:00"
+    },
+    {
+      "monotonic_seconds": 27040.786426,
+      "path": "6-2.2:1.1",
+      "status": -71,
+      "UTC": "2026-11-11T07:50:14.306076+00:00"
+    }
+  ],
+  "USB_error_interpretation": {
+    "linux_errno_71": "EPROTO",
+    "official_reference": "https://docs.kernel.org/driver-api/usb/error-codes.html",
+    "meaning": "USB protocol/response error; Linux docs associate EPROTO with device/firmware/cable issues. Shared hub/path/power must also be considered.",
+    "limitation": "Absolute timestamps are required to determine whether these errors occurred only during startup or at actual recording gaps. Do not assume temporal causality from the current monotonic-only excerpt.",
+    "time_correlation": "All three USB protocol errors occurred at startup (07:50:14 UTC), not during the seven measured SDK frame gaps (07:51:15 through 07:53:58 UTC). The kernel excerpt shows no errors at the actual gaps. This does not rule out USB faults without kernel messages, but it does not establish USB-error causality for this run."
+  },
+  "updated_utc": "2026-11-11T08:25:31.082772+00:00",
+  "next_control": {
+    "change": "Inspect complete new native-port PC kernel/capture logs, then decide whether a clean A-B-A return-to-HUB control is necessary.",
+    "camera_and_cable_unchanged": true,
+    "recorder_or_motion_configuration_change": false
+  },
+  "right_selection_root_cause_summary": "At the observed boundary, choosing a right exposure only 15.26 microseconds nearer to the head reference changed a valid ~66.68ms right-source step into 100.02ms. Offline camera-timestamp replay eliminated this selection gap with a continuity preference, with the same 1195 frames and unchanged maximum skew 41.08ms. Production recorder logic was not changed.",
+  "native_USB_control_attempt": {
+    "left_USB_path": "6-1",
+    "left_USB_speed_Mbps": 5000,
+    "right_USB_path": "6-2.1",
+    "right_still_behind_HUB": true,
+    "PC_new_server_error": "EADDRINUSE: TCP 9800 still held by old diagnostic server",
+    "old_server_probe": {
+      "left_wrist": {
+        "type": "waiting",
+        "reason": "xioctl(VIDIOC_S_FMT) failed, errno=5 Last Error: Input/output error",
+        "clock_epoch": "bb545ab1c3024a73b53493e3d8e76c09",
+        "pc_utc_ns": 1794384047674435206
+      },
+      "right_wrist": {
+        "type": "frame",
+        "camera": "right_wrist",
+        "serial": "261122274758",
+        "clock_epoch": "bb545ab1c3024a73b53493e3d8e76c09",
+        "capture_utc_ns": 1794384047546904832,
+        "camera_frame_number": 18977,
+        "width": 640,
+        "height": 480,
+        "encoding": "rgb8",
+        "codec": "png",
+        "synthetic": false,
+        "timestamp_source": "camera_global_time",
+        "pc_capture_trace": {
+          "capture_session": "fe440702dd8448a190af9fa31594eda7",
+          "wait_ms": 19.555093,
+          "previous_processing_ms": 13.775456,
+          "capture_return_interval_ms": 33.330549,
+          "camera_counter_delta": 1,
+          "capture_return_utc_ns": 1794384047555736246,
+          "encode_ms": 13.456925
+        },
+        "sequence": 18699,
+        "pc_send_utc_ns": 1794384047675775415
+      }
+    },
+    "left_error": "xioctl(VIDIOC_S_FMT) failed, errno=5 Last Error: Input/output error",
+    "valid_comparison": false,
+    "reason": "Old server was still streaming right camera after left hotplug; left SDK was retrying. No native-port comparison recording started."
+  },
+  "required_PC_action": "After Ctrl+C closes the PC diagnostic writer, copy camera-trace-6giUAiQy into /tmp/aide-camera-trace-gj_y9nzw/pc_logs/ for complete USB startup/runtime correlation.",
+  "native_USB_clean_restart_from_user": {
+    "PC_diagnostics_directory": "/home/umie/aide_pc_wrist_cameras/diagnostics/camera-trace-Py4Oq7qr",
+    "trace": "capture_20261111T080207Z_83849361.jsonl",
+    "PC_server_listened": true,
+    "both_D405_enumerated_USB": "3.2",
+    "left_serial": "352122274013",
+    "right_serial": "261122274758",
+    "left_wait_for_frames_timeout_ms": 2000,
+    "left_retries_shown": 5,
+    "actual_native_port_frame_trace_completed": false,
+    "Jetson_probe": {
+      "left_wrist": [
+        {
+          "error": "[Errno 111] Connection refused"
+        }
+      ],
+      "right_wrist": [
+        {
+          "error": "[Errno 111] Connection refused"
+        }
+      ]
+    },
+    "interpretation": "Failure occurs at PC SDK frame acquisition, before PNG compression or network transmission. Fresh application restart did not restore left frames with the native USB wiring; USB/kernel evidence and a clean device reconnect are needed before assigning camera/cable/port cause."
+  },
+  "native_USB_failure_kernel_from_user": [
+    {
+      "monotonic_seconds": 27754.64035,
+      "USB_path": "6-2.1:1.1",
+      "status": -71
+    },
+    {
+      "monotonic_seconds": 27754.648458,
+      "USB_path": "6-2.1:1.3",
+      "status": -71
+    },
+    {
+      "monotonic_seconds": 27759.223581,
+      "USB_path": "6-1:1.1",
+      "status": -71
+    },
+    {
+      "monotonic_seconds": 27759.231658,
+      "USB_path": "6-1:1.3",
+      "status": -71
+    },
+    {
+      "monotonic_seconds": 27763.889572,
+      "USB_path": "6-1:1.1",
+      "status": -71
+    },
+    {
+      "monotonic_seconds": 27763.897688,
+      "USB_path": "6-1:1.3",
+      "status": -71
+    },
+    {
+      "monotonic_seconds": 27768.451732,
+      "USB_path": "6-1:1.1",
+      "status": -71
+    },
+    {
+      "monotonic_seconds": 27768.459871,
+      "USB_path": "6-1:1.3",
+      "status": -71
+    },
+    {
+      "monotonic_seconds": 27773.015124,
+      "USB_path": "6-1:1.1",
+      "status": -71
+    },
+    {
+      "monotonic_seconds": 27773.023247,
+      "USB_path": "6-1:1.3",
+      "status": -71
+    }
+  ],
+  "native_USB_failure_kernel_caveat": "The ~4.6 second protocol-error recurrence resembles the capture timeout/retry/stop-start cycle. Compare the capture_exception monotonic timestamps against kernel errors before calling the USB errors a cause rather than a teardown consequence.",
+  "native_failure_complete_PC_logs": {
+    "source": "/tmp/aide-camera-trace-gj_y9nzw/pc_logs/camera-trace-Py4Oq7qr",
+    "trace_records": 1268,
+    "event_counts": {
+      "left_wrist": {
+        "capture_exception": 5
+      },
+      "right_wrist": {
+        "capture": 631,
+        "timestamp_guard_rejected": 277,
+        "encoded": 354
+      }
+    },
+    "trace_footer": [
+      {
+        "stage": "trace_summary",
+        "written": 1267,
+        "dropped": 0
+      }
+    ],
+    "left_exceptions": [
+      {
+        "monotonic_seconds": 27756.338057156,
+        "Beijing": "2026-11-11T16:02:10.132814+08:00",
+        "error": "Frame didn't arrive within 2000"
+      },
+      {
+        "monotonic_seconds": 27760.885845087,
+        "Beijing": "2026-11-11T16:02:14.680604+08:00",
+        "error": "Frame didn't arrive within 2000"
+      },
+      {
+        "monotonic_seconds": 27765.616753919,
+        "Beijing": "2026-11-11T16:02:19.411512+08:00",
+        "error": "Frame didn't arrive within 2000"
+      },
+      {
+        "monotonic_seconds": 27770.178999169,
+        "Beijing": "2026-11-11T16:02:23.973757+08:00",
+        "error": "Frame didn't arrive within 2000"
+      },
+      {
+        "monotonic_seconds": 27774.742306313,
+        "Beijing": "2026-11-11T16:02:28.537064+08:00",
+        "error": "Frame didn't arrive within 2000"
+      }
+    ],
+    "kernel_errors": [
+      {
+        "kernel_monotonic_seconds": 27754.64035,
+        "USB_path": "6-2.1",
+        "interface": "1.1",
+        "status": -71
+      },
+      {
+        "kernel_monotonic_seconds": 27754.648458,
+        "USB_path": "6-2.1",
+        "interface": "1.3",
+        "status": -71
+      },
+      {
+        "kernel_monotonic_seconds": 27759.223581,
+        "USB_path": "6-1",
+        "interface": "1.1",
+        "status": -71,
+        "nearest_left_exception": {
+          "stage": "capture_exception",
+          "trace_utc_ns": 1794384134680603454,
+          "trace_monotonic_ns": 27760885845087,
+          "camera": "left_wrist",
+          "capture_session": "6959f6ca2f9749c3a9145a9a2a44d556",
+          "error": "Frame didn't arrive within 2000"
+        },
+        "kernel_minus_exception_ms": -1662.264087000949
+      },
+      {
+        "kernel_monotonic_seconds": 27759.231658,
+        "USB_path": "6-1",
+        "interface": "1.3",
+        "status": -71,
+        "nearest_left_exception": {
+          "stage": "capture_exception",
+          "trace_utc_ns": 1794384134680603454,
+          "trace_monotonic_ns": 27760885845087,
+          "camera": "left_wrist",
+          "capture_session": "6959f6ca2f9749c3a9145a9a2a44d556",
+          "error": "Frame didn't arrive within 2000"
+        },
+        "kernel_minus_exception_ms": -1654.1870869987179
+      },
+      {
+        "kernel_monotonic_seconds": 27763.889572,
+        "USB_path": "6-1",
+        "interface": "1.1",
+        "status": -71,
+        "nearest_left_exception": {
+          "stage": "capture_exception",
+          "trace_utc_ns": 1794384139411511755,
+          "trace_monotonic_ns": 27765616753919,
+          "camera": "left_wrist",
+          "capture_session": "426274cef7e24f28b060f562bc13acfe",
+          "error": "Frame didn't arrive within 2000"
+        },
+        "kernel_minus_exception_ms": -1727.181918999122
+      },
+      {
+        "kernel_monotonic_seconds": 27763.897688,
+        "USB_path": "6-1",
+        "interface": "1.3",
+        "status": -71,
+        "nearest_left_exception": {
+          "stage": "capture_exception",
+          "trace_utc_ns": 1794384139411511755,
+          "trace_monotonic_ns": 27765616753919,
+          "camera": "left_wrist",
+          "capture_session": "426274cef7e24f28b060f562bc13acfe",
+          "error": "Frame didn't arrive within 2000"
+        },
+        "kernel_minus_exception_ms": -1719.0659189982398
+      },
+      {
+        "kernel_monotonic_seconds": 27768.451732,
+        "USB_path": "6-1",
+        "interface": "1.1",
+        "status": -71,
+        "nearest_left_exception": {
+          "stage": "capture_exception",
+          "trace_utc_ns": 1794384143973756765,
+          "trace_monotonic_ns": 27770178999169,
+          "camera": "left_wrist",
+          "capture_session": "e06a1a067b6c4a52bd90f0c2fcfe36b5",
+          "error": "Frame didn't arrive within 2000"
+        },
+        "kernel_minus_exception_ms": -1727.2671689970593
+      },
+      {
+        "kernel_monotonic_seconds": 27768.459871,
+        "USB_path": "6-1",
+        "interface": "1.3",
+        "status": -71,
+        "nearest_left_exception": {
+          "stage": "capture_exception",
+          "trace_utc_ns": 1794384143973756765,
+          "trace_monotonic_ns": 27770178999169,
+          "camera": "left_wrist",
+          "capture_session": "e06a1a067b6c4a52bd90f0c2fcfe36b5",
+          "error": "Frame didn't arrive within 2000"
+        },
+        "kernel_minus_exception_ms": -1719.1281689993048
+      },
+      {
+        "kernel_monotonic_seconds": 27773.015124,
+        "USB_path": "6-1",
+        "interface": "1.1",
+        "status": -71,
+        "nearest_left_exception": {
+          "stage": "capture_exception",
+          "trace_utc_ns": 1794384148537064049,
+          "trace_monotonic_ns": 27774742306313,
+          "camera": "left_wrist",
+          "capture_session": "2937c947653b491ea72fd5dfd5fb86e3",
+          "error": "Frame didn't arrive within 2000"
+        },
+        "kernel_minus_exception_ms": -1727.1823129995028
+      },
+      {
+        "kernel_monotonic_seconds": 27773.023247,
+        "USB_path": "6-1",
+        "interface": "1.3",
+        "status": -71,
+        "nearest_left_exception": {
+          "stage": "capture_exception",
+          "trace_utc_ns": 1794384148537064049,
+          "trace_monotonic_ns": 27774742306313,
+          "camera": "left_wrist",
+          "capture_session": "2937c947653b491ea72fd5dfd5fb86e3",
+          "error": "Frame didn't arrive within 2000"
+        },
+        "kernel_minus_exception_ms": -1719.0593129998888
+      }
+    ]
+  },
+  "native_failure_order_interpretation": {
+    "left_frame_count": 0,
+    "right_frame_count": 631,
+    "left_timeouts": 5,
+    "kernel_error_precedes_next_timeout_ms": [
+      -1662.264087000949,
+      -1654.1870869987179,
+      -1727.181918999122,
+      -1719.0659189982398,
+      -1727.2671689970593,
+      -1719.1281689993048,
+      -1727.1823129995028,
+      -1719.0593129998888
+    ],
+    "caveat": "Left protocol errors precede the next 2s timeout by about 1.65–1.73s during repeated pipeline restarts; the right camera also reports startup EPROTO while producing frames. These errors alone do not identify a defective camera or cable."
+  },
+  "native_USB_cold_reconnect": {
+    "same_left_camera": "352122274013",
+    "same_cable": true,
+    "same_native_port": true,
+    "USB_unplug_seconds_requested": 10,
+    "PC_restart_output_received": true,
+    "PC_trace": "capture_20261111T081452Z_744052bf.jsonl",
+    "both_actual_frame_streams_recovered": true,
+    "local_artifacts": "/tmp/aide-camera-trace-gj_y9nzw/native_cold_reconnect_stream",
+    "production_or_motion_changes": false,
+    "wire_trace": {
+      "host": "192.168.50.20",
+      "source_fps": 30.0,
+      "seconds": 180.03119754900035,
+      "errors": [],
+      "cameras": {
+        "left_wrist": {
+          "frames": 5404,
+          "connections": 1,
+          "gaps": [],
+          "receive_hz": 30.01375285617152,
+          "source_interval_ms_p50_p95_max": [
+            33.34144,
+            33.341696,
+            33.34272
+          ]
+        },
+        "right_wrist": {
+          "frames": 5404,
+          "connections": 1,
+          "gaps": [],
+          "receive_hz": 30.015315730499445,
+          "source_interval_ms_p50_p95_max": [
+            33.34144,
+            33.341952,
+            33.342464
+          ]
+        }
+      },
+      "physical_arms": false,
+      "physical_IO": false,
+      "image_files_written": false
+    },
+    "stage_analysis": {
+      "left_wrist": {
+        "frames": 5404,
+        "instrumented_frames": 5404,
+        "native_gap_events": [],
+        "missing_native_frames": 0,
+        "missing_encoded_sequences": 0,
+        "encode_ms_p50_p95_max": [
+          13.712118499999999,
+          14.7062664,
+          19.235509
+        ],
+        "wait_ms_p50_p95_max": [
+          19.595636,
+          20.1912128,
+          20.681152
+        ],
+        "previous_processing_ms_p50_p95_max": [
+          13.7633905,
+          14.759073749999997,
+          19.316081
+        ],
+        "capture_return_interval_ms_p50_p95_max": [
+          33.3393175,
+          33.59781535,
+          34.157401
+        ]
+      },
+      "right_wrist": {
+        "frames": 5404,
+        "instrumented_frames": 5404,
+        "native_gap_events": [],
+        "missing_native_frames": 0,
+        "missing_encoded_sequences": 0,
+        "encode_ms_p50_p95_max": [
+          13.848691,
+          14.46663785,
+          19.653121
+        ],
+        "wait_ms_p50_p95_max": [
+          19.443110500000003,
+          20.12125255,
+          20.861178
+        ],
+        "previous_processing_ms_p50_p95_max": [
+          13.9049655,
+          14.525101849999999,
+          19.73229
+        ],
+        "capture_return_interval_ms_p50_p95_max": [
+          33.340008,
+          33.625767149999994,
+          34.842485
+        ]
+      }
+    },
+    "timing_analysis": {
+      "left_wrist": {
+        "frames": 5404,
+        "capture_sessions": [
+          "7e994cefc122446681fd51788ba116f7"
+        ],
+        "clock_epochs": [
+          "ac501691c1c14bf485d9593942799aaf"
+        ],
+        "source_hz": 29.992855975489288,
+        "source_interval_ms_p50_p95_p99_max": [
+          33.34144,
+          33.341696,
+          33.341952,
+          33.34272
+        ],
+        "receipt_interval_ms_p50_p95_p99_max": [
+          33.237755,
+          34.3199774,
+          35.05300592,
+          39.512865
+        ],
+        "capture_age_ms_p50_p95_p99_max": [
+          26.2152085,
+          27.2887399,
+          28.04838155,
+          31.557066
+        ],
+        "clock_rtt_ms_p50_p95_p99_max": [
+          0.445468,
+          0.507933,
+          0.51747,
+          0.557868
+        ],
+        "first_native_frame": 12462,
+        "last_native_frame": 17865,
+        "first_encoded_sequence": 12373,
+        "last_encoded_sequence": 17776
+      },
+      "right_wrist": {
+        "frames": 5404,
+        "capture_sessions": [
+          "c85879ecd95f44559494cd4cd14bd2c5"
+        ],
+        "clock_epochs": [
+          "ac501691c1c14bf485d9593942799aaf"
+        ],
+        "source_hz": 29.992663322262683,
+        "source_interval_ms_p50_p95_p99_max": [
+          33.34144,
+          33.341952,
+          33.342208,
+          33.342464
+        ],
+        "receipt_interval_ms_p50_p95_p99_max": [
+          33.256275,
+          34.185943099999996,
+          34.88531439999999,
+          40.22361
+        ],
+        "capture_age_ms_p50_p95_p99_max": [
+          26.401846499999998,
+          27.08603815,
+          28.460505369999986,
+          32.408243
+        ],
+        "clock_rtt_ms_p50_p95_p99_max": [
+          0.445468,
+          0.507933,
+          0.51747,
+          0.557868
+        ],
+        "first_native_frame": 12458,
+        "last_native_frame": 17861,
+        "first_encoded_sequence": 12369,
+        "last_encoded_sequence": 17772
+      }
+    }
+  },
+  "native_vs_shared_HUB_comparison": {
+    "duration_seconds_each": 180,
+    "prior_shared_HUB_native_gap_events": {
+      "left_wrist": 7,
+      "right_wrist": 0
+    },
+    "native_left_after_cold_reconnect_gap_events": {
+      "left_wrist": 0,
+      "right_wrist": 0
+    },
+    "same_cameras_and_cables": true,
+    "right_connection_unchanged": true,
+    "limitations": [
+      "The left USB path and a clean device power cycle differ from the prior shared-HUB session, so this does not isolate the HUB as the cause.",
+      "A three-minute observation cannot rule out intermittent camera, cable, USB path or SDK faults.",
+      "This measurement covers dual-wrist capture/encode/wire reception, without ROS, head camera or recording writer.",
+      "The earlier independently identified nearest-timestamp selection gap remains unmodified in production."
+    ],
+    "inference": "The same left camera and cable can deliver an uninterrupted 30Hz stream on the native path after a clean reconnect. No PC capture-loop processing overrun, encoded sequence omission or network receiver gap was observed in this run."
+  }
+}

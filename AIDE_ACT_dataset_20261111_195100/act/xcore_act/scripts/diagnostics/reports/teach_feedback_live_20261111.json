@@ -1,0 +1,844 @@
+{
+  "generated_utc": "2026-11-11T10:01:51.506179+00:00",
+  "status": "real_teaching_stall_located_in_ROS_publish_not_slow_SDK_read",
+  "original_trace": "/tmp/aide-teach-feedback-m196EwKj/feedback_report.json",
+  "source_trace_files": [
+    "/tmp/aide-teach-feedback-m196EwKj/sdk_41086.jsonl",
+    "/tmp/aide-teach-feedback-m196EwKj/receive_41179.jsonl"
+  ],
+  "trace_warnings": [],
+  "teaching_seconds": {
+    "left": 73.392216625,
+    "right": 73.393544827
+  },
+  "SDK_read_max_ms": {
+    "left:drag.jointPos": 10.415211,
+    "right:drag.jointPos": 8.553773,
+    "left:drag.monitor_posture": 4.846554,
+    "left:drag.monitor_jointPos": 4.810263,
+    "left:drag.getEndTorque": 4.928732,
+    "right:drag.monitor_posture": 4.853209,
+    "right:drag.monitor_jointPos": 8.092511,
+    "right:drag.getEndTorque": 3.043777
+  },
+  "publish_call_max_ms": {
+    "left": 1086.369991,
+    "right": 1096.835411
+  },
+  "publication_gaps": [
+    {
+      "stream": "left.drag",
+      "start_ns": 28850457030994,
+      "end_ns": 28850795637880,
+      "interval_ms": 338.606886,
+      "slow_operations": [
+        {
+          "op": "drag.publish",
+          "duration_ms": 327.23779
+        },
+        {
+          "op": "drag.sample_callback",
+          "duration_ms": 327.300095
+        }
+      ],
+      "end_utc": "2026-11-11T09:50:28.279575+00:00",
+      "before_first_saved_frame": true
+    },
+    {
+      "stream": "left.drag",
+      "start_ns": 28850874141934,
+      "end_ns": 28851971402415,
+      "interval_ms": 1097.260481,
+      "slow_operations": [
+        {
+          "op": "drag.publish",
+          "duration_ms": 1086.369991
+        },
+        {
+          "op": "drag.sample_callback",
+          "duration_ms": 1086.447722
+        }
+      ],
+      "end_utc": "2026-11-11T09:50:29.455340+00:00",
+      "before_first_saved_frame": true
+    },
+    {
+      "stream": "left.drag",
+      "start_ns": 28860741700312,
+      "end_ns": 28860828946815,
+      "interval_ms": 87.246503,
+      "slow_operations": [
+        {
+          "op": "drag.publish",
+          "duration_ms": 85.507216
+        },
+        {
+          "op": "drag.sample_callback",
+          "duration_ms": 85.601619
+        }
+      ],
+      "end_utc": "2026-11-11T09:50:38.312885+00:00",
+      "before_first_saved_frame": true
+    },
+    {
+      "stream": "left.drag",
+      "start_ns": 28872875582939,
+      "end_ns": 28872972277543,
+      "interval_ms": 96.694604,
+      "slow_operations": [
+        {
+          "op": "drag.publish",
+          "duration_ms": 85.600205
+        },
+        {
+          "op": "drag.sample_callback",
+          "duration_ms": 85.832437
+        }
+      ],
+      "end_utc": "2026-11-11T09:50:50.456215+00:00",
+      "before_first_saved_frame": true
+    },
+    {
+      "stream": "left.drag",
+      "start_ns": 28874804846859,
+      "end_ns": 28875402965025,
+      "interval_ms": 598.118166,
+      "slow_operations": [
+        {
+          "op": "drag.publish",
+          "duration_ms": 586.902773
+        },
+        {
+          "op": "drag.sample_callback",
+          "duration_ms": 587.003512
+        }
+      ],
+      "end_utc": "2026-11-11T09:50:52.886903+00:00",
+      "before_first_saved_frame": true
+    },
+    {
+      "stream": "left.drag",
+      "start_ns": 28875479458351,
+      "end_ns": 28876566327996,
+      "interval_ms": 1086.869645,
+      "slow_operations": [
+        {
+          "op": "drag.publish",
+          "duration_ms": 1075.870642
+        },
+        {
+          "op": "drag.sample_callback",
+          "duration_ms": 1075.967701
+        }
+      ],
+      "end_utc": "2026-11-11T09:50:54.050265+00:00",
+      "before_first_saved_frame": true
+    },
+    {
+      "stream": "left.drag",
+      "start_ns": 28876632351998,
+      "end_ns": 28877309022652,
+      "interval_ms": 676.670654,
+      "slow_operations": [
+        {
+          "op": "drag.publish",
+          "duration_ms": 665.684483
+        },
+        {
+          "op": "drag.sample_callback",
+          "duration_ms": 665.786215
+        }
+      ],
+      "end_utc": "2026-11-11T09:50:54.792960+00:00",
+      "before_first_saved_frame": true
+    },
+    {
+      "stream": "left.drag",
+      "start_ns": 28880810537405,
+      "end_ns": 28881282827684,
+      "interval_ms": 472.290279,
+      "slow_operations": [
+        {
+          "op": "drag.publish",
+          "duration_ms": 461.345453
+        },
+        {
+          "op": "drag.sample_callback",
+          "duration_ms": 461.505523
+        }
+      ],
+      "end_utc": "2026-11-11T09:50:58.766765+00:00",
+      "before_first_saved_frame": true
+    },
+    {
+      "stream": "left.drag",
+      "start_ns": 28881338189397,
+      "end_ns": 28882364350601,
+      "interval_ms": 1026.161204,
+      "slow_operations": [
+        {
+          "op": "drag.publish",
+          "duration_ms": 1015.129785
+        },
+        {
+          "op": "drag.sample_callback",
+          "duration_ms": 1015.347391
+        }
+      ],
+      "end_utc": "2026-11-11T09:50:59.848288+00:00",
+      "before_first_saved_frame": true
+    },
+    {
+      "stream": "left.drag",
+      "start_ns": 28891013694662,
+      "end_ns": 28891261328215,
+      "interval_ms": 247.633553,
+      "slow_operations": [
+        {
+          "op": "drag.publish",
+          "duration_ms": 236.725338
+        },
+        {
+          "op": "drag.sample_callback",
+          "duration_ms": 236.808156
+        }
+      ],
+      "end_utc": "2026-11-11T09:51:08.745266+00:00",
+      "before_first_saved_frame": true
+    },
+    {
+      "stream": "left.drag",
+      "start_ns": 28891275919426,
+      "end_ns": 28892079594699,
+      "interval_ms": 803.675273,
+      "slow_operations": [
+        {
+          "op": "drag.publish",
+          "duration_ms": 792.678895
+        },
+        {
+          "op": "drag.sample_callback",
+          "duration_ms": 792.771954
+        }
+      ],
+      "end_utc": "2026-11-11T09:51:09.563532+00:00",
+      "before_first_saved_frame": true
+    },
+    {
+      "stream": "left.drag",
+      "start_ns": 28897527368505,
+      "end_ns": 28898344555923,
+      "interval_ms": 817.187418,
+      "slow_operations": [
+        {
+          "op": "drag.publish",
+          "duration_ms": 809.512296
+        },
+        {
+          "op": "drag.sample_callback",
+          "duration_ms": 809.606507
+        }
+      ],
+      "end_utc": "2026-11-11T09:51:15.828493+00:00",
+      "before_first_saved_frame": true
+    },
+    {
+      "stream": "right.drag",
+      "start_ns": 28850443312288,
+      "end_ns": 28850795494771,
+      "interval_ms": 352.182483,
+      "slow_operations": [
+        {
+          "op": "drag.publish",
+          "duration_ms": 341.384253
+        },
+        {
+          "op": "drag.sample_callback",
+          "duration_ms": 341.471168
+        }
+      ],
+      "end_utc": "2026-11-11T09:50:28.279432+00:00",
+      "before_first_saved_frame": true
+    },
+    {
+      "stream": "right.drag",
+      "start_ns": 28850863339288,
+      "end_ns": 28851971342637,
+      "interval_ms": 1108.003349,
+      "slow_operations": [
+        {
+          "op": "drag.publish",
+          "duration_ms": 1096.835411
+        },
+        {
+          "op": "drag.sample_callback",
+          "duration_ms": 1096.908757
+        }
+      ],
+      "end_utc": "2026-11-11T09:50:29.455280+00:00",
+      "before_first_saved_frame": true
+    },
+    {
+      "stream": "right.drag",
+      "start_ns": 28860743517010,
+      "end_ns": 28860829192295,
+      "interval_ms": 85.675285,
+      "slow_operations": [
+        {
+          "op": "drag.publish",
+          "duration_ms": 73.862879
+        },
+        {
+          "op": "drag.sample_callback",
+          "duration_ms": 73.944386
+        }
+      ],
+      "end_utc": "2026-11-11T09:50:38.313130+00:00",
+      "before_first_saved_frame": true
+    },
+    {
+      "stream": "right.drag",
+      "start_ns": 28872885321359,
+      "end_ns": 28872972128866,
+      "interval_ms": 86.807507,
+      "slow_operations": [
+        {
+          "op": "drag.publish",
+          "duration_ms": 75.558384
+        },
+        {
+          "op": "drag.sample_callback",
+          "duration_ms": 75.646867
+        }
+      ],
+      "end_utc": "2026-11-11T09:50:50.456066+00:00",
+      "before_first_saved_frame": true
+    },
+    {
+      "stream": "right.drag",
+      "start_ns": 28874797260251,
+      "end_ns": 28875402940481,
+      "interval_ms": 605.68023,
+      "slow_operations": [
+        {
+          "op": "drag.publish",
+          "duration_ms": 594.759437
+        },
+        {
+          "op": "drag.sample_callback",
+          "duration_ms": 594.855632
+        }
+      ],
+      "end_utc": "2026-11-11T09:50:52.886878+00:00",
+      "before_first_saved_frame": true
+    },
+    {
+      "stream": "right.drag",
+      "start_ns": 28875468509077,
+      "end_ns": 28876566331900,
+      "interval_ms": 1097.822823,
+      "slow_operations": [
+        {
+          "op": "drag.publish",
+          "duration_ms": 1086.834412
+        },
+        {
+          "op": "drag.sample_callback",
+          "duration_ms": 1087.133237
+        }
+      ],
+      "end_utc": "2026-11-11T09:50:54.050269+00:00",
+      "before_first_saved_frame": true
+    },
+    {
+      "stream": "right.drag",
+      "start_ns": 28876624672844,
+      "end_ns": 28877309022556,
+      "interval_ms": 684.349712,
+      "slow_operations": [
+        {
+          "op": "drag.publish",
+          "duration_ms": 673.482073
+        },
+        {
+          "op": "drag.sample_callback",
+          "duration_ms": 673.560572
+        }
+      ],
+      "end_utc": "2026-11-11T09:50:54.792960+00:00",
+      "before_first_saved_frame": true
+    },
+    {
+      "stream": "right.drag",
+      "start_ns": 28880804845642,
+      "end_ns": 28881282776706,
+      "interval_ms": 477.931064,
+      "slow_operations": [
+        {
+          "op": "drag.publish",
+          "duration_ms": 470.464973
+        },
+        {
+          "op": "drag.sample_callback",
+          "duration_ms": 470.55944
+        }
+      ],
+      "end_utc": "2026-11-11T09:50:58.766714+00:00",
+      "before_first_saved_frame": true
+    },
+    {
+      "stream": "right.drag",
+      "start_ns": 28881346486618,
+      "end_ns": 28882364204004,
+      "interval_ms": 1017.717386,
+      "slow_operations": [
+        {
+          "op": "drag.publish",
+          "duration_ms": 1006.638317
+        },
+        {
+          "op": "drag.sample_callback",
+          "duration_ms": 1006.744656
+        }
+      ],
+      "end_utc": "2026-11-11T09:50:59.848142+00:00",
+      "before_first_saved_frame": true
+    },
+    {
+      "stream": "right.drag",
+      "start_ns": 28891018939947,
+      "end_ns": 28891261553214,
+      "interval_ms": 242.613267,
+      "slow_operations": [
+        {
+          "op": "drag.publish",
+          "duration_ms": 231.661594
+        },
+        {
+          "op": "drag.sample_callback",
+          "duration_ms": 231.746493
+        }
+      ],
+      "end_utc": "2026-11-11T09:51:08.745491+00:00",
+      "before_first_saved_frame": true
+    },
+    {
+      "stream": "right.drag",
+      "start_ns": 28891327712352,
+      "end_ns": 28892079676014,
+      "interval_ms": 751.963662,
+      "slow_operations": [
+        {
+          "op": "drag.publish",
+          "duration_ms": 741.024437
+        },
+        {
+          "op": "drag.sample_callback",
+          "duration_ms": 741.105144
+        }
+      ],
+      "end_utc": "2026-11-11T09:51:09.563613+00:00",
+      "before_first_saved_frame": true
+    },
+    {
+      "stream": "right.drag",
+      "start_ns": 28897481814881,
+      "end_ns": 28898347229767,
+      "interval_ms": 865.414886,
+      "slow_operations": [
+        {
+          "op": "drag.publish",
+          "duration_ms": 854.391211
+        },
+        {
+          "op": "drag.sample_callback",
+          "duration_ms": 854.471021
+        }
+      ],
+      "end_utc": "2026-11-11T09:51:15.831167+00:00",
+      "before_first_saved_frame": true
+    }
+  ],
+  "receiver_executor_heartbeat_max_ms": 58.682402,
+  "joint_callback_max_ms": {
+    "left": 15.256799,
+    "right": 2.65618
+  },
+  "joint_delivery": {
+    "left.recording": {
+      "matched_messages": 498,
+      "source_to_callback_latency": {
+        "count": 498,
+        "p50_ms": 1.1573485,
+        "p95_ms": 16.378441,
+        "max_ms": 108.253428
+      },
+      "unmatched_published_interior_messages": 3
+    },
+    "right.recording": {
+      "matched_messages": 496,
+      "source_to_callback_latency": {
+        "count": 496,
+        "p50_ms": 0.9868950000000001,
+        "p95_ms": 12.477582,
+        "max_ms": 99.124049
+      },
+      "unmatched_published_interior_messages": 3
+    },
+    "left.drag": {
+      "matched_messages": 6280,
+      "source_to_callback_latency": {
+        "count": 6280,
+        "p50_ms": 1.1406755,
+        "p95_ms": 8.946905,
+        "max_ms": 1150.678397
+      },
+      "unmatched_published_interior_messages": 24
+    },
+    "right.drag": {
+      "matched_messages": 6275,
+      "source_to_callback_latency": {
+        "count": 6275,
+        "p50_ms": 1.468399,
+        "p95_ms": 8.958044,
+        "max_ms": 1141.372886
+      },
+      "unmatched_published_interior_messages": 24
+    }
+  },
+  "cameras": {
+    "head": {
+      "received": 2430,
+      "intervals": {
+        "count": 2429,
+        "p50_ms": 33.363163,
+        "p95_ms": 36.69755,
+        "max_ms": 65.552796
+      },
+      "callback_duration": {
+        "count": 2430,
+        "p50_ms": 0.45140650000000004,
+        "p95_ms": 1.033632,
+        "max_ms": 7.983774
+      },
+      "source_intervals": {
+        "count": 2429,
+        "p50_ms": 33.357422,
+        "p95_ms": 33.358155,
+        "max_ms": 33.362305
+      },
+      "non_increasing_source_timestamps": 0
+    },
+    "left_wrist": {
+      "received": 2430,
+      "intervals": {
+        "count": 2429,
+        "p50_ms": 33.338942,
+        "p95_ms": 38.855877,
+        "max_ms": 75.998611
+      },
+      "callback_duration": {
+        "count": 2430,
+        "p50_ms": 0.416909,
+        "p95_ms": 0.82425,
+        "max_ms": 6.744596
+      },
+      "source_intervals": {
+        "count": 2429,
+        "p50_ms": 33.341184,
+        "p95_ms": 33.341696,
+        "max_ms": 66.682368
+      },
+      "non_increasing_source_timestamps": 0
+    },
+    "right_wrist": {
+      "received": 2431,
+      "intervals": {
+        "count": 2430,
+        "p50_ms": 33.298815000000005,
+        "p95_ms": 38.250264,
+        "max_ms": 74.981587
+      },
+      "callback_duration": {
+        "count": 2431,
+        "p50_ms": 0.407917,
+        "p95_ms": 0.786937,
+        "max_ms": 9.322373
+      },
+      "source_intervals": {
+        "count": 2430,
+        "p50_ms": 33.34144,
+        "p95_ms": 33.341952,
+        "max_ms": 33.391552
+      },
+      "non_increasing_source_timestamps": 0
+    }
+  },
+  "camera_source_gaps_over55ms": [
+    {
+      "stream": "left_wrist.camera",
+      "start_ns": 28861601457323,
+      "end_ns": 28861667648279,
+      "receipt_interval_ms": 66.190956,
+      "source_interval_ms": 66.682368,
+      "executor_heartbeat_delayed": false
+    }
+  ],
+  "saved_episode": {
+    "name": "episode_000004",
+    "images_fully_decoded": 207,
+    "quality": {
+      "status": "needs_review",
+      "frames": 69,
+      "target_fps": 20.0,
+      "saved_fps": 18.651954193340867,
+      "source_span_seconds": 3.4008216857910156,
+      "source_span_fps": 19.995167721998193,
+      "segment_frames": [
+        69
+      ],
+      "chunk_size": 50,
+      "full_chunk_start_frames": 20,
+      "trailing_no_frame_seconds": 0.0,
+      "suction": {
+        "left": {
+          "observation_values": [
+            0
+          ],
+          "action_values": [
+            0
+          ],
+          "observation_transitions": 0,
+          "action_transitions": 0,
+          "final_observed": 0,
+          "final_requested": 0
+        },
+        "right": {
+          "observation_values": [
+            0
+          ],
+          "action_values": [
+            0
+          ],
+          "observation_transitions": 0,
+          "action_transitions": 0,
+          "final_observed": 0,
+          "final_requested": 0
+        }
+      },
+      "warnings": [
+        "本条没有录到吸盘开关指令变化；需确认是否覆盖所需操作"
+      ],
+      "task_success_requires_review": true
+    }
+  },
+  "source_files_changed": [],
+  "no_robot_commands_sent_by_agent": true,
+  "findings_zh": [
+    "这次SDK查询没有出现足以解释约1秒长间断的耗时。",
+    "两臂的ROS发布函数各发生12次超过80ms的间隔，多次几乎同时恢复，慢点在publish调用内部。",
+    "采集器心跳最长58.7ms，关节回调最长15.3ms；不能解释约1.1秒的长停顿。",
+    "所有24个发布间断均发生在正式保存首帧之前，未由本条图片写盘引起。",
+    "头部和右腕相机收到的源时间戳间隔约33.4ms；左腕另有一次66.7ms源间隔，需要与电脑端相机硬件帧号核对。",
+    "这次只保存了69帧约3.4秒连续图像，恰好避开长停顿，不能据此认为问题解决。"
+  ],
+  "scope_limits_zh": [
+    "publish内部的具体互斥锁/传输/资源等待原因尚未由这份时长追踪区分。",
+    "不能将该次DDS发布阻塞直接等同于永久排除相机、线缆和USB的其他故障。",
+    "本轮仅做只读分析和隔离域模拟DDS负载，不开启、移动或连接机器人SDK。"
+  ],
+  "isolated_DDS_load_comparisons": {
+    "mixed_sync": {
+      "simulated_data_only": true,
+      "ROS_domain": 230,
+      "ROS_LOCALHOST_ONLY": 0,
+      "cameras_30Hz": 3,
+      "joints_100Hz": 2,
+      "duration_per_run_seconds": 43,
+      "publication_calls": 7800,
+      "max_publish_ms": 0.564017,
+      "publish_calls_over_80ms": 0,
+      "trace_footer": {
+        "kind": "trace_end",
+        "dropped": 0
+      },
+      "receive": {
+        "heartbeat": {
+          "messages": 860,
+          "receipt_max_ms": 54.188927,
+          "source_max_ms": 54.188767,
+          "receipt_hz": 20.000014343200043,
+          "gaps_over80ms": 0
+        },
+        "left_wrist": {
+          "messages": 1230,
+          "receipt_max_ms": 35.605938,
+          "source_max_ms": 33.688406,
+          "receipt_hz": 30.000958241835242,
+          "gaps_over80ms": 0
+        },
+        "right_wrist": {
+          "messages": 1230,
+          "receipt_max_ms": 36.09712,
+          "source_max_ms": 33.688406,
+          "receipt_hz": 30.000164138245477,
+          "gaps_over80ms": 0
+        },
+        "head": {
+          "messages": 1230,
+          "receipt_max_ms": 35.598705,
+          "source_max_ms": 33.768632,
+          "receipt_hz": 30.00171678831301,
+          "gaps_over80ms": 0
+        },
+        "left": {
+          "messages": 3700,
+          "receipt_max_ms": 14.611351,
+          "source_max_ms": 10.397817,
+          "receipt_hz": 100.0004629083337,
+          "gaps_over80ms": 0
+        },
+        "right": {
+          "messages": 3700,
+          "receipt_max_ms": 14.070503,
+          "source_max_ms": 13.376403,
+          "receipt_hz": 100.00117310378589,
+          "gaps_over80ms": 0
+        }
+      }
+    },
+    "mixed_async": {
+      "simulated_data_only": true,
+      "ROS_domain": 230,
+      "ROS_LOCALHOST_ONLY": 0,
+      "cameras_30Hz": 3,
+      "joints_100Hz": 2,
+      "duration_per_run_seconds": 43,
+      "publication_calls": 7800,
+      "max_publish_ms": 0.569169,
+      "publish_calls_over_80ms": 0,
+      "trace_footer": {
+        "kind": "trace_end",
+        "dropped": 0
+      },
+      "receive": {
+        "heartbeat": {
+          "messages": 860,
+          "receipt_max_ms": 51.717518,
+          "source_max_ms": 51.71787,
+          "receipt_hz": 20.00006035920428,
+          "gaps_over80ms": 0
+        },
+        "left_wrist": {
+          "messages": 1230,
+          "receipt_max_ms": 39.399934,
+          "source_max_ms": 34.168992,
+          "receipt_hz": 30.00172296233249,
+          "gaps_over80ms": 0
+        },
+        "head": {
+          "messages": 1230,
+          "receipt_max_ms": 39.703497,
+          "source_max_ms": 34.270725,
+          "receipt_hz": 30.00075438569036,
+          "gaps_over80ms": 0
+        },
+        "right_wrist": {
+          "messages": 1230,
+          "receipt_max_ms": 40.029872,
+          "source_max_ms": 34.168992,
+          "receipt_hz": 30.000053000256365,
+          "gaps_over80ms": 0
+        },
+        "left": {
+          "messages": 3700,
+          "receipt_max_ms": 20.016697,
+          "source_max_ms": 10.643744,
+          "receipt_hz": 99.99987466087622,
+          "gaps_over80ms": 0
+        },
+        "right": {
+          "messages": 3700,
+          "receipt_max_ms": 19.450632,
+          "source_max_ms": 10.401272,
+          "receipt_hz": 100.00156306038686,
+          "gaps_over80ms": 0
+        }
+      }
+    },
+    "udp_joints": {
+      "simulated_data_only": true,
+      "ROS_domain": 230,
+      "ROS_LOCALHOST_ONLY": 0,
+      "cameras_30Hz": 3,
+      "joints_100Hz": 2,
+      "duration_per_run_seconds": 43,
+      "publication_calls": 7800,
+      "max_publish_ms": 0.772503,
+      "publish_calls_over_80ms": 0,
+      "trace_footer": {
+        "kind": "trace_end",
+        "dropped": 0
+      },
+      "receive": {
+        "heartbeat": {
+          "messages": 860,
+          "receipt_max_ms": 51.214686,
+          "source_max_ms": 51.21459,
+          "receipt_hz": 20.000005368103885,
+          "gaps_over80ms": 0
+        },
+        "left_wrist": {
+          "messages": 1230,
+          "receipt_max_ms": 34.900405,
+          "source_max_ms": 34.075645,
+          "receipt_hz": 30.00132524861344,
+          "gaps_over80ms": 0
+        },
+        "head": {
+          "messages": 1230,
+          "receipt_max_ms": 38.962511,
+          "source_max_ms": 33.923833,
+          "receipt_hz": 30.000104025177635,
+          "gaps_over80ms": 0
+        },
+        "right_wrist": {
+          "messages": 1230,
+          "receipt_max_ms": 39.315674,
+          "source_max_ms": 34.075645,
+          "receipt_hz": 29.999260124268808,
+          "gaps_over80ms": 0
+        },
+        "left": {
+          "messages": 3900,
+          "receipt_max_ms": 18.199265,
+          "source_max_ms": 10.497178,
+          "receipt_hz": 99.99569917702797,
+          "gaps_over80ms": 0
+        },
+        "right": {
+          "messages": 3900,
+          "receipt_max_ms": 18.148191,
+          "source_max_ms": 10.208978,
+          "receipt_hz": 99.99724519258832,
+          "gaps_over80ms": 0
+        }
+      }
+    }
+  },
+  "isolated_DDS_load_limitations_zh": [
+    "模拟负载没有连接机器人SDK、没有访问相机硬件，也没有重建正式驱动全部服务/节点，不能视为正式驱动已修复。",
+    "三种配置均未复现正式驱动的约1秒阻塞，因此尚不能将根因唯一归为SHM大小、同步发布模式或UDP。",
+    "早期域233端口范围错误和localhost-only下缺少图像的尝试不计入有效负载测试。"
+  ],
+  "recommended_fix_zh": [
+    "示教SDK采样回调只读取实测数据并交给有界缓存，采样时间立即固定；将ROS发布移至独立线程，让publish阻塞不再阻塞采样与既有监测。",
+    "数采反馈采用独立本机传输通道或隔离的DDS参与者，并为传输队列记录序号、丢弃计数和最大延迟；仅加发布线程而继续丢失/迟到的原链路不足以保证数据完整。",
+    "保持相机30Hz、有线PC传输与现有真实时戳对齐；左腕一次66.7ms源间隔仍需用PC硬件帧号定位，20Hz采样不一定因此缺帧。",
+    "修复后验证完整真实示教至少180秒，并包含结束示教和B回位，分别检查SDK采样、发布、接收、20Hz保存及标签覆盖；运动目标、速度、按键和回位点保持原值。"
+  ],
+  "implementation_source_files_changed_this_turn": [],
+  "no_production_code_changes_this_turn": true,
+  "production_DDS_configuration_changed": false,
+  "active_agent_test_processes": []
+}

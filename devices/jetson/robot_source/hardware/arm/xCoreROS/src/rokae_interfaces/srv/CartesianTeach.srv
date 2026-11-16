@@ -1,0 +1,15 @@
+# false (0): require holding the physical end drag button while moving.
+# true  (1): allow direct dragging without holding the end button.
+bool enable_drag_button
+# false (0): use the load already stored in the controller.
+# true  (1): validate and store tool_mass_kg/tool_cog_m before dragging.
+bool set_tool_load
+# Complete physical end-tool mass in kg. Default is 0; when set_tool_load is
+# true, a measured value in (0, 5] is required.
+float64 tool_mass_kg
+# Tool centre of gravity [x, y, z] from the flange, in metres. Defaults to 0.
+# Existing inertia and tool/reference frames are preserved when updating.
+float64[3] tool_cog_m
+---
+bool success
+string message

@@ -1,0 +1,156 @@
+[
+  {
+    "time_ns": 1794488732931094783,
+    "event": "phase",
+    "phase": "INITIALIZING",
+    "run_id": "0efd53bc-ab40-4fa0-b86d-c3e6eca7c611",
+    "reason": "Initializing both arms before dataset home move",
+    "local_time": "2026-11-12T21:05:32.931095+08:00"
+  },
+  {
+    "time_ns": 1794488733464501462,
+    "event": "phase",
+    "phase": "HOMING",
+    "run_id": "0efd53bc-ab40-4fa0-b86d-c3e6eca7c611",
+    "reason": "MoveAbsJ to the saved dataset B-key pose",
+    "local_time": "2026-11-12T21:05:33.464502+08:00"
+  },
+  {
+    "time_ns": 1794488734274106759,
+    "event": "phase",
+    "phase": "VERIFY_HOME",
+    "run_id": "0efd53bc-ab40-4fa0-b86d-c3e6eca7c611",
+    "reason": "Checking fresh measured joint feedback after both moves",
+    "local_time": "2026-11-12T21:05:34.274107+08:00"
+  },
+  {
+    "time_ns": 1794488734323912409,
+    "event": "phase",
+    "phase": "WAITING_ACTION",
+    "run_id": "0efd53bc-ab40-4fa0-b86d-c3e6eca7c611",
+    "reason": "Both arms home verified; waiting for fresh post-home policy input",
+    "local_time": "2026-11-12T21:05:34.323912+08:00"
+  },
+  {
+    "time_ns": 1794488734405004911,
+    "event": "phase",
+    "phase": "STARTING_SERVO",
+    "run_id": "0efd53bc-ab40-4fa0-b86d-c3e6eca7c611",
+    "reason": "Starting Servo J at measured joints before moving targets",
+    "local_time": "2026-11-12T21:05:34.405005+08:00"
+  },
+  {
+    "time_ns": 1794488735803883178,
+    "event": "phase",
+    "phase": "RUNNING",
+    "run_id": "0efd53bc-ab40-4fa0-b86d-c3e6eca7c611",
+    "reason": "Both Servo J arms running; manual stop; no round time limit",
+    "local_time": "2026-11-12T21:05:35.803883+08:00"
+  },
+  {
+    "time_ns": 1794488780626660463,
+    "event": "stage_complete",
+    "phase": "RUNNING",
+    "run_id": "0efd53bc-ab40-4fa0-b86d-c3e6eca7c611",
+    "stage": "far",
+    "completion_source": "operator_service",
+    "local_time": "2026-11-12T21:06:20.626660+08:00"
+  },
+  {
+    "time_ns": 1794488780626783219,
+    "event": "phase",
+    "phase": "STOPPING",
+    "run_id": "0efd53bc-ab40-4fa0-b86d-c3e6eca7c611",
+    "reason": "Operator confirmed far stage completion",
+    "local_time": "2026-11-12T21:06:20.626783+08:00"
+  },
+  {
+    "time_ns": 1794488781144472246,
+    "event": "phase",
+    "phase": "STAGE_RELEASE",
+    "run_id": "0efd53bc-ab40-4fa0-b86d-c3e6eca7c611",
+    "reason": "Verifying both suction channels released before stage transition",
+    "local_time": "2026-11-12T21:06:21.144472+08:00"
+  },
+  {
+    "time_ns": 1794488781654635529,
+    "event": "phase",
+    "phase": "INITIALIZING",
+    "run_id": "806f4955-b504-445f-8b2a-51fc2548507b",
+    "reason": "Far stage stopped and suction released; return BOTH arms to dataset home for near ACT",
+    "local_time": "2026-11-12T21:06:21.654635+08:00"
+  },
+  {
+    "time_ns": 1794488782194111329,
+    "event": "phase",
+    "phase": "HOMING",
+    "run_id": "806f4955-b504-445f-8b2a-51fc2548507b",
+    "reason": "MoveAbsJ to the saved dataset B-key pose",
+    "local_time": "2026-11-12T21:06:22.194111+08:00"
+  },
+  {
+    "time_ns": 1794488786003666093,
+    "event": "phase",
+    "phase": "VERIFY_HOME",
+    "run_id": "806f4955-b504-445f-8b2a-51fc2548507b",
+    "reason": "Checking fresh measured joint feedback after both moves",
+    "local_time": "2026-11-12T21:06:26.003666+08:00"
+  },
+  {
+    "time_ns": 1794488786024113336,
+    "event": "phase",
+    "phase": "WAITING_ACTION",
+    "run_id": "806f4955-b504-445f-8b2a-51fc2548507b",
+    "reason": "Both arms home verified; waiting for fresh post-home policy input",
+    "local_time": "2026-11-12T21:06:26.024113+08:00"
+  },
+  {
+    "time_ns": 1794488786096039594,
+    "event": "phase",
+    "phase": "STARTING_SERVO",
+    "run_id": "806f4955-b504-445f-8b2a-51fc2548507b",
+    "reason": "Starting Servo J at measured joints before moving targets",
+    "local_time": "2026-11-12T21:06:26.096040+08:00"
+  },
+  {
+    "time_ns": 1794488787503907011,
+    "event": "phase",
+    "phase": "RUNNING",
+    "run_id": "806f4955-b504-445f-8b2a-51fc2548507b",
+    "reason": "Both Servo J arms running; manual stop; no round time limit",
+    "local_time": "2026-11-12T21:06:27.503907+08:00"
+  },
+  {
+    "time_ns": 1794488825203553524,
+    "event": "stage_complete",
+    "phase": "RUNNING",
+    "run_id": "806f4955-b504-445f-8b2a-51fc2548507b",
+    "stage": "near",
+    "completion_source": "operator_service",
+    "local_time": "2026-11-12T21:07:05.203553+08:00"
+  },
+  {
+    "time_ns": 1794488825203717850,
+    "event": "phase",
+    "phase": "STOPPING",
+    "run_id": "806f4955-b504-445f-8b2a-51fc2548507b",
+    "reason": "Operator confirmed near stage completion",
+    "local_time": "2026-11-12T21:07:05.203718+08:00"
+  },
+  {
+    "time_ns": 1794488825714689511,
+    "event": "phase",
+    "phase": "STAGE_RELEASE",
+    "run_id": "806f4955-b504-445f-8b2a-51fc2548507b",
+    "reason": "Verifying both suction channels released before stage transition",
+    "local_time": "2026-11-12T21:07:05.714689+08:00"
+  },
+  {
+    "time_ns": 1794488826223975582,
+    "event": "phase",
+    "phase": "IDLE",
+    "run_id": "806f4955-b504-445f-8b2a-51fc2548507b",
+    "reason": "Operator finished sequence; stopped with suction released",
+    "local_time": "2026-11-12T21:07:06.223976+08:00"
+  }
+]

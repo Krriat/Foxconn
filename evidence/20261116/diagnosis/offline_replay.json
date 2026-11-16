@@ -1,0 +1,140 @@
+{
+  "checkpoint_sha256": "af60ccd4cfca37c420d1107e440c8fcb78904d22a28e802d39b4b5925a9055f9",
+  "exact_recorded_images": true,
+  "samples": 10,
+  "joint_max_diff_deg": 0.0,
+  "suction_max_diff": 0.0,
+  "rows": [
+    {
+      "seconds": 0.0,
+      "joint_max_diff_deg": 0.0,
+      "suction_max_diff": 0.0,
+      "original_suction": [
+        0.9227191805839539,
+        0.0
+      ],
+      "replay_suction": [
+        0.9227191805839539,
+        0.0
+      ]
+    },
+    {
+      "seconds": 1.000717056,
+      "joint_max_diff_deg": 0.0,
+      "suction_max_diff": 0.0,
+      "original_suction": [
+        0.9260827302932739,
+        0.0
+      ],
+      "replay_suction": [
+        0.9260827302932739,
+        0.0
+      ]
+    },
+    {
+      "seconds": 3.00198656,
+      "joint_max_diff_deg": 0.0,
+      "suction_max_diff": 0.0,
+      "original_suction": [
+        1.0020320415496826,
+        0.0
+      ],
+      "replay_suction": [
+        1.0020320415496826,
+        0.0
+      ]
+    },
+    {
+      "seconds": 5.00714496,
+      "joint_max_diff_deg": 0.0,
+      "suction_max_diff": 0.0,
+      "original_suction": [
+        0.9988416433334351,
+        0.0
+      ],
+      "replay_suction": [
+        0.9988416433334351,
+        0.0
+      ]
+    },
+    {
+      "seconds": 10.007098368,
+      "joint_max_diff_deg": 0.0,
+      "suction_max_diff": 0.0,
+      "original_suction": [
+        1.001184105873108,
+        0.0
+      ],
+      "replay_suction": [
+        1.001184105873108,
+        0.0
+      ]
+    },
+    {
+      "seconds": 15.010690816,
+      "joint_max_diff_deg": 0.0,
+      "suction_max_diff": 0.0,
+      "original_suction": [
+        1.0034936666488647,
+        0.0
+      ],
+      "replay_suction": [
+        1.0034936666488647,
+        0.0
+      ]
+    },
+    {
+      "seconds": 20.014268928,
+      "joint_max_diff_deg": 0.0,
+      "suction_max_diff": 0.0,
+      "original_suction": [
+        1.0020065307617188,
+        0.0
+      ],
+      "replay_suction": [
+        1.0020065307617188,
+        0.0
+      ]
+    },
+    {
+      "seconds": 29.98820864,
+      "joint_max_diff_deg": 0.0,
+      "suction_max_diff": 0.0,
+      "original_suction": [
+        0.9999361038208008,
+        0.0
+      ],
+      "replay_suction": [
+        0.9999361038208008,
+        0.0
+      ]
+    },
+    {
+      "seconds": 39.995395584,
+      "joint_max_diff_deg": 0.0,
+      "suction_max_diff": 0.0,
+      "original_suction": [
+        1.0023880004882812,
+        0.0
+      ],
+      "replay_suction": [
+        1.0023880004882812,
+        0.0
+      ]
+    },
+    {
+      "seconds": 50.003490048,
+      "joint_max_diff_deg": 0.0,
+      "suction_max_diff": 0.0,
+      "original_suction": [
+        -0.00041222572326660156,
+        0.0
+      ],
+      "replay_suction": [
+        -0.00041222572326660156,
+        0.0
+      ]
+    }
+  ],
+  "scope": "Numerical reproduction with historical observations, not a new closed-loop success rate"
+}

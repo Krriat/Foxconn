@@ -1,0 +1,82 @@
+# 所有真实关节值均使用控制器坐标，不能直接填写仿真待机姿态。
+schema_version: 1
+connection:
+  # 地址来自 ../pos.cpp，尚未经本次现场连接核实；不自动连接。
+  left: {robot_ip: 192.168.1.160, local_ip: 192.168.1.10}
+  right: {robot_ip: 192.168.2.160, local_ip: 192.168.2.10}
+  source: 'cxl/pos.cpp: ArmConfig arms'
+interface:
+  name: ServoJ_joint_position_candidate
+  deployment_interface_confirmed: false
+  command_period_s: 0.02
+  feedback_interval_ms: 4
+  lookahead_s: null
+  gain: null
+  velocity_feedforward: false
+  independent_gravity_effort: false
+  source: example/rt/servoj_demo.cpp; include/rokae/motion_control_rt.h
+condition:
+  posture_id: null
+  load_id: funnel_without_ball
+  funnel_mass_kg: 0.252
+  funnel_construction: PLA，两层壁，15%填充；不是2mm壁厚
+  installed_total_mass_kg: null
+  includes_connectors_and_sensors: null
+  controller_tool_mass_kg: null
+  controller_tool_cog_m: null
+  controller_tool_inertia_kg_m2: null
+  unknown_reason: 安装总质量、质心、惯量和现场控制器配置待记录；漏斗质量不能替代整套工具质量
+  motor_temperature_before_c: null
+  motor_temperature_after_c: null
+  structural_vibration_record: null
+mapping:
+  # 每项需要 controller_index(0..6), sim_name, sign(+1/-1), zero_offset_rad, source。
+  # q_sim = sign * q_controller + zero_offset_rad；本工具不自动转换运动目标。
+  left: null
+  right: null
+  j4_sign_verified: false
+  j6_j7_coupling_verified: false
+center_q_rad:
+  left: null
+  right: null
+limits:
+  # 七轴数组。现场与厂商限额应先取交集，不能提高控制器原有上限。
+  joint_lower_rad: null
+  joint_upper_rad: null
+  velocity_rad_s: null
+  acceleration_rad_s2: null
+  jerk_rad_s3: null
+  source: null
+  stage_velocity_rad_s: 0.10
+  stage_acceleration_rad_s2: 0.30
+  stage_jerk_rad_s3: 1.0
+  stage_source: test.md §5.2 首轮建议；尚不是现场批准值
+  joint_stop_margin_rad: null
+  tcp_speed_m_s: null
+  tracking_error_rad: null
+  tracking_error_duration_s: null
+  motor_temperature_c: null
+  drive_temperature_c: null
+  current_a: null
+  feedback_timeout_s: null
+  command_deadline_s: null
+  controlled_stop_timeout_s: null
+  stopped_velocity_rad_s: null
+verification:
+  workspace_collision_tcp_and_stop_report: null
+  load_installation_report: null
+  controller_watchdog_test_report: null
+  control_ownership_and_release_report: null
+  protection_telemetry_and_threshold_report: null
+  sdk_call_timeout_and_independent_stop_report: null
+  servo_period_and_interpolation_report: null
+trial:
+  amplitude_deg: 0.5
+  frequencies_hz: [0.1]
+  candidate_frequencies_hz: [0.1, 0.25, 0.5, 1, 2, 4]
+  repetitions: 3
+  holdout_frequency_hz: 0.125
+  ramp_s: 10.0
+  stationary_before_s: 10.0
+  stationary_after_s: 5.0
+  minimum_signal_to_noise: 5.0

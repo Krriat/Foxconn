@@ -1,0 +1,2531 @@
+{
+  "date_beijing": "2026-11-11",
+  "diagnostic_root": "/tmp/aide-camera-recheck-_6its2r6",
+  "scope": {
+    "real_camera_images": true,
+    "simulated_joint_and_suction_labels": true,
+    "physical_arm_connections": false,
+    "physical_arm_services": false,
+    "physical_suction_IO": false,
+    "production_dataset_modified": false
+  },
+  "protected_files_checked": 41,
+  "protected_files_changed": [],
+  "stages": {
+    "pipeline/baseline_no_writer": {
+      "instrumented_analysis": {
+        "measurement_monotonic_window": [
+          12276.674030642,
+          12336.677117022
+        ],
+        "kernel_queues": {
+          "/dev/video11": {
+            "format": "metadata",
+            "type": 13,
+            "buffers": 1799,
+            "allocated_buffers": 4,
+            "skipped_sequence_numbers": 1,
+            "error_flag_buffers": 0,
+            "zero_payload_buffers": 0,
+            "dequeue_latency_ms_p50_p95_max": [
+              7.9256110002461355,
+              8.244875601121748,
+              10.325940000257106
+            ],
+            "return_buffer_ms_p50_p95_max": [
+              0.4598769992298912,
+              0.6480581994765088,
+              2.9001890015933895
+            ]
+          },
+          "/dev/video7": {
+            "format": "metadata",
+            "type": 13,
+            "buffers": 1799,
+            "allocated_buffers": 4,
+            "skipped_sequence_numbers": 1,
+            "error_flag_buffers": 0,
+            "zero_payload_buffers": 0,
+            "dequeue_latency_ms_p50_p95_max": [
+              7.627056000274024,
+              7.868754899936903,
+              9.027924999827519
+            ],
+            "return_buffer_ms_p50_p95_max": [
+              0.44912500015925616,
+              0.6293373000517021,
+              2.961856000183616
+            ]
+          },
+          "/dev/video10": {
+            "format": "YUYV",
+            "type": 1,
+            "buffers": 1799,
+            "allocated_buffers": 4,
+            "skipped_sequence_numbers": 1,
+            "error_flag_buffers": 0,
+            "zero_payload_buffers": 0,
+            "dequeue_latency_ms_p50_p95_max": [
+              8.066647000305238,
+              8.428900699982478,
+              10.544791000938858
+            ],
+            "return_buffer_ms_p50_p95_max": [
+              0.27001899979950394,
+              0.38107590098661603,
+              2.7598679989750963
+            ]
+          },
+          "/dev/video6": {
+            "format": "Z16",
+            "type": 1,
+            "buffers": 1799,
+            "allocated_buffers": 4,
+            "skipped_sequence_numbers": 1,
+            "error_flag_buffers": 0,
+            "zero_payload_buffers": 0,
+            "dequeue_latency_ms_p50_p95_max": [
+              7.761828999719,
+              8.047569900554663,
+              10.183974000028684
+            ],
+            "return_buffer_ms_p50_p95_max": [
+              0.25657799960754346,
+              0.36576310048985744,
+              1.9223889994464116
+            ]
+          },
+          "/dev/video17": {
+            "format": "metadata",
+            "type": 13,
+            "buffers": 1799,
+            "allocated_buffers": 4,
+            "skipped_sequence_numbers": 0,
+            "error_flag_buffers": 0,
+            "zero_payload_buffers": 0,
+            "dequeue_latency_ms_p50_p95_max": [
+              30.74856100101897,
+              31.06911430022592,
+              32.89727400078846
+            ],
+            "return_buffer_ms_p50_p95_max": [
+              0.3897000005963491,
+              0.5481916003191144,
+              2.384023999184137
+            ]
+          },
+          "/dev/video16": {
+            "format": "YUYV",
+            "type": 1,
+            "buffers": 1799,
+            "allocated_buffers": 4,
+            "skipped_sequence_numbers": 0,
+            "error_flag_buffers": 0,
+            "zero_payload_buffers": 0,
+            "dequeue_latency_ms_p50_p95_max": [
+              30.8714359998703,
+              31.2234413009719,
+              32.99842699925648
+            ],
+            "return_buffer_ms_p50_p95_max": [
+              0.22848300068289973,
+              0.31681259970355313,
+              2.191894000134198
+            ]
+          },
+          "/dev/video13": {
+            "format": "metadata",
+            "type": 13,
+            "buffers": 1798,
+            "allocated_buffers": 4,
+            "skipped_sequence_numbers": 1,
+            "error_flag_buffers": 0,
+            "zero_payload_buffers": 0,
+            "dequeue_latency_ms_p50_p95_max": [
+              7.673300498936442,
+              7.8338770503251,
+              11.199602999113267
+            ],
+            "return_buffer_ms_p50_p95_max": [
+              0.40314000034413766,
+              0.5699676006770459,
+              3.344865999679314
+            ]
+          },
+          "/dev/video12": {
+            "format": "Z16",
+            "type": 1,
+            "buffers": 1798,
+            "allocated_buffers": 4,
+            "skipped_sequence_numbers": 1,
+            "error_flag_buffers": 0,
+            "zero_payload_buffers": 0,
+            "dequeue_latency_ms_p50_p95_max": [
+              7.805119999829913,
+              8.028218900653883,
+              11.342964999130345
+            ],
+            "return_buffer_ms_p50_p95_max": [
+              0.22923500000615604,
+              0.32399354922745255,
+              2.2716719995514723
+            ]
+          },
+          "/dev/video1": {
+            "format": "metadata",
+            "type": 13,
+            "buffers": 1799,
+            "allocated_buffers": 4,
+            "skipped_sequence_numbers": 0,
+            "error_flag_buffers": 0,
+            "zero_payload_buffers": 0,
+            "dequeue_latency_ms_p50_p95_max": [
+              7.774309000524227,
+              7.981963500606071,
+              14.412597000045935
+            ],
+            "return_buffer_ms_p50_p95_max": [
+              0.4243559997121338,
+              0.6017020001308989,
+              2.2303589994407957
+            ]
+          },
+          "/dev/video5": {
+            "format": "metadata",
+            "type": 13,
+            "buffers": 1798,
+            "allocated_buffers": 4,
+            "skipped_sequence_numbers": 1,
+            "error_flag_buffers": 0,
+            "zero_payload_buffers": 0,
+            "dequeue_latency_ms_p50_p95_max": [
+              7.884141999966232,
+              8.197281349112018,
+              10.108320999279385
+            ],
+            "return_buffer_ms_p50_p95_max": [
+              0.4422609990797355,
+              0.6675989990981176,
+              2.939133999461774
+            ]
+          },
+          "/dev/video0": {
+            "format": "Z16",
+            "type": 1,
+            "buffers": 1799,
+            "allocated_buffers": 4,
+            "skipped_sequence_numbers": 0,
+            "error_flag_buffers": 0,
+            "zero_payload_buffers": 0,
+            "dequeue_latency_ms_p50_p95_max": [
+              7.90180900003179,
+              8.146746901002189,
+              14.536245998897357
+            ],
+            "return_buffer_ms_p50_p95_max": [
+              0.24809900060063228,
+              0.3527783999743406,
+              1.475950999520137
+            ]
+          },
+          "/dev/video4": {
+            "format": "YUYV",
+            "type": 1,
+            "buffers": 1798,
+            "allocated_buffers": 4,
+            "skipped_sequence_numbers": 1,
+            "error_flag_buffers": 0,
+            "zero_payload_buffers": 0,
+            "dequeue_latency_ms_p50_p95_max": [
+              8.01566400059528,
+              8.364429950052,
+              10.196097999141784
+            ],
+            "return_buffer_ms_p50_p95_max": [
+              0.2649310008564498,
+              0.378114250179351,
+              2.8247659993212437
+            ]
+          }
+        },
+        "ioctl_errors": [],
+        "host": {
+          "cpu_busy_percent": {
+            "cpu": {
+              "mean": 47.11589341099764,
+              "p95": 49.9078235945541,
+              "max": 53.88513513513513
+            },
+            "cpu0": {
+              "mean": 52.826126986331374,
+              "p95": 66.33663366336633,
+              "max": 69.0
+            },
+            "cpu1": {
+              "mean": 47.61144535767072,
+              "p95": 63.75429553264604,
+              "max": 69.3069306930693
+            },
+            "cpu2": {
+              "mean": 42.924550729805,
+              "p95": 55.126012601260115,
+              "max": 62.0
+            },
+            "cpu3": {
+              "mean": 41.8521853241134,
+              "p95": 57.97000618429189,
+              "max": 62.62626262626263
+            },
+            "cpu4": {
+              "mean": 47.58858311200737,
+              "p95": 60.07575757575757,
+              "max": 74.0
+            },
+            "cpu5": {
+              "mean": 49.79518541310057,
+              "p95": 64.49999999999999,
+              "max": 68.93203883495146
+            }
+          },
+          "max_temperature_C": 48.5
+        },
+        "kernel_usb_fault_lines": [],
+        "kernel_log_read_success": true,
+        "kernel_log_source": "journalctl",
+        "publish_receive": {
+          "head": {
+            "received": 1800,
+            "received_without_matching_publish": 0,
+            "interior_published": 1793,
+            "interior_published_without_receive": 0,
+            "publish_errors": 0,
+            "positive_source_gaps_over_50ms": 0,
+            "source_regressions": 0
+          },
+          "left_wrist": {
+            "received": 1800,
+            "received_without_matching_publish": 0,
+            "interior_published": 1793,
+            "interior_published_without_receive": 0,
+            "publish_errors": 0,
+            "positive_source_gaps_over_50ms": 1,
+            "source_regressions": 0
+          },
+          "right_wrist": {
+            "received": 1800,
+            "received_without_matching_publish": 0,
+            "interior_published": 1793,
+            "interior_published_without_receive": 0,
+            "publish_errors": 0,
+            "positive_source_gaps_over_50ms": 1,
+            "source_regressions": 0
+          }
+        },
+        "caveat": "Kernel sequence skips alone do not distinguish camera/USB problems from host UVC scheduling or buffer starvation; two-sided end windows excluded for publish delivery checks.",
+        "metadata_evidence": {
+          "head": {
+            "source_anomalies": [],
+            "host_realtime_minus_monotonic_p0_p50_p100": [
+              1794361777.484135,
+              1794361777.4842558,
+              1794361777.4868703
+            ]
+          },
+          "left_wrist": {
+            "source_anomalies": [
+              {
+                "elapsed_seconds": 25.020805008000025,
+                "source_step_ms": 66.6816234588623,
+                "hardware_step_us": 66688,
+                "previous_metadata": [
+                  1794374079.0805905,
+                  12301.621698249,
+                  {
+                    "frame_number": 905,
+                    "clock_domain": "global_time",
+                    "frame_timestamp": 1794374079080.5906,
+                    "hw_timestamp": 1909640843,
+                    "time_of_arrival": 1794374079088,
+                    "backend_timestamp": 1794374079080,
+                    "actual_fps": 29993,
+                    "raw_frame_size": 614400
+                  }
+                ],
+                "next_metadata": [
+                  1794374079.147272,
+                  12301.695669546,
+                  {
+                    "frame_number": 906,
+                    "clock_domain": "global_time",
+                    "frame_timestamp": 1794374079147.2722,
+                    "hw_timestamp": 1909707531,
+                    "time_of_arrival": 1794374079155,
+                    "backend_timestamp": 1794374079147,
+                    "actual_fps": 14996,
+                    "raw_frame_size": 614400
+                  }
+                ]
+              }
+            ],
+            "host_realtime_minus_monotonic_p0_p50_p100": [
+              1794361777.484138,
+              1794361777.484252,
+              1794361777.4879842
+            ]
+          },
+          "right_wrist": {
+            "source_anomalies": [
+              {
+                "elapsed_seconds": 46.33074787700025,
+                "source_step_ms": 66.68233871459961,
+                "hardware_step_us": 66688,
+                "previous_metadata": [
+                  1794374100.4050455,
+                  12322.941475823,
+                  {
+                    "frame_number": 1545,
+                    "clock_domain": "global_time",
+                    "frame_timestamp": 1794374100405.0454,
+                    "hw_timestamp": 1148526955,
+                    "time_of_arrival": 1794374100413,
+                    "backend_timestamp": 1794374100405,
+                    "actual_fps": 29992,
+                    "raw_frame_size": 614400
+                  }
+                ],
+                "next_metadata": [
+                  1794374100.4717278,
+                  12323.005671201,
+                  {
+                    "frame_number": 1546,
+                    "clock_domain": "global_time",
+                    "frame_timestamp": 1794374100471.7278,
+                    "hw_timestamp": 1148593643,
+                    "time_of_arrival": 1794374100480,
+                    "backend_timestamp": 1794374100471,
+                    "actual_fps": 14996,
+                    "raw_frame_size": 614400
+                  }
+                ]
+              }
+            ],
+            "host_realtime_minus_monotonic_p0_p50_p100": [
+              1794361777.4841201,
+              1794361777.4842558,
+              1794361777.488205
+            ]
+          }
+        }
+      },
+      "acquisition_report": {
+        "camera_source_fps": 30,
+        "writer_running": false,
+        "physical_arms_or_IO": false,
+        "monotonic_start": 12276.672468483,
+        "monotonic_end": 12336.678800016,
+        "cameras": {
+          "head": {
+            "messages": 1800,
+            "source_hz": 29.978881975480803,
+            "receive_hz": 29.985695793858103,
+            "source_interval_ms_p50_p95_max": [
+              33.356666564941406,
+              33.35738182067871,
+              33.35857391357422
+            ],
+            "source_intervals_over_50ms": 0,
+            "receive_interval_ms_p50_p95_max": [
+              33.36179300094955,
+              37.40616030045203,
+              67.63937100004114
+            ],
+            "receive_intervals_over_50ms": 1,
+            "receive_lag_ms_p50_p95_max": [
+              51.99730396270752,
+              55.63582181930542,
+              85.01482009887695
+            ],
+            "decode_ms_p50_p95_max": [
+              0.2691229992706212,
+              0.8256122006969235,
+              2.8719980000460055
+            ],
+            "metadata_frames_in_image_window": 1800,
+            "metadata_missing_frame_numbers": 0,
+            "metadata_duplicate_or_backward_numbers": 0,
+            "metadata_without_image_with_5us_tolerance": 0,
+            "metadata_image_max_timestamp_difference_us": 0.0,
+            "source_gaps": []
+          },
+          "left_wrist": {
+            "messages": 1800,
+            "source_hz": 29.97689741544979,
+            "receive_hz": 29.98745080274821,
+            "source_interval_ms_p50_p95_max": [
+              33.3404541015625,
+              33.34167003631592,
+              66.6816234588623
+            ],
+            "source_intervals_over_50ms": 1,
+            "receive_interval_ms_p50_p95_max": [
+              33.349187000567326,
+              37.984876400150824,
+              73.94541000030586
+            ],
+            "receive_intervals_over_50ms": 3,
+            "receive_lag_ms_p50_p95_max": [
+              26.175975799560547,
+              30.833685398101807,
+              50.09007453918457
+            ],
+            "decode_ms_p50_p95_max": [
+              0.26568300017970614,
+              0.8475610503410279,
+              3.9787599998817313
+            ],
+            "metadata_frames_in_image_window": 1800,
+            "metadata_missing_frame_numbers": 0,
+            "metadata_duplicate_or_backward_numbers": 0,
+            "metadata_without_image_with_5us_tolerance": 0,
+            "metadata_image_max_timestamp_difference_us": 0.0,
+            "source_gaps": [
+              {
+                "after_message": 749,
+                "elapsed_seconds": 25.038743019104004,
+                "source_interval_ms": 66.6816234588623
+              }
+            ]
+          },
+          "right_wrist": {
+            "messages": 1800,
+            "source_hz": 29.97673295041118,
+            "receive_hz": 29.982843713994917,
+            "source_interval_ms_p50_p95_max": [
+              33.3406925201416,
+              33.34212303161621,
+              66.68233871459961
+            ],
+            "source_intervals_over_50ms": 1,
+            "receive_interval_ms_p50_p95_max": [
+              33.34371600067243,
+              36.16300250014319,
+              64.62712599932274
+            ],
+            "receive_intervals_over_50ms": 1,
+            "receive_lag_ms_p50_p95_max": [
+              19.13917064666748,
+              22.078847885131836,
+              32.49382972717285
+            ],
+            "decode_ms_p50_p95_max": [
+              0.2699705000850372,
+              0.8744346012463211,
+              4.198828999506077
+            ],
+            "metadata_frames_in_image_window": 1800,
+            "metadata_missing_frame_numbers": 0,
+            "metadata_duplicate_or_backward_numbers": 0,
+            "metadata_without_image_with_5us_tolerance": 0,
+            "metadata_image_max_timestamp_difference_us": 0.0,
+            "source_gaps": [
+              {
+                "after_message": 1388,
+                "elapsed_seconds": 46.34356498718262,
+                "source_interval_ms": 66.68233871459961
+              }
+            ]
+          }
+        }
+      }
+    },
+    "pipeline": {
+      "instrumented_analysis": {
+        "measurement_monotonic_window": [
+          12338.281238967,
+          12458.272580314
+        ],
+        "kernel_queues": {
+          "/dev/video7": {
+            "format": "metadata",
+            "type": 13,
+            "buffers": 3596,
+            "allocated_buffers": 4,
+            "skipped_sequence_numbers": 3,
+            "error_flag_buffers": 0,
+            "zero_payload_buffers": 0,
+            "dequeue_latency_ms_p50_p95_max": [
+              7.594460499603883,
+              7.813153999904898,
+              13.13751900124771
+            ],
+            "return_buffer_ms_p50_p95_max": [
+              0.3920210001524538,
+              0.5616147500404622,
+              2.697150001040427
+            ]
+          },
+          "/dev/video6": {
+            "format": "Z16",
+            "type": 1,
+            "buffers": 3596,
+            "allocated_buffers": 4,
+            "skipped_sequence_numbers": 3,
+            "error_flag_buffers": 0,
+            "zero_payload_buffers": 0,
+            "dequeue_latency_ms_p50_p95_max": [
+              7.718368499809003,
+              7.975319749675691,
+              13.192752001486951
+            ],
+            "return_buffer_ms_p50_p95_max": [
+              0.2285465006934828,
+              0.3158832491862995,
+              2.5059479994524736
+            ]
+          },
+          "/dev/video11": {
+            "format": "metadata",
+            "type": 13,
+            "buffers": 3594,
+            "allocated_buffers": 4,
+            "skipped_sequence_numbers": 5,
+            "error_flag_buffers": 0,
+            "zero_payload_buffers": 0,
+            "dequeue_latency_ms_p50_p95_max": [
+              7.897280999713985,
+              8.148950450686243,
+              35.636816999613075
+            ],
+            "return_buffer_ms_p50_p95_max": [
+              0.40570099918113556,
+              0.5627957995784527,
+              6.475177000538679
+            ]
+          },
+          "/dev/video10": {
+            "format": "YUYV",
+            "type": 1,
+            "buffers": 3594,
+            "allocated_buffers": 4,
+            "skipped_sequence_numbers": 5,
+            "error_flag_buffers": 0,
+            "zero_payload_buffers": 0,
+            "dequeue_latency_ms_p50_p95_max": [
+              8.019182000680303,
+              8.295991749946552,
+              35.71684999951685
+            ],
+            "return_buffer_ms_p50_p95_max": [
+              0.24240300081146415,
+              0.3296375997706491,
+              6.299013999523595
+            ]
+          },
+          "/dev/video17": {
+            "format": "metadata",
+            "type": 13,
+            "buffers": 3598,
+            "allocated_buffers": 4,
+            "skipped_sequence_numbers": 0,
+            "error_flag_buffers": 0,
+            "zero_payload_buffers": 0,
+            "dequeue_latency_ms_p50_p95_max": [
+              30.73728549952648,
+              31.05114615036655,
+              95.73948199977167
+            ],
+            "return_buffer_ms_p50_p95_max": [
+              0.35842050056089647,
+              0.5127267496391139,
+              14.31435400081682
+            ]
+          },
+          "/dev/video16": {
+            "format": "YUYV",
+            "type": 1,
+            "buffers": 3598,
+            "allocated_buffers": 4,
+            "skipped_sequence_numbers": 0,
+            "error_flag_buffers": 0,
+            "zero_payload_buffers": 0,
+            "dequeue_latency_ms_p50_p95_max": [
+              30.85136599929683,
+              31.221808049303945,
+              95.86175600088609
+            ],
+            "return_buffer_ms_p50_p95_max": [
+              0.2124345010088291,
+              0.30331584921441357,
+              14.11470400125836
+            ]
+          },
+          "/dev/video13": {
+            "format": "metadata",
+            "type": 13,
+            "buffers": 3591,
+            "allocated_buffers": 4,
+            "skipped_sequence_numbers": 6,
+            "error_flag_buffers": 0,
+            "zero_payload_buffers": 0,
+            "dequeue_latency_ms_p50_p95_max": [
+              7.664615999601665,
+              7.890179999776592,
+              16.567071999816108
+            ],
+            "return_buffer_ms_p50_p95_max": [
+              0.3706279985635774,
+              0.5451099996207631,
+              7.3543860016798135
+            ]
+          },
+          "/dev/video12": {
+            "format": "Z16",
+            "type": 1,
+            "buffers": 3591,
+            "allocated_buffers": 4,
+            "skipped_sequence_numbers": 6,
+            "error_flag_buffers": 0,
+            "zero_payload_buffers": 0,
+            "dequeue_latency_ms_p50_p95_max": [
+              7.792832000632188,
+              8.055301499553025,
+              17.079812998417765
+            ],
+            "return_buffer_ms_p50_p95_max": [
+              0.21177800044824835,
+              0.28731599923048634,
+              1.7571400003362214
+            ]
+          },
+          "/dev/video5": {
+            "format": "metadata",
+            "type": 13,
+            "buffers": 3595,
+            "allocated_buffers": 4,
+            "skipped_sequence_numbers": 4,
+            "error_flag_buffers": 0,
+            "zero_payload_buffers": 0,
+            "dequeue_latency_ms_p50_p95_max": [
+              7.878599999457947,
+              8.476944900939998,
+              38.85209399959422
+            ],
+            "return_buffer_ms_p50_p95_max": [
+              0.40605300091556273,
+              0.6541643999298684,
+              5.233822001173394
+            ]
+          },
+          "/dev/video1": {
+            "format": "metadata",
+            "type": 13,
+            "buffers": 3595,
+            "allocated_buffers": 4,
+            "skipped_sequence_numbers": 4,
+            "error_flag_buffers": 0,
+            "zero_payload_buffers": 0,
+            "dequeue_latency_ms_p50_p95_max": [
+              7.760505999613088,
+              8.00278269998671,
+              76.0794519992487
+            ],
+            "return_buffer_ms_p50_p95_max": [
+              0.3873959994962206,
+              0.5801541996333981,
+              4.950653999912902
+            ]
+          },
+          "/dev/video4": {
+            "format": "YUYV",
+            "type": 1,
+            "buffers": 3595,
+            "allocated_buffers": 4,
+            "skipped_sequence_numbers": 4,
+            "error_flag_buffers": 0,
+            "zero_payload_buffers": 0,
+            "dequeue_latency_ms_p50_p95_max": [
+              8.002390000910964,
+              8.59535489926202,
+              38.91119800027809
+            ],
+            "return_buffer_ms_p50_p95_max": [
+              0.24211500021920074,
+              0.3674283003419986,
+              4.53685300090001
+            ]
+          },
+          "/dev/video0": {
+            "format": "Z16",
+            "type": 1,
+            "buffers": 3595,
+            "allocated_buffers": 4,
+            "skipped_sequence_numbers": 4,
+            "error_flag_buffers": 0,
+            "zero_payload_buffers": 0,
+            "dequeue_latency_ms_p50_p95_max": [
+              7.8810180002619745,
+              8.182671501162986,
+              76.15180500033603
+            ],
+            "return_buffer_ms_p50_p95_max": [
+              0.22691500089422334,
+              0.3274151995356078,
+              4.735675000119954
+            ]
+          }
+        },
+        "ioctl_errors": [],
+        "host": {
+          "cpu_busy_percent": {
+            "cpu": {
+              "mean": 60.99590674183948,
+              "p95": 64.34604329306573,
+              "max": 73.33333333333334
+            },
+            "cpu0": {
+              "mean": 65.66382823038411,
+              "p95": 72.0673469387755,
+              "max": 79.20792079207921
+            },
+            "cpu1": {
+              "mean": 59.18876216082887,
+              "p95": 66.58613861386137,
+              "max": 70.0
+            },
+            "cpu2": {
+              "mean": 57.74687785789856,
+              "p95": 64.28571428571428,
+              "max": 75.75757575757575
+            },
+            "cpu3": {
+              "mean": 56.92792050178717,
+              "p95": 62.95855874247218,
+              "max": 68.31683168316832
+            },
+            "cpu4": {
+              "mean": 63.38493150307338,
+              "p95": 70.28069817291005,
+              "max": 76.69902912621359
+            },
+            "cpu5": {
+              "mean": 62.96349733443118,
+              "p95": 69.43413729128014,
+              "max": 81.63265306122449
+            }
+          },
+          "max_temperature_C": 51.0
+        },
+        "kernel_usb_fault_lines": [],
+        "kernel_log_read_success": true,
+        "kernel_log_source": "journalctl",
+        "publish_receive": {
+          "head": {
+            "received": 3596,
+            "received_without_matching_publish": 0,
+            "interior_published": 3591,
+            "interior_published_without_receive": 1,
+            "publish_errors": 0,
+            "positive_source_gaps_over_50ms": 1,
+            "source_regressions": 0
+          },
+          "left_wrist": {
+            "received": 3594,
+            "received_without_matching_publish": 0,
+            "interior_published": 3589,
+            "interior_published_without_receive": 1,
+            "publish_errors": 0,
+            "positive_source_gaps_over_50ms": 5,
+            "source_regressions": 0
+          },
+          "right_wrist": {
+            "received": 3594,
+            "received_without_matching_publish": 0,
+            "interior_published": 3588,
+            "interior_published_without_receive": 1,
+            "publish_errors": 0,
+            "positive_source_gaps_over_50ms": 6,
+            "source_regressions": 0
+          }
+        },
+        "caveat": "Kernel sequence skips alone do not distinguish camera/USB problems from host UVC scheduling or buffer starvation; two-sided end windows excluded for publish delivery checks.",
+        "metadata_evidence": {
+          "head": {
+            "source_anomalies": [
+              {
+                "elapsed_seconds": 107.2620394000005,
+                "source_step_ms": 66.71524047851562,
+                "hardware_step_us": 66720,
+                "previous_metadata": [
+                  1794374222.8480017,
+                  12445.496120851,
+                  {
+                    "frame_number": 5219,
+                    "clock_domain": "global_time",
+                    "frame_timestamp": 1794374222848.0017,
+                    "hw_timestamp": 1035505971,
+                    "time_of_arrival": 1794374222940,
+                    "backend_timestamp": 1794374222849,
+                    "actual_fps": 29978,
+                    "raw_frame_size": 614400
+                  }
+                ],
+                "next_metadata": [
+                  1794374222.914717,
+                  12445.54475621,
+                  {
+                    "frame_number": 5221,
+                    "clock_domain": "global_time",
+                    "frame_timestamp": 1794374222914.717,
+                    "hw_timestamp": 1035572691,
+                    "time_of_arrival": 1794374222985,
+                    "backend_timestamp": 1794374222916,
+                    "actual_fps": 29978,
+                    "raw_frame_size": 614400
+                  }
+                ]
+              }
+            ],
+            "host_realtime_minus_monotonic_p0_p50_p100": [
+              1794361777.4841313,
+              1794361777.4844773,
+              1794361777.4932823
+            ]
+          },
+          "left_wrist": {
+            "source_anomalies": [
+              {
+                "elapsed_seconds": 12.486147715999323,
+                "source_step_ms": 66.67923927307129,
+                "hardware_step_us": 66687,
+                "previous_metadata": [
+                  1794374128.1577153,
+                  12350.697521422,
+                  {
+                    "frame_number": 2376,
+                    "clock_domain": "global_time",
+                    "frame_timestamp": 1794374128157.7153,
+                    "hw_timestamp": 1958723101,
+                    "time_of_arrival": 1794374128166,
+                    "backend_timestamp": 1794374128158,
+                    "actual_fps": 29993,
+                    "raw_frame_size": 614400
+                  }
+                ],
+                "next_metadata": [
+                  1794374128.2243946,
+                  12350.768266885,
+                  {
+                    "frame_number": 2377,
+                    "clock_domain": "global_time",
+                    "frame_timestamp": 1794374128224.3945,
+                    "hw_timestamp": 1958789788,
+                    "time_of_arrival": 1794374128232,
+                    "backend_timestamp": 1794374128224,
+                    "actual_fps": 14997,
+                    "raw_frame_size": 614400
+                  }
+                ]
+              },
+              {
+                "elapsed_seconds": 15.714277000000948,
+                "source_step_ms": 66.6811466217041,
+                "hardware_step_us": 66688,
+                "previous_metadata": [
+                  1794374131.3917098,
+                  12353.930130497,
+                  {
+                    "frame_number": 2472,
+                    "clock_domain": "global_time",
+                    "frame_timestamp": 1794374131391.7097,
+                    "hw_timestamp": 1961957461,
+                    "time_of_arrival": 1794374131400,
+                    "backend_timestamp": 1794374131392,
+                    "actual_fps": 29993,
+                    "raw_frame_size": 614400
+                  }
+                ],
+                "next_metadata": [
+                  1794374131.458391,
+                  12353.99638788,
+                  {
+                    "frame_number": 2473,
+                    "clock_domain": "global_time",
+                    "frame_timestamp": 1794374131458.3909,
+                    "hw_timestamp": 1962024149,
+                    "time_of_arrival": 1794374131466,
+                    "backend_timestamp": 1794374131458,
+                    "actual_fps": 14996,
+                    "raw_frame_size": 614400
+                  }
+                ]
+              },
+              {
+                "elapsed_seconds": 38.42836358600107,
+                "source_step_ms": 66.6816234588623,
+                "hardware_step_us": 66688,
+                "previous_metadata": [
+                  1794374154.0632956,
+                  12376.667938647,
+                  {
+                    "frame_number": 3151,
+                    "clock_domain": "global_time",
+                    "frame_timestamp": 1794374154063.2957,
+                    "hw_timestamp": 1984631330,
+                    "time_of_arrival": 1794374154092,
+                    "backend_timestamp": 1794374154063,
+                    "actual_fps": 29993,
+                    "raw_frame_size": 614400
+                  }
+                ],
+                "next_metadata": [
+                  1794374154.1299772,
+                  12376.71037517,
+                  {
+                    "frame_number": 3153,
+                    "clock_domain": "global_time",
+                    "frame_timestamp": 1794374154129.9773,
+                    "hw_timestamp": 1984698018,
+                    "time_of_arrival": 1794374154169,
+                    "backend_timestamp": 1794374154130,
+                    "actual_fps": 29993,
+                    "raw_frame_size": 614400
+                  }
+                ]
+              },
+              {
+                "elapsed_seconds": 81.32870067400108,
+                "source_step_ms": 66.68329238891602,
+                "hardware_step_us": 66688,
+                "previous_metadata": [
+                  1794374197.0058048,
+                  12419.544217627,
+                  {
+                    "frame_number": 4439,
+                    "clock_domain": "global_time",
+                    "frame_timestamp": 1794374197005.8047,
+                    "hw_timestamp": 2027578306,
+                    "time_of_arrival": 1794374197014,
+                    "backend_timestamp": 1794374197006,
+                    "actual_fps": 29993,
+                    "raw_frame_size": 614400
+                  }
+                ],
+                "next_metadata": [
+                  1794374197.072488,
+                  12419.610655713,
+                  {
+                    "frame_number": 4440,
+                    "clock_domain": "global_time",
+                    "frame_timestamp": 1794374197072.488,
+                    "hw_timestamp": 2027644994,
+                    "time_of_arrival": 1794374197080,
+                    "backend_timestamp": 1794374197072,
+                    "actual_fps": 14996,
+                    "raw_frame_size": 614400
+                  }
+                ]
+              },
+              {
+                "elapsed_seconds": 82.53009052299967,
+                "source_step_ms": 66.68233871459961,
+                "hardware_step_us": 66688,
+                "previous_metadata": [
+                  1794374198.2061028,
+                  12420.745187695,
+                  {
+                    "frame_number": 4474,
+                    "clock_domain": "global_time",
+                    "frame_timestamp": 1794374198206.1028,
+                    "hw_timestamp": 2028778687,
+                    "time_of_arrival": 1794374198214,
+                    "backend_timestamp": 1794374198206,
+                    "actual_fps": 29993,
+                    "raw_frame_size": 614400
+                  }
+                ],
+                "next_metadata": [
+                  1794374198.2727852,
+                  12420.81214934,
+                  {
+                    "frame_number": 4475,
+                    "clock_domain": "global_time",
+                    "frame_timestamp": 1794374198272.7852,
+                    "hw_timestamp": 2028845375,
+                    "time_of_arrival": 1794374198281,
+                    "backend_timestamp": 1794374198273,
+                    "actual_fps": 14996,
+                    "raw_frame_size": 614400
+                  }
+                ]
+              }
+            ],
+            "host_realtime_minus_monotonic_p0_p50_p100": [
+              1794361777.4841392,
+              1794361777.4845781,
+              1794361777.4957283
+            ]
+          },
+          "right_wrist": {
+            "source_anomalies": [
+              {
+                "elapsed_seconds": 38.41773370299961,
+                "source_step_ms": 66.68806076049805,
+                "hardware_step_us": 66688,
+                "previous_metadata": [
+                  1794374154.083563,
+                  12376.678115053,
+                  {
+                    "frame_number": 3154,
+                    "clock_domain": "global_time",
+                    "frame_timestamp": 1794374154083.563,
+                    "hw_timestamp": 1202210674,
+                    "time_of_arrival": 1794374154092,
+                    "backend_timestamp": 1794374154083,
+                    "actual_fps": 29990,
+                    "raw_frame_size": 614400
+                  }
+                ],
+                "next_metadata": [
+                  1794374154.1502512,
+                  12376.69969991,
+                  {
+                    "frame_number": 3156,
+                    "clock_domain": "global_time",
+                    "frame_timestamp": 1794374154150.2512,
+                    "hw_timestamp": 1202277362,
+                    "time_of_arrival": 1794374154168,
+                    "backend_timestamp": 1794374154150,
+                    "actual_fps": 29990,
+                    "raw_frame_size": 614400
+                  }
+                ]
+              },
+              {
+                "elapsed_seconds": 61.643746948000626,
+                "source_step_ms": 66.68400764465332,
+                "hardware_step_us": 66688,
+                "previous_metadata": [
+                  1794374177.3220198,
+                  12399.857012084,
+                  {
+                    "frame_number": 3851,
+                    "clock_domain": "global_time",
+                    "frame_timestamp": 1794374177322.0198,
+                    "hw_timestamp": 1225451390,
+                    "time_of_arrival": 1794374177330,
+                    "backend_timestamp": 1794374177322,
+                    "actual_fps": 29992,
+                    "raw_frame_size": 614400
+                  }
+                ],
+                "next_metadata": [
+                  1794374177.3887038,
+                  12399.925764709,
+                  {
+                    "frame_number": 3852,
+                    "clock_domain": "global_time",
+                    "frame_timestamp": 1794374177388.7039,
+                    "hw_timestamp": 1225518078,
+                    "time_of_arrival": 1794374177396,
+                    "backend_timestamp": 1794374177388,
+                    "actual_fps": 14996,
+                    "raw_frame_size": 614400
+                  }
+                ]
+              },
+              {
+                "elapsed_seconds": 65.57463399900007,
+                "source_step_ms": 66.67542457580566,
+                "hardware_step_us": 66688,
+                "previous_metadata": [
+                  1794374181.2562695,
+                  12403.7922372,
+                  {
+                    "frame_number": 3968,
+                    "clock_domain": "global_time",
+                    "frame_timestamp": 1794374181256.2695,
+                    "hw_timestamp": 1229385973,
+                    "time_of_arrival": 1794374181264,
+                    "backend_timestamp": 1794374181256,
+                    "actual_fps": 29995,
+                    "raw_frame_size": 614400
+                  }
+                ],
+                "next_metadata": [
+                  1794374181.3229449,
+                  12403.856752177,
+                  {
+                    "frame_number": 3969,
+                    "clock_domain": "global_time",
+                    "frame_timestamp": 1794374181322.9448,
+                    "hw_timestamp": 1229452661,
+                    "time_of_arrival": 1794374181330,
+                    "backend_timestamp": 1794374181322,
+                    "actual_fps": 14998,
+                    "raw_frame_size": 614400
+                  }
+                ]
+              },
+              {
+                "elapsed_seconds": 70.30786594299934,
+                "source_step_ms": 66.68472290039062,
+                "hardware_step_us": 66688,
+                "previous_metadata": [
+                  1794374185.9905531,
+                  12408.523087318,
+                  {
+                    "frame_number": 4109,
+                    "clock_domain": "global_time",
+                    "frame_timestamp": 1794374185990.5532,
+                    "hw_timestamp": 1234120810,
+                    "time_of_arrival": 1794374185998,
+                    "backend_timestamp": 1794374185990,
+                    "actual_fps": 29994,
+                    "raw_frame_size": 614400
+                  }
+                ],
+                "next_metadata": [
+                  1794374186.0572379,
+                  12408.590772738,
+                  {
+                    "frame_number": 4110,
+                    "clock_domain": "global_time",
+                    "frame_timestamp": 1794374186057.2378,
+                    "hw_timestamp": 1234187498,
+                    "time_of_arrival": 1794374186065,
+                    "backend_timestamp": 1794374186057,
+                    "actual_fps": 14995,
+                    "raw_frame_size": 614400
+                  }
+                ]
+              },
+              {
+                "elapsed_seconds": 72.00952956000037,
+                "source_step_ms": 66.67661666870117,
+                "hardware_step_us": 66688,
+                "previous_metadata": [
+                  1794374187.6909335,
+                  12410.227657753,
+                  {
+                    "frame_number": 4159,
+                    "clock_domain": "global_time",
+                    "frame_timestamp": 1794374187690.9333,
+                    "hw_timestamp": 1235821351,
+                    "time_of_arrival": 1794374187699,
+                    "backend_timestamp": 1794374187691,
+                    "actual_fps": 29995,
+                    "raw_frame_size": 614400
+                  }
+                ],
+                "next_metadata": [
+                  1794374187.75761,
+                  12410.291516728,
+                  {
+                    "frame_number": 4160,
+                    "clock_domain": "global_time",
+                    "frame_timestamp": 1794374187757.61,
+                    "hw_timestamp": 1235888039,
+                    "time_of_arrival": 1794374187765,
+                    "backend_timestamp": 1794374187757,
+                    "actual_fps": 14997,
+                    "raw_frame_size": 614400
+                  }
+                ]
+              },
+              {
+                "elapsed_seconds": 85.41632477500025,
+                "source_step_ms": 66.6804313659668,
+                "hardware_step_us": 66687,
+                "previous_metadata": [
+                  1794374201.0938473,
+                  12423.629567681,
+                  {
+                    "frame_number": 4560,
+                    "clock_domain": "global_time",
+                    "frame_timestamp": 1794374201093.8472,
+                    "hw_timestamp": 1249225609,
+                    "time_of_arrival": 1794374201102,
+                    "backend_timestamp": 1794374201094,
+                    "actual_fps": 29993,
+                    "raw_frame_size": 614400
+                  }
+                ],
+                "next_metadata": [
+                  1794374201.1605277,
+                  12423.698668459,
+                  {
+                    "frame_number": 4561,
+                    "clock_domain": "global_time",
+                    "frame_timestamp": 1794374201160.5276,
+                    "hw_timestamp": 1249292296,
+                    "time_of_arrival": 1794374201168,
+                    "backend_timestamp": 1794374201160,
+                    "actual_fps": 14996,
+                    "raw_frame_size": 614400
+                  }
+                ]
+              }
+            ],
+            "host_realtime_minus_monotonic_p0_p50_p100": [
+              1794361777.4841282,
+              1794361777.4845166,
+              1794361777.4934335
+            ]
+          }
+        }
+      },
+      "acquisition_report": {
+        "started_beijing": "2026-11-11T13:14:06.454710+08:00",
+        "measurement_seconds": 120.00171219399999,
+        "camera_source_fps": 30,
+        "recording_fps": 20,
+        "source_gap_threshold_ms": 80,
+        "synthetic_joints_and_suction": true,
+        "physical_arm_connections": false,
+        "physical_arm_services": false,
+        "physical_DO_access": false,
+        "production_dataset_modified": false,
+        "raw_dataset": "/tmp/aide-camera-recheck-_6its2r6/pipeline/TEST_ONLY_raw_simulated_joints_and_suction",
+        "publishers": {
+          "head": 1,
+          "left_wrist": 1,
+          "right_wrist": 1
+        },
+        "cameras": {
+          "head": {
+            "messages": 3596,
+            "source_hz": 29.970536950677275,
+            "receive_hz": 29.967284110339303,
+            "source_interval_ms_p50_p95_max": [
+              33.35690498352051,
+              33.35762023925781,
+              66.71524047851562
+            ],
+            "source_intervals_over_50ms": 1,
+            "receive_interval_ms_p50_p95_max": [
+              33.44255699994392,
+              40.063820500654394,
+              105.33481600032246
+            ],
+            "receive_intervals_over_50ms": 10,
+            "receive_lag_ms_p50_p95_max": [
+              50.304293632507324,
+              57.07216262817383,
+              145.48540115356445
+            ],
+            "decode_ms_p50_p95_max": [
+              0.4769654988194816,
+              1.8673827498787432,
+              9.27354199848196
+            ],
+            "metadata_frames_in_image_window": 3597,
+            "metadata_missing_frame_numbers": 0,
+            "metadata_duplicate_or_backward_numbers": 0,
+            "metadata_without_image_with_5us_tolerance": 1,
+            "metadata_image_max_timestamp_difference_us": 33357.62023925781,
+            "source_gaps": [
+              {
+                "after_message": 3211,
+                "elapsed_seconds": 107.17542147636414,
+                "source_interval_ms": 66.71524047851562
+              }
+            ]
+          },
+          "left_wrist": {
+            "messages": 3594,
+            "source_hz": 29.95190145507565,
+            "receive_hz": 29.947570443107317,
+            "source_interval_ms_p50_p95_max": [
+              33.3404541015625,
+              33.34164619445801,
+              66.68329238891602
+            ],
+            "source_intervals_over_50ms": 5,
+            "receive_interval_ms_p50_p95_max": [
+              33.392280000043684,
+              39.01983320029103,
+              96.61269999924116
+            ],
+            "receive_intervals_over_50ms": 19,
+            "receive_lag_ms_p50_p95_max": [
+              24.0328311920166,
+              30.286574363708496,
+              108.2310676574707
+            ],
+            "decode_ms_p50_p95_max": [
+              0.5876224995517987,
+              1.9683548499415333,
+              11.723264999091043
+            ],
+            "metadata_frames_in_image_window": 3595,
+            "metadata_missing_frame_numbers": 0,
+            "metadata_duplicate_or_backward_numbers": 0,
+            "metadata_without_image_with_5us_tolerance": 1,
+            "metadata_image_max_timestamp_difference_us": 33340.6925201416,
+            "source_gaps": [
+              {
+                "after_message": 372,
+                "elapsed_seconds": 12.469267845153809,
+                "source_interval_ms": 66.67923927307129
+              },
+              {
+                "after_message": 468,
+                "elapsed_seconds": 15.703264236450195,
+                "source_interval_ms": 66.6811466217041
+              },
+              {
+                "after_message": 1147,
+                "elapsed_seconds": 38.3748505115509,
+                "source_interval_ms": 66.6816234588623
+              },
+              {
+                "after_message": 2434,
+                "elapsed_seconds": 81.31736135482788,
+                "source_interval_ms": 66.68329238891602
+              },
+              {
+                "after_message": 2469,
+                "elapsed_seconds": 82.51765847206116,
+                "source_interval_ms": 66.68233871459961
+              }
+            ]
+          },
+          "right_wrist": {
+            "messages": 3594,
+            "source_hz": 29.94339229670556,
+            "receive_hz": 29.9448023061963,
+            "source_interval_ms_p50_p95_max": [
+              33.3406925201416,
+              33.34236145019531,
+              66.68806076049805
+            ],
+            "source_intervals_over_50ms": 6,
+            "receive_interval_ms_p50_p95_max": [
+              33.35885200067423,
+              38.329379800416056,
+              69.81708500097739
+            ],
+            "receive_intervals_over_50ms": 14,
+            "receive_lag_ms_p50_p95_max": [
+              18.596172332763672,
+              24.41012859344482,
+              49.448251724243164
+            ],
+            "decode_ms_p50_p95_max": [
+              0.5173979998289724,
+              2.1627219507536206,
+              9.450058001675643
+            ],
+            "metadata_frames_in_image_window": 3595,
+            "metadata_missing_frame_numbers": 0,
+            "metadata_duplicate_or_backward_numbers": 0,
+            "metadata_without_image_with_5us_tolerance": 1,
+            "metadata_image_max_timestamp_difference_us": 33343.79196166992,
+            "source_gaps": [
+              {
+                "after_message": 1150,
+                "elapsed_seconds": 38.40854239463806,
+                "source_interval_ms": 66.68806076049805
+              },
+              {
+                "after_message": 1846,
+                "elapsed_seconds": 61.646995067596436,
+                "source_interval_ms": 66.68400764465332
+              },
+              {
+                "after_message": 1963,
+                "elapsed_seconds": 65.5812361240387,
+                "source_interval_ms": 66.67542457580566
+              },
+              {
+                "after_message": 2104,
+                "elapsed_seconds": 70.31552910804749,
+                "source_interval_ms": 66.68472290039062
+              },
+              {
+                "after_message": 2154,
+                "elapsed_seconds": 72.01590132713318,
+                "source_interval_ms": 66.67661666870117
+              },
+              {
+                "after_message": 2555,
+                "elapsed_seconds": 85.41881895065308,
+                "source_interval_ms": 66.6804313659668
+              }
+            ]
+          }
+        },
+        "simulated_command_events": [
+          {
+            "side": "left",
+            "value": 1,
+            "elapsed_seconds": 5.001421184000719,
+            "ros_timestamp": 1794374120.7644448
+          },
+          {
+            "side": "right",
+            "value": 1,
+            "elapsed_seconds": 10.006151711999337,
+            "ros_timestamp": 1794374125.769194
+          },
+          {
+            "side": "left",
+            "value": 0,
+            "elapsed_seconds": 20.001702633000605,
+            "ros_timestamp": 1794374135.7647219
+          },
+          {
+            "side": "right",
+            "value": 0,
+            "elapsed_seconds": 25.004489105000175,
+            "ros_timestamp": 1794374140.7675207
+          },
+          {
+            "side": "left",
+            "value": 1,
+            "elapsed_seconds": 35.00264302399955,
+            "ros_timestamp": 1794374150.7657359
+          },
+          {
+            "side": "right",
+            "value": 1,
+            "elapsed_seconds": 40.001373798000714,
+            "ros_timestamp": 1794374155.7643986
+          },
+          {
+            "side": "left",
+            "value": 0,
+            "elapsed_seconds": 45.000749925999116,
+            "ros_timestamp": 1794374160.763767
+          },
+          {
+            "side": "right",
+            "value": 0,
+            "elapsed_seconds": 50.000304838000375,
+            "ros_timestamp": 1794374165.7633438
+          }
+        ],
+        "image_decode_errors": [],
+        "publisher_diagnostics": {
+          "right_wrist: Temperatures": {
+            "Asic Temperature": "28"
+          },
+          "left_wrist: Temperatures": {
+            "Asic Temperature": "27"
+          },
+          "head: Temperatures": {
+            "Asic Temperature": "28",
+            "Projector Temperature": "25"
+          },
+          "head: depth": {
+            "Events in window": "300",
+            "Events since startup": "5613",
+            "Duration of window (s)": "9.993059",
+            "Actual frequency (Hz)": "30.020838",
+            "Target frequency (Hz)": "30.000000",
+            "Minimum acceptable frequency (Hz)": "27.000000",
+            "Maximum acceptable frequency (Hz)": "33.000000"
+          },
+          "right_wrist: color": {
+            "Events in window": "300",
+            "Events since startup": "5606",
+            "Duration of window (s)": "9.999910",
+            "Actual frequency (Hz)": "30.000269",
+            "Target frequency (Hz)": "30.000000",
+            "Minimum acceptable frequency (Hz)": "27.000000",
+            "Maximum acceptable frequency (Hz)": "33.000000"
+          },
+          "right_wrist: depth": {
+            "Events in window": "300",
+            "Events since startup": "5622",
+            "Duration of window (s)": "9.999908",
+            "Actual frequency (Hz)": "30.000277",
+            "Target frequency (Hz)": "30.000000",
+            "Minimum acceptable frequency (Hz)": "27.000000",
+            "Maximum acceptable frequency (Hz)": "33.000000"
+          },
+          "left_wrist: color": {
+            "Events in window": "300",
+            "Events since startup": "5607",
+            "Duration of window (s)": "9.999431",
+            "Actual frequency (Hz)": "30.001706",
+            "Target frequency (Hz)": "30.000000",
+            "Minimum acceptable frequency (Hz)": "27.000000",
+            "Maximum acceptable frequency (Hz)": "33.000000"
+          },
+          "left_wrist: depth": {
+            "Events in window": "300",
+            "Events since startup": "5623",
+            "Duration of window (s)": "9.999428",
+            "Actual frequency (Hz)": "30.001717",
+            "Target frequency (Hz)": "30.000000",
+            "Minimum acceptable frequency (Hz)": "27.000000",
+            "Maximum acceptable frequency (Hz)": "33.000000"
+          },
+          "head: color": {
+            "Events in window": "300",
+            "Events since startup": "5613",
+            "Duration of window (s)": "9.993057",
+            "Actual frequency (Hz)": "30.020844",
+            "Target frequency (Hz)": "30.000000",
+            "Minimum acceptable frequency (Hz)": "27.000000",
+            "Maximum acceptable frequency (Hz)": "33.000000"
+          }
+        },
+        "schema": {
+          "version": 2,
+          "schema_id": "keyboard_dual_arm_suction_v1",
+          "fps": 20.0,
+          "width": 640,
+          "height": 480,
+          "cameras": [
+            "head",
+            "left_wrist",
+            "right_wrist"
+          ],
+          "state_names": [
+            "left_joint_1.pos",
+            "left_joint_2.pos",
+            "left_joint_3.pos",
+            "left_joint_4.pos",
+            "left_joint_5.pos",
+            "left_joint_6.pos",
+            "left_joint_7.pos",
+            "right_joint_1.pos",
+            "right_joint_2.pos",
+            "right_joint_3.pos",
+            "right_joint_4.pos",
+            "right_joint_5.pos",
+            "right_joint_6.pos",
+            "right_joint_7.pos",
+            "left_suction.on",
+            "right_suction.on"
+          ],
+          "action_names": [
+            "left_joint_1.pos",
+            "left_joint_2.pos",
+            "left_joint_3.pos",
+            "left_joint_4.pos",
+            "left_joint_5.pos",
+            "left_joint_6.pos",
+            "left_joint_7.pos",
+            "right_joint_1.pos",
+            "right_joint_2.pos",
+            "right_joint_3.pos",
+            "right_joint_4.pos",
+            "right_joint_5.pos",
+            "right_joint_6.pos",
+            "right_joint_7.pos",
+            "left_suction.on",
+            "right_suction.on"
+          ],
+          "units": [
+            "radian",
+            "radian",
+            "radian",
+            "radian",
+            "radian",
+            "radian",
+            "radian",
+            "radian",
+            "radian",
+            "radian",
+            "radian",
+            "radian",
+            "radian",
+            "radian",
+            "binary",
+            "binary"
+          ],
+          "source_order": [
+            "left",
+            "right",
+            "head",
+            "left_wrist",
+            "right_wrist"
+          ],
+          "suction_channels": {
+            "left": 1,
+            "right": 2
+          },
+          "source_max_skew_seconds": 0.05,
+          "joint_action_source": "same_sample_measured_joint_positions",
+          "suction_observation_source": "verified_logical_DO_readback_not_vacuum_detection",
+          "suction_action_source": "keyboard_requested_binary_target",
+          "suction_max_age_seconds": 0.5,
+          "suction_time_alignment": "latest_IO_and_command_at_or_before_image_time"
+        },
+        "writer": {
+          "written_frames": 2398,
+          "written_bytes": 2225562644,
+          "queue_capacity_frames": 64,
+          "image_workers": 3,
+          "png_encoder": "libdeflate_sub_1",
+          "queue_full_count": 0,
+          "peak_queue": 1,
+          "write_ms_p50_p95_max": [
+            56.75388599956932,
+            72.62023664970911,
+            140.96869999957562
+          ],
+          "queue_wait_ms_p95": 1.584767799977271
+        },
+        "environment": {
+          "ROS_DOMAIN_ID": "232",
+          "ROS_LOCALHOST_ONLY": "1",
+          "RMW_IMPLEMENTATION": "rmw_fastrtps_cpp"
+        },
+        "raw_validation": "all_arrays_and_images_pass",
+        "frames": 2398,
+        "images": 7194,
+        "segments": [
+          {
+            "start": 0,
+            "end": 301,
+            "pause_reason": "图像/关节跳过了采集周期：left=89.8ms, right=89.8ms"
+          },
+          {
+            "start": 301,
+            "end": 766,
+            "pause_reason": "图像/关节跳过了采集周期：left_wrist=100.0ms"
+          },
+          {
+            "start": 766,
+            "end": 794,
+            "pause_reason": "图像/关节跳过了采集周期：right_wrist=100.0ms"
+          },
+          {
+            "start": 794,
+            "end": 1325,
+            "pause_reason": "图像/关节跳过了采集周期：left_wrist=100.0ms"
+          },
+          {
+            "start": 1325,
+            "end": 1800,
+            "pause_reason": "图像/关节跳过了采集周期：left=82.1ms, right=82.1ms"
+          },
+          {
+            "start": 1800,
+            "end": 2149,
+            "pause_reason": "图像/关节跳过了采集周期：left=80.6ms, right=80.6ms"
+          },
+          {
+            "start": 2149,
+            "end": 2398,
+            "pause_reason": "keyboard save"
+          }
+        ],
+        "capture_gaps": [
+          {
+            "after_frame": 301,
+            "reasons": [
+              "图像/关节跳过了采集周期：left=89.8ms, right=89.8ms"
+            ],
+            "start_elapsed_seconds": 15.170982409999851,
+            "end_elapsed_seconds": 15.189150598000197
+          },
+          {
+            "after_frame": 766,
+            "reasons": [
+              "图像/关节跳过了采集周期：left_wrist=100.0ms"
+            ],
+            "start_elapsed_seconds": 38.45452513299824,
+            "end_elapsed_seconds": 38.46497008799997
+          },
+          {
+            "after_frame": 794,
+            "reasons": [
+              "图像/关节跳过了采集周期：right_wrist=100.0ms"
+            ],
+            "start_elapsed_seconds": 39.82078841099974,
+            "end_elapsed_seconds": 39.835122242999205
+          },
+          {
+            "after_frame": 1325,
+            "reasons": [
+              "图像/关节跳过了采集周期：left_wrist=100.0ms"
+            ],
+            "start_elapsed_seconds": 66.37333726299948,
+            "end_elapsed_seconds": 66.3968118039993
+          },
+          {
+            "after_frame": 1800,
+            "reasons": [
+              "图像/关节跳过了采集周期：left=82.1ms, right=82.1ms"
+            ],
+            "start_elapsed_seconds": 90.12076693999916,
+            "end_elapsed_seconds": 90.14510433000032
+          },
+          {
+            "after_frame": 2149,
+            "reasons": [
+              "图像/关节跳过了采集周期：left=80.6ms, right=80.6ms"
+            ],
+            "start_elapsed_seconds": 107.56984683599876,
+            "end_elapsed_seconds": 107.58638654499919
+          }
+        ],
+        "capture_diagnostics": {
+          "receive": {
+            "left": {
+              "messages": 417,
+              "source_hz": 83.39375614013329,
+              "receive_hz": 83.39387330945021,
+              "latency_ms_p95": 0.0,
+              "decode_ms_p95": 0.0,
+              "source_max_interval_ms": 31.14032745361328
+            },
+            "right": {
+              "messages": 417,
+              "source_hz": 83.39375614013329,
+              "receive_hz": 83.39387330945021,
+              "latency_ms_p95": 0.0,
+              "decode_ms_p95": 0.0,
+              "source_max_interval_ms": 31.14032745361328
+            },
+            "head": {
+              "messages": 150,
+              "source_hz": 29.9787688683687,
+              "receive_hz": 29.909220085206474,
+              "latency_ms_p95": 55.62034845352171,
+              "decode_ms_p95": 1.908611299859328,
+              "source_max_interval_ms": 33.358097076416016
+            },
+            "left_wrist": {
+              "messages": 150,
+              "source_hz": 29.993447288839395,
+              "receive_hz": 29.883710632739323,
+              "latency_ms_p95": 32.6940894126892,
+              "decode_ms_p95": 1.8079942007716454,
+              "source_max_interval_ms": 33.34164619445801
+            },
+            "right_wrist": {
+              "messages": 150,
+              "source_hz": 29.99332493326805,
+              "receive_hz": 29.983448820325258,
+              "latency_ms_p95": 19.85296010971069,
+              "decode_ms_p95": 1.7422077003175207,
+              "source_max_interval_ms": 33.34164619445801
+            }
+          },
+          "wait_reason_counts": {
+            "图像/关节跳过了采集周期：left=89.8ms, right=89.8ms": 1,
+            "图像/关节跳过了采集周期：left_wrist=100.0ms": 2,
+            "图像/关节跳过了采集周期：right_wrist=100.0ms": 1,
+            "图像/关节跳过了采集周期：left=82.1ms, right=82.1ms": 1,
+            "图像/关节跳过了采集周期：left=80.6ms, right=80.6ms": 1
+          },
+          "scheduler_delay_count": 0,
+          "max_poll_interval_ms": 44.875692001369316,
+          "write_backpressure_seconds": 0.0,
+          "pending_samples_discarded_on_control_change": 0
+        },
+        "quality": {
+          "status": "checks_passed",
+          "frames": 2398,
+          "target_fps": 20.0,
+          "saved_fps": 19.983047650022428,
+          "source_span_seconds": 119.8414466381073,
+          "source_span_fps": 20.001427446368957,
+          "segment_frames": [
+            301,
+            465,
+            28,
+            531,
+            475,
+            349,
+            249
+          ],
+          "chunk_size": 50,
+          "full_chunk_start_frames": 2076,
+          "trailing_no_frame_seconds": 0.0,
+          "suction": {
+            "left": {
+              "observation_values": [
+                0,
+                1
+              ],
+              "action_values": [
+                0,
+                1
+              ],
+              "observation_transitions": 4,
+              "action_transitions": 4,
+              "final_observed": 0,
+              "final_requested": 0
+            },
+            "right": {
+              "observation_values": [
+                0,
+                1
+              ],
+              "action_values": [
+                0,
+                1
+              ],
+              "observation_transitions": 4,
+              "action_transitions": 4,
+              "final_observed": 0,
+              "final_requested": 0
+            }
+          },
+          "warnings": [],
+          "task_success_requires_review": true
+        },
+        "max_source_skew_ms": 46.87356948852539,
+        "completed_episode_promoted": true,
+        "partial_directories": [],
+        "saved_image_bytes": 2225562644,
+        "finished_beijing": "2026-11-11T13:18:29.940136+08:00"
+      }
+    }
+  },
+  "native_control": {
+    "stage": "native_three",
+    "selection": "all",
+    "mode": "color_and_depth",
+    "requested_seconds": 90,
+    "started_beijing": "2026-11-11T13:18:36.145811+08:00",
+    "usb_before": {
+      "2-1": {
+        "product": "4-Port USB 3.0 Hub",
+        "speed": "10000",
+        "devnum": "2",
+        "power/control": "auto",
+        "power/runtime_status": "suspended",
+        "power/usb3_hardware_lpm_u1": "enabled",
+        "power/usb3_hardware_lpm_u2": "enabled"
+      },
+      "2-1.1": {
+        "product": "Intel(R) RealSense(TM) Depth Camera 405",
+        "serial": "261923072940",
+        "speed": "5000",
+        "devnum": "10",
+        "power/control": "auto",
+        "power/runtime_status": "suspended",
+        "power/usb3_hardware_lpm_u1": "enabled",
+        "power/usb3_hardware_lpm_u2": "enabled"
+      },
+      "2-1.2": {
+        "product": "Intel(R) RealSense(TM) Depth Camera 405",
+        "serial": "254623078816",
+        "speed": "5000",
+        "devnum": "8",
+        "power/control": "auto",
+        "power/runtime_status": "suspended",
+        "power/usb3_hardware_lpm_u1": "enabled",
+        "power/usb3_hardware_lpm_u2": "enabled"
+      },
+      "2-1.4": {
+        "product": "Intel(R) RealSense(TM) Depth Camera 435i",
+        "serial": "262923063591",
+        "speed": "5000",
+        "devnum": "11",
+        "power/control": "auto",
+        "power/runtime_status": "suspended",
+        "power/usb3_hardware_lpm_u1": "enabled",
+        "power/usb3_hardware_lpm_u2": "disabled"
+      }
+    },
+    "real_arm_or_IO_connections": false,
+    "ROS_used": false,
+    "exit_code": 0,
+    "finished_beijing": "2026-11-11T13:20:14.277168+08:00",
+    "usb_after": {
+      "2-1": {
+        "product": "4-Port USB 3.0 Hub",
+        "speed": "10000",
+        "devnum": "2",
+        "power/control": "auto",
+        "power/runtime_status": "active",
+        "power/usb3_hardware_lpm_u1": "enabled",
+        "power/usb3_hardware_lpm_u2": "enabled"
+      },
+      "2-1.1": {
+        "product": "Intel(R) RealSense(TM) Depth Camera 405",
+        "serial": "261923072940",
+        "speed": "5000",
+        "devnum": "10",
+        "power/control": "auto",
+        "power/runtime_status": "active",
+        "power/usb3_hardware_lpm_u1": "enabled",
+        "power/usb3_hardware_lpm_u2": "enabled"
+      },
+      "2-1.2": {
+        "product": "Intel(R) RealSense(TM) Depth Camera 405",
+        "serial": "254623078816",
+        "speed": "5000",
+        "devnum": "8",
+        "power/control": "auto",
+        "power/runtime_status": "active",
+        "power/usb3_hardware_lpm_u1": "enabled",
+        "power/usb3_hardware_lpm_u2": "enabled"
+      },
+      "2-1.4": {
+        "product": "Intel(R) RealSense(TM) Depth Camera 435i",
+        "serial": "262923063591",
+        "speed": "5000",
+        "devnum": "11",
+        "power/control": "auto",
+        "power/runtime_status": "active",
+        "power/usb3_hardware_lpm_u1": "enabled",
+        "power/usb3_hardware_lpm_u2": "disabled"
+      }
+    },
+    "kernel_reset_lines": [],
+    "cameras": {
+      "left_wrist": {
+        "color": {
+          "frames": 2700,
+          "receive_span_seconds": 89.9860945649998,
+          "source_interval_ms_p50_p95_max": [
+            33.340576171875,
+            33.341064453125,
+            33.342529296875
+          ],
+          "source_intervals_over50ms": 0,
+          "receive_max_interval_ms": 34.61714500008384,
+          "SDK_sequence_numbers_missing": 0,
+          "hardware_exposure_counter_supported": false
+        },
+        "depth": {
+          "frames": 2700,
+          "receive_span_seconds": 89.98584284999924,
+          "source_interval_ms_p50_p95_max": [
+            33.340576171875,
+            33.341064453125,
+            33.342529296875
+          ],
+          "source_intervals_over50ms": 0,
+          "receive_max_interval_ms": 33.996063999438775,
+          "SDK_sequence_numbers_missing": 0,
+          "hardware_exposure_counter_supported": false
+        }
+      },
+      "right_wrist": {
+        "color": {
+          "frames": 2699,
+          "receive_span_seconds": 89.95339859399974,
+          "source_interval_ms_p50_p95_max": [
+            33.3408203125,
+            33.341064453125,
+            33.3427734375
+          ],
+          "source_intervals_over50ms": 0,
+          "receive_max_interval_ms": 39.19301399946562,
+          "SDK_sequence_numbers_missing": 0,
+          "hardware_exposure_counter_supported": false
+        },
+        "depth": {
+          "frames": 2699,
+          "receive_span_seconds": 89.95348134699998,
+          "source_interval_ms_p50_p95_max": [
+            33.3408203125,
+            33.341064453125,
+            33.3427734375
+          ],
+          "source_intervals_over50ms": 0,
+          "receive_max_interval_ms": 39.19944599874725,
+          "SDK_sequence_numbers_missing": 0,
+          "hardware_exposure_counter_supported": false
+        }
+      },
+      "head": {
+        "color": {
+          "frames": 2699,
+          "receive_span_seconds": 89.99708576900048,
+          "source_interval_ms_p50_p95_max": [
+            33.35693359375,
+            33.357421875,
+            33.359619140625
+          ],
+          "source_intervals_over50ms": 0,
+          "receive_max_interval_ms": 33.98850499979744,
+          "SDK_sequence_numbers_missing": 0,
+          "hardware_exposure_counter_supported": false
+        },
+        "depth": {
+          "frames": 2698,
+          "receive_span_seconds": 89.96360599900072,
+          "source_interval_ms_p50_p95_max": [
+            33.35693359375,
+            33.357421875,
+            33.359619140625
+          ],
+          "source_intervals_over50ms": 0,
+          "receive_max_interval_ms": 36.007556000186014,
+          "SDK_sequence_numbers_missing": 0,
+          "hardware_exposure_counter_supported": false
+        }
+      }
+    },
+    "host_before_stream_stop": {
+      "cpu_busy_percent": {
+        "cpu": {
+          "mean": 5.598401213125278,
+          "p95": 17.894704110119118,
+          "max": 21.92691029900332
+        },
+        "cpu0": {
+          "mean": 12.304371393691742,
+          "p95": 21.487721302113066,
+          "max": 39.21568627450981
+        },
+        "cpu1": {
+          "mean": 4.179901802952454,
+          "p95": 9.06862745098039,
+          "max": 13.592233009708742
+        },
+        "cpu2": {
+          "mean": 6.521069640480066,
+          "p95": 15.294554455445542,
+          "max": 97.02970297029702
+        },
+        "cpu3": {
+          "mean": 6.278976608194322,
+          "p95": 13.428401663695727,
+          "max": 98.0
+        },
+        "cpu4": {
+          "mean": 2.1807763216236715,
+          "p95": 8.318811881188111,
+          "max": 10.784313725490192
+        },
+        "cpu5": {
+          "mean": 1.9889238519827537,
+          "p95": 7.638235294117634,
+          "max": 14.141414141414144
+        }
+      },
+      "max_temperatures_C": {
+        "cpu-thermal": 48.312,
+        "soc2-thermal": 47.125,
+        "soc0-thermal": 48.75,
+        "gpu-thermal": 48.593,
+        "tj-thermal": 49.687,
+        "soc1-thermal": 49.687
+      }
+    },
+    "kernel_buffer_analysis": {
+      "measurement_monotonic_window": [
+        12544.375822119,
+        12634.379228102
+      ],
+      "kernel_buffers": {
+        "/dev/video0:type1": {
+          "fd": 15,
+          "node": "/dev/video0",
+          "buffer_type": 1,
+          "buffers": 2700,
+          "error_flag_buffers": 0,
+          "zero_payload_buffers": 0,
+          "nonzero_timestamp_buffers": 2700,
+          "ioctl_sequence_skips": 0,
+          "format": {
+            "format": "Z16 ",
+            "width": 640,
+            "height": 480
+          },
+          "good_buffer_receive_interval_ms_p50_p95_max": [
+            33.3399860010104,
+            33.41783539908647,
+            33.94845299953886
+          ]
+        },
+        "/dev/video17:type13": {
+          "fd": 20,
+          "node": "/dev/video17",
+          "buffer_type": 13,
+          "buffers": 2699,
+          "error_flag_buffers": 0,
+          "zero_payload_buffers": 0,
+          "nonzero_timestamp_buffers": 2699,
+          "ioctl_sequence_skips": 0,
+          "format": null,
+          "good_buffer_receive_interval_ms_p50_p95_max": [
+            33.355995500642166,
+            33.5823003508267,
+            33.887479001350584
+          ]
+        },
+        "/dev/video16:type1": {
+          "fd": 16,
+          "node": "/dev/video16",
+          "buffer_type": 1,
+          "buffers": 2699,
+          "error_flag_buffers": 0,
+          "zero_payload_buffers": 0,
+          "nonzero_timestamp_buffers": 2699,
+          "ioctl_sequence_skips": 0,
+          "format": {
+            "format": "YUYV",
+            "width": 640,
+            "height": 480
+          },
+          "good_buffer_receive_interval_ms_p50_p95_max": [
+            33.355489000314265,
+            33.581317150765244,
+            33.915414998773485
+          ]
+        },
+        "/dev/video13:type13": {
+          "fd": 10,
+          "node": "/dev/video13",
+          "buffer_type": 13,
+          "buffers": 2698,
+          "error_flag_buffers": 0,
+          "zero_payload_buffers": 0,
+          "nonzero_timestamp_buffers": 2698,
+          "ioctl_sequence_skips": 0,
+          "format": null,
+          "good_buffer_receive_interval_ms_p50_p95_max": [
+            33.35528800016618,
+            33.59103920047346,
+            34.528832000432885
+          ]
+        },
+        "/dev/video12:type1": {
+          "fd": 5,
+          "node": "/dev/video12",
+          "buffer_type": 1,
+          "buffers": 2698,
+          "error_flag_buffers": 0,
+          "zero_payload_buffers": 0,
+          "nonzero_timestamp_buffers": 2698,
+          "ioctl_sequence_skips": 0,
+          "format": {
+            "format": "Z16 ",
+            "width": 640,
+            "height": 480
+          },
+          "good_buffer_receive_interval_ms_p50_p95_max": [
+            33.354119999785325,
+            33.5958245996153,
+            34.54211200005375
+          ]
+        },
+        "/dev/video11:type13": {
+          "fd": 42,
+          "node": "/dev/video11",
+          "buffer_type": 13,
+          "buffers": 2699,
+          "error_flag_buffers": 0,
+          "zero_payload_buffers": 0,
+          "nonzero_timestamp_buffers": 2699,
+          "ioctl_sequence_skips": 0,
+          "format": null,
+          "good_buffer_receive_interval_ms_p50_p95_max": [
+            33.34013899984711,
+            33.58342835044823,
+            33.73109699896304
+          ]
+        },
+        "/dev/video10:type1": {
+          "fd": 39,
+          "node": "/dev/video10",
+          "buffer_type": 1,
+          "buffers": 2699,
+          "error_flag_buffers": 0,
+          "zero_payload_buffers": 0,
+          "nonzero_timestamp_buffers": 2699,
+          "ioctl_sequence_skips": 0,
+          "format": {
+            "format": "YUYV",
+            "width": 640,
+            "height": 480
+          },
+          "good_buffer_receive_interval_ms_p50_p95_max": [
+            33.33940850006911,
+            33.60025614983897,
+            33.77378499862971
+          ]
+        },
+        "/dev/video7:type13": {
+          "fd": 34,
+          "node": "/dev/video7",
+          "buffer_type": 13,
+          "buffers": 2699,
+          "error_flag_buffers": 0,
+          "zero_payload_buffers": 0,
+          "nonzero_timestamp_buffers": 2699,
+          "ioctl_sequence_skips": 0,
+          "format": null,
+          "good_buffer_receive_interval_ms_p50_p95_max": [
+            33.34031499980483,
+            33.56901520055544,
+            33.949271999517805
+          ]
+        },
+        "/dev/video6:type1": {
+          "fd": 31,
+          "node": "/dev/video6",
+          "buffer_type": 1,
+          "buffers": 2699,
+          "error_flag_buffers": 0,
+          "zero_payload_buffers": 0,
+          "nonzero_timestamp_buffers": 2699,
+          "ioctl_sequence_skips": 0,
+          "format": {
+            "format": "Z16 ",
+            "width": 640,
+            "height": 480
+          },
+          "good_buffer_receive_interval_ms_p50_p95_max": [
+            33.339595499455754,
+            33.56995490066765,
+            39.18933400018432
+          ]
+        },
+        "/dev/video5:type13": {
+          "fd": 30,
+          "node": "/dev/video5",
+          "buffer_type": 13,
+          "buffers": 2699,
+          "error_flag_buffers": 0,
+          "zero_payload_buffers": 0,
+          "nonzero_timestamp_buffers": 2699,
+          "ioctl_sequence_skips": 0,
+          "format": null,
+          "good_buffer_receive_interval_ms_p50_p95_max": [
+            33.34029349935008,
+            33.58310510056981,
+            34.535863998826244
+          ]
+        },
+        "/dev/video4:type1": {
+          "fd": 27,
+          "node": "/dev/video4",
+          "buffer_type": 1,
+          "buffers": 2699,
+          "error_flag_buffers": 0,
+          "zero_payload_buffers": 0,
+          "nonzero_timestamp_buffers": 2699,
+          "ioctl_sequence_skips": 0,
+          "format": {
+            "format": "YUYV",
+            "width": 640,
+            "height": 480
+          },
+          "good_buffer_receive_interval_ms_p50_p95_max": [
+            33.33990999999514,
+            33.591455248915736,
+            34.58754399980535
+          ]
+        },
+        "/dev/video1:type13": {
+          "fd": 22,
+          "node": "/dev/video1",
+          "buffer_type": 13,
+          "buffers": 2699,
+          "error_flag_buffers": 0,
+          "zero_payload_buffers": 0,
+          "nonzero_timestamp_buffers": 2699,
+          "ioctl_sequence_skips": 0,
+          "format": null,
+          "good_buffer_receive_interval_ms_p50_p95_max": [
+            33.340623999720265,
+            33.38079475106497,
+            33.96320599858882
+          ]
+        }
+      },
+      "ioctl_errors": [],
+      "hardware_or_kernel_fault_claim_requires_interpreting_error_flags": true
+    }
+  },
+  "camera_hardware_notifications": [
+    "[realsense2_camera_node-1] [WARN] [1794374049.316316025] [robot.sensors.cameras.head]: Hardware Notification:Left MIPI error,1.79437e+12,Error,Hardware Error"
+  ],
+  "selected_sample_break_analysis": [
+    {
+      "after_frame": 301,
+      "reported_reasons": [
+        "图像/关节跳过了采集周期：left=89.8ms, right=89.8ms"
+      ],
+      "sources": {
+        "head": {
+          "saved_source_span_ms": 66.71333312988281,
+          "original_received_frames_inclusive": 3,
+          "original_max_interval_ms": 33.356666564941406,
+          "original_image_gap_present": false,
+          "selected_interval_exceeds_80ms": false
+        },
+        "left_wrist": {
+          "saved_source_span_ms": 66.680908203125,
+          "original_received_frames_inclusive": 3,
+          "original_max_interval_ms": 33.3404541015625,
+          "original_image_gap_present": false,
+          "selected_interval_exceeds_80ms": false
+        },
+        "right_wrist": {
+          "saved_source_span_ms": 66.6806697845459,
+          "original_received_frames_inclusive": 3,
+          "original_max_interval_ms": 33.3404541015625,
+          "original_image_gap_present": false,
+          "selected_interval_exceeds_80ms": false
+        }
+      }
+    },
+    {
+      "after_frame": 766,
+      "reported_reasons": [
+        "图像/关节跳过了采集周期：left_wrist=100.0ms"
+      ],
+      "sources": {
+        "head": {
+          "saved_source_span_ms": 66.71404838562012,
+          "original_received_frames_inclusive": 3,
+          "original_max_interval_ms": 33.35714340209961,
+          "original_image_gap_present": false,
+          "selected_interval_exceeds_80ms": false
+        },
+        "left_wrist": {
+          "saved_source_span_ms": 100.0223159790039,
+          "original_received_frames_inclusive": 3,
+          "original_max_interval_ms": 66.6816234588623,
+          "original_image_gap_present": true,
+          "selected_interval_exceeds_80ms": true
+        },
+        "right_wrist": {
+          "saved_source_span_ms": 66.68853759765625,
+          "original_received_frames_inclusive": 3,
+          "original_max_interval_ms": 33.344268798828125,
+          "original_image_gap_present": false,
+          "selected_interval_exceeds_80ms": false
+        }
+      }
+    },
+    {
+      "after_frame": 794,
+      "reported_reasons": [
+        "图像/关节跳过了采集周期：right_wrist=100.0ms"
+      ],
+      "sources": {
+        "head": {
+          "saved_source_span_ms": 66.71524047851562,
+          "original_received_frames_inclusive": 3,
+          "original_max_interval_ms": 33.357858657836914,
+          "original_image_gap_present": false,
+          "selected_interval_exceeds_80ms": false
+        },
+        "left_wrist": {
+          "saved_source_span_ms": 66.68210029602051,
+          "original_received_frames_inclusive": 3,
+          "original_max_interval_ms": 33.341169357299805,
+          "original_image_gap_present": false,
+          "selected_interval_exceeds_80ms": false
+        },
+        "right_wrist": {
+          "saved_source_span_ms": 100.01397132873535,
+          "original_received_frames_inclusive": 4,
+          "original_max_interval_ms": 33.338308334350586,
+          "original_image_gap_present": false,
+          "selected_interval_exceeds_80ms": true
+        }
+      }
+    },
+    {
+      "after_frame": 1325,
+      "reported_reasons": [
+        "图像/关节跳过了采集周期：left_wrist=100.0ms"
+      ],
+      "sources": {
+        "head": {
+          "saved_source_span_ms": 66.71690940856934,
+          "original_received_frames_inclusive": 3,
+          "original_max_interval_ms": 33.35928916931152,
+          "original_image_gap_present": false,
+          "selected_interval_exceeds_80ms": false
+        },
+        "left_wrist": {
+          "saved_source_span_ms": 100.02446174621582,
+          "original_received_frames_inclusive": 4,
+          "original_max_interval_ms": 33.34188461303711,
+          "original_image_gap_present": false,
+          "selected_interval_exceeds_80ms": true
+        },
+        "right_wrist": {
+          "saved_source_span_ms": 66.68400764465332,
+          "original_received_frames_inclusive": 3,
+          "original_max_interval_ms": 33.34355354309082,
+          "original_image_gap_present": false,
+          "selected_interval_exceeds_80ms": false
+        }
+      }
+    },
+    {
+      "after_frame": 1800,
+      "reported_reasons": [
+        "图像/关节跳过了采集周期：left=82.1ms, right=82.1ms"
+      ],
+      "sources": {
+        "head": {
+          "saved_source_span_ms": 66.71309471130371,
+          "original_received_frames_inclusive": 3,
+          "original_max_interval_ms": 33.356666564941406,
+          "original_image_gap_present": false,
+          "selected_interval_exceeds_80ms": false
+        },
+        "left_wrist": {
+          "saved_source_span_ms": 66.6818618774414,
+          "original_received_frames_inclusive": 3,
+          "original_max_interval_ms": 33.341169357299805,
+          "original_image_gap_present": false,
+          "selected_interval_exceeds_80ms": false
+        },
+        "right_wrist": {
+          "saved_source_span_ms": 66.68210029602051,
+          "original_received_frames_inclusive": 3,
+          "original_max_interval_ms": 33.341169357299805,
+          "original_image_gap_present": false,
+          "selected_interval_exceeds_80ms": false
+        }
+      }
+    },
+    {
+      "after_frame": 2149,
+      "reported_reasons": [
+        "图像/关节跳过了采集周期：left=80.6ms, right=80.6ms"
+      ],
+      "sources": {
+        "head": {
+          "saved_source_span_ms": 66.71404838562012,
+          "original_received_frames_inclusive": 3,
+          "original_max_interval_ms": 33.35714340209961,
+          "original_image_gap_present": false,
+          "selected_interval_exceeds_80ms": false
+        },
+        "left_wrist": {
+          "saved_source_span_ms": 66.6811466217041,
+          "original_received_frames_inclusive": 3,
+          "original_max_interval_ms": 33.3406925201416,
+          "original_image_gap_present": false,
+          "selected_interval_exceeds_80ms": false
+        },
+        "right_wrist": {
+          "saved_source_span_ms": 66.6801929473877,
+          "original_received_frames_inclusive": 3,
+          "original_max_interval_ms": 33.3402156829834,
+          "original_image_gap_present": false,
+          "selected_interval_exceeds_80ms": false
+        }
+      }
+    }
+  ],
+  "prior_report": "/home/jetson/AIDE_robot_main/software/vla/act/xcore_act/scripts/diagnostics/reports/teach_camera_followup_20261111.json",
+  "established_findings": [
+    "New baseline without recording/writing reproduced positive ~66.7ms intervals for BOTH wrists. Matching hardware timestamp steps and V4L2 sequence skips must be used to distinguish these from timestamp conversion jumps.",
+    "Earlier head global-time regression by 534.425ms is a separate confirmed software time-mapping issue; a clean new window does not negate the earlier directly observed event.",
+    "Some 100ms selected source intervals arise from 30Hz-to-20Hz nearest-exposure pairing even when original camera frames were all received; see each selected_sample_break_analysis entry rather than equating every segment boundary with hardware loss.",
+    "During the new 120s full recording, kernel RGB sequence skips were head=0, left=4, right=5; additionally each camera had one interior RCL publish returning success without a corresponding recorder receive callback. These are two distinct missing-frame stages.",
+    "Three segment boundaries in this test are attributable to selected simulated joint samples exceeding 80ms; they are not evidence of actual arm state publication faults, because no physical arm clients or services were used.",
+    "The head camera also emitted a startup Left MIPI error hardware notification. This names the head camera internal sensor path, not the left robot arm; its root cause is not established.",
+    "Camera/USB/UVC input-stage loss does not by itself prove a defective camera, insufficient power, or insufficient Jetson CPU. Exact physical component remains unisolated."
+  ],
+  "references": [
+    {
+      "url": "https://support.realsenseai.com/hc/en-us/community/posts/6255901992467-MIPI-error-after-upgrading-FW",
+      "relevance": "Official RealSense support notes that this hardware notification alone does not identify its root cause; log occurrence is our own measurement."
+    }
+  ]
+}

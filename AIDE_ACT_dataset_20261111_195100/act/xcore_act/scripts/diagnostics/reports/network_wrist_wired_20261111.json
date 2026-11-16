@@ -1,0 +1,213 @@
+{
+  "generated_utc": "2026-11-11T07:19:53.364759+00:00",
+  "test_directory": "/tmp/aide-wired-wrists-qbvf6wuo",
+  "PC": "192.168.50.20",
+  "Jetson": "192.168.50.10",
+  "wired_interface": "enx00e04c2b7928",
+  "link_mbps": 1000,
+  "duplex": "full",
+  "route": "192.168.50.20 dev enx00e04c2b7928 src 192.168.50.10 uid 1000 \n    cache",
+  "ping_5": {
+    "sent": 5,
+    "received": 5,
+    "loss_pct": 0,
+    "rtt_ms_min": 0.437,
+    "rtt_ms_mean": 0.61,
+    "rtt_ms_max": 0.899
+  },
+  "receiver_test": {
+    "check_seconds": 45,
+    "exit_code": 0,
+    "logged_seconds": 45,
+    "both_first_fresh_at_logged_second": 5,
+    "codec": "png",
+    "target_recording_hz": 20,
+    "cameras": {
+      "left_wrist": {
+        "last_stats": {
+          "received": 1217,
+          "published": 1216,
+          "rejected": 9,
+          "skipped_sequences": 0,
+          "last_error": "",
+          "camera": "left_wrist",
+          "sequence": 1216,
+          "capture_pc_utc_ns": 1794381519648010752,
+          "clock_epoch": "48af609f273c44e39daba4c4dba919ba",
+          "capture_jetson_utc_ns": 1794381519653096066,
+          "pc_minus_jetson_ms": -5.085314,
+          "clock_error_bound_ms": 1.280624,
+          "clock_rtt_ms": 0.536526,
+          "capture_age_ms": 47.979404,
+          "codec": "png",
+          "fresh": true,
+          "receive_hz": 29.992745415122847,
+          "capture_age_p95_ms": 50.00963765
+        },
+        "stable_window_samples": 36,
+        "receive_hz_min": 29.96505697880737,
+        "receive_hz_median": 29.993055252164815,
+        "receive_hz_max": 30.01762181467619,
+        "max_rolling_5s_capture_age_p95_ms": 50.6106428,
+        "fresh_through_stable_window": true,
+        "notes": "skipped_sequences tracks PC encoded-frame sequence, not the native camera frame counter; startup rejected counts include connection and clock warmup."
+      },
+      "right_wrist": {
+        "last_stats": {
+          "received": 1220,
+          "published": 1220,
+          "rejected": 9,
+          "skipped_sequences": 0,
+          "last_error": "",
+          "camera": "right_wrist",
+          "sequence": 1220,
+          "capture_pc_utc_ns": 1794381519670338816,
+          "clock_epoch": "48af609f273c44e39daba4c4dba919ba",
+          "capture_jetson_utc_ns": 1794381519675424130,
+          "pc_minus_jetson_ms": -5.085314,
+          "clock_error_bound_ms": 1.285,
+          "clock_rtt_ms": 0.536526,
+          "capture_age_ms": 49.255781,
+          "codec": "png",
+          "fresh": true,
+          "receive_hz": 29.997722452105226,
+          "capture_age_p95_ms": 50.66561865
+        },
+        "stable_window_samples": 36,
+        "receive_hz_min": 29.973537460126522,
+        "receive_hz_median": 29.992223764854224,
+        "receive_hz_max": 30.006841249676828,
+        "max_rolling_5s_capture_age_p95_ms": 51.6773066,
+        "fresh_through_stable_window": true,
+        "notes": "skipped_sequences tracks PC encoded-frame sequence, not the native camera frame counter; startup rejected counts include connection and clock warmup."
+      }
+    }
+  },
+  "extra_clock_probes": {
+    "samples": [
+      {
+        "rtt_ms": 0.507049,
+        "pc_minus_jetson_ms": -5.3303625,
+        "wall_monotonic_difference_ms": -0.002977
+      },
+      {
+        "rtt_ms": 0.558444,
+        "pc_minus_jetson_ms": -5.338349,
+        "wall_monotonic_difference_ms": -0.003488
+      },
+      {
+        "rtt_ms": 0.523594,
+        "pc_minus_jetson_ms": -5.36826,
+        "wall_monotonic_difference_ms": -0.005856
+      },
+      {
+        "rtt_ms": 0.923447,
+        "pc_minus_jetson_ms": -5.5678425,
+        "wall_monotonic_difference_ms": -0.002016
+      },
+      {
+        "rtt_ms": 0.472762,
+        "pc_minus_jetson_ms": -5.409286,
+        "wall_monotonic_difference_ms": -0.001952
+      },
+      {
+        "rtt_ms": 0.607141,
+        "pc_minus_jetson_ms": -5.3629655,
+        "wall_monotonic_difference_ms": -0.00496
+      },
+      {
+        "rtt_ms": 0.841553,
+        "pc_minus_jetson_ms": -5.3334025,
+        "wall_monotonic_difference_ms": -0.006208
+      },
+      {
+        "rtt_ms": 0.894355,
+        "pc_minus_jetson_ms": -5.5482775,
+        "wall_monotonic_difference_ms": -0.002336
+      },
+      {
+        "rtt_ms": 0.621515,
+        "pc_minus_jetson_ms": -5.3833105,
+        "wall_monotonic_difference_ms": -0.002336
+      },
+      {
+        "rtt_ms": 0.551055,
+        "pc_minus_jetson_ms": -5.3792235,
+        "wall_monotonic_difference_ms": -0.002433
+      },
+      {
+        "rtt_ms": 0.546455,
+        "pc_minus_jetson_ms": -5.3920645,
+        "wall_monotonic_difference_ms": -0.002273
+      },
+      {
+        "rtt_ms": 0.635113,
+        "pc_minus_jetson_ms": -5.3952025,
+        "wall_monotonic_difference_ms": -0.002209
+      },
+      {
+        "rtt_ms": 0.49455,
+        "pc_minus_jetson_ms": -5.411282,
+        "wall_monotonic_difference_ms": -0.002656
+      },
+      {
+        "rtt_ms": 0.483286,
+        "pc_minus_jetson_ms": -5.435101,
+        "wall_monotonic_difference_ms": -0.001569
+      },
+      {
+        "rtt_ms": 0.54949,
+        "pc_minus_jetson_ms": -5.426625,
+        "wall_monotonic_difference_ms": -0.002496
+      },
+      {
+        "rtt_ms": 0.646062,
+        "pc_minus_jetson_ms": -5.396766,
+        "wall_monotonic_difference_ms": -0.001984
+      },
+      {
+        "rtt_ms": 0.612919,
+        "pc_minus_jetson_ms": -5.5043865,
+        "wall_monotonic_difference_ms": -0.003201
+      },
+      {
+        "rtt_ms": 0.536645,
+        "pc_minus_jetson_ms": -5.4463975,
+        "wall_monotonic_difference_ms": -0.002336
+      },
+      {
+        "rtt_ms": 0.931899,
+        "pc_minus_jetson_ms": -5.5454675,
+        "wall_monotonic_difference_ms": -0.003168
+      },
+      {
+        "rtt_ms": 0.884626,
+        "pc_minus_jetson_ms": -5.541851,
+        "wall_monotonic_difference_ms": -0.00176
+      }
+    ],
+    "rtt_ms_min": 0.472762,
+    "rtt_ms_median": 0.5827925,
+    "rtt_ms_max": 0.931899
+  },
+  "implementation_changes": [
+    "recording/start_xcore_teach_suction_network.sh: default PC wired address",
+    "recording/network_cameras/protocol.py: default PC wired address",
+    "recording/network_cameras/README.md: wired address, route and firewall instructions",
+    "recording/network_cameras/dist/aide_pc_wrist_cameras.zip: updated protocol, README and manifest"
+  ],
+  "validation": {
+    "network_unit_tests_passed": 10,
+    "shell_syntax": "pass",
+    "zip_CRC_and_SHA256_manifest": "pass",
+    "protected_files_unchanged": 19
+  },
+  "limitations": [
+    "Only dual-wrist network reception and image decode were tested in this run; head camera, ROS publication, joint matching and dataset writes were not exercised.",
+    "No claim that native camera frame counters had no skips; receiver sequence continuity was checked."
+  ],
+  "physical_arm_connections": false,
+  "physical_suction_IO": false,
+  "head_camera_started": false,
+  "training_dataset_modified": false
+}

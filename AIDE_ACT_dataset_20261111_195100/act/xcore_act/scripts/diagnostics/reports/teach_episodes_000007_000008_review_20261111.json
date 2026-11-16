@@ -1,0 +1,889 @@
+{
+  "generated_utc": "2026-11-11T10:45:28.922233+00:00",
+  "dataset": "/home/jetson/AIDE_robot_main/assets/dataset/act_teach_keyboard_suction_30hz",
+  "read_only": true,
+  "episodes": [
+    {
+      "episode": "episode_000007",
+      "validation": "passed",
+      "images_fully_decoded": 2136,
+      "state_shape": [
+        712,
+        16
+      ],
+      "quality": {
+        "status": "needs_review",
+        "frames": 712,
+        "target_fps": 20.0,
+        "saved_fps": 17.832695450433587,
+        "source_span_seconds": 35.564207792282104,
+        "source_span_fps": 19.99201006114626,
+        "segment_frames": [
+          710,
+          2
+        ],
+        "chunk_size": 50,
+        "full_chunk_start_frames": 661,
+        "trailing_no_frame_seconds": 2.236457134997181,
+        "suction": {
+          "left": {
+            "observation_values": [
+              0,
+              1
+            ],
+            "action_values": [
+              0,
+              1
+            ],
+            "observation_transitions": 1,
+            "action_transitions": 1,
+            "final_observed": 0,
+            "final_requested": 0
+          },
+          "right": {
+            "observation_values": [
+              0
+            ],
+            "action_values": [
+              0
+            ],
+            "observation_transitions": 0,
+            "action_transitions": 0,
+            "final_observed": 0,
+            "final_requested": 0
+          }
+        },
+        "warnings": [
+          "整段保存 17.83/20 帧/秒，低于目标90%；检查等待和间断",
+          "录制末尾 2.24 秒没有新帧，需确认任务是否录全"
+        ],
+        "task_success_requires_review": true
+      },
+      "segments": [
+        {
+          "start_zero_based": 0,
+          "end_exclusive": 710,
+          "frames": 710,
+          "span_seconds": 35.464136362075806,
+          "source_fps": 19.992027798488323,
+          "max_source_interval_ms": 78.7508487701416,
+          "reason": "键盘结束示教，等待下次 A 开启示教"
+        },
+        {
+          "start_zero_based": 710,
+          "end_exclusive": 712,
+          "frames": 2,
+          "span_seconds": 0.03335714340209961,
+          "source_fps": 29.978586234007576,
+          "max_source_interval_ms": 40.89069366455078,
+          "reason": "left teaching: stopped"
+        }
+      ],
+      "max_source_skew_ms": 42.2358512878418,
+      "source_skew_p50_p95_max_ms": [
+        15.408873558044434,
+        30.007362365722656,
+        42.2358512878418
+      ],
+      "joint_range_rad": [
+        0.4634847044944763,
+        0.592422366142273,
+        0.2847430109977722,
+        0.48864197731018066,
+        0.331417977809906,
+        0.056153520941734314,
+        0.2836098074913025,
+        0.2835295498371124,
+        0.8813713788986206,
+        0.2294420599937439,
+        0.9198936820030212,
+        1.0885283946990967,
+        0.9832186698913574,
+        0.22138983011245728
+      ],
+      "max_joint_step_rad": 0.05686849355697632,
+      "max_suction_feedback_age_ms": 194.76938247680664,
+      "suction": {
+        "left": {
+          "action": {
+            "initial": 1,
+            "final": 0,
+            "transitions": [
+              {
+                "frame_zero_based": 270,
+                "seconds": 13.503254175186157,
+                "value": 0
+              }
+            ]
+          },
+          "state": {
+            "initial": 1,
+            "final": 0,
+            "transitions": [
+              {
+                "frame_zero_based": 272,
+                "seconds": 13.603282451629639,
+                "value": 0
+              }
+            ]
+          }
+        },
+        "right": {
+          "action": {
+            "initial": 0,
+            "final": 0,
+            "transitions": []
+          },
+          "state": {
+            "initial": 0,
+            "final": 0,
+            "transitions": []
+          }
+        }
+      },
+      "recording_summary": {
+        "elapsed_seconds": 39.92666178699801,
+        "frames": 712,
+        "target_fps": 20,
+        "saved_fps": 17.832695450433587,
+        "nominal_data_seconds": 35.6,
+        "gap_count": 3,
+        "stopped_reason": "keyboard save"
+      },
+      "capture_gaps": [
+        {
+          "after_frame": 0,
+          "reasons": [
+            "左右臂都必须处于 teaching 状态",
+            "图像/关节跳过了采集周期：left=1878.9ms, right=1879.5ms, head=1842.5ms, left_wrist=1840.7ms, right_wrist=1837.2ms"
+          ],
+          "start_elapsed_seconds": 0.0,
+          "end_elapsed_seconds": 2.2778868899986264
+        },
+        {
+          "after_frame": 710,
+          "reasons": [
+            "键盘结束示教，等待下次 A 开启示教"
+          ],
+          "start_elapsed_seconds": 37.60091880999971,
+          "end_elapsed_seconds": 37.62634641299883
+        },
+        {
+          "after_frame": 712,
+          "reasons": [
+            "left teaching: stopped",
+            "right teaching: stopped",
+            "左右臂都必须处于 teaching 状态"
+          ],
+          "start_elapsed_seconds": 37.69020465200083,
+          "end_elapsed_seconds": 39.92666178699801
+        }
+      ],
+      "control_events": [],
+      "local_feedback_deltas": {
+        "left.recording": {
+          "received": 224,
+          "missing_sequences": 0,
+          "out_of_order": 0,
+          "sender_send_errors": 0,
+          "ros_queue_overwrites": 0
+        },
+        "right.recording": {
+          "received": 181,
+          "missing_sequences": 0,
+          "out_of_order": 0,
+          "sender_send_errors": 0,
+          "ros_queue_overwrites": 0
+        },
+        "right.drag": {
+          "received": 3456,
+          "missing_sequences": 0,
+          "out_of_order": 0,
+          "sender_send_errors": 0,
+          "ros_queue_overwrites": 0
+        },
+        "left.drag": {
+          "received": 3457,
+          "missing_sequences": 0,
+          "out_of_order": 0,
+          "sender_send_errors": 0,
+          "ros_queue_overwrites": 0
+        }
+      },
+      "local_feedback_error": null,
+      "writer": {
+        "written_frames": 712,
+        "written_bytes": 752914052,
+        "queue_capacity_frames": 64,
+        "image_workers": 3,
+        "png_encoder": "libdeflate_sub_1",
+        "queue_full_count": 0,
+        "peak_queue": 3,
+        "write_ms_p50_p95_max": [
+          60.39793799936888,
+          86.16298864908457,
+          150.27515000110725
+        ],
+        "queue_wait_ms_p95": 1.6153486003531705
+      },
+      "capture_diagnostics": {
+        "receive": {
+          "left": {
+            "messages": 258,
+            "source_hz": 95.92616486893823,
+            "receive_hz": 96.01630477297958,
+            "latency_ms_p95": 2.845287322998047,
+            "decode_ms_p95": 0.0,
+            "source_max_interval_ms": 15.209674835205078
+          },
+          "right": {
+            "messages": 256,
+            "source_hz": 95.32886328122075,
+            "receive_hz": 95.34033144394179,
+            "latency_ms_p95": 3.5104751586914062,
+            "decode_ms_p95": 0.0,
+            "source_max_interval_ms": 16.493797302246094
+          },
+          "head": {
+            "messages": 150,
+            "source_hz": 29.97834608039994,
+            "receive_hz": 30.046934778169938,
+            "latency_ms_p95": 64.62465524673456,
+            "decode_ms_p95": 2.182907548194629,
+            "source_max_interval_ms": 33.358097076416016,
+            "camera_driver_hz": 29.999946
+          },
+          "left_wrist": {
+            "messages": 149,
+            "source_hz": 29.791354024945363,
+            "receive_hz": 29.790272436208785,
+            "latency_ms_p95": 63.91620635986328,
+            "decode_ms_p95": 1.4321528004074933,
+            "source_max_interval_ms": 66.68424606323242,
+            "camera_driver_hz": 29.815935268206502
+          },
+          "right_wrist": {
+            "messages": 150,
+            "source_hz": 29.992176279052448,
+            "receive_hz": 29.997841367405126,
+            "latency_ms_p95": 64.64902162551876,
+            "decode_ms_p95": 1.3077611503831545,
+            "source_max_interval_ms": 33.34307670593262,
+            "camera_driver_hz": 30.00915966578923
+          }
+        },
+        "wait_reason_counts": {
+          "左右臂都必须处于 teaching 状态": 801,
+          "图像/关节跳过了采集周期：left=1878.9ms, right=1879.5ms, head=1842.5ms, left_wrist=1840.7ms, right_wrist=1837.2ms": 1,
+          "键盘结束示教，等待下次 A 开启示教": 1,
+          "left teaching: stopped": 1,
+          "right teaching: stopped": 1
+        },
+        "scheduler_delay_count": 0,
+        "max_poll_interval_ms": 52.01481599942781,
+        "write_backpressure_seconds": 0.0,
+        "pending_samples_discarded_on_control_change": 0,
+        "local_joint_feedback": {
+          "at_record_start": {
+            "transport": "loopback_udp_v1",
+            "port": 29701,
+            "producer": [
+              46813,
+              1794393708922388603
+            ],
+            "error": null,
+            "invalid_packets": 0,
+            "stale_packets": 0,
+            "streams": {
+              "left.recording": {
+                "received": 1428,
+                "missing_sequences": 0,
+                "out_of_order": 0,
+                "max_latency_ms": 4.445493,
+                "last_sequence": 1762,
+                "initial_sender_send_errors": 0,
+                "last_stamp_ns": 1794393726664188467,
+                "last_received_ns": 31949181064771,
+                "sender_send_errors": 0,
+                "ros_queue_overwrites": 0,
+                "sender_send_errors_since_first": 0
+              },
+              "right.recording": {
+                "received": 1156,
+                "missing_sequences": 0,
+                "out_of_order": 0,
+                "max_latency_ms": 10.433203,
+                "last_sequence": 1425,
+                "initial_sender_send_errors": 0,
+                "last_stamp_ns": 1794393726664691073,
+                "last_received_ns": 31949181238407,
+                "sender_send_errors": 0,
+                "ros_queue_overwrites": 0,
+                "sender_send_errors_since_first": 0
+              }
+            }
+          },
+          "current": {
+            "transport": "loopback_udp_v1",
+            "port": 29701,
+            "producer": [
+              46813,
+              1794393708922388603
+            ],
+            "error": null,
+            "invalid_packets": 0,
+            "stale_packets": 0,
+            "streams": {
+              "left.recording": {
+                "received": 1652,
+                "missing_sequences": 0,
+                "out_of_order": 0,
+                "max_latency_ms": 5.7777210000000006,
+                "last_sequence": 1986,
+                "initial_sender_send_errors": 0,
+                "last_stamp_ns": 1794393767795411328,
+                "last_received_ns": 31990312602328,
+                "sender_send_errors": 0,
+                "ros_queue_overwrites": 0,
+                "sender_send_errors_since_first": 0
+              },
+              "right.recording": {
+                "received": 1337,
+                "missing_sequences": 0,
+                "out_of_order": 0,
+                "max_latency_ms": 10.433203,
+                "last_sequence": 1606,
+                "initial_sender_send_errors": 0,
+                "last_stamp_ns": 1794393767785834754,
+                "last_received_ns": 31990301962174,
+                "sender_send_errors": 0,
+                "ros_queue_overwrites": 0,
+                "sender_send_errors_since_first": 0
+              },
+              "right.drag": {
+                "received": 3456,
+                "missing_sequences": 0,
+                "out_of_order": 0,
+                "max_latency_ms": 24.809168,
+                "last_sequence": 3456,
+                "initial_sender_send_errors": 0,
+                "last_stamp_ns": 1794393765466357335,
+                "last_received_ns": 31987984225697,
+                "sender_send_errors": 0,
+                "ros_queue_overwrites": 0,
+                "sender_send_errors_since_first": 0
+              },
+              "left.drag": {
+                "received": 3457,
+                "missing_sequences": 0,
+                "out_of_order": 0,
+                "max_latency_ms": 23.470668,
+                "last_sequence": 3457,
+                "initial_sender_send_errors": 0,
+                "last_stamp_ns": 1794393765470556903,
+                "last_received_ns": 31987986878535,
+                "sender_send_errors": 0,
+                "ros_queue_overwrites": 0,
+                "sender_send_errors_since_first": 0
+              }
+            }
+          }
+        }
+      },
+      "source_start_utc": "2026-11-11T10:42:09.699179+00:00",
+      "source_end_utc": "2026-11-11T10:42:45.263387+00:00",
+      "validation_seconds": 22.624864372999582,
+      "contact_sheet": "/tmp/aide-episodes-7-8-review-58b13649/episode_000007_contact.jpg",
+      "network_camera_metrics": {
+        "left_wrist": {
+          "metric_samples": 41,
+          "rejected_delta": 0,
+          "skipped_sequence_delta": 0,
+          "received_delta": 1233,
+          "receive_hz_min_median_max": [
+            29.739719360664466,
+            29.9919283427701,
+            30.090482899960847
+          ],
+          "max_clock_error_bound_ms": 1.35748
+        },
+        "right_wrist": {
+          "metric_samples": 41,
+          "rejected_delta": 0,
+          "skipped_sequence_delta": 0,
+          "received_delta": 1235,
+          "receive_hz_min_median_max": [
+            29.93972174735706,
+            29.999771327252866,
+            30.096627576041794
+          ],
+          "max_clock_error_bound_ms": 1.357118
+        }
+      },
+      "actual_return_recorded": false
+    },
+    {
+      "episode": "episode_000008",
+      "validation": "passed",
+      "images_fully_decoded": 1905,
+      "state_shape": [
+        635,
+        16
+      ],
+      "quality": {
+        "status": "needs_review",
+        "frames": 635,
+        "target_fps": 20.0,
+        "saved_fps": 18.39765828351744,
+        "source_span_seconds": 31.640868663787842,
+        "source_span_fps": 20.03737655678198,
+        "segment_frames": [
+          633,
+          2
+        ],
+        "chunk_size": 50,
+        "full_chunk_start_frames": 584,
+        "trailing_no_frame_seconds": 0.9829758850028156,
+        "suction": {
+          "left": {
+            "observation_values": [
+              0,
+              1
+            ],
+            "action_values": [
+              0,
+              1
+            ],
+            "observation_transitions": 1,
+            "action_transitions": 1,
+            "final_observed": 0,
+            "final_requested": 0
+          },
+          "right": {
+            "observation_values": [
+              0
+            ],
+            "action_values": [
+              0
+            ],
+            "observation_transitions": 0,
+            "action_transitions": 0,
+            "final_observed": 0,
+            "final_requested": 0
+          }
+        },
+        "warnings": [
+          "录制末尾 0.98 秒没有新帧，需确认任务是否录全"
+        ],
+        "task_success_requires_review": true
+      },
+      "segments": [
+        {
+          "start_zero_based": 0,
+          "end_exclusive": 633,
+          "frames": 633,
+          "span_seconds": 31.54084038734436,
+          "source_fps": 20.037513022436382,
+          "max_source_interval_ms": 79.44869995117188,
+          "reason": "键盘结束示教，等待下次 A 开启示教"
+        },
+        {
+          "start_zero_based": 633,
+          "end_exclusive": 635,
+          "frames": 2,
+          "span_seconds": 0.033342838287353516,
+          "source_fps": 29.99144797997855,
+          "max_source_interval_ms": 33.35833549499512,
+          "reason": "right teaching: stopped"
+        }
+      ],
+      "max_source_skew_ms": 39.02912139892578,
+      "source_skew_p50_p95_max_ms": [
+        9.747743606567383,
+        17.80838966369629,
+        39.02912139892578
+      ],
+      "joint_range_rad": [
+        0.2873151898384094,
+        0.3464256227016449,
+        0.34776875376701355,
+        0.2783217430114746,
+        0.34947124123573303,
+        0.013541683554649353,
+        0.1814533770084381,
+        0.09680122137069702,
+        0.3544020652770996,
+        0.31256726384162903,
+        0.43202102184295654,
+        0.5450605154037476,
+        0.15841682255268097,
+        0.17559361457824707
+      ],
+      "max_joint_step_rad": 0.023467302322387695,
+      "max_suction_feedback_age_ms": 210.6482982635498,
+      "suction": {
+        "left": {
+          "action": {
+            "initial": 1,
+            "final": 0,
+            "transitions": [
+              {
+                "frame_zero_based": 266,
+                "seconds": 13.269841432571411,
+                "value": 0
+              }
+            ]
+          },
+          "state": {
+            "initial": 1,
+            "final": 0,
+            "transitions": [
+              {
+                "frame_zero_based": 267,
+                "seconds": 13.30318307876587,
+                "value": 0
+              }
+            ]
+          }
+        },
+        "right": {
+          "action": {
+            "initial": 0,
+            "final": 0,
+            "transitions": []
+          },
+          "state": {
+            "initial": 0,
+            "final": 0,
+            "transitions": []
+          }
+        }
+      },
+      "recording_summary": {
+        "elapsed_seconds": 34.51526222600296,
+        "frames": 635,
+        "target_fps": 20,
+        "saved_fps": 18.39765828351744,
+        "nominal_data_seconds": 31.75,
+        "gap_count": 3,
+        "stopped_reason": "keyboard save"
+      },
+      "capture_gaps": [
+        {
+          "after_frame": 0,
+          "reasons": [
+            "左右臂都必须处于 teaching 状态",
+            "等待 left 数据",
+            "图像/关节跳过了采集周期：left=1649.4ms, right=1648.0ms, head=1610.4ms, left_wrist=1613.6ms, right_wrist=1610.5ms"
+          ],
+          "start_elapsed_seconds": 0.0,
+          "end_elapsed_seconds": 1.8673251079999318
+        },
+        {
+          "after_frame": 633,
+          "reasons": [
+            "键盘结束示教，等待下次 A 开启示教"
+          ],
+          "start_elapsed_seconds": 33.46835570300027,
+          "end_elapsed_seconds": 33.48478628700104
+        },
+        {
+          "after_frame": 635,
+          "reasons": [
+            "right teaching: stopped",
+            "left teaching: stopped",
+            "左右臂都必须处于 teaching 状态"
+          ],
+          "start_elapsed_seconds": 33.532286341000145,
+          "end_elapsed_seconds": 34.51526222600296
+        }
+      ],
+      "control_events": [],
+      "local_feedback_deltas": {
+        "left.recording": {
+          "received": 100,
+          "missing_sequences": 0,
+          "out_of_order": 0,
+          "sender_send_errors": 0,
+          "ros_queue_overwrites": 0
+        },
+        "right.recording": {
+          "received": 79,
+          "missing_sequences": 0,
+          "out_of_order": 0,
+          "sender_send_errors": 0,
+          "ros_queue_overwrites": 0
+        },
+        "right.drag": {
+          "received": 3033,
+          "missing_sequences": 0,
+          "out_of_order": 0,
+          "sender_send_errors": 0,
+          "ros_queue_overwrites": 0
+        },
+        "left.drag": {
+          "received": 3033,
+          "missing_sequences": 0,
+          "out_of_order": 0,
+          "sender_send_errors": 0,
+          "ros_queue_overwrites": 0
+        }
+      },
+      "local_feedback_error": null,
+      "writer": {
+        "written_frames": 635,
+        "written_bytes": 643509455,
+        "queue_capacity_frames": 64,
+        "image_workers": 3,
+        "png_encoder": "libdeflate_sub_1",
+        "queue_full_count": 0,
+        "peak_queue": 1,
+        "write_ms_p50_p95_max": [
+          59.783900000184076,
+          88.6763497004722,
+          168.66658700018888
+        ],
+        "queue_wait_ms_p95": 1.9173694021446854
+      },
+      "capture_diagnostics": {
+        "receive": {
+          "left": {
+            "messages": 379,
+            "source_hz": 95.63978444224304,
+            "receive_hz": 95.69109001112132,
+            "latency_ms_p95": 4.095864295959473,
+            "decode_ms_p95": 0.0,
+            "source_max_interval_ms": 21.320343017578125
+          },
+          "right": {
+            "messages": 377,
+            "source_hz": 95.32405377601066,
+            "receive_hz": 95.32404867686041,
+            "latency_ms_p95": 3.6662101745605455,
+            "decode_ms_p95": 0.0,
+            "source_max_interval_ms": 13.782024383544922
+          },
+          "head": {
+            "messages": 149,
+            "source_hz": 29.97800424028842,
+            "receive_hz": 29.972109870344607,
+            "latency_ms_p95": 62.06889152526855,
+            "decode_ms_p95": 2.29385979910148,
+            "source_max_interval_ms": 33.35857391357422,
+            "camera_driver_hz": 30.000444
+          },
+          "left_wrist": {
+            "messages": 150,
+            "source_hz": 29.993710716575354,
+            "receive_hz": 29.963777820628746,
+            "latency_ms_p95": 76.10974311828602,
+            "decode_ms_p95": 1.6827299996293703,
+            "source_max_interval_ms": 33.379316329956055,
+            "camera_driver_hz": 30.154446673312286
+          },
+          "right_wrist": {
+            "messages": 150,
+            "source_hz": 29.99343433349635,
+            "receive_hz": 29.984726557085462,
+            "latency_ms_p95": 80.90792894363403,
+            "decode_ms_p95": 1.7427717986720377,
+            "source_max_interval_ms": 33.37883949279785,
+            "camera_driver_hz": 30.10304029869607
+          }
+        },
+        "wait_reason_counts": {
+          "左右臂都必须处于 teaching 状态": 473,
+          "等待 left 数据": 1,
+          "图像/关节跳过了采集周期：left=1649.4ms, right=1648.0ms, head=1610.4ms, left_wrist=1613.6ms, right_wrist=1610.5ms": 1,
+          "键盘结束示教，等待下次 A 开启示教": 1,
+          "right teaching: stopped": 1,
+          "left teaching: stopped": 1
+        },
+        "scheduler_delay_count": 0,
+        "max_poll_interval_ms": 53.1082300003618,
+        "write_backpressure_seconds": 0.0,
+        "pending_samples_discarded_on_control_change": 0,
+        "local_joint_feedback": {
+          "at_record_start": {
+            "transport": "loopback_udp_v1",
+            "port": 29701,
+            "producer": [
+              46813,
+              1794393708922388603
+            ],
+            "error": null,
+            "invalid_packets": 0,
+            "stale_packets": 0,
+            "streams": {
+              "left.recording": {
+                "received": 3321,
+                "missing_sequences": 0,
+                "out_of_order": 0,
+                "max_latency_ms": 13.814159,
+                "last_sequence": 3655,
+                "initial_sender_send_errors": 0,
+                "last_stamp_ns": 1794393785077270388,
+                "last_received_ns": 32007593424817,
+                "sender_send_errors": 0,
+                "ros_queue_overwrites": 0,
+                "sender_send_errors_since_first": 0
+              },
+              "right.recording": {
+                "received": 2671,
+                "missing_sequences": 0,
+                "out_of_order": 0,
+                "max_latency_ms": 10.433203,
+                "last_sequence": 2940,
+                "initial_sender_send_errors": 0,
+                "last_stamp_ns": 1794393785073115750,
+                "last_received_ns": 32007589287266,
+                "sender_send_errors": 0,
+                "ros_queue_overwrites": 0,
+                "sender_send_errors_since_first": 0
+              },
+              "right.drag": {
+                "received": 3456,
+                "missing_sequences": 0,
+                "out_of_order": 0,
+                "max_latency_ms": 24.809168,
+                "last_sequence": 3456,
+                "initial_sender_send_errors": 0,
+                "last_stamp_ns": 1794393765466357335,
+                "last_received_ns": 31987984225697,
+                "sender_send_errors": 0,
+                "ros_queue_overwrites": 0,
+                "sender_send_errors_since_first": 0
+              },
+              "left.drag": {
+                "received": 3457,
+                "missing_sequences": 0,
+                "out_of_order": 0,
+                "max_latency_ms": 23.470668,
+                "last_sequence": 3457,
+                "initial_sender_send_errors": 0,
+                "last_stamp_ns": 1794393765470556903,
+                "last_received_ns": 31987986878535,
+                "sender_send_errors": 0,
+                "ros_queue_overwrites": 0,
+                "sender_send_errors_since_first": 0
+              }
+            }
+          },
+          "current": {
+            "transport": "loopback_udp_v1",
+            "port": 29701,
+            "producer": [
+              46813,
+              1794393708922388603
+            ],
+            "error": null,
+            "invalid_packets": 0,
+            "stale_packets": 0,
+            "streams": {
+              "left.recording": {
+                "received": 3421,
+                "missing_sequences": 0,
+                "out_of_order": 0,
+                "max_latency_ms": 13.814159,
+                "last_sequence": 3755,
+                "initial_sender_send_errors": 0,
+                "last_stamp_ns": 1794393820557006096,
+                "last_received_ns": 32043073933186,
+                "sender_send_errors": 0,
+                "ros_queue_overwrites": 0,
+                "sender_send_errors_since_first": 0
+              },
+              "right.recording": {
+                "received": 2750,
+                "missing_sequences": 0,
+                "out_of_order": 0,
+                "max_latency_ms": 10.433203,
+                "last_sequence": 3019,
+                "initial_sender_send_errors": 0,
+                "last_stamp_ns": 1794393820537036154,
+                "last_received_ns": 32043053184471,
+                "sender_send_errors": 0,
+                "ros_queue_overwrites": 0,
+                "sender_send_errors_since_first": 0
+              },
+              "right.drag": {
+                "received": 6489,
+                "missing_sequences": 0,
+                "out_of_order": 0,
+                "max_latency_ms": 36.812053,
+                "last_sequence": 6489,
+                "initial_sender_send_errors": 0,
+                "last_stamp_ns": 1794393819498550113,
+                "last_received_ns": 32042014712221,
+                "sender_send_errors": 0,
+                "ros_queue_overwrites": 0,
+                "sender_send_errors_since_first": 0
+              },
+              "left.drag": {
+                "received": 6490,
+                "missing_sequences": 0,
+                "out_of_order": 0,
+                "max_latency_ms": 36.920215,
+                "last_sequence": 6490,
+                "initial_sender_send_errors": 0,
+                "last_stamp_ns": 1794393819501499919,
+                "last_received_ns": 32042017678317,
+                "sender_send_errors": 0,
+                "ros_queue_overwrites": 0,
+                "sender_send_errors_since_first": 0
+              }
+            }
+          }
+        }
+      },
+      "source_start_utc": "2026-11-11T10:43:07.646192+00:00",
+      "source_end_utc": "2026-11-11T10:43:39.287061+00:00",
+      "validation_seconds": 19.81476785799896,
+      "contact_sheet": "/tmp/aide-episodes-7-8-review-58b13649/episode_000008_contact.jpg",
+      "network_camera_metrics": {
+        "left_wrist": {
+          "metric_samples": 35,
+          "rejected_delta": 0,
+          "skipped_sequence_delta": 0,
+          "received_delta": 1053,
+          "receive_hz_min_median_max": [
+            29.59859797925706,
+            29.98674447712686,
+            30.240454481986237
+          ],
+          "max_clock_error_bound_ms": 1.359302
+        },
+        "right_wrist": {
+          "metric_samples": 35,
+          "rejected_delta": 0,
+          "skipped_sequence_delta": 0,
+          "received_delta": 1054,
+          "receive_hz_min_median_max": [
+            29.498614481786557,
+            29.990437357844318,
+            30.403512306518103
+          ],
+          "max_clock_error_bound_ms": 1.359394
+        }
+      },
+      "actual_return_recorded": false
+    }
+  ],
+  "source_files_changed": [],
+  "findings_zh": [
+    "两条技术格式、16维数组、时间戳与4041张图片校验通过；主要示教段可按连续片段用于训练。",
+    "episode_000007主段710帧、35.464秒、19.992Hz；episode_000008主段633帧、31.541秒、20.038Hz；两条段内五路源时间间隔均不超过80ms，片段内无未标记间断。",
+    "两条各有末尾2帧短片段，来自键盘结束示教前后的状态切换；训练时可优先使用主连续段，原数据未过滤或修改。",
+    "整段17.83/18.40Hz包含开头等待示教2.28/1.87秒，以及结束示教后等保存2.24/0.98秒；低平均值不表示主要示教段在持续丢帧。",
+    "本机关节通道新增序列缺失、发送错误、乱序均0；写盘满队列/背压/调度延迟计数均0。腕相机网络窗口序列跳跃、拒收新增均0。",
+    "左腕末尾5秒诊断在第一条出现过约66.7ms源图像间隔，但20Hz主录制段仍连续；未声称相机原生30Hz绝对零丢帧。",
+    "两条左吸盘都是1到0，缺少0到1开启示范；右吸盘全程0。能提供当前动作及关闭左吸盘的示范，不能提供完整自主双吸盘开闭示范。",
+    "若任务有意从左吸盘预先开启开始，初始1可符合设定；若希望模型自己决定吸附时机，应补录持续录制中的0到1过程。",
+    "两条control_events均无B记录；arms.log显示两次MoveAbsJ均在各自episode保存之后启动，自动回位未录入这两条。",
+    "读取部分关键帧检查图像内容；格式通过不等于已经验证实际吸附效果或任务完成。",
+    "建议先A并确认双臂teaching再R，吸盘开启/关闭在录制中操作；如不录回位则先S再结束示教，如需回位则R保持录制、B后等到位再S。"
+  ],
+  "logs_directory": "/tmp/aide-teach-suction-v6eic0f2",
+  "robot_or_IO_commands_sent": false,
+  "motion_configuration_changed": false
+}

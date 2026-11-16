@@ -1,0 +1,10 @@
+{
+  "source": "training_verification/success_failure_20261112/success_first60.jsonl",
+  "sha256": "3bce6f753e0e57e5ce66d47ab0be9c59f2a977dca0e2b3dfc5bd58118c254084",
+  "run_id": "3fef21c8-e371-4361-9ab3-95c071311351",
+  "checkpoint_sha256": "0d71f2e37a180b2e829bc7bf423bbe8171945c3afa327f8d08f2a72297d00d93",
+  "chunks": 1168,
+  "active_servo_samples": 5705,
+  "label": "far_flap_success",
+  "image_inputs_available": false
+}

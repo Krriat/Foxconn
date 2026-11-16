@@ -1,0 +1,13 @@
+# channel must be 1 or 2. closed=true closes the relay; false opens it.
+uint8 channel
+bool closed
+---
+# Success requires both a valid FC05 echo and matching FC01 readback.
+bool success
+int32 error_code
+string message
+# A failed write may already have reached the device. Writes are never retried.
+bool write_may_have_applied
+# do_state is meaningful only when do_state_valid is true.
+bool do_state_valid
+bool[2] do_state

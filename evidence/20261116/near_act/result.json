@@ -1,0 +1,160 @@
+{
+  "reason": "Requested manual stages completed",
+  "fault": null,
+  "robot_motion_requested": true,
+  "stages_completed": true,
+  "cleanup_error": "",
+  "final_status": {
+    "schema": "policy_executor_status_v1",
+    "phase": "IDLE",
+    "mode": "live",
+    "heartbeat": "67316850-a603-48b7-894b-2512ad14b5d0",
+    "run_id": "3dc697db-fa8a-4a1e-9ef7-645ed85fdcf2",
+    "model": "act",
+    "reason": "Operator finished sequence; stopped with suction released",
+    "policy_key": "default",
+    "expected_checkpoint_sha256": "0d71f2e37a180b2e829bc7bf423bbe8171945c3afa327f8d08f2a72297d00d93",
+    "home_verified_run_id": "3dc697db-fa8a-4a1e-9ef7-645ed85fdcf2",
+    "policy_observation_after_ns": 1794796153312500415,
+    "enable_motion": true,
+    "max_round_seconds": null,
+    "round_time_limit_enabled": false,
+    "accepted_actions": 803,
+    "rejected_actions": 0,
+    "servo_commands": 4036,
+    "limited_ticks": 3897,
+    "last_action_age_ms": null,
+    "round_elapsed_seconds": null,
+    "driver_status": {
+      "left": "idle_power_on",
+      "right": "idle_power_on"
+    },
+    "last_command": [
+      0.8985964023040417,
+      0.30716242445467523,
+      -0.694565431239642,
+      1.9551798779614287,
+      0.4316472536680383,
+      0.30262478057877756,
+      0.2651074694943018,
+      -0.6287551222004294,
+      0.30385654693046477,
+      0.3126457777763467,
+      1.6952827299435307,
+      -0.37544739922133796,
+      0.32891488112389033,
+      -0.6315137313263356
+    ],
+    "trajectory_ready": true,
+    "native_protocol": "timed_chunk_v2",
+    "max_joint_speed_rad_s": 0.5,
+    "max_joint_acceleration_rad_s2": 1.0,
+    "max_relative_target_rad": 0.035,
+    "max_tracking_error_rad": 0.15,
+    "temporal_ensemble_coefficient": 0.01,
+    "trajectory_response_seconds": 0.1,
+    "execution_lead_ns": 0,
+    "fusion_contributors": 48,
+    "newest_prediction_index": 1.59167578,
+    "native_error": "",
+    "feedback_reader": "drain_latest_v1",
+    "feedback_max_host_age_ms": 30,
+    "left_feedback": {
+      "age_scope": "host time since latest drained SDK read; controller capture timestamp unavailable",
+      "discarded_total": 35391,
+      "drain_duration_ms": 0.116164,
+      "frames_drained": 10,
+      "frames_total": 39295,
+      "fresh": true,
+      "historical_frames_discarded": 9,
+      "host_read_age_ms": 0.22023,
+      "last_host_read_ns": 1794796193773490948,
+      "reader": "drain_latest_v1"
+    },
+    "right_feedback": {
+      "age_scope": "host time since latest drained SDK read; controller capture timestamp unavailable",
+      "discarded_total": 35389,
+      "drain_duration_ms": 0.068546,
+      "frames_drained": 10,
+      "frames_total": 39292,
+      "fresh": true,
+      "historical_frames_discarded": 9,
+      "host_read_age_ms": 0.164613,
+      "last_host_read_ns": 1794796193773560806,
+      "reader": "drain_latest_v1"
+    },
+    "stop_retry_error": "",
+    "suction_target": [
+      false,
+      false
+    ],
+    "task_sequence": {
+      "id": "ee2b28f1-2241-461c-8eb9-1fdf9d1207b3",
+      "stage": "near",
+      "result": "complete",
+      "pending": null,
+      "completed_stages": [
+        "near"
+      ],
+      "completion_mode": "manual"
+    },
+    "box_scene_check_enabled": false,
+    "completion_mode": "manual",
+    "brain_adapter_sha256": "63e882d82b66a58da2269ce32f22dedc41b42959b2165d080a131ddeeabf0ade",
+    "stage_timeout_seconds": null,
+    "suction_io": {
+      "verified": [
+        false,
+        false
+      ],
+      "error": "",
+      "writes": 2,
+      "pending_operation": false,
+      "settled": true
+    }
+  },
+  "final_inference": {
+    "ready": true,
+    "model": "act",
+    "publisher_id": "1777f997-9f11-4d22-a8dc-e736c55982c8",
+    "host": "jj-MS-7E71",
+    "runtime": "lerobot",
+    "backend": "pytorch",
+    "checkpoint_sha256": "0d71f2e37a180b2e829bc7bf423bbe8171945c3afa327f8d08f2a72297d00d93",
+    "actions_published": 40200,
+    "loaded_checkpoints": {
+      "far": "0d71f2e37a180b2e829bc7bf423bbe8171945c3afa327f8d08f2a72297d00d93",
+      "near": "ec6e21a2a4e8b1813f5e16926f1e1b15f27468627dd7e3841056f4c016174ad8",
+      "default": "0d71f2e37a180b2e829bc7bf423bbe8171945c3afa327f8d08f2a72297d00d93"
+    },
+    "active_policy_key": "near",
+    "active_checkpoint_sha256": "ec6e21a2a4e8b1813f5e16926f1e1b15f27468627dd7e3841056f4c016174ad8",
+    "chunks_predicted": 804,
+    "skipped_action_ticks": 0,
+    "error": "",
+    "last_inference_ms": 10.648,
+    "joint_postprocess": "absolute",
+    "pause_reason": "executor_phase_STOPPING",
+    "run_id": "3dc697db-fa8a-4a1e-9ef7-645ed85fdcf2",
+    "protocol": "timed_chunk_v2",
+    "chunk_steps": 50,
+    "prediction_hz": 20,
+    "observation_state_logged": true,
+    "actual_prediction_hz": 19.99827168875797,
+    "cyclic_gc_policy": "idle_only",
+    "cyclic_gc_deferred": false,
+    "input_receive_age_ms": {
+      "head": 2.91,
+      "left_wrist": 38.75,
+      "right_wrist": 41.73,
+      "left_arm": 37.91,
+      "right_arm": 38.12,
+      "left_suction": 37.85,
+      "right_suction": 37.83
+    }
+  },
+  "final_suction": [
+    false,
+    false
+  ]
+}
