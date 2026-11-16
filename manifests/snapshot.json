@@ -20,5 +20,6 @@
     "full original 28 GB dataset; metadata required for ACT loading is in the checkpoint asset",
     "undeployed candidate model weights and unrelated base VLM blobs"
   ],
-  "source_files_verified": 1530
+  "source_files_verified": 1569,
+  "release_tag": "snapshot-20261116-v1"
 }

@@ -3,18 +3,18 @@
     "name": "foxconn-physical-runs-20261116.tar.gz",
     "bytes": 444047483,
     "sha256": "896af6869431686b1a84708c9183dd7acbd67d3eea15a9ff9ca3bf44794b85ff",
-    "release": "snapshot-20261116"
+    "release": "snapshot-20261116-v1"
   },
   {
     "name": "foxconn-act-checkpoints-20261116.tar.gz",
     "bytes": 581395368,
     "sha256": "9c50fcb3c66caafe1686126c66e1a4d7962c44adbd35461c0de7335c033ebd57",
-    "release": "snapshot-20261116"
+    "release": "snapshot-20261116-v1"
   },
   {
     "name": "foxconn-jetson-runtime-assets-20261116.tar.gz",
     "bytes": 12000002,
     "sha256": "9272cec18a67c3e3a4bfc5433c8a092fd707a1701d55709a23538387367cf4db",
-    "release": "snapshot-20261116"
+    "release": "snapshot-20261116-v1"
   }
 ]

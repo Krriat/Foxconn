@@ -37,7 +37,7 @@ ROS 2 Humble，Domain 1，`rmw_fastrtps_cpp`。ACT 动作时间基准为 20 Hz�
 - `evidence/20261116/`：可直接在 GitHub 查看结果、对照报告和末帧图像。
 - `manifests/`：源文件 SHA-256、设备环境、权重身份、附件校验和。
 
-完整 ROS bags、所有相机帧、动作块、伺服轨迹、模型权重和 Jetson 必需运行库在同一仓库的 [snapshot-20261116 Release](https://github.com/Krriat/Foxconn/releases/tag/snapshot-20261116)，不是只上传摘要：
+完整 ROS bags、所有相机帧、动作块、伺服轨迹、模型权重和 Jetson 必需运行库在同一仓库的 [snapshot-20261116-v1 Release](https://github.com/Krriat/Foxconn/releases/tag/snapshot-20261116-v1)，不是只上传摘要：
 
 | 附件 | 内容 / 解包布局 |
 |---|---|
@@ -79,6 +79,8 @@ af60ccd4cfca37c420d1107e440c8fcb78904d22a28e802d39b4b5925a9055f9
 2. 电脑的项目源码、`training_tools/`、权重和训练元数据对应 `/home/jj/code/ACT/`。权重和实机数据附件以这个目录为解包根。
 3. Jetson 的 `robot_source/` 对应 `/home/jetson/AIDE_robot_main/`。源码中 CMake 所引用 SDK、USR-M050 库和 ROS 接口都在源码或运行附件中。
 4. 所有来源、校验和及网络拓扑见 `manifests/`。保留原安全限制；归档动作本身不执行安装或启动。
+
+运行库附件保留了原 Colcon `install/` 中的符号链接，因此不是可任意移动目录的独立安装包。迁移到新设备时，应先用已归档的 `xCoreROS/src/` 重建 ROS 接口，再构建状态读取和原生驱动；SDK 的 Eigen 等无扩展名头文件也已完整收录。
 
 本次当前代码仍使用人工阶段完成服务；归档不启用箱盖判定或自动切换。近盖单阶段实测调用的是 `start_near`，会先归位。`finish_near` 是结束并释放吸盘，不能在刚启动时调用。
 

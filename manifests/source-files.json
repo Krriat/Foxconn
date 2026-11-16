@@ -3311,6 +3311,13 @@
     "device_or_dependency": "jetson"
   },
   {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreROS/.gitattributes",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreROS/.gitattributes",
+    "bytes": 238,
+    "sha256": "5ea024cd9a744e5f7c48b2028632e8e7ea87f3d498a20da3996bdd36ab629811",
+    "device_or_dependency": "jetson"
+  },
+  {
     "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreROS/.gitignore",
     "export": "devices/jetson/robot_source/hardware/arm/xCoreROS/.gitignore",
     "bytes": 99,
@@ -3542,6 +3549,13 @@
     "device_or_dependency": "jetson"
   },
   {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreROS/docs/public/.nojekyll",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreROS/docs/public/.nojekyll",
+    "bytes": 78,
+    "sha256": "f4acc1cb29ab9a843616352c71724d5c0f33f24606977040536f89652ccbb5f3",
+    "device_or_dependency": "jetson"
+  },
+  {
     "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreROS/docs/reference/action-types.md",
     "export": "devices/jetson/robot_source/hardware/arm/xCoreROS/docs/reference/action-types.md",
     "bytes": 1386,
@@ -3633,6 +3647,13 @@
     "device_or_dependency": "jetson"
   },
   {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreROS/src/aruco_scanner/resource/aruco_scanner",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreROS/src/aruco_scanner/resource/aruco_scanner",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "device_or_dependency": "jetson"
+  },
+  {
     "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreROS/src/aruco_scanner/test/test_copyright.py",
     "export": "devices/jetson/robot_source/hardware/arm/xCoreROS/src/aruco_scanner/test/test_copyright.py",
     "bytes": 962,
@@ -3721,6 +3742,13 @@
     "export": "devices/jetson/robot_source/hardware/arm/xCoreROS/src/realsense_multi_camera/realsense_multi_camera/multi_camera_node.py",
     "bytes": 8409,
     "sha256": "9cd68df5dfce4a041ff6cd6caaa576c91cd5e976544085a999da65e765e54cb4",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreROS/src/realsense_multi_camera/resource/realsense_multi_camera",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreROS/src/realsense_multi_camera/resource/realsense_multi_camera",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "device_or_dependency": "jetson"
   },
   {
@@ -4239,6 +4267,13 @@
     "export": "devices/jetson/robot_source/hardware/arm/xCoreROS/src/rokae_motion/config/vision_offsets.yaml",
     "bytes": 1002,
     "sha256": "22dd649d0b48ee06d95341365e2f68c4c4860de55a52c6ea6f30153239b52e67",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreROS/src/rokae_motion/resource/rokae_motion",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreROS/src/rokae_motion/resource/rokae_motion",
+    "bytes": 1,
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
     "device_or_dependency": "jetson"
   },
   {
@@ -5303,6 +5338,223 @@
     "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/CMakeLists.txt",
     "bytes": 1159,
     "sha256": "783b0325d4e755675e91ce403df48c32201819f9fb7357ef9e915d9ae2d9447c",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/AccelerateSupport",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/AccelerateSupport",
+    "bytes": 2058,
+    "sha256": "b7286cc9b05c96fe9ed13754c4d785f77120c67a4fbf0600e438060543f28866",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/Cholesky",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/Cholesky",
+    "bytes": 1110,
+    "sha256": "9de20dc29bbe0a420b9ce22bd34cbbf4a65c384cb170238ec7ef6b4b8f1e651b",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/CholmodSupport",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/CholmodSupport",
+    "bytes": 1900,
+    "sha256": "23133b1dbac5356a38d236371543ef53a4f9e9d928eb8156da025872f34a7b01",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/Core",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/Core",
+    "bytes": 13351,
+    "sha256": "92d7266cd61b50bebc4abb47f60f7345bbc7895559b6dc60d8698c10ed648039",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/Dense",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/Dense",
+    "bytes": 122,
+    "sha256": "5325c9d4d693e504ee012c5275ad4b10b135a701cbd87c14466d2ea21ea22ee5",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/Eigen",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/Eigen",
+    "bytes": 35,
+    "sha256": "b0473b5d7c0cd9311d4a90548162e8cf160904476871f7fb749e9624e9b3dfd1",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/Eigenvalues",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/Eigenvalues",
+    "bytes": 1777,
+    "sha256": "f1958a9acf3cd3e1f518d871d7dc602e8101b33ce35008b8ee8e1720845bda07",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/Geometry",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/Geometry",
+    "bytes": 1940,
+    "sha256": "f38a145ee513d1fa75bfcfc794fbc47c9de65a3af5d9fb719e057ac63302c2f8",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/Householder",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/Householder",
+    "bytes": 829,
+    "sha256": "1a18ea2659db15ce93de0f5aff135a536af9701da9af4f026710e56def23a559",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/IterativeLinearSolvers",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/IterativeLinearSolvers",
+    "bytes": 2102,
+    "sha256": "372d8f00c9efa6824104f36527dff0117a016e84f6510c1d4cfa4f60ba256ec9",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/Jacobi",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/Jacobi",
+    "bytes": 894,
+    "sha256": "af3020c91b8e92d0734c113fb1511d96a0d6b058128911d898e0177628a358c8",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/KLUSupport",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/KLUSupport",
+    "bytes": 1389,
+    "sha256": "bc4631eba44254d2d102287f01c02b0ca793291c976b509b7c3528157fed2f64",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/LU",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/LU",
+    "bytes": 1217,
+    "sha256": "5e9a3010354063a41b46de23ff3620cead6828c891d553c8855998d8771b8699",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/MetisSupport",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/MetisSupport",
+    "bytes": 991,
+    "sha256": "e46d51d3065962408a403480f2c9cad4e7d61fb509c1e4a695274751274969a2",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/OrderingMethods",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/OrderingMethods",
+    "bytes": 2451,
+    "sha256": "25fac81cac3358017e4dcb20f93afd0f9ce65d6041376f2ff5d96fd9d084bd72",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/PaStiXSupport",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/PaStiXSupport",
+    "bytes": 1751,
+    "sha256": "f423b95716b804f9521234dfbc58ad1a2fad9a16f84bcf16df0bb88aeecc8543",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/PardisoSupport",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/PardisoSupport",
+    "bytes": 1116,
+    "sha256": "50ec5003df399fabf518620e220f71c717ff3a03a7218b8650a974dc3ad06b15",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/QR",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/QR",
+    "bytes": 1221,
+    "sha256": "f50c8c7f1846149ec1d7b533b3ab7aa3feb6ae2c01597729dd28775b1beaae58",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/QtAlignedMalloc",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/QtAlignedMalloc",
+    "bytes": 900,
+    "sha256": "c466291c6e7d230e8b76b725cdad1ed82c249bf01f5ec3bcb6f3f6501ed0ff97",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/SPQRSupport",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/SPQRSupport",
+    "bytes": 1141,
+    "sha256": "736cd1dfe912b17984060e781cbf5e669f5ed6119db2b5e24beab0276c601118",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/SVD",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/SVD",
+    "bytes": 1616,
+    "sha256": "4fc03dcb5c44000c19f61e844f74bed9f38f1a95d182b703877eae9c336764d8",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/Sparse",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/Sparse",
+    "bytes": 888,
+    "sha256": "be351b6ee652a7a20e3953d0eae216d4d01c2c26ba7b6a464bf908db3449907b",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/SparseCholesky",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/SparseCholesky",
+    "bytes": 1235,
+    "sha256": "6e364a72115dea57061e136a6ec804cf21c5d3cd79aa4439fd2b352f589dea9b",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/SparseCore",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/SparseCore",
+    "bytes": 2212,
+    "sha256": "be1e349117e70c51b9bd971029d8d44a51b7f2e716d57f3bffae2bc19feded08",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/SparseLU",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/SparseLU",
+    "bytes": 1766,
+    "sha256": "8872f098945d0cccadbcc89d34918809f62565308c69edb0662f21b7f9d56700",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/SparseQR",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/SparseQR",
+    "bytes": 1195,
+    "sha256": "7433458ae0082f26aac3b544f08e5718a5d122c479a9314252b411ccf1d9b8fb",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/StdDeque",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/StdDeque",
+    "bytes": 797,
+    "sha256": "c1885167a447825ab7c35573422c3efa23dec62f5b630ac322ffe658e0ee5242",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/StdList",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/StdList",
+    "bytes": 726,
+    "sha256": "03540e297ae96ed03e828d9a433bb7f5a5e93aa83c6f50a6c271c78f9283d667",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/StdVector",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/StdVector",
+    "bytes": 803,
+    "sha256": "7e8b1060757a1140298ff3905df70edb59ad1083f505681df30dc9dc9963d8ab",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/SuperLUSupport",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/SuperLUSupport",
+    "bytes": 2243,
+    "sha256": "8aa601f3fa1e6bfc03b799666bf39ebc42d44917a5fb2aaa489beafd63901f72",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/UmfPackSupport",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/Eigen/UmfPackSupport",
+    "bytes": 1382,
+    "sha256": "003d41fa08cde68b1c4698499fa9bf9c803cebb27ae748615851519f42dc56ac",
     "device_or_dependency": "jetson"
   },
   {
@@ -8036,6 +8288,13 @@
     "device_or_dependency": "jetson"
   },
   {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/kdl/include/kdl/frameacc.inl",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/kdl/include/kdl/frameacc.inl",
+    "bytes": 14304,
+    "sha256": "900c02eac7779462ac8a3557a4cec3af325854c60214ec35ffe9424586e82111",
+    "device_or_dependency": "jetson"
+  },
+  {
     "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/kdl/include/kdl/frameacc_io.hpp",
     "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/kdl/include/kdl/frameacc_io.hpp",
     "bytes": 1500,
@@ -8050,6 +8309,13 @@
     "device_or_dependency": "jetson"
   },
   {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/kdl/include/kdl/frames.inl",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/kdl/include/kdl/frames.inl",
+    "bytes": 30494,
+    "sha256": "9636cde65b73794c0dffcfe3e78b7deffdd06bb4ee6346588f822302f589b5cc",
+    "device_or_dependency": "jetson"
+  },
+  {
     "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/kdl/include/kdl/frames_io.hpp",
     "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/kdl/include/kdl/frames_io.hpp",
     "bytes": 5281,
@@ -8061,6 +8327,13 @@
     "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/kdl/include/kdl/framevel.hpp",
     "bytes": 13686,
     "sha256": "d7cb855cb9529f86a2838cd19244666f5582c95f4c79a9b75eee0d4627f3228c",
+    "device_or_dependency": "jetson"
+  },
+  {
+    "source": "/home/jetson/AIDE_robot_main/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/kdl/include/kdl/framevel.inl",
+    "export": "devices/jetson/robot_source/hardware/arm/xCoreSDK-v0.7.1.ar_6/external/kdl/include/kdl/framevel.inl",
+    "bytes": 12585,
+    "sha256": "b6d702f293add64c72aad24cb4a418f8c30e4d8d39124290a7d3f31e327c6f71",
     "device_or_dependency": "jetson"
   },
   {
