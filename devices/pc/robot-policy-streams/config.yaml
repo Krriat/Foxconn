@@ -61,3 +61,5 @@ act_stage_checkpoints:
     path: /home/jj/code/ACT/model_outputs/act_near_success_20261112/pretrained_model
     sha256: ec6e21a2a4e8b1813f5e16926f1e1b15f27468627dd7e3841056f4c016174ad8
 brain_adapter_sha256: 63e882d82b66a58da2269ce32f22dedc41b42959b2165d080a131ddeeabf0ade
+execution_speed_scale: 1.0
+execution_speed_profile: uniform

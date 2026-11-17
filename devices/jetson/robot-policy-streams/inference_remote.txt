@@ -1,2 +1,0 @@
-Jetson ACT inference is paused. ACT inference now runs on jj@172.16.12.16.
-Start ~/.local/share/robot-policy-streams/start.sh inference on that computer.

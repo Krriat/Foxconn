@@ -1,0 +1,7 @@
+{
+  "model": "Qwen/Qwen3.5-9B",
+  "revision": "460979c3",
+  "weight_files_not_uploaded": true,
+  "reason": "Public 19GB base already installed locally; adapter and pinned source checksums are included",
+  "required_location_on_PC": "/home/jj/code/ACT/model_outputs/base/Qwen3.5-9B"
+}

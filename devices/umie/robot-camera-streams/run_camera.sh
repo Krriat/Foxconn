@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -eo pipefail
 camera_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+export FASTRTPS_DEFAULT_PROFILES_FILE="$camera_dir/fastdds_wrist_transport.xml"
 source /opt/ros/humble/setup.bash
 export ROS_DOMAIN_ID="${ROS_DOMAIN_ID:-1}"
 export ROS_LOCALHOST_ONLY=0

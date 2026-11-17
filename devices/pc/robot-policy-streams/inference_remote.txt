@@ -1,0 +1,2 @@
+ACT inference runs on jetson@172.16.12.95. This computer runs Qwen LoRA only.
+Start Jetson: ~/.local/share/robot-policy-streams/start.sh inference

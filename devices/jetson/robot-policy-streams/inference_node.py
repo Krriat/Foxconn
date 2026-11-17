@@ -2,6 +2,8 @@
 """GPU policy publisher. This process has no hardware or motion-service clients."""
 import argparse
 import copy
+import faulthandler
+import gc
 from collections import deque
 import hashlib
 import importlib.util
@@ -42,6 +44,13 @@ class Inference(Node):
         self.snapshot_failure = "waiting_for_inputs"
         self.last_pause_reason = None
         self.identity = str(uuid.uuid4())
+        self.progress = {"step": "initializing", "time": time.monotonic()}
+        self.last_publish_mono = 0.0
+        self.last_gate_log = 0.0
+        self.gc_initially_enabled = gc.isenabled()
+        self.gc_suspended = False
+        self.gc_started = {}
+        gc.callbacks.append(self.on_gc)
         self.executor_context, self.context_received = {}, 0.0
         self.buffers = {name: deque(maxlen=50) for name in
                         ("head", "left_wrist", "right_wrist", "left_arm", "right_arm",
@@ -49,6 +58,8 @@ class Inference(Node):
         self.status = {"ready": False, "model": config["model"], "publisher_id": self.identity,
                        "host": socket.gethostname(), "runtime": config.get("inference_runtime", "lerobot"),
                        "backend": config.get("act_backend", "pytorch"),
+                       "execution_speed_scale": config.get("execution_speed_scale", 1.),
+                       "execution_speed_profile": config.get("execution_speed_profile", "uniform"),
                        "checkpoint_sha256": weights_sha, "actions_published": 0,
                        "loaded_checkpoints": {key: entry[2] for key, entry in self.policies.items()},
                        "active_policy_key": None, "active_checkpoint_sha256": None,
@@ -73,6 +84,71 @@ class Inference(Node):
         self.create_timer(1.0, self.publish_status)
         self.thread = threading.Thread(target=self.run, daemon=True)
         self.thread.start()
+        self.monitor = threading.Thread(target=self.monitor_progress, daemon=True)
+        self.monitor.start()
+
+    def mark_progress(self, step, **details):
+        self.progress = dict(step=step, time=time.monotonic(), **details)
+
+    def manage_gc(self):
+        # CPython's generation-2 traversal stops every Python thread, including
+        # ROS input callbacks. Reference-count reclamation continues normally.
+        # Run cyclic traversal only outside the action-producing phases.
+        active = self.executor_context.get('phase') in ACTIVE_PHASES
+        if active and self.gc_initially_enabled and not self.gc_suspended:
+            gc.disable()
+            self.gc_suspended = True
+            print(encode(dict(event='cyclic_gc_deferred', time_ns=time.time_ns())), flush=True)
+        elif not active and self.gc_suspended:
+            self.gc_suspended = False
+            gc.enable()
+            self.mark_progress('idle_garbage_collection')
+            gc.collect()
+            print(encode(dict(event='cyclic_gc_completed_idle', time_ns=time.time_ns())), flush=True)
+
+    def on_gc(self, phase, info):
+        generation = info['generation']
+        if phase == 'start':
+            self.gc_started[generation] = time.monotonic()
+        elif generation in self.gc_started:
+            elapsed = (time.monotonic()-self.gc_started.pop(generation))*1000
+            if elapsed > 20:
+                print(encode(dict(event='cyclic_gc_pause', time_ns=time.time_ns(),
+                    generation=generation, duration_ms=elapsed,
+                    progress=self.progress, executor_phase=getattr(self, 'executor_context', {}).get('phase'),
+                    collected=info.get('collected'))), flush=True)
+
+    def log_gate(self, reason, **details):
+        self.mark_progress(reason, **details)
+        now = time.monotonic()
+        if now-self.last_gate_log >= .1:
+            self.last_gate_log = now
+            print(encode(dict(event="observation_skipped", time_ns=time.time_ns(),
+                              reason=reason, **details)), flush=True)
+
+    def monitor_progress(self):
+        last_log = 0.0
+        while not self.stop_event.wait(.05):
+            now = time.monotonic()
+            # Diagnostic only: never changes freshness checks or execution.
+            if not self.lock.acquire(timeout=.005):
+                continue
+            try:
+                active = self.executor_context.get("phase") in ACTIVE_PHASES
+                details = dict(phase=self.executor_context.get("phase"),
+                    run_id=self.executor_context.get("run_id"),
+                    context_age_ms=(now-self.context_received)*1000,
+                    receive_ages_ms={k:(now-v[-1][1])*1000 if v else None
+                                     for k,v in self.buffers.items()},
+                    head_stamps=[v[0] for v in list(self.buffers["head"])[-3:]])
+            finally:
+                self.lock.release()
+            if active and self.last_publish_mono and now-self.last_publish_mono > .15 and now-last_log > .5:
+                last_log = now
+                print(encode(dict(event="inference_progress_gap", time_ns=time.time_ns(),
+                    publish_age_ms=(now-self.last_publish_mono)*1000,
+                    progress=self.progress, **details)), flush=True)
+                faulthandler.dump_traceback()
 
     def receive(self, key, message):
         received = time.monotonic()
@@ -145,6 +221,10 @@ class Inference(Node):
             return None
         if context.get("model") != self.config["model"]:
             return None
+        if context.get("execution_speed_scale", 1.) != self.config.get("execution_speed_scale", 1.):
+            return None
+        if context.get("execution_speed_profile", "uniform") != self.config.get("execution_speed_profile", "uniform"):
+            return None
         if self.config.get("act_stage_checkpoints"):
             key, sha = selected_policy(self.config, context.get("task_sequence"))
             if context.get("policy_key") != key or context.get("expected_checkpoint_sha256") != sha:
@@ -159,6 +239,8 @@ class Inference(Node):
         warmed = False
         published_times = deque(maxlen=100)
         while not self.stop_event.is_set():
+            self.manage_gc()
+            self.mark_progress("snapshot")
             observation = self.snapshot()
             if not warmed:
                 if observation is None:
@@ -200,6 +282,7 @@ class Inference(Node):
                 continue
             if context["run_id"] != run_id:
                 run_id, sequence, last_observation = context["run_id"], 0, 0
+                self.last_publish_mono = time.monotonic()
                 published_times.clear()
                 policy_key, sha = selected_policy(self.config, context.get("task_sequence"))
                 self.predict, self.reset, self.weights_sha = self.policies[policy_key]
@@ -214,6 +297,7 @@ class Inference(Node):
             # The camera publishes at 20 Hz. Follow new frames instead of a
             # second free-running 20-Hz timer, which can repeatedly sample the
             # same frame near a phase boundary and lose an entire period.
+            self.mark_progress("waiting_for_head")
             if not self.head_event.wait(.05):
                 continue
             self.head_event.clear()
@@ -221,16 +305,23 @@ class Inference(Node):
                 current = self.active_context()
                 if (current is None or current["run_id"] != run_id
                         or selected_policy(self.config, current.get("task_sequence"))[0] != policy_key):
+                    self.log_gate("context_changed_before_prediction", run_id=run_id)
                     continue
                 observation = self.snapshot()
                 if observation is None:
+                    self.log_gate("snapshot_after_head_"+self.snapshot_failure, run_id=run_id)
                     continue
                 origin_ns = int(observation["source_stamp"] * 1e9)
                 if origin_ns < current.get("policy_observation_after_ns", 0):
+                    self.log_gate("image_before_home", origin_ns=origin_ns,
+                                  minimum_ns=current["policy_observation_after_ns"], run_id=run_id)
                     continue  # require a new image after both arms were verified home
                 if origin_ns <= last_observation:
+                    self.log_gate("nonincreasing_head_stamp", origin_ns=origin_ns,
+                                  last_observation_ns=last_observation, run_id=run_id)
                     continue  # never re-predict the same frame under a new timeline
                 start_ns, start_mono = time.time_ns(), time.monotonic_ns()
+                self.mark_progress("predict", sequence=sequence+1, origin_ns=origin_ns)
                 chunk = self.predict(observation)
                 raw_first_joint_target = chunk[0, :14].copy()
                 if self.anchor_joints:
@@ -251,6 +342,8 @@ class Inference(Node):
                            "model": self.config["model"], "checkpoint_sha256": self.weights_sha,
                            "policy_key": policy_key,
                            "action_hz": self.config["action_hz"], "step_ns": 50_000_000,
+                           "execution_speed_scale": self.config.get("execution_speed_scale", 1.),
+                           "execution_speed_profile": self.config.get("execution_speed_profile", "uniform"),
                            "actions": chunk.tolist(), "observation_time_ns": origin_ns,
                            "joint_postprocess": "anchor_observed_joints_v1" if self.anchor_joints else "absolute",
                            "raw_first_joint_target": raw_first_joint_target.tolist(),
@@ -261,7 +354,12 @@ class Inference(Node):
                            "observation_source_skew_ms": observation["source_skew_ms"],
                            "max_input_receive_age_ms": observation["latest_age_ms"],
                            "send_time_ns": time.time_ns()}
-                self.actions.publish(String(data=encode(message)))
+                self.mark_progress("encode", sequence=sequence)
+                wire_message = String(data=encode(message))
+                self.mark_progress("publish", sequence=sequence)
+                self.actions.publish(wire_message)
+                self.last_publish_mono = time.monotonic()
+                self.mark_progress("published", sequence=sequence)
                 last_observation = origin_ns
                 published_times.append(time.monotonic())
                 with self.lock:
@@ -282,6 +380,8 @@ class Inference(Node):
     def publish_status(self):
         with self.lock:
             status = dict(self.status)
+            status['cyclic_gc_policy'] = 'idle_only'
+            status['cyclic_gc_deferred'] = self.gc_suspended
             status["input_receive_age_ms"] = {
                 key: round((time.monotonic() - values[-1][1]) * 1000, 2) if values else None
                 for key, values in self.buffers.items()}
@@ -384,6 +484,9 @@ def main():
     finally:
         node.stop_event.set()
         node.thread.join(timeout=5)
+        if node.gc_suspended and node.gc_initially_enabled:
+            gc.enable()
+        gc.callbacks.remove(node.on_gc)
         node.destroy_node()
         if rclpy.ok():
             rclpy.shutdown()

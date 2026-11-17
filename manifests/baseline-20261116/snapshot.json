@@ -1,0 +1,25 @@
+{
+  "snapshot_at": "2026-11-16T10:56:09.171219+08:00",
+  "repository": "Krriat/Foxconn",
+  "visibility": "private",
+  "devices": {
+    "pc": "jj@172.16.12.16",
+    "jetson": "jetson@172.16.12.95",
+    "umie": "umie@172.16.12.45"
+  },
+  "purpose": "Archive actual deployed source, reproducible far-reference / near-ACT successes and full physical evidence. No motion was requested for this export.",
+  "far_success_mode": "saved successful trajectory replay; NOT ACT inference",
+  "near_success_mode": "ACT, PC inference, Jetson native execution; two successful physical runs on 2026-11-16",
+  "deployed_far_ACT": "af60ccd4cfca37c420d1107e440c8fcb78904d22a28e802d39b4b5925a9055f9; this morning far ACT attempt failed to attach suction",
+  "near_ACT": "ec6e21a2a4e8b1813f5e16926f1e1b15f27468627dd7e3841056f4c016174ad8",
+  "not_in_active_success": "new far contact candidate and Qwen/LoRA automatic task switching",
+  "omissions": [
+    "SSH/GitHub credentials and credential-bearing continuation note",
+    "Python virtual environments and caches",
+    "unrelated historical runtime logs and build intermediates",
+    "full original 28 GB dataset; metadata required for ACT loading is in the checkpoint asset",
+    "undeployed candidate model weights and unrelated base VLM blobs"
+  ],
+  "source_files_verified": 1569,
+  "release_tag": "snapshot-20261116-v1"
+}

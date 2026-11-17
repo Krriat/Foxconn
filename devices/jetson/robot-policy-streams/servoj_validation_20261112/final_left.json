@@ -1,0 +1,37 @@
+{
+  "amplitude_rad": 0.004,
+  "cleanup_errors": [],
+  "duration_s": 8.0,
+  "execute": false,
+  "final_joints": [
+    0.7787381301433781,
+    0.42542879886358,
+    -0.6129525972288085,
+    1.8888650860025011,
+    0.5089022010175293,
+    0.24225990803929257,
+    0.2120601406467902
+  ],
+  "final_operation_state": 0,
+  "final_power_state": 1,
+  "gain": 0.0,
+  "initial_joints": [
+    0.7787379304062964,
+    0.4254291983377435,
+    -0.6129528369133067,
+    1.8888650860025011,
+    0.5089029200710236,
+    0.24225990803929257,
+    0.21205966127779402
+  ],
+  "initial_operation_state": 0,
+  "initial_power_state": 1,
+  "joint_1_based": 6,
+  "lookahead_s": 0.01,
+  "passed": true,
+  "period_s": 0.01,
+  "power_after_servo_stop": 1,
+  "samples": [],
+  "side": "left",
+  "soft_limits_enabled": true
+}

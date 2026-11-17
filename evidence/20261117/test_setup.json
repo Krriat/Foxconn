@@ -1,0 +1,10 @@
+{
+  "only_config_change": {
+    "coordinate_far_right_arm": [
+      true,
+      false
+    ]
+  },
+  "robot_motion_requested_by_setup": false,
+  "prior_success": "training_verification/grasp_repair_20261117_095228/coordination01"
+}

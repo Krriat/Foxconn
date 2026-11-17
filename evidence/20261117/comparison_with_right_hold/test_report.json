@@ -1,0 +1,223 @@
+{
+  "passed_one_physical_trial": true,
+  "physical_observation": "Far lid stayed open after release/home; near lid opened; both remain open in final camera image.",
+  "automatic_stage_order": [
+    "far",
+    "near"
+  ],
+  "verified_home_stages": [
+    "far",
+    "near"
+  ],
+  "phase_changes": [
+    {
+      "elapsed_s": 0.0,
+      "phase": "INITIALIZING",
+      "stage": null,
+      "result": null,
+      "reason": "Initializing both arms before dataset home move"
+    },
+    {
+      "elapsed_s": 0.01,
+      "phase": "INITIALIZING",
+      "stage": "far",
+      "result": "running",
+      "reason": "Initializing both arms before dataset home move"
+    },
+    {
+      "elapsed_s": 0.539,
+      "phase": "HOMING",
+      "stage": "far",
+      "result": "running",
+      "reason": "MoveAbsJ to the saved dataset B-key pose"
+    },
+    {
+      "elapsed_s": 3.793,
+      "phase": "VERIFY_HOME",
+      "stage": "far",
+      "result": "running",
+      "reason": "Checking fresh measured joint feedback after both moves"
+    },
+    {
+      "elapsed_s": 3.816,
+      "phase": "WAITING_ACTION",
+      "stage": "far",
+      "result": "running",
+      "reason": "Both arms home verified; waiting for fresh post-home policy input"
+    },
+    {
+      "elapsed_s": 4.057,
+      "phase": "STARTING_SERVO",
+      "stage": "far",
+      "result": "running",
+      "reason": "Starting Servo J at measured joints before moving targets"
+    },
+    {
+      "elapsed_s": 5.675,
+      "phase": "RUNNING",
+      "stage": "far",
+      "result": "running",
+      "reason": "Both Servo J arms running; manual stop; no round time limit"
+    },
+    {
+      "elapsed_s": 67.843,
+      "phase": "STOPPING",
+      "stage": "far",
+      "result": "running",
+      "reason": "LoRA brain confirmed far stage completion"
+    },
+    {
+      "elapsed_s": 68.356,
+      "phase": "STAGE_RELEASE",
+      "stage": "far",
+      "result": "running",
+      "reason": "Verifying both suction channels released before stage transition"
+    },
+    {
+      "elapsed_s": 68.866,
+      "phase": "INITIALIZING",
+      "stage": "near",
+      "result": "running",
+      "reason": "Far stage stopped and suction released; return BOTH arms to dataset home for near ACT"
+    },
+    {
+      "elapsed_s": 69.396,
+      "phase": "HOMING",
+      "stage": "near",
+      "result": "running",
+      "reason": "MoveAbsJ to the saved dataset B-key pose"
+    },
+    {
+      "elapsed_s": 73.17,
+      "phase": "VERIFY_HOME",
+      "stage": "near",
+      "result": "running",
+      "reason": "Checking fresh measured joint feedback after both moves"
+    },
+    {
+      "elapsed_s": 73.204,
+      "phase": "WAITING_ACTION",
+      "stage": "near",
+      "result": "running",
+      "reason": "Both arms home verified; waiting for fresh post-home policy input"
+    },
+    {
+      "elapsed_s": 73.432,
+      "phase": "STARTING_SERVO",
+      "stage": "near",
+      "result": "running",
+      "reason": "Starting Servo J at measured joints before moving targets"
+    },
+    {
+      "elapsed_s": 75.007,
+      "phase": "RUNNING",
+      "stage": "near",
+      "result": "running",
+      "reason": "Both Servo J arms running; manual stop; no round time limit"
+    },
+    {
+      "elapsed_s": 105.993,
+      "phase": "STOPPING",
+      "stage": "near",
+      "result": "running",
+      "reason": "LoRA brain confirmed near stage completion"
+    },
+    {
+      "elapsed_s": 106.504,
+      "phase": "STAGE_RELEASE",
+      "stage": "near",
+      "result": "running",
+      "reason": "Verifying both suction channels released before stage transition"
+    },
+    {
+      "elapsed_s": 107.018,
+      "phase": "IDLE",
+      "stage": "near",
+      "result": "complete",
+      "reason": "Operator finished sequence; stopped with suction released"
+    }
+  ],
+  "coordination_changes": [
+    {
+      "elapsed_s": 4.057,
+      "enabled": true,
+      "right_held": true,
+      "left_lift_seen": false,
+      "hold_target": [
+        -0.6706498091399044,
+        0.3094896121246071,
+        0.3269905352806465,
+        1.8779409856322726,
+        -0.44162947356480453,
+        0.3126734611552132,
+        -0.45348211168070024
+      ],
+      "release_condition": "measured left-arm lift during suction ON",
+      "is_vacuum_detection": false
+    },
+    {
+      "elapsed_s": 30.154,
+      "enabled": true,
+      "right_held": false,
+      "left_lift_seen": true,
+      "hold_target": [
+        -0.6706498091399044,
+        0.3094896121246071,
+        0.3269905352806465,
+        1.8779409856322726,
+        -0.44162947356480453,
+        0.3126734611552132,
+        -0.45348211168070024
+      ],
+      "release_condition": "measured left-arm lift during suction ON",
+      "is_vacuum_detection": false
+    }
+  ],
+  "brain_decisions": [
+    {
+      "elapsed_s": 67.882,
+      "decision": {
+        "service": "finish_far",
+        "run_id": "692f911e-424a-4ff1-8909-ce141894c8c3",
+        "stage": "far",
+        "sequence_id": "d5905487-6990-43f3-9b64-23f2c08c23ce"
+      },
+      "reason": "LoRA model confirmed stable stage completion"
+    },
+    {
+      "elapsed_s": 105.982,
+      "decision": {
+        "service": "finish_near",
+        "run_id": "0898bfa9-346b-40f4-82a3-f4a8e2cf9dfc",
+        "stage": "near",
+        "sequence_id": "d5905487-6990-43f3-9b64-23f2c08c23ce"
+      },
+      "reason": "LoRA model confirmed stable stage completion"
+    }
+  ],
+  "inference_ms": {
+    "n": 856,
+    "median": 109.09095149999999,
+    "p95": 117.89482025000001,
+    "max": 168.94829
+  },
+  "runs": {
+    "692f911e-424a-4ff1-8909-ce141894c8c3": "far",
+    "0898bfa9-346b-40f4-82a3-f4a8e2cf9dfc": "near"
+  },
+  "final_phase": "IDLE",
+  "final_suction": {
+    "left": false,
+    "right": false
+  },
+  "mode": "Jetson IEEE FP32 ACT, original model weights, uniform 1.0x; desktop Qwen LoRA",
+  "change": "During automatic far stage hold right arm at measured verified home until measured left-arm lift; then resume right ACT targets through unchanged fusion/limiter. Left/IO remain ACT predictions subject to previous guard.",
+  "limits": "One completed physical run, not a long-run success-rate estimate. Kinematic milestones do not detect vacuum pressure. Offline image swaps are inconsistent counterfactuals; failed video replay is approximate.",
+  "physical_move_replayed": false,
+  "right_hold_is_actuator_coordination": true,
+  "waiting_breakdown": "waiting_breakdown.json",
+  "successful_setup_snapshot": "successful_setup/jetson_deployed_code.tgz and successful_setup/pc_sources",
+  "ACT_model_count": 2,
+  "far_ACT_predicts_both_arms": true,
+  "separate_left_right_ACT_models": false
+}

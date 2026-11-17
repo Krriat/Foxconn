@@ -74,6 +74,10 @@ class Gate:
             self.invalidate(str(e));return None
         if value["status"]!="complete":
             self.invalidate("model has not confirmed visual completion");return None
+        if context.get("require_manipulation_sweep_for_brain"):
+            progress=context.get("manipulation_progress") or {}
+            if progress.get("stage")!=evidence.stage or not progress.get("completion_ready"):
+                self.invalidate("visual opening seen; waiting for ACT manipulation sweep to finish");return None
         if now-self.started<self.min_stage_seconds:
             self.invalidate("stage start grace period");return None
         if self.samples and evidence.captured_mono-self.samples[-1]>self.max_gap:

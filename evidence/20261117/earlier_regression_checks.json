@@ -1,0 +1,12 @@
+{
+  "tests": {
+    "pure_gate_checks": 10,
+    "recorded_sweep_checks": 3,
+    "isolated_manual_sequence_checks": 11
+  },
+  "passed": true,
+  "simulated_test_domain": 77,
+  "manual_sequence_test_log_on_jetson": "/tmp/manual-sequence-domain77-coyju4yb",
+  "replay_log": "progress_replay.json",
+  "limits": "Development replay and isolated protocol checks; not an independent physical success rate."
+}

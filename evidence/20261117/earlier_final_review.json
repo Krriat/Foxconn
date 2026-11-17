@@ -1,0 +1,142 @@
+{
+  "schema": "completion_contact_fix_review_v1",
+  "physical_testing_paused_by_user": true,
+  "physical_run_id": "c0a1a9b7-173b-4a5c-aeb5-92ebe6195fa8",
+  "physical_sequence_id": "8846892b-c765-4526-83ce-4c520616f8a9",
+  "physical_result": "far grasp failed, far lid not lifted per operator and video; near stage never executed",
+  "physical_stop_reason": "RuntimeError('fault: Automatic stage exceeded 90 s without brain completion; sequence cancelled')",
+  "suction_events": [
+    {
+      "elapsed_s": 0.0,
+      "target": [
+        false,
+        false
+      ],
+      "readback": [
+        false,
+        false
+      ]
+    },
+    {
+      "elapsed_s": 5.266,
+      "target": [
+        true,
+        false
+      ],
+      "readback": [
+        false,
+        false
+      ]
+    },
+    {
+      "elapsed_s": 5.479,
+      "target": [
+        true,
+        false
+      ],
+      "readback": [
+        true,
+        false
+      ]
+    },
+    {
+      "elapsed_s": 18.377,
+      "target": [
+        false,
+        false
+      ],
+      "readback": [
+        true,
+        false
+      ]
+    },
+    {
+      "elapsed_s": 18.477,
+      "target": [
+        false,
+        false
+      ],
+      "readback": [
+        false,
+        false
+      ]
+    }
+  ],
+  "left_max_J2_degrees": 47.26050567626953,
+  "inference_ms": {
+    "n": 818,
+    "median": 108.4168,
+    "p95": 116.79461605,
+    "max": 159.302351
+  },
+  "findings": [
+    "Earlier two runs were interrupted by LoRA completion before the right-arm manipulation sweep finished.",
+    "This latest run failed earlier at physical attachment/lift. ACT requested OFF around 18.38s; actual relay OFF was read back around 18.48s while lid remained closed.",
+    "The OFF command timing does not by itself prove why initial attachment failed; vacuum pressure feedback is unavailable.",
+    "The latest recording survived the full 90-second stage timeout under systemd."
+  ],
+  "changes": [
+    "Visual completion additionally requires measured full manipulation sweep, checked by brain and Jetson executor.",
+    "Far-only automatic suction release requires demonstrated left-arm lifting milestone; at most 1.5s grace before controlled fault. Explicit stop bypasses filter.",
+    "Wrist DDS interfaces exclude relay-only network.",
+    "Persistent systemd recorder with stop-on-exit and video frame timestamps."
+  ],
+  "validation": {
+    "original_far_demo_IO_replays": 29,
+    "original_far_demo_IO_replays_passed": 29,
+    "known_success_motion_replays_passed": [
+      "far",
+      "near"
+    ],
+    "earlier_partial_far_completions_blocked": 2,
+    "release_guard_checks": 4,
+    "observer_fake_ROS_checks": "passed, Domain 77, 0 real motion clients",
+    "camera_read_only_90s": "passed, zero receive gaps over 250ms",
+    "release_guard_physical_retest": "NOT RUN: user paused physical testing",
+    "final_no_motion_preview": {
+      "passed": true,
+      "prediction_chunks": 175,
+      "active_preview_traces": 1950,
+      "hardware_commands_sent": 0,
+      "suction": [
+        false,
+        false
+      ]
+    }
+  },
+  "limitations": [
+    "Not a measured physical grasp-success improvement.",
+    "Near suction attachment not revalidated.",
+    "Pose milestones and relay ON do not measure vacuum attachment.",
+    "Relay long-session issue remains separate."
+  ],
+  "last_physical_result_safe_state": {
+    "phase": "IDLE",
+    "drivers": {
+      "left": "idle_power_on",
+      "right": "idle_power_on"
+    },
+    "suction": {
+      "left": false,
+      "right": false
+    }
+  },
+  "final_verified_state": {
+    "phase": "IDLE",
+    "driver_status": {},
+    "readback_suction": [
+      false,
+      false
+    ],
+    "execution_speed_scale": 1.0,
+    "require_manipulation_sweep_for_brain": true,
+    "suction_release_guard": {
+      "on_seen": false,
+      "released": false,
+      "left_lift_seen": false,
+      "holding_pending_lift": false,
+      "grace_seconds": 1.5,
+      "is_vacuum_detection": false
+    }
+  }
+}

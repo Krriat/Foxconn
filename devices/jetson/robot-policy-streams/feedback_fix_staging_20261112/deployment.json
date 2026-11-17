@@ -1,0 +1,21 @@
+{
+  "backup": "/home/jetson/.local/share/robot-policy-streams/backup_before_feedback_20261112",
+  "changed_files": {
+    "executor_node.py": "3ca7d904dd8ae2dd36f8bfe60d6a0af1bb5ef610cea53971c35d7b991df70661",
+    "inference_node.py": "6b358aa4d71cee00f8f902961da672821081696720e59b35ae1c56f8d8b5908d",
+    "test_protocol.py": "feb880fe30d523dea8c21a184dad8f9a6a4d7ffac3ef9c53bfe5636abfd09a70",
+    "test_executor_ros.py": "9420f0c7d2d77b32b57adf9796d733d3aab8b56923125e2f4fc6cc3a857e6888",
+    "monitor_feedback.py": "cbe652fec366419cb9059fea27dd6fe72470a58cd958895c3c5724c188087909",
+    "monitor.sh": "e5880d94e90c055a2e9b014941a17cce94c0f33093f4a7e41b96cdbf8fa86410",
+    "native/vendor/src/ros_servoj_subscriber.cpp": "a8744a0aa44988f2102f7644dcf06ebb5c550e47884995df5ff2f52789c9f5db",
+    "native/latest_feedback.hpp": "7d69492badc268bd69e976b96e11ac7b096389e84ebe5c076c741fa1df16dc08",
+    "native/test_latest_feedback.cpp": "c20823f791f7101429bd6d4e0d84c882e78a7d8d2edbb8a531853e2807c6cdad",
+    "native/readonly_feedback_probe.cpp": "c07df24761c4f7f83c9426aa4efdb44c9ae4796068ad0f2b5f2751513a3e70b1",
+    "native/CMakeLists.txt": "5263b901dfaec49dcc9f3a69fcf8ebc6d0130e063a07ddda758f5271de0eb675",
+    "native/build/robot_timed_policy_driver": "e340e7b2764ccab1b9190f4f4e06ea08e28a490f29c3ca54cc3103d76955b8ce",
+    "native/build/test_latest_feedback": "cc0fec193d310ddbcd0c611cfaa18f5bc132c8dcd9e3f74290bb2c49134e7144",
+    "native/build/readonly_feedback_probe": "a7721acfcc512422e7094a045afafccce3fe1d29aea1ecfc82677fd7aa516870"
+  },
+  "config_preserved": true,
+  "protocol_preserved": true
+}

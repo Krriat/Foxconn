@@ -63,6 +63,21 @@ class Checks(unittest.TestCase):
         c=context();c["task_sequence"]["result"]="cancelled"
         self.assertIsNone(self.send(9,c=c))
 
+    def test_visual_completion_cannot_interrupt_unfinished_manipulation(self):
+        self.c['require_manipulation_sweep_for_brain']=True
+        self.c['manipulation_progress']={'stage':'far','completion_ready':False}
+        for t in range(5,20):self.assertIsNone(self.send(t))
+        self.assertFalse(self.g.samples)
+        self.c['manipulation_progress']={'stage':'far','completion_ready':True}
+        self.assertIsNone(self.send(20));self.assertIsNone(self.send(21))
+        self.assertEqual(self.send(22)['service'],'finish_far')
+
+    def test_missing_or_other_stage_progress_never_authorizes_switch(self):
+        self.c['require_manipulation_sweep_for_brain']=True
+        self.assertIsNone(self.send(5))
+        self.c['manipulation_progress']={'stage':'near','completion_ready':True}
+        for t in (6,7,8):self.assertIsNone(self.send(t))
+
     def test_executor_binds_run_stage_sequence_model_and_fresh_image(self):
         now=10_000_000_000
         c=context();c["task_sequence"]["completion_mode"]="qwen_lora"

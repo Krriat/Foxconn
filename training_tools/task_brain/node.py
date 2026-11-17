@@ -32,6 +32,7 @@ class Observer(Node):
         self.last_started=0.;self.last_stamp=0;self.ready=False;self.result=None;self.decision=None
         self.inferences=0;self.proposals=0;self.service_calls=0;self.error="";self.last_valid=0.
         self.transition_error="";self.service_started=0.
+        self.last_evidence=None
         self.log_path=Path(log_path) if log_path else None
         if self.log_path:self.log_path.parent.mkdir(exist_ok=True,parents=True)
         self.transition_client=(self.create_client(SetParametersAtomically,"/robot/policy/brain_finish")
@@ -67,7 +68,10 @@ class Observer(Node):
             "reason":self.gate.reason,"error":self.error or self.transition_error,"inferences":self.inferences,
             "proposals":self.proposals,"service_calls":self.service_calls,
             "result":self.result,"decision":self.decision,"last_inference_age_seconds":
-                None if not self.last_valid else time.monotonic()-self.last_valid},allow_nan=False)))
+                None if not self.last_valid else time.monotonic()-self.last_valid,
+            "result_run_id":None if self.last_evidence is None else self.last_evidence.run_id,
+            "result_stage":None if self.last_evidence is None else self.last_evidence.stage,
+            "result_image_time_ns":None if self.last_evidence is None else self.last_evidence.image_stamp_ns},allow_nan=False)))
 
     def tick(self):
         now=time.monotonic()
@@ -84,7 +88,7 @@ class Observer(Node):
             self.pending_service=None
         if self.future is not None and self.future.done():
             try:
-                result,evidence=self.future.result();self.result=result;self.inferences+=1
+                result,evidence=self.future.result();self.result=result;self.last_evidence=evidence;self.inferences+=1
                 self.ready=bool(result.get("visibility_ok",True));self.error="";self.last_valid=now
                 self.event("prediction",run_id=evidence.run_id,stage=evidence.stage,
                            image_stamp_ns=evidence.image_stamp_ns,**result)

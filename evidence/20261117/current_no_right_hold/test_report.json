@@ -1,0 +1,194 @@
+{
+  "passed_one_physical_trial": true,
+  "far_lid_open_in_video": true,
+  "near_lid_open_in_video": true,
+  "only_control_config_change": {
+    "coordinate_far_right_arm": [
+      true,
+      false
+    ]
+  },
+  "right_hold_enabled_any_time": false,
+  "execution_speed_scale": 1.0,
+  "ACT_weights_changed": false,
+  "engine_precision_changed": false,
+  "qwen_automatic_stage_switch": true,
+  "brain_decisions": [
+    {
+      "service": "finish_far",
+      "run_id": "b45277f0-12c2-4b80-9558-5988e0affca1",
+      "stage": "far",
+      "sequence_id": "273e1cdc-5c95-45e5-a1b6-41fa18c1944a"
+    },
+    {
+      "service": "finish_near",
+      "run_id": "faffb276-b627-4c26-8ab5-bf4589ef3dcc",
+      "stage": "near",
+      "sequence_id": "273e1cdc-5c95-45e5-a1b6-41fa18c1944a"
+    }
+  ],
+  "phase_changes": [
+    {
+      "elapsed_s": 0.0,
+      "phase": "INITIALIZING",
+      "stage": null,
+      "result": null,
+      "reason": "Initializing both arms before dataset home move"
+    },
+    {
+      "elapsed_s": 0.003,
+      "phase": "INITIALIZING",
+      "stage": "far",
+      "result": "running",
+      "reason": "Initializing both arms before dataset home move"
+    },
+    {
+      "elapsed_s": 0.539,
+      "phase": "HOMING",
+      "stage": "far",
+      "result": "running",
+      "reason": "MoveAbsJ to the saved dataset B-key pose"
+    },
+    {
+      "elapsed_s": 2.495,
+      "phase": "VERIFY_HOME",
+      "stage": "far",
+      "result": "running",
+      "reason": "Checking fresh measured joint feedback after both moves"
+    },
+    {
+      "elapsed_s": 2.513,
+      "phase": "WAITING_ACTION",
+      "stage": "far",
+      "result": "running",
+      "reason": "Both arms home verified; waiting for fresh post-home policy input"
+    },
+    {
+      "elapsed_s": 2.766,
+      "phase": "STARTING_SERVO",
+      "stage": "far",
+      "result": "running",
+      "reason": "Starting Servo J at measured joints before moving targets"
+    },
+    {
+      "elapsed_s": 4.412,
+      "phase": "RUNNING",
+      "stage": "far",
+      "result": "running",
+      "reason": "Both Servo J arms running; manual stop; no round time limit"
+    },
+    {
+      "elapsed_s": 48.299,
+      "phase": "STOPPING",
+      "stage": "far",
+      "result": "running",
+      "reason": "LoRA brain confirmed far stage completion"
+    },
+    {
+      "elapsed_s": 48.804,
+      "phase": "STAGE_RELEASE",
+      "stage": "far",
+      "result": "running",
+      "reason": "Verifying both suction channels released before stage transition"
+    },
+    {
+      "elapsed_s": 49.312,
+      "phase": "INITIALIZING",
+      "stage": "near",
+      "result": "running",
+      "reason": "Far stage stopped and suction released; return BOTH arms to dataset home for near ACT"
+    },
+    {
+      "elapsed_s": 49.879,
+      "phase": "HOMING",
+      "stage": "near",
+      "result": "running",
+      "reason": "MoveAbsJ to the saved dataset B-key pose"
+    },
+    {
+      "elapsed_s": 52.942,
+      "phase": "VERIFY_HOME",
+      "stage": "near",
+      "result": "running",
+      "reason": "Checking fresh measured joint feedback after both moves"
+    },
+    {
+      "elapsed_s": 52.963,
+      "phase": "WAITING_ACTION",
+      "stage": "near",
+      "result": "running",
+      "reason": "Both arms home verified; waiting for fresh post-home policy input"
+    },
+    {
+      "elapsed_s": 53.184,
+      "phase": "STARTING_SERVO",
+      "stage": "near",
+      "result": "running",
+      "reason": "Starting Servo J at measured joints before moving targets"
+    },
+    {
+      "elapsed_s": 54.822,
+      "phase": "RUNNING",
+      "stage": "near",
+      "result": "running",
+      "reason": "Both Servo J arms running; manual stop; no round time limit"
+    },
+    {
+      "elapsed_s": 85.497,
+      "phase": "STOPPING",
+      "stage": "near",
+      "result": "running",
+      "reason": "LoRA brain confirmed near stage completion"
+    },
+    {
+      "elapsed_s": 86.022,
+      "phase": "STAGE_RELEASE",
+      "stage": "near",
+      "result": "running",
+      "reason": "Verifying both suction channels released before stage transition"
+    },
+    {
+      "elapsed_s": 86.534,
+      "phase": "IDLE",
+      "stage": "near",
+      "result": "complete",
+      "reason": "Operator finished sequence; stopped with suction released"
+    }
+  ],
+  "stage_timing": {
+    "far": {
+      "start_s": 4.412150144577026,
+      "end_s": 48.299091815948486,
+      "duration_s": 43.88694167137146
+    },
+    "near": {
+      "start_s": 54.82224082946777,
+      "end_s": 85.49720644950867,
+      "duration_s": 30.674965620040894
+    }
+  },
+  "previous_with_hold_stage_duration_s": {
+    "far": 62.168000000000006,
+    "near": 30.98599999999999
+  },
+  "inference_ms": {
+    "n": 697,
+    "median": 108.442041,
+    "p95": 117.3872502,
+    "max": 162.271609
+  },
+  "final_state": {
+    "phase": "IDLE",
+    "drivers": {
+      "left": "idle_power_on",
+      "right": "idle_power_on"
+    },
+    "suction": {
+      "left": false,
+      "right": false
+    }
+  },
+  "limits": "One physical trial per condition. Success without the hold disproves necessity in every run, but does not establish comparative reliability or a unique cause for prior failures. Preflight-only timeout before this trial had zero motion requests.",
+  "will_restore_right_hold_automatically": false,
+  "brain_decision_filter": "Current sequence_id only; retained status from earlier runs is not a current service call"
+}

@@ -1,4 +1,4 @@
-act_root: /home/jj/code/ACT
+act_root: /home/jetson/.local/share/robot-policy-streams/jetson_act_runtime_20261116
 robot_root: /home/jetson/AIDE_robot_main
 model: act
 checkpoint_sha256:
@@ -54,11 +54,20 @@ joint_upper_limits_rad:
   right_joint_4: 2.447824275922047
 act_stage_checkpoints:
   far:
-    path: /home/jj/code/ACT/model_outputs/act_far_current_recovery_20261113_03/checkpoints/001000/pretrained_model
+    path: /home/jetson/.local/share/robot-policy-streams/jetson_act_runtime_20261116/models/far
     sha256: af60ccd4cfca37c420d1107e440c8fcb78904d22a28e802d39b4b5925a9055f9
   near:
-    path: /home/jj/code/ACT/model_outputs/act_near_success_20261112/pretrained_model
+    path: /home/jetson/.local/share/robot-policy-streams/jetson_act_runtime_20261116/models/near
     sha256: ec6e21a2a4e8b1813f5e16926f1e1b15f27468627dd7e3841056f4c016174ad8
 brain_adapter_sha256: 63e882d82b66a58da2269ce32f22dedc41b42959b2165d080a131ddeeabf0ade
 io_host: 192.168.50.20
 io_port: 20108
+execution_speed_scale: 1.0
+execution_speed_profile: uniform
+inference_runtime: jetson_act
+inference_bundle: /home/jetson/.local/share/robot-policy-streams/jetson_act_runtime_20261116
+inference_cpu_threads: 2
+act_backend: tensorrt
+require_manipulation_sweep_for_brain: true
+guard_far_suction_release: true
+coordinate_far_right_arm: false

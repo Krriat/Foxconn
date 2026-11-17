@@ -1,0 +1,144 @@
+{
+  "schema": "policy_executor_status_v1",
+  "phase": "IDLE",
+  "mode": "live",
+  "heartbeat": "d9bf1064-2221-4128-81f5-70a4b236cf59",
+  "run_id": "faffb276-b627-4c26-8ab5-bf4589ef3dcc",
+  "model": "act",
+  "reason": "Operator finished sequence; stopped with suction released",
+  "policy_key": "default",
+  "expected_checkpoint_sha256": "af60ccd4cfca37c420d1107e440c8fcb78904d22a28e802d39b4b5925a9055f9",
+  "home_verified_run_id": "faffb276-b627-4c26-8ab5-bf4589ef3dcc",
+  "policy_observation_after_ns": 1794882945040231511,
+  "enable_motion": true,
+  "max_round_seconds": null,
+  "round_time_limit_enabled": false,
+  "accepted_actions": 697,
+  "rejected_actions": 0,
+  "servo_commands": 7779,
+  "limited_ticks": 7458,
+  "last_action_age_ms": null,
+  "round_elapsed_seconds": null,
+  "driver_status": {
+    "left": "idle_power_on",
+    "right": "idle_power_on"
+  },
+  "last_command": [
+    0.9043312308726327,
+    0.3004376449623814,
+    -0.7022638664243438,
+    1.957722206858774,
+    0.4408250322433575,
+    0.2860119214778134,
+    0.26728805518136006,
+    -0.6201618287383946,
+    0.321724182661197,
+    0.3363665587302502,
+    1.7031537550677296,
+    -0.3943990601010118,
+    0.315008314343988,
+    -0.6130475932471785
+  ],
+  "trajectory_ready": true,
+  "native_protocol": "timed_chunk_v2",
+  "max_joint_speed_rad_s": 0.5,
+  "max_joint_acceleration_rad_s2": 1.0,
+  "execution_speed_scale": 1.0,
+  "execution_speed_profile": "uniform",
+  "effective_execution_speed_scale": 1.0,
+  "motion_speed_phase": "uniform",
+  "effective_action_step_ms": 50.0,
+  "max_relative_target_rad": 0.035,
+  "max_tracking_error_rad": 0.15,
+  "temporal_ensemble_coefficient": 0.01,
+  "trajectory_response_seconds": 0.1,
+  "execution_lead_ns": 0,
+  "fusion_contributors": 20,
+  "newest_prediction_index": 4.38368544,
+  "native_error": "",
+  "feedback_reader": "drain_latest_v1",
+  "feedback_max_host_age_ms": 30,
+  "left_feedback": {
+    "age_scope": "host time since latest drained SDK read; controller capture timestamp unavailable",
+    "discarded_total": 28138,
+    "drain_duration_ms": 0.115876,
+    "frames_drained": 10,
+    "frames_total": 31236,
+    "fresh": true,
+    "historical_frames_discarded": 9,
+    "host_read_age_ms": 0.258184,
+    "last_host_read_ns": 1794882977563795149,
+    "reader": "drain_latest_v1"
+  },
+  "right_feedback": {
+    "age_scope": "host time since latest drained SDK read; controller capture timestamp unavailable",
+    "discarded_total": 28136,
+    "drain_duration_ms": 0.053602,
+    "frames_drained": 10,
+    "frames_total": 31233,
+    "fresh": true,
+    "historical_frames_discarded": 9,
+    "host_read_age_ms": 0.215463,
+    "last_host_read_ns": 1794882977563849903,
+    "reader": "drain_latest_v1"
+  },
+  "stop_retry_error": "",
+  "suction_target": [
+    false,
+    false
+  ],
+  "suction_release_guard": {
+    "on_seen": false,
+    "released": false,
+    "left_lift_seen": false,
+    "holding_pending_lift": false,
+    "grace_seconds": 1.5,
+    "is_vacuum_detection": false
+  },
+  "far_arm_coordination": {
+    "enabled": false,
+    "right_held": false,
+    "left_lift_seen": false,
+    "hold_target": null,
+    "release_condition": "measured left-arm lift during suction ON",
+    "is_vacuum_detection": false
+  },
+  "task_sequence": {
+    "id": "273e1cdc-5c95-45e5-a1b6-41fa18c1944a",
+    "stage": "near",
+    "result": "complete",
+    "pending": null,
+    "completed_stages": [
+      "far",
+      "near"
+    ],
+    "completion_mode": "qwen_lora"
+  },
+  "box_scene_check_enabled": false,
+  "completion_mode": "qwen_lora",
+  "require_manipulation_sweep_for_brain": true,
+  "manipulation_progress": {
+    "stage": "near",
+    "phase": "retract",
+    "contact_seen": true,
+    "sweep_seen": true,
+    "completion_ready": true,
+    "is_lid_or_vacuum_detection": false
+  },
+  "brain_adapter_sha256": "63e882d82b66a58da2269ce32f22dedc41b42959b2165d080a131ddeeabf0ade",
+  "stage_timeout_seconds": 90.0,
+  "suction_io": {
+    "verified": [
+      false,
+      false
+    ],
+    "error": "",
+    "writes": 4,
+    "pending_operation": false,
+    "settled": true
+  },
+  "readback_suction": [
+    false,
+    false
+  ]
+}

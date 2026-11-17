@@ -1,0 +1,30 @@
+[
+  {
+    "asset": "foxconn-physical-runs-20261116.tar.gz",
+    "files": 1511,
+    "uncompressed_bytes": 629347437,
+    "path_or_credential_alerts": [],
+    "model_hashes": {},
+    "symlink_count": 0
+  },
+  {
+    "asset": "foxconn-act-checkpoints-20261116.tar.gz",
+    "files": 26,
+    "uncompressed_bytes": 628762109,
+    "path_or_credential_alerts": [],
+    "model_hashes": {
+      "model_outputs/act_far_current_recovery_20261113_03/checkpoints/001000/pretrained_model/model.safetensors": "af60ccd4cfca37c420d1107e440c8fcb78904d22a28e802d39b4b5925a9055f9",
+      "model_outputs/act_near_success_20261112/pretrained_model/model.safetensors": "ec6e21a2a4e8b1813f5e16926f1e1b15f27468627dd7e3841056f4c016174ad8",
+      "model_outputs/act_suction_20261111_213453/checkpoints/014000/pretrained_model/model.safetensors": "0d71f2e37a180b2e829bc7bf423bbe8171945c3afa327f8d08f2a72297d00d93"
+    },
+    "symlink_count": 0
+  },
+  {
+    "asset": "foxconn-jetson-runtime-assets-20261116.tar.gz",
+    "files": 163,
+    "uncompressed_bytes": 63064534,
+    "path_or_credential_alerts": [],
+    "model_hashes": {},
+    "symlink_count": 528
+  }
+]

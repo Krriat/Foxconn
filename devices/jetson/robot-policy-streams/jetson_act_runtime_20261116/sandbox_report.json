@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "domain": 77,
+  "separate_processes": true,
+  "real_hardware_commands": 0,
+  "simulated_driver_only": true,
+  "backend": "tensorrt",
+  "real_jetson_act_weights": {
+    "far": "af60ccd4cfca37c420d1107e440c8fcb78904d22a28e802d39b4b5925a9055f9",
+    "near": "ec6e21a2a4e8b1813f5e16926f1e1b15f27468627dd7e3841056f4c016174ad8"
+  },
+  "home_calls": {
+    "left": 2,
+    "right": 2
+  },
+  "verified_home_events": 2,
+  "stages": [
+    "far",
+    "near"
+  ],
+  "brain_adapter_sha256": "63e882d82b66a58da2269ce32f22dedc41b42959b2165d080a131ddeeabf0ade",
+  "inference_host": "tegra-ubuntu",
+  "brain_host": "jj-MS-7E71",
+  "execution_speed_scale": 1.0,
+  "execution_speed_profile": "uniform",
+  "max_joint_acceleration_rad_s2": 1.0,
+  "completion_sources": [
+    "qwen_lora",
+    "qwen_lora"
+  ],
+  "events": "/home/jetson/.local/share/robot-policy-streams/jetson_act_runtime_20261116/sandbox_events_1794821209135085951.jsonl"
+}

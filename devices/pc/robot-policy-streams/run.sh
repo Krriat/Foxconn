@@ -13,6 +13,7 @@ case "${1:-}" in
     exec /usr/bin/python3 -u "$policy_dir/task_monitor.py"
     ;;
   inference)
+    if [[ -f "$policy_dir/inference_remote.txt" ]]; then cat "$policy_dir/inference_remote.txt" >&2; exit 2; fi
     exec /home/jj/code/ACT/.venv-act/bin/python3 -u "$policy_dir/inference_node.py" --config "$policy_dir/config.yaml"
     ;;
   executor)

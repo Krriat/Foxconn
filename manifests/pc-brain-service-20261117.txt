@@ -1,0 +1,13 @@
+# /run/user/1000/systemd/transient/robot-policy-brain.service
+# This is a transient unit file, created programmatically via the systemd API. Do not edit.
+[Unit]
+Description=/usr/bin/bash /home/jj/code/ACT/training_tools/task_brain/run.sh auto
+CollectMode=inactive-or-failed
+
+[Service]
+Restart=no
+TimeoutStopSec=1min
+StandardOutput=append:/home/jj/code/ACT/training_verification/task_brain_20261112/brain_service.log
+StandardError=inherit
+ExecStart=
+ExecStart="/usr/bin/bash" "/home/jj/code/ACT/training_tools/task_brain/run.sh" "auto"

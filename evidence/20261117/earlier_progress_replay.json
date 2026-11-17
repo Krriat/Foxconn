@@ -1,0 +1,94 @@
+[
+  {
+    "case": "known_success_far",
+    "ready_seconds": 38.050976399,
+    "passed": true,
+    "final": {
+      "stage": "far",
+      "phase": "retract",
+      "contact_seen": true,
+      "sweep_seen": true,
+      "completion_ready": true,
+      "is_lid_or_vacuum_detection": false
+    }
+  },
+  {
+    "case": "known_success_near",
+    "ready_seconds": 28.109973936,
+    "passed": true,
+    "final": {
+      "stage": "near",
+      "phase": "retract",
+      "contact_seen": true,
+      "sweep_seen": true,
+      "completion_ready": true,
+      "is_lid_or_vacuum_detection": false
+    }
+  },
+  {
+    "case": "jetson_dual_act_live_20261117_085515",
+    "runs": [
+      {
+        "run_id": "9d619f29-be3e-4a83-a637-bff4c52961a8",
+        "stage": "far",
+        "duration": 46.61134624481201,
+        "ready_seconds": null,
+        "final": {
+          "stage": "far",
+          "phase": "manipulation",
+          "contact_seen": true,
+          "sweep_seen": true,
+          "completion_ready": false,
+          "is_lid_or_vacuum_detection": false
+        }
+      },
+      {
+        "run_id": "e9da4751-ba60-46ab-84bf-fd13c09f3562",
+        "stage": "near",
+        "duration": 14.838014125823975,
+        "ready_seconds": null,
+        "final": {
+          "stage": "near",
+          "phase": "contact",
+          "contact_seen": true,
+          "sweep_seen": false,
+          "completion_ready": false,
+          "is_lid_or_vacuum_detection": false
+        }
+      }
+    ]
+  },
+  {
+    "case": "jetson_dual_act_live_20261117_090304",
+    "runs": [
+      {
+        "run_id": "4c9b39f0-ece4-46dc-b010-2e11f195ddfd",
+        "stage": "far",
+        "duration": 48.47109270095825,
+        "ready_seconds": null,
+        "final": {
+          "stage": "far",
+          "phase": "manipulation",
+          "contact_seen": true,
+          "sweep_seen": true,
+          "completion_ready": false,
+          "is_lid_or_vacuum_detection": false
+        }
+      },
+      {
+        "run_id": "b6fbafd7-5d44-47ee-934a-a50063d1b2e9",
+        "stage": "near",
+        "duration": 19.111199617385864,
+        "ready_seconds": null,
+        "final": {
+          "stage": "near",
+          "phase": "contact",
+          "contact_seen": true,
+          "sweep_seen": false,
+          "completion_ready": false,
+          "is_lid_or_vacuum_detection": false
+        }
+      }
+    ]
+  }
+]

@@ -8,4 +8,20 @@ downloads/
 *.safetensors
 *.engine
 *.onnx
+*.npz
+*.npy
+*.avi
+*.mp4
+*.tgz
+*.cache
+*.so
+*.so.*
+*.db3-wal
+*.db3-shm
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
 

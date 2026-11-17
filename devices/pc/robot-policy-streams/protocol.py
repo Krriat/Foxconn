@@ -39,6 +39,8 @@ def joint_bounds(margin, upper_overrides=None):
 
 def validate_config(config):
     stage_specs(config)
+    if config.get("execution_speed_profile", "uniform") not in ("uniform", "contact_slow_v1", "contact_slow_1p2_v1"):
+        raise ValueError("unknown execution speed profile")
     if config["model"] not in ("act", "interact"):
         raise ValueError("unknown policy")
     if config["action_hz"] != 20 or config["servo_hz"] != 100:
@@ -47,10 +49,13 @@ def validate_config(config):
         raise ValueError("timed fusion requires full fifty-step predictions at 20 Hz")
     for name, lower, upper in (("temporal_ensemble_coefficient", 0., 1.),
                                ("trajectory_response_seconds", .05, .5),
-                               ("execution_lead_seconds", 0., .05)):
-        value = config.get(name)
+                               ("execution_lead_seconds", 0., .05),
+                               ("execution_speed_scale", 1., 1.5)):
+        value = config.get(name, 1. if name == "execution_speed_scale" else None)
         if isinstance(value, bool) or not isinstance(value, (float, int)) or not math.isfinite(value) or not lower <= value <= upper:
             raise ValueError(f"invalid {name}")
+    if config.get("execution_speed_profile") == "contact_slow_1p2_v1" and config.get("execution_speed_scale", 1.) < 1.2:
+        raise ValueError("contact speed exceeds fast speed")
     limit = config.get("max_round_seconds")
     if limit is not None and (isinstance(limit, bool) or not isinstance(limit, (int, float)) or
                               not math.isfinite(limit) or limit <= 0):
@@ -58,7 +63,7 @@ def validate_config(config):
     bounds = {"command_timeout_seconds": .25,
               "heartbeat_timeout_seconds": .4, "feedback_timeout_seconds": .25,
               "input_max_age_seconds": .3, "input_max_skew_seconds": .1,
-              "max_joint_speed_rad_s": .5, "max_joint_acceleration_rad_s2": 2., "max_relative_target_rad": .035,
+              "max_joint_speed_rad_s": .5, "max_joint_acceleration_rad_s2": 2.25, "max_relative_target_rad": .035,
               "max_tracking_error_rad": .15, "home_tolerance_rad": .01,
               "home_joint_speed_scale": .05, "home_speed_mm_s": 50}
     for name, upper in bounds.items():
@@ -133,6 +138,12 @@ def validate_action(message, run_id, publisher_id, last_sequence, config):
 def validate_chunk(message, run_id, publisher_id, last_sequence, config, receive_ns):
     if not isinstance(message, dict) or message.get("schema") != "dual_arm_suction_chunk_v2":
         raise ValueError("unsupported chunk schema")
+    if message.get("execution_speed_profile", "uniform") != config.get("execution_speed_profile", "uniform"):
+        raise ValueError("chunk execution speed profile differs from current round")
+    scale = message.get("execution_speed_scale", 1.)
+    if (isinstance(scale, bool) or not isinstance(scale, (int, float)) or not math.isfinite(scale)
+            or not 1. <= scale <= 1.5 or scale != config.get("execution_speed_scale", 1.)):
+        raise ValueError("chunk execution speed scale differs from the current round")
     proxy = dict(message, schema="dual_arm_suction_action_v1", action=message.get("actions", [None])[0])
     validate_action(proxy, run_id, publisher_id, last_sequence, config)
     actions = message.get("actions")

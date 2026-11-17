@@ -142,6 +142,9 @@ class RokaeServoJSubscriber : public rclcpp::Node {
       std_msgs::msg::String message;
       message.data = Json({{"protocol","timed_chunk_v2"},{"ready",true},{"servo_hz",100},
                            {"feedback_reader","drain_latest_v1"},{"feedback_max_host_age_ms",30},
+                           {"execution_time_scaling","per_observation_v1"},
+                           {"continuous_action_clock_v1",true},{"contact_slow_1p2_v1",true},
+                           {"maximum_execution_speed_scale",1.5},{"maximum_joint_acceleration_rad_s2",2.25},
                            {"servoj_period_s",options_.periodS},{"servoj_lookahead_s",options_.lookaheadS},
                            {"servoj_gain",options_.gain},
                            {"run_id",runId_},{"last_error",policyError_}}).dump();
@@ -190,6 +193,17 @@ class RokaeServoJSubscriber : public rclcpp::Node {
       if (value.value("native_protocol", "") != "timed_chunk_v2") return;
       const auto id = value.at("run_id").get<std::string>();
       if (id.empty()) return;
+      const double speedScale = value.value("execution_speed_scale", 1.);
+      const std::string profile=value.value("execution_speed_profile",std::string("uniform"));
+      if (profile!="uniform" && profile!="contact_slow_v1" && profile!="contact_slow_1p2_v1")
+        throw std::runtime_error("unknown speed profile");
+      if (profile=="contact_slow_1p2_v1" && speedScale<1.2)
+        throw std::runtime_error("contact speed exceeds fast speed");
+      if (!std::isfinite(speedScale) || speedScale < 1. || speedScale > 1.5)
+        throw std::runtime_error("invalid execution speed scale");
+      if (id == runId_ && speedScale != speedScale_)
+        throw std::runtime_error("execution speed scale changed within a round; stop and start a new round");
+      if (id==runId_ && profile!=speedProfile_) throw std::runtime_error("speed profile changed within a round");
       if (id != runId_) {
         runId_ = id; closedRunId_.clear(); fusion_.reset(); policyError_.clear(); newestSequence_ = 0;
         anchor_ = value.at("last_command").get<timed_policy::Joints>();
@@ -200,7 +214,10 @@ class RokaeServoJSubscriber : public rclcpp::Node {
         leadNs_ = value.at("execution_lead_ns").get<std::int64_t>();
         if (relativeLimit_ <= 0 || relativeLimit_ > .035 || trackingLimit_ <= 0 || trackingLimit_ > .15 || leadNs_ < 0 || leadNs_ > 50000000)
           throw std::runtime_error("invalid policy motion limits");
-        fusion_ = timed_policy::Fusion(value.at("temporal_ensemble_coefficient").get<double>());
+        speedScale_ = speedScale;
+        speedProfile_=profile;effectiveScale_=speedScale_;
+        contactSpeed_.reset(value.value("policy_key",std::string("default"))=="near");
+        fusion_ = timed_policy::Fusion(value.at("temporal_ensemble_coefficient").get<double>(), speedScale_);
         limiter_ = timed_policy::Limiter(speed, accel, value.at("trajectory_response_seconds").get<double>());
         limiter_.reset(anchor_);
         lastCycle_ = readyMono_ = Clock::now(); clockWall_ = wallNs(); clockMono_ = lastCycle_;
@@ -219,6 +236,10 @@ class RokaeServoJSubscriber : public rclcpp::Node {
       const auto value = Json::parse(data);
       std::lock_guard<std::mutex> lock(policyMutex_);
       if (value.value("run_id", "") != runId_ || !activePhase(phase_)) return;
+      if (value.value("execution_speed_scale", 1.) != speedScale_)
+        throw std::runtime_error("native chunk execution speed scale differs from current round");
+      if (value.value("execution_speed_profile",std::string("uniform"))!=speedProfile_)
+        throw std::runtime_error("native chunk speed profile differs from current round");
       timed_policy::Plan plan;
       plan.sequence = value.at("sequence").get<std::uint64_t>();
       plan.observation_ns = value.at("observation_time_ns").get<std::int64_t>();
@@ -251,11 +272,22 @@ class RokaeServoJSubscriber : public rclcpp::Node {
     if (mono-lastChunk_ > std::chrono::milliseconds(250) && mono-readyMono_ > std::chrono::milliseconds(500))
       throw std::runtime_error("native prediction watchdog expired");
     double dt = std::chrono::duration<double>(mono-lastCycle_).count(); lastCycle_ = mono;
+    if (!(dt>0. && dt<=.05)) throw std::runtime_error("trajectory cycle overdue");
+    const double slowScale=speedProfile_=="contact_slow_1p2_v1" ? 1.2 : 1.;
+    const double requestedScale=speedProfile_!="uniform" ? contactSpeed_.request(measured,speedScale_,slowScale) : speedScale_;
+    effectiveScale_=std::clamp(requestedScale,effectiveScale_-2.*dt,effectiveScale_+2.*dt);
+    if (speedProfile_!="uniform") fusion_.update_speed_scale(now,effectiveScale_);
     timed_policy::Fused fused;
     const auto executionNs = now+leadNs_+static_cast<std::int64_t>(dispatchLeadNs_);
     hasPlan = fusion_.sample(executionNs, fused);
     Json result = {{"selection_time_ns",now},{"requested_execution_time_ns",executionNs},{"estimated_dispatch_lead_ns",dispatchLeadNs_},
-                   {"dt_s",dt},{"contributors",fused.contributors},{"active",hasPlan}};
+                   {"dt_s",dt},{"contributors",fused.contributors},{"active",hasPlan},
+                   {"execution_speed_scale",speedScale_},{"effective_action_step_ms",50./speedScale_}};
+    result["execution_speed_profile"]=speedProfile_;
+    result["effective_execution_speed_scale"]=effectiveScale_;
+    result["effective_action_step_ms"]=50./effectiveScale_;
+    result["motion_speed_phase"]=speedProfile_=="uniform" ? "uniform" : contactSpeed_.phase();
+    result["action_age_ms"]=hasPlan ? fusion_.action_age(executionNs,fused.newest_observation_ns)/1e6 : 0.;
     if (!hasPlan) { result["command"] = limiter_.position(); result["velocity"] = limiter_.velocity(); return result; }
     timed_policy::Joints desired;
     for (unsigned j=0;j<14;++j) {
@@ -674,7 +706,9 @@ class RokaeServoJSubscriber : public rclcpp::Node {
   timed_policy::Joints anchor_{};
   std::string runId_,closedRunId_,mode_,phase_,policyError_;
   bool motionAllowed_{false};
-  double relativeLimit_{.035},trackingLimit_{.15},dispatchLeadNs_{};
+  double relativeLimit_{.035},trackingLimit_{.15},dispatchLeadNs_{},speedScale_{1.};
+  double effectiveScale_{1.};std::string speedProfile_{"uniform"};
+  timed_policy::ContactSpeed contactSpeed_;
   std::uint64_t newestSequence_{},traceSequence_{};
   std::int64_t readyNs_{},clockWall_{},leadNs_{};
   Clock::time_point lastCycle_{},readyMono_{},clockMono_{},lastStatus_{},lastChunk_{};

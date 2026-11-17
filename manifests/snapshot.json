@@ -1,25 +1,58 @@
 {
-  "snapshot_at": "2026-11-16T10:56:09.171219+08:00",
+  "captured_at": "2026-11-17T11:00:43.825485+08:00",
+  "branch": "jetson-act-qwen-20261117",
+  "parent_commit": "a7e15b19a74f064e8d9fde2bf03753845b68cf04",
+  "sources": {
+    "pc": [
+      "robot-policy-streams"
+    ],
+    "jetson": [
+      "robot-policy-streams",
+      "robot-camera-streams",
+      "robot-state-streams"
+    ],
+    "umie": [
+      "robot-camera-streams",
+      "robot-relay-bridge",
+      "robot-policy-monitor"
+    ]
+  },
+  "robot_motion_requested_by_export": false,
+  "full_data_roots": [
+    "training_verification/no_right_hold_20261117_102134",
+    "training_verification/grasp_repair_20261117_095228"
+  ],
+  "data_omitted": [
+    "temporary model_comparison/models symlinks; model weights are in a separate asset",
+    "full original 28GB dataset",
+    "Qwen base weights; public base identifier/config are recorded separately",
+    "SSH/GitHub secrets, virtual environments, caches and unrelated old logs"
+  ],
   "repository": "Krriat/Foxconn",
   "visibility": "private",
-  "devices": {
-    "pc": "jj@172.16.12.16",
-    "jetson": "jetson@172.16.12.95",
-    "umie": "umie@172.16.12.45"
+  "release_tag": "snapshot-20261117-jetson-act-qwen",
+  "capture_scope": "Successful policy code/configuration; exported services may already be stopped for a new teaching session. No service was started/stopped by export.",
+  "current_control": {
+    "coordinate_far_right_arm": false,
+    "require_manipulation_sweep_for_brain": true,
+    "guard_far_suction_release": true,
+    "execution_speed_scale": 1.0,
+    "max_joint_acceleration_rad_s2": 1.0
   },
-  "purpose": "Archive actual deployed source, reproducible far-reference / near-ACT successes and full physical evidence. No motion was requested for this export.",
-  "far_success_mode": "saved successful trajectory replay; NOT ACT inference",
-  "near_success_mode": "ACT, PC inference, Jetson native execution; two successful physical runs on 2026-11-16",
-  "deployed_far_ACT": "af60ccd4cfca37c420d1107e440c8fcb78904d22a28e802d39b4b5925a9055f9; this morning far ACT attempt failed to attach suction",
-  "near_ACT": "ec6e21a2a4e8b1813f5e16926f1e1b15f27468627dd7e3841056f4c016174ad8",
-  "not_in_active_success": "new far contact candidate and Qwen/LoRA automatic task switching",
-  "omissions": [
-    "SSH/GitHub credentials and credential-bearing continuation note",
-    "Python virtual environments and caches",
-    "unrelated historical runtime logs and build intermediates",
-    "full original 28 GB dataset; metadata required for ACT loading is in the checkpoint asset",
-    "undeployed candidate model weights and unrelated base VLM blobs"
-  ],
-  "source_files_verified": 1569,
-  "release_tag": "snapshot-20261116-v1"
+  "test_results": {
+    "current_no_right_hold": {
+      "far_seconds": 43.88694167137146,
+      "near_seconds": 30.674965620040894,
+      "passed": true
+    },
+    "comparison_with_right_hold": {
+      "far_seconds": 62.168,
+      "near_seconds": 30.986,
+      "passed": true
+    }
+  },
+  "inference_median_ms": 108.442041,
+  "hardware_environment": "Jetson Orin Nano 8GB, current JetPack/TensorRT 10.3/PyTorch environment; model engines are target-specific",
+  "ACT_weights_unchanged": true,
+  "LoRA_weights_unchanged": true
 }

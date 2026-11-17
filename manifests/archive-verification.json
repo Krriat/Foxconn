@@ -1,30 +1,49 @@
-[
-  {
-    "asset": "foxconn-physical-runs-20261116.tar.gz",
-    "files": 1511,
-    "uncompressed_bytes": 629347437,
-    "path_or_credential_alerts": [],
-    "model_hashes": {},
-    "symlink_count": 0
-  },
-  {
-    "asset": "foxconn-act-checkpoints-20261116.tar.gz",
-    "files": 26,
-    "uncompressed_bytes": 628762109,
-    "path_or_credential_alerts": [],
-    "model_hashes": {
-      "model_outputs/act_far_current_recovery_20261113_03/checkpoints/001000/pretrained_model/model.safetensors": "af60ccd4cfca37c420d1107e440c8fcb78904d22a28e802d39b4b5925a9055f9",
-      "model_outputs/act_near_success_20261112/pretrained_model/model.safetensors": "ec6e21a2a4e8b1813f5e16926f1e1b15f27468627dd7e3841056f4c016174ad8",
-      "model_outputs/act_suction_20261111_213453/checkpoints/014000/pretrained_model/model.safetensors": "0d71f2e37a180b2e829bc7bf423bbe8171945c3afa327f8d08f2a72297d00d93"
+{
+  "verified_at": "2026-11-17T11:16:44.063718+08:00",
+  "source_files": 2442,
+  "credential_scan": "no high-confidence matches",
+  "source_scan_scope": "all repository files, plus text members inside all three assets and nested setup tars",
+  "assets": [
+    {
+      "name": "foxconn-successful-runs-20261117.tar.gz",
+      "bytes": 171567671,
+      "sha256": "01f4eff991393d18dae0a6686ba4c08374ccedf9e6061439f5d14368f57e0d78",
+      "release": "snapshot-20261117-jetson-act-qwen",
+      "members": 116,
+      "content_index_verified": false,
+      "path_or_credential_alerts": [],
+      "symlink_count": 0
     },
-    "symlink_count": 0
-  },
-  {
-    "asset": "foxconn-jetson-runtime-assets-20261116.tar.gz",
-    "files": 163,
-    "uncompressed_bytes": 63064534,
-    "path_or_credential_alerts": [],
-    "model_hashes": {},
-    "symlink_count": 528
-  }
-]
+    {
+      "name": "foxconn-models-20261117.tar.gz",
+      "bytes": 415747129,
+      "sha256": "4d7641e183b97c6c580df1a826f93e6157a3ba336ddcf6d38164dcb2d39c1200",
+      "release": "snapshot-20261117-jetson-act-qwen",
+      "members": 34,
+      "content_index_verified": true,
+      "path_or_credential_alerts": [],
+      "symlink_count": 0
+    },
+    {
+      "name": "foxconn-jetson-runtime-assets-20261117.tar.gz",
+      "bytes": 396180919,
+      "sha256": "7768490d779de6c9df20f9de82508985ac459c04357a0177c421efea0c4136fe",
+      "release": "snapshot-20261117-jetson-act-qwen",
+      "members": 676,
+      "content_index_verified": true,
+      "path_or_credential_alerts": [],
+      "symlink_count": 0
+    }
+  ],
+  "robot_motion_requested": false,
+  "device_service_changes": false,
+  "checks": [
+    "archive SHA-256 and sizes",
+    "per-file model/runtime index",
+    "both complete successful runs",
+    "safe archive paths; no symlinks",
+    "JSON parsing",
+    "launcher bash syntax",
+    "git diff --check"
+  ]
+}

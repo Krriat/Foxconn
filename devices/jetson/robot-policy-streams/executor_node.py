@@ -25,6 +25,9 @@ from protocol import suction_target, validate_chunk, validate_joints, validate_c
 from suction_io import Suction
 from stage_policy import checkpoint_map, selected_policy, action_config
 from brain_protocol import validate_brain_completion
+from manipulation_progress import ManipulationProgress
+from suction_phase_guard import FarReleaseGuard
+from far_arm_coordination import FarArmCoordination
 
 
 class Executor(Node):
@@ -53,6 +56,10 @@ class Executor(Node):
         self.next_round_index = 0
         self.heartbeats = {}
         self.sequence_job = None
+        self.manipulation_progress = ManipulationProgress()
+        self.progress_run_id = None
+        self.suction_release_guard = FarReleaseGuard()
+        self.far_arm_coordination = FarArmCoordination()
         self.brain_status, self.brain_status_received = {}, 0.
         self.stop_wait_native = False
         self.log_path = Path(log_path)
@@ -186,6 +193,10 @@ class Executor(Node):
 
     def finish_from_brain(self, request, response):
         try:
+            if self.config.get("require_manipulation_sweep_for_brain", False):
+                if (self.progress_run_id != self.run_id or not self.manipulation_progress.ready
+                        or time.monotonic()-self.native_received > .25):
+                    raise ValueError("ACT manipulation sweep is not finished; premature visual completion blocked")
             value = {}
             for parameter in request.parameters:
                 if parameter.name in value: raise ValueError("Duplicate brain parameter")
@@ -220,7 +231,8 @@ class Executor(Node):
         self.event("stage_complete", stage=expected_stage, completion_source=source)
         self.sequence_job["completed_stages"].append(expected_stage)
         self.sequence_job["pending"] = "near" if expected_stage == "far" else "done"
-        self.request_stop("Operator confirmed " + expected_stage + " stage completion", advance=True)
+        self.request_stop(("LoRA brain confirmed " if source == "qwen_lora" else "Operator confirmed ")
+                          + expected_stage + " stage completion", advance=True)
         response.success = True
         response.message = ("Accepted: stopping and releasing suction, then homing BOTH arms for near ACT"
                             if expected_stage == "far" else
@@ -299,11 +311,26 @@ class Executor(Node):
                              str(self.trajectory_status["last_error"]))
         if live and self.trajectory_status.get("feedback_reader") != "drain_latest_v1":
             raise ValueError("Native driver lacks latest-feedback FIFO fix; restart the updated driver")
+        scale = self.config.get("execution_speed_scale", 1.)
+        profile = self.config.get("execution_speed_profile", "uniform")
+        if profile != "uniform" and not self.trajectory_status.get("continuous_action_clock_v1"):
+            raise ValueError("Native driver lacks continuous contact-speed profile support")
+        if profile == "contact_slow_1p2_v1" and not self.trajectory_status.get("contact_slow_1p2_v1"):
+            raise ValueError("Native driver lacks 1.2 contact-speed profile support")
+        if (scale != 1. or self.config["max_joint_acceleration_rad_s2"] > 2.) and (
+                self.trajectory_status.get("execution_time_scaling") != "per_observation_v1"
+                or self.trajectory_status.get("maximum_execution_speed_scale", 1.) < scale
+                or self.trajectory_status.get("maximum_joint_acceleration_rad_s2", 2.) < self.config["max_joint_acceleration_rad_s2"]):
+            raise ValueError("Native driver lacks requested execution speed/acceleration support; restart the updated driver")
         if (time.monotonic() - self.inference_received > 2.5 or
                 not self.inference_status.get("ready") or self.inference_status.get("error")):
             raise ValueError("Inference node is not ready")
         if self.inference_status.get("model") != self.config["model"]:
             raise ValueError("Inference and executor model settings differ")
+        if self.inference_status.get("execution_speed_scale", 1.) != scale:
+            raise ValueError("Inference and executor execution speed scales differ")
+        if self.inference_status.get("execution_speed_profile", "uniform") != profile:
+            raise ValueError("Inference and executor execution speed profiles differ")
         if self.inference_status.get("checkpoint_sha256") != self.config["checkpoint_sha256"][self.config["model"]]:
             raise ValueError("Inference weights differ from the reviewed checkpoint")
         if self.config.get("act_stage_checkpoints") and self.inference_status.get("loaded_checkpoints") != checkpoint_map(self.config):
@@ -405,6 +432,23 @@ class Executor(Node):
             issued = self.heartbeats.get(value.get("executor_heartbeat"))
             if issued is None or time.monotonic()-issued > self.config["heartbeat_timeout_seconds"]:
                 raise ValueError("Chunk echoes a missing or expired Jetson heartbeat")
+            coordinate = (self.mode == "live" and self.config.get("coordinate_far_right_arm", False)
+                          and (self.sequence_job or {}).get("stage") == "far"
+                          and (self.sequence_job or {}).get("completion_mode") == "qwen_lora")
+            if coordinate:
+                raw_first_right = list(actions[0][7:14])
+                anchor = (self.feedback() if self.far_arm_coordination.run_id != self.run_id
+                          or self.far_arm_coordination.hold_target is None else [])
+                actions = self.far_arm_coordination.apply(actions, run_id=self.run_id,
+                    verified_anchor=anchor, enabled=True,
+                    left_lift_seen=(self.progress_run_id == self.run_id
+                                    and self.suction_release_guard.left_lift_seen))
+                value['actions'] = actions
+                value['raw_first_right_target'] = raw_first_right
+                value['far_arm_coordination'] = self.far_arm_coordination.status()
+            else:
+                self.far_arm_coordination.apply(actions,run_id=self.run_id,verified_anchor=[],
+                                                enabled=False,left_lift_seen=False)
             self.publisher_id, self.last_sequence = value["publisher_id"], value["sequence"]
             self.action, self.last_action = actions, time.monotonic()
             self.accepted += 1
@@ -427,11 +471,30 @@ class Executor(Node):
             if value.get("error"):
                 raise RuntimeError(value["error"])
             if value.get("active"):
+                if self.progress_run_id != self.run_id:
+                    self.progress_run_id = self.run_id
+                    self.manipulation_progress.reset((self.sequence_job or {}).get("stage"))
+                    self.suction_release_guard.reset()
+                measured = value.get("left_measured", []) + value.get("right_measured", [])
+                if len(measured) == 14:
+                    self.manipulation_progress.update(measured, time.monotonic())
                 self.previous = validate_joints(value["command"], self.config["joint_limit_margin_rad"],
                                                 self.config.get("joint_upper_limits_rad"))
                 self.limited_ticks += int(max(abs(a-b) for a,b in zip(value["command"],value["fused_target"][:14]))>1e-7)
-                self.shadow_suction = [suction_target(target, previous, self.config) for target,previous in
-                                       zip(value["fused_target"][14:],self.shadow_suction)]
+                predicted_suction = [suction_target(target, previous, self.config) for target,previous in
+                                     zip(value["fused_target"][14:],self.shadow_suction)]
+                guard_enabled = (self.config.get("guard_far_suction_release", False) and
+                                 (self.sequence_job or {}).get("completion_mode") == "qwen_lora" and
+                                 (self.sequence_job or {}).get("stage") == "far")
+                if len(measured)==14:
+                    self.suction_release_guard.update_measured(measured)
+                was_blocked=self.suction_release_guard.waiting_since is not None
+                self.shadow_suction=self.suction_release_guard.filter(predicted_suction,
+                    now=time.monotonic(),enabled=guard_enabled)
+                if was_blocked != (self.suction_release_guard.waiting_since is not None):
+                    self.event("suction_release_interlock",
+                               model_target=predicted_suction,applied_target=self.shadow_suction,
+                               guard=self.suction_release_guard.status())
         except Exception as error:
             self.request_stop(f"Native trajectory: {error}", fault=True)
 
@@ -665,6 +728,11 @@ class Executor(Node):
                  "native_protocol": "timed_chunk_v2",
                  "max_joint_speed_rad_s": self.config["max_joint_speed_rad_s"],
                  "max_joint_acceleration_rad_s2": self.config["max_joint_acceleration_rad_s2"],
+                 "execution_speed_scale": self.config.get("execution_speed_scale", 1.),
+                 "execution_speed_profile": self.config.get("execution_speed_profile", "uniform"),
+                 "effective_execution_speed_scale": self.native_trace.get("effective_execution_speed_scale",self.config.get("execution_speed_scale",1.)),
+                 "motion_speed_phase": self.native_trace.get("motion_speed_phase","waiting"),
+                 "effective_action_step_ms": 50. / self.config.get("execution_speed_scale", 1.),
                  "max_relative_target_rad": self.config["max_relative_target_rad"],
                  "max_tracking_error_rad": self.config["max_tracking_error_rad"],
                  "temporal_ensemble_coefficient": self.config["temporal_ensemble_coefficient"],
@@ -679,9 +747,14 @@ class Executor(Node):
                  "right_feedback": self.native_trace.get("right_feedback"),
                  "stop_retry_error": self.stop_retry_error,
                  "suction_target": self.shadow_suction,
+                 "suction_release_guard": self.suction_release_guard.status(),
+                 "far_arm_coordination": self.far_arm_coordination.status(),
                  "task_sequence": self.sequence_job,
                  "box_scene_check_enabled": False,
                  "completion_mode": (self.sequence_job or {}).get("completion_mode", "manual"),
+                 "require_manipulation_sweep_for_brain": self.config.get("require_manipulation_sweep_for_brain", False),
+                 "manipulation_progress": (self.manipulation_progress.status()
+                                           if self.progress_run_id == self.run_id else None),
                  "brain_adapter_sha256": self.config.get("brain_adapter_sha256"),
                  "stage_timeout_seconds": (90. if (self.sequence_job or {}).get("completion_mode") == "qwen_lora" else None),
                  "suction_io": None if self.suction is None else self.suction.state()}

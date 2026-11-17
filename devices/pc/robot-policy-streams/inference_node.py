@@ -58,6 +58,8 @@ class Inference(Node):
         self.status = {"ready": False, "model": config["model"], "publisher_id": self.identity,
                        "host": socket.gethostname(), "runtime": config.get("inference_runtime", "lerobot"),
                        "backend": config.get("act_backend", "pytorch"),
+                       "execution_speed_scale": config.get("execution_speed_scale", 1.),
+                       "execution_speed_profile": config.get("execution_speed_profile", "uniform"),
                        "checkpoint_sha256": weights_sha, "actions_published": 0,
                        "loaded_checkpoints": {key: entry[2] for key, entry in self.policies.items()},
                        "active_policy_key": None, "active_checkpoint_sha256": None,
@@ -219,6 +221,10 @@ class Inference(Node):
             return None
         if context.get("model") != self.config["model"]:
             return None
+        if context.get("execution_speed_scale", 1.) != self.config.get("execution_speed_scale", 1.):
+            return None
+        if context.get("execution_speed_profile", "uniform") != self.config.get("execution_speed_profile", "uniform"):
+            return None
         if self.config.get("act_stage_checkpoints"):
             key, sha = selected_policy(self.config, context.get("task_sequence"))
             if context.get("policy_key") != key or context.get("expected_checkpoint_sha256") != sha:
@@ -336,6 +342,8 @@ class Inference(Node):
                            "model": self.config["model"], "checkpoint_sha256": self.weights_sha,
                            "policy_key": policy_key,
                            "action_hz": self.config["action_hz"], "step_ns": 50_000_000,
+                           "execution_speed_scale": self.config.get("execution_speed_scale", 1.),
+                           "execution_speed_profile": self.config.get("execution_speed_profile", "uniform"),
                            "actions": chunk.tolist(), "observation_time_ns": origin_ns,
                            "joint_postprocess": "anchor_observed_joints_v1" if self.anchor_joints else "absolute",
                            "raw_first_joint_target": raw_first_joint_target.tolist(),

@@ -1,0 +1,240 @@
+{
+  "markers": [
+    {
+      "t": 0.01,
+      "name": "suction",
+      "value": [
+        false,
+        false
+      ]
+    },
+    {
+      "t": 0.01,
+      "name": "coordination",
+      "value": {
+        "enabled": false,
+        "right_held": false,
+        "left_lift_seen": false,
+        "hold_target": null,
+        "release_condition": "measured left-arm lift during suction ON",
+        "is_vacuum_detection": false
+      }
+    },
+    {
+      "t": 0.082,
+      "name": "Qwen",
+      "value": {
+        "scene": "closed",
+        "status": "running"
+      },
+      "latency_ms": 588.217281998368
+    },
+    {
+      "t": 4.057,
+      "name": "coordination",
+      "value": {
+        "enabled": true,
+        "right_held": true,
+        "left_lift_seen": false,
+        "hold_target": [
+          -0.6706498091399044,
+          0.3094896121246071,
+          0.3269905352806465,
+          1.8779409856322726,
+          -0.44162947356480453,
+          0.3126734611552132,
+          -0.45348211168070024
+        ],
+        "release_condition": "measured left-arm lift during suction ON",
+        "is_vacuum_detection": false
+      }
+    },
+    {
+      "t": 5.675,
+      "name": "suction",
+      "value": [
+        true,
+        false
+      ]
+    },
+    {
+      "t": 5.675,
+      "name": "progress",
+      "value": {
+        "stage": "far",
+        "phase": "approach",
+        "contact_seen": false,
+        "sweep_seen": false,
+        "completion_ready": false,
+        "is_lid_or_vacuum_detection": false
+      }
+    },
+    {
+      "t": 9.753,
+      "name": "progress",
+      "value": {
+        "stage": "far",
+        "phase": "contact",
+        "contact_seen": true,
+        "sweep_seen": false,
+        "completion_ready": false,
+        "is_lid_or_vacuum_detection": false
+      }
+    },
+    {
+      "t": 30.154,
+      "name": "coordination",
+      "value": {
+        "enabled": true,
+        "right_held": false,
+        "left_lift_seen": true,
+        "hold_target": [
+          -0.6706498091399044,
+          0.3094896121246071,
+          0.3269905352806465,
+          1.8779409856322726,
+          -0.44162947356480453,
+          0.3126734611552132,
+          -0.45348211168070024
+        ],
+        "release_condition": "measured left-arm lift during suction ON",
+        "is_vacuum_detection": false
+      }
+    },
+    {
+      "t": 41.663,
+      "name": "progress",
+      "value": {
+        "stage": "far",
+        "phase": "manipulation",
+        "contact_seen": true,
+        "sweep_seen": true,
+        "completion_ready": false,
+        "is_lid_or_vacuum_detection": false
+      }
+    },
+    {
+      "t": 51.757,
+      "name": "suction",
+      "value": [
+        false,
+        false
+      ]
+    },
+    {
+      "t": 51.957,
+      "name": "suction",
+      "value": [
+        true,
+        false
+      ]
+    },
+    {
+      "t": 52.154,
+      "name": "suction",
+      "value": [
+        false,
+        false
+      ]
+    },
+    {
+      "t": 56.482,
+      "name": "Qwen",
+      "value": {
+        "scene": "far_open",
+        "status": "complete"
+      },
+      "latency_ms": 585.4177709989017
+    },
+    {
+      "t": 65.156,
+      "name": "progress",
+      "value": {
+        "stage": "far",
+        "phase": "retract",
+        "contact_seen": true,
+        "sweep_seen": true,
+        "completion_ready": true,
+        "is_lid_or_vacuum_detection": false
+      }
+    }
+  ],
+  "left_motion_windows": [
+    {
+      "interval_s": [
+        6,
+        12
+      ],
+      "max_per_joint_motion_deg": 19.190013885498047,
+      "left_J1_J2_start_deg": [
+        46.25621795654297,
+        22.697959899902344
+      ],
+      "left_J1_J2_end_deg": [
+        31.435867309570312,
+        40.47813034057617
+      ]
+    },
+    {
+      "interval_s": [
+        12,
+        18
+      ],
+      "max_per_joint_motion_deg": 8.674942016601557,
+      "left_J1_J2_start_deg": [
+        31.42028045654297,
+        40.51048278808594
+      ],
+      "left_J1_J2_end_deg": [
+        32.592910766601555,
+        46.82291793823242
+      ]
+    },
+    {
+      "interval_s": [
+        18,
+        24
+      ],
+      "max_per_joint_motion_deg": 3.102923583984378,
+      "left_J1_J2_start_deg": [
+        32.59261322021485,
+        46.82246017456055
+      ],
+      "left_J1_J2_end_deg": [
+        30.37344360351563,
+        46.92165756225586
+      ]
+    },
+    {
+      "interval_s": [
+        24,
+        30
+      ],
+      "max_per_joint_motion_deg": 4.626878356933596,
+      "left_J1_J2_start_deg": [
+        30.36800765991211,
+        46.92192077636719
+      ],
+      "left_J1_J2_end_deg": [
+        27.99200820922852,
+        47.25325012207031
+      ]
+    },
+    {
+      "interval_s": [
+        30,
+        36
+      ],
+      "max_per_joint_motion_deg": 4.024278259277344,
+      "left_J1_J2_start_deg": [
+        27.986778259277344,
+        47.25424575805665
+      ],
+      "left_J1_J2_end_deg": [
+        26.328712463378906,
+        47.840240478515625
+      ]
+    }
+  ],
+  "far_ACT_started_s": 5.674526214599609
+}

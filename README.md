@@ -1,88 +1,87 @@
-# Foxconn
+# Foxconn — Jetson 双 ACT + Qwen LoRA 自动调度
 
-双臂开箱系统的三设备源码与实机记录快照，保存于 **2026-11-16（Asia/Shanghai）**。
+分支 `jetson-act-qwen-20261117` 基于旧 `main` 的 `a7e15b19a74f064e8d9fde2bf03753845b68cf04`，归档于 **2026-11-17（Asia/Shanghai）**。旧分支与旧 Release 保留。
 
-## 本次成功结果的准确范围
+**当前默认：两个 ACT 均在 Jetson Orin Nano 8GB 在线推理；电脑运行 Qwen3.5-9B LoRA 判断完成并切换；全程 1.0 倍速；每个 ACT 前双臂归位；右臂等待约束关闭。**
 
-| 测试 | 实际执行方式 | 结果 |
+这里归档的是成功测试时的开盖程序与配置。导出时设备已进入另一轮示教采集，旧策略服务可能显示停止或不存在；服务状态单独保存在 `manifests/*services-20261117.txt`，导出没有重启服务或干预采集。
+
+## 与旧快照的区别
+
+| 项目 | 2026-11-16 旧快照 | 当前分支 |
 |---|---|---|
-| 远盖 ACT 对照 | 电脑 ACT 推理 → Jetson 执行 | 未吸住远盖，保留失败记录 |
-| 远盖成功对照 | 保存的成功轨迹回放 → 原执行器和限幅器 | 远盖打开，无执行故障；不是 ACT 在线推理 |
-| 近盖第一次 | 原近盖 ACT，电脑推理 → Jetson 执行 | 近盖打开，正常结束 |
-| 近盖复测 | 同一近盖 ACT | 再次打开；推理中位数 9.05 ms，P95 10.20 ms |
+| 远盖成功方式 | 保存轨迹回放，非 ACT 在线推理 | Jetson 远盖 ACT 在线推理 |
+| 近盖推理位置 | 电脑推理、Jetson 执行 | Jetson 推理与执行 |
+| 电脑职责 | ACT、参考轨迹与训练诊断 | Qwen3.5-9B NF4 + LoRA 完成状态判断 |
+| 完成与切换 | 人工阶段完成服务 | Qwen 连续视觉确认 + 关节收尾检查 |
+| 模型结构 | 双臂 ACT | 保持远盖、近盖两份双臂 ACT，未拆左右臂模型 |
+| 新增右臂等待 | 无 | 当前关闭，另保存开启时的成功对照 |
 
-每次实机执行前都确认双臂到数据集初始位置。最后一轮通过 `finish_near` 正常结束，双臂 `IDLE`、两路吸盘关闭。这里只记录有限次实测，不将其解释为一般成功率。
+详见 [版本差异](docs/CHANGES_20261117.md) 和 [旧版原始说明](docs/SNAPSHOT_20261116_BASELINE.md)。
 
-今天额外微调的远盖候选**没有部署、没有实机验收**。Qwen/LoRA 自动调度也不属于这次成功运行链路。
+## 成功实机记录
+
+| 试验 | 右臂等待约束 | 远盖阶段 | 近盖阶段 | 结果 |
+|---|---|---:|---:|---|
+| **当前默认** | **关闭** | **43.9 s** | **30.7 s** | 两盖打开，Qwen 自动切换，IDLE，吸盘关闭 |
+| 先前对照 | 开启 | 62.2 s | 31.0 s | 两盖打开，Qwen 自动切换，IDLE，吸盘关闭 |
+
+时间从各阶段 `RUNNING` 到 `STOPPING`，包含执行与完成确认、排除归位。两轮权重、IEEE FP32 引擎、1.0 倍速相同，均未用保存轨迹回放。每种设置各一次成功，不能推算长期成功率或证明此前失败只有一个原因。取消约束也成功，当前保持 `coordinate_far_right_arm: false`。
+
+当前 ACT 推理中位数 **108.44 ms**、P95 **117.39 ms**、最大 **162.27 ms**。计算延迟未恢复到桌面约 9 ms；实际约 8–9 次/秒重规划，50 步动作保持 20 Hz 时间基准，经时间对齐、chunk fusion、插值和限幅，以 100 Hz 下发。
 
 ## 三台设备
 
-| 设备 | 地址 | 本次职责 | 源码快照 |
-|---|---|---|---|
-| 电脑 jj | 172.16.12.16 | ACT 推理、参考轨迹诊断、录包及训练工具 | `devices/pc/`、`training_tools/` |
-| Jetson | 172.16.12.95 | 双臂控制、100 Hz 原生 ServoJ、头相机、关节和吸盘状态 | `devices/jetson/` |
-| umie | 172.16.12.45 | 左右腕相机、有线继电器 TCP 桥接 | `devices/umie/` |
+| 设备 | 当前职责 | 代码目录 |
+|---|---|---|
+| jj `172.16.12.16` | Qwen LoRA、监督录像、离线工具；桌面 ACT 发布禁用 | `devices/pc/`、`training_tools/task_brain/` |
+| Jetson `172.16.12.95` | 双 ACT、头相机、状态、原生 ServoJ | `devices/jetson/` |
+| umie `172.16.12.45` | 双腕相机、有线继电器桥接 | `devices/umie/` |
 
-ROS 2 Humble，Domain 1，`rmw_fastrtps_cpp`。ACT 动作时间基准为 20 Hz，每次预测 50 步，执行器保留 chunk fusion、速度/加速度限制、输入时效及跟踪误差保护。此次归档没有修改提速参数。
+ROS 2 Humble，Domain 1，`rmw_fastrtps_cpp`。Jetson 活动入口是 `devices/jetson/robot-policy-streams/run.sh`、`run_inference_jetson.sh` 和同目录 `config.yaml`，模型目录为 `jetson_act_runtime_20261116/`。模型目录保留的旧联调脚本不是活动执行器入口。
 
-继电器链路为：`Jetson 192.168.50.10 → umie 192.168.50.20:20108 → 192.168.1.7:20108`。继电器直接接 umie 的 USB 网卡。桥接源码和两端配置已保存。双臂控制器地址为 `192.168.1.160`、`192.168.2.160`。
-
-## 目录与完整数据
-
-- `devices/`：从设备当前目录读取的代码、配置和构建文件；以这里的部署快照为准。
-- `training_tools/`：训练、回放、通信检查和测试工具的开发归档。部分历史脚本有旧路径或 SSH socket，不应逐个直接运行。
-- `AIDE_ACT_dataset_20261111_195100/act/`：ACT / interACT 项目源码；没有复制原始 28 GB 数据集。
-- `vendor/lerobot/`：电脑当前环境实际使用的 LeRobot 源码快照及原有许可资料。
-- `requirements/`：电脑 ACT 环境的依赖版本记录。
-- `evidence/20261116/`：可直接在 GitHub 查看结果、对照报告和末帧图像。
-- `manifests/`：源文件 SHA-256、设备环境、权重身份、附件校验和。
-
-完整 ROS bags、所有相机帧、动作块、伺服轨迹、模型权重和 Jetson 必需运行库在同一仓库的 [snapshot-20261116-v1 Release](https://github.com/Krriat/Foxconn/releases/tag/snapshot-20261116-v1)，不是只上传摘要：
-
-| 附件 | 内容 / 解包布局 |
-|---|---|
-| `foxconn-physical-runs-20261116.tar.gz` | 整个 `training_verification/box_retest_20261116_1005/`，含失败对照、远盖成功回放、两次近盖 ACT 录包及完整日志 |
-| `foxconn-act-checkpoints-20261116.tar.gz` | 当前远盖 ACT、成功近盖 ACT、参考回放所对应的原 014000 ACT 权重；加载所需训练元数据；远/近盖历史成功参考轨迹 |
-| `foxconn-jetson-runtime-assets-20261116.tar.gz` | `devices/jetson/` 布局下的原生可执行文件、SDK 库、ROS 接口安装文件、吸盘库和初始位置文件 |
-
-下载并校验（需要仓库读取权限和 `gh` 登录）：
+待命与启动说明见 [当前操作说明](training_tools/jetson_dual_act_20261116/README.md)。恢复原路径、依赖与模型后，在电脑开始真实运动：
 
 ```bash
-git clone https://github.com/Krriat/Foxconn.git
+bash /home/jj/code/ACT/training_tools/jetson_dual_act_20261116/run_sequence.sh
+```
+
+停止：
+
+```bash
+bash /home/jj/code/ACT/training_tools/jetson_dual_act_20261116/stop_sequence.sh
+```
+
+自动入口是 `/robot/policy/start_sequence_brain`；`/start_sequence` 仍是手动切换。监督录像由 systemd 用户服务保持，关闭启动终端不能代替停止。归档、下载和校验不会启动机器人。
+
+## 完整附件
+
+Git 保存源码、配置、报告与末帧；大文件在同仓库 [snapshot-20261117-jetson-act-qwen Release](https://github.com/Krriat/Foxconn/releases/tag/snapshot-20261117-jetson-act-qwen)：
+
+| 附件 | 内容 |
+|---|---|
+| `foxconn-successful-runs-20261117.tar.gz` | 完整 `training_verification/no_right_hold_20261117_102134/` 与 `grasp_repair_20261117_095228/`：两轮录像、全部动作/伺服/Qwen 日志、逐帧时间、配置、对照输入与审计；排除临时模型链接 |
+| `foxconn-models-20261117.tar.gz` | Jetson 两个 ACT 权重与归一化、电脑 Qwen LoRA 适配器；基座来源、配置、许可证（无 19 GB 基座权重） |
+| `foxconn-jetson-runtime-assets-20261117.tar.gz` | 两个对应 TensorRT 引擎、原生执行器/状态程序、SDK/M050/ROS 接口、cuDSS 运行库 |
+
+```bash
+git clone --branch jetson-act-qwen-20261117 https://github.com/Krriat/Foxconn.git
 cd Foxconn
 bash scripts/download_assets.sh
 ```
 
-脚本只下载和校验，不启动机器人、不覆盖设备配置。完整素材下载后位于 `downloads/`。
+脚本只下载并检查 SHA-256，不解包或安装。实机数据以原电脑 `/home/jj/code/ACT/` 为解包根；设备代码/资产按 `devices/` 布局还原。代码保留原用户名和绝对路径，不是任意设备的一键安装包。运行库需匹配现有 JetPack、ROS 2 Humble、Python 3.10 与 aarch64。
 
-## 权重与恢复说明
+Qwen 基座使用既有安装，或依据 `manifests/qwen-base-source.json` 的固定版本、逐文件哈希获取；获取脚本为 `training_tools/task_brain/download_base.py`。LoRA 基座是 Safetensors 版本，不能用 Ollama GGUF 直接替代。
 
-成功近盖 ACT：
+## 权重身份与范围
 
-```text
-model_outputs/act_near_success_20261112/pretrained_model
-ec6e21a2a4e8b1813f5e16926f1e1b15f27468627dd7e3841056f4c016174ad8
-```
+| 组件 | SHA-256 |
+|---|---|
+| 远盖 ACT | `af60ccd4cfca37c420d1107e440c8fcb78904d22a28e802d39b4b5925a9055f9` |
+| 近盖 ACT | `ec6e21a2a4e8b1813f5e16926f1e1b15f27468627dd7e3841056f4c016174ad8` |
+| Qwen LoRA | `63e882d82b66a58da2269ce32f22dedc41b42959b2165d080a131ddeeabf0ade` |
 
-本次测试结束恢复的远盖 ACT 配置：
+本次没有重新训练或替换这些权重。引擎保持 IEEE FP32、FP16/TF32 禁用；没有启用试验性混合精度引擎或时钟锁定。开发工具中保留的其他模式不代表活动设置。
 
-```text
-model_outputs/act_far_current_recovery_20261113_03/checkpoints/001000/pretrained_model
-af60ccd4cfca37c420d1107e440c8fcb78904d22a28e802d39b4b5925a9055f9
-```
-
-这个远盖 ACT 不是今天成功远盖回放的算法。回放工具为 `training_tools/far_recovery/reference_session.py` / `reference_actor.py`，实际成功配置和哈希见完整附件中的 `successful_setup/`。回放使用原 `014000` 模型身份和保存的参考轨迹，期间仍使用新 run ID、双臂归位和原保护机制。
-
-本仓库是实际安装目录的快照，并非一键安装包。恢复时：
-
-1. 将对应设备的 `robot-*` 目录恢复到该用户的 `~/.local/share/`；代码保留原绝对路径，需核对主机用户名和安装位置。
-2. 电脑的项目源码、`training_tools/`、权重和训练元数据对应 `/home/jj/code/ACT/`。权重和实机数据附件以这个目录为解包根。
-3. Jetson 的 `robot_source/` 对应 `/home/jetson/AIDE_robot_main/`。源码中 CMake 所引用 SDK、USR-M050 库和 ROS 接口都在源码或运行附件中。
-4. 所有来源、校验和及网络拓扑见 `manifests/`。保留原安全限制；归档动作本身不执行安装或启动。
-
-运行库附件保留了原 Colcon `install/` 中的符号链接，因此不是可任意移动目录的独立安装包。迁移到新设备时，应先用已归档的 `xCoreROS/src/` 重建 ROS 接口，再构建状态读取和原生驱动；SDK 的 Eigen 等无扩展名头文件也已完整收录。
-
-本次当前代码仍使用人工阶段完成服务；归档不启用箱盖判定或自动切换。近盖单阶段实测调用的是 `start_near`，会先归位。`finish_near` 是结束并释放吸盘，不能在刚启动时调用。
-
-仓库不含 SSH/GitHub 登录凭据；原有第三方代码许可证保留。尚未验收的候选模型只保存训练审计信息，没有替换成功近盖权重。
-
+环境、启动入口、哈希与附件清单见 `manifests/`。不含 SSH/GitHub 凭据、虚拟环境、完整原始 28 GB 数据集和无关历史日志；保留第三方源码和许可证。

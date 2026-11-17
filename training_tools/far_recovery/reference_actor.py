@@ -33,6 +33,8 @@ class Reference:
         self.times=data['time'].copy();self.targets=data['fused'].copy()
         self.commands=data['command'].copy()
         self.stage=stage;self.origin=None;self.node=None
+        self.speed_scale=float(cfg.get('execution_speed_scale',1.))
+        if not 1.<=self.speed_scale<=1.5:raise ValueError('Invalid reference speed scale')
         self.home=np.array(cfg['home_left']+cfg['home_right']+[0,0])
         self.sha=hashlib.sha256(self.path.read_bytes()).hexdigest()
         assert self.targets.shape==(len(self.times),16)
@@ -51,7 +53,10 @@ class Reference:
         if phase not in ('RUNNING','PREVIEW'):
             return np.tile(self.home,(50,1))
         if self.origin is None:self.origin=observation['source_stamp']
-        elapsed=observation['source_stamp']-self.origin
+        # The archived trajectory also has an episode clock. Advance its base
+        # at the requested speed; native fusion separately maps the local
+        # 50-ms action horizon. Raw observation stamps remain real host time.
+        elapsed=(observation['source_stamp']-self.origin)*self.speed_scale
         if elapsed < -.001 or elapsed>self.times[-1]+3:
             raise RuntimeError('Recorded reference duration exceeded')
         return self.sample(elapsed)
@@ -63,7 +68,8 @@ class MarkedPublisher:
         ref=self.references['far' if key=='default' else key]
         data.update(is_model_inference=False,diagnostic_mode='recorded_success_reference',
             source_reference_sha256=ref.sha,source_reference_path=str(ref.path),
-            reference_elapsed_seconds=(data['observation_time_ns']/1e9-ref.origin) if ref.origin else None)
+            reference_elapsed_seconds=(data['observation_time_ns']/1e9-ref.origin)*ref.speed_scale if ref.origin is not None else None,
+            reference_wall_elapsed_seconds=(data['observation_time_ns']/1e9-ref.origin) if ref.origin is not None else None)
         self.publisher.publish(String(data=encode(data)))
 
 def main():
@@ -74,7 +80,9 @@ def main():
     assert {k:v['sha256'] for k,v in cfg['act_stage_checkpoints'].items()}==expected,'Restore source checkpoints before reference test'
     references={k:Reference(k,cfg) for k in expected}
     report={k:dict(artifact_sha256=r.sha,duration_seconds=float(r.times[-1]),
-        max_recorded_command_speed=float(np.max(abs(np.diff(r.commands,axis=0)/np.diff(r.times)[:,None])))) for k,r in references.items()}
+        execution_speed_scale=r.speed_scale,scaled_duration_seconds=float(r.times[-1])/r.speed_scale,
+        max_recorded_command_speed=float(np.max(abs(np.diff(r.commands,axis=0)/np.diff(r.times)[:,None]))),
+        scaled_max_recorded_command_speed=float(np.max(abs(np.diff(r.commands,axis=0)/np.diff(r.times)[:,None])))*r.speed_scale) for k,r in references.items()}
     print(json.dumps(dict(diagnostic_mode='recorded_success_reference',is_model_inference=False,references=report)),flush=True)
     if a.validate_only:return
     cfg=dict(cfg,inference_runtime='recorded_reference',act_backend='archived_fused_targets')
