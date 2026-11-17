@@ -76,7 +76,7 @@ try:
     assert driver['execution_time_scaling']=='per_observation_v1' and driver.get('continuous_action_clock_v1'),driver
     assert s.get('execution_speed_profile')==inf.get('execution_speed_profile')=='uniform'
     assert inf.get('host')=='tegra-ubuntu' and inf.get('runtime')=='jetson_act' and inf.get('backend')=='tensorrt'
-    assert len(n.get_publishers_info_by_topic('/robot/policy/action_chunk'))==1, 'More than one ACT publisher' 
+    assert len(n.get_publishers_info_by_topic('/robot/policy/action_chunk'))==1, 'More than one ACT publisher'
     assert driver['maximum_joint_acceleration_rad_s2']>=a.expected_acceleration,driver
     brain=latest['brain_status'];assert brain.get('transitions_enabled') and brain.get('adapter_sha256')==s['brain_adapter_sha256']
     before_brain_calls=brain['service_calls']

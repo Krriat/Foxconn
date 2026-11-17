@@ -9401,8 +9401,8 @@
   },
   {
     "export": "training_tools/archive_verify_20261117.py",
-    "bytes": 7281,
-    "sha256": "e4a40b05a9f68fa890cea1d99ea94c4a7479a27ca79cd6d5f00f660764f1cb0a"
+    "bytes": 7684,
+    "sha256": "2aa30593b000fe5e1267bd9da16353096a98ff7b473e114592b49bd428da361e"
   },
   {
     "export": "training_tools/audit_box_opening.py",
@@ -10131,8 +10131,8 @@
   },
   {
     "export": "training_tools/jetson_dual_act_20261116/verify_preview.py",
-    "bytes": 7967,
-    "sha256": "acc1f8a144dec61804c18617795eeb8c15e464af461f62e1ac8ae1a6102f68bf"
+    "bytes": 7966,
+    "sha256": "364db743ddcd6f0429e39406c54ac0d1721f2ac7a5a2ee48503ce877ed63fa3a"
   },
   {
     "export": "training_tools/jetson_inference_runtime.py",

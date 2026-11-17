@@ -3,7 +3,6 @@ import hashlib
 import io
 import json
 import re
-import shutil
 import subprocess
 import tarfile
 from datetime import datetime
@@ -123,14 +122,19 @@ def main():
     for path in (REPO / 'scripts/download_assets.sh', REPO / 'training_tools/jetson_dual_act_20261116/run_sequence.sh',
                  REPO / 'training_tools/jetson_dual_act_20261116/stop_sequence.sh'):
         subprocess.run(['bash', '-n', str(path)], check=True)
-    subprocess.run(['git', '-C', str(REPO), 'diff', '--check'], check=True)
+    # Preserve original capture bytes, including final blank lines in config
+    # snapshots and the old README; reject other whitespace errors in all
+    # branch changes, including files that were originally untracked.
+    subprocess.run(['git', '-C', str(REPO), '-c', 'core.whitespace=-blank-at-eof',
+                    'diff', '--check', 'a7e15b19a74f064e8d9fde2bf03753845b68cf04', '--'], check=True)
     (REPO / 'manifests/source-files.json').write_text(json.dumps(source_files, indent=2) + '\n')
     report = {'verified_at': datetime.now(ZoneInfo('Asia/Shanghai')).isoformat(),
               'source_files': len(source_files), 'credential_scan': 'no high-confidence matches',
               'source_scan_scope': 'all repository files, plus text members inside all three assets and nested setup tars',
               'assets': reports, 'robot_motion_requested': False, 'device_service_changes': False,
               'checks': ['archive SHA-256 and sizes', 'per-file model/runtime index', 'both complete successful runs',
-                         'safe archive paths; no symlinks', 'JSON parsing', 'launcher bash syntax', 'git diff --check']}
+                         'safe archive paths; no symlinks', 'JSON parsing', 'launcher bash syntax',
+                         'git diff --check against baseline (original capture EOF blank lines preserved)']}
     (REPO / 'manifests/archive-verification.json').write_text(json.dumps(report, indent=2) + '\n')
     (OUT / 'verification.json').write_text(json.dumps(report, indent=2) + '\n')
     print(json.dumps({'complete': True, 'source_files': len(source_files), 'assets': len(reports)}), flush=True)

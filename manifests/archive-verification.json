@@ -1,5 +1,5 @@
 {
-  "verified_at": "2026-11-17T11:16:44.063718+08:00",
+  "verified_at": "2026-11-17T11:18:05.778973+08:00",
   "source_files": 2442,
   "credential_scan": "no high-confidence matches",
   "source_scan_scope": "all repository files, plus text members inside all three assets and nested setup tars",
@@ -44,6 +44,6 @@
     "safe archive paths; no symlinks",
     "JSON parsing",
     "launcher bash syntax",
-    "git diff --check"
+    "git diff --check against baseline (original capture EOF blank lines preserved)"
   ]
 }
