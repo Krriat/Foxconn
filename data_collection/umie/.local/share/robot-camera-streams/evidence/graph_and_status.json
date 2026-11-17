@@ -1,0 +1,129 @@
+{
+  "ros_domain_id": 1,
+  "rmw_implementation": "rmw_fastrtps_cpp",
+  "statuses": {
+    "robot_wrist_cameras": {
+      "node": "robot_wrist_cameras",
+      "cameras": {
+        "left_wrist": {
+          "backend": "realsense",
+          "device": "352122274013",
+          "state": "streaming",
+          "frames": 1004,
+          "reconnects": 0,
+          "fps": 15.01,
+          "width": 640,
+          "height": 480,
+          "requested_fps": 15,
+          "calibrated": true,
+          "last_jpeg_bytes": 24632,
+          "error": "",
+          "last_frame_age_sec": 0.059
+        },
+        "right_wrist": {
+          "backend": "realsense",
+          "device": "261122274758",
+          "state": "streaming",
+          "frames": 999,
+          "reconnects": 0,
+          "fps": 15.0,
+          "width": 640,
+          "height": 480,
+          "requested_fps": 15,
+          "calibrated": true,
+          "last_jpeg_bytes": 30555,
+          "error": "",
+          "last_frame_age_sec": 0.005
+        }
+      }
+    },
+    "robot_head_camera": {
+      "node": "robot_head_camera",
+      "cameras": {
+        "head": {
+          "backend": "v4l2",
+          "device": "262923063591",
+          "state": "streaming",
+          "frames": 1100,
+          "reconnects": 0,
+          "fps": 14.99,
+          "width": 640,
+          "height": 480,
+          "requested_fps": 15,
+          "calibrated": false,
+          "last_jpeg_bytes": 18224,
+          "error": "",
+          "video_device": "/dev/video4",
+          "last_frame_age_sec": 0.028
+        }
+      }
+    }
+  },
+  "topics": {
+    "/parameter_events": [
+      "rcl_interfaces/msg/ParameterEvent"
+    ],
+    "/robot/sensors/cameras/head/color/camera_info": [
+      "sensor_msgs/msg/CameraInfo"
+    ],
+    "/robot/sensors/cameras/head/color/image_raw": [
+      "sensor_msgs/msg/Image"
+    ],
+    "/robot/sensors/cameras/head/color/image_raw/compressed": [
+      "sensor_msgs/msg/CompressedImage"
+    ],
+    "/robot/sensors/cameras/left_wrist/color/camera_info": [
+      "sensor_msgs/msg/CameraInfo"
+    ],
+    "/robot/sensors/cameras/left_wrist/color/image_raw": [
+      "sensor_msgs/msg/Image"
+    ],
+    "/robot/sensors/cameras/left_wrist/color/image_raw/compressed": [
+      "sensor_msgs/msg/CompressedImage"
+    ],
+    "/robot/sensors/cameras/right_wrist/color/camera_info": [
+      "sensor_msgs/msg/CameraInfo"
+    ],
+    "/robot/sensors/cameras/right_wrist/color/image_raw": [
+      "sensor_msgs/msg/Image"
+    ],
+    "/robot/sensors/cameras/right_wrist/color/image_raw/compressed": [
+      "sensor_msgs/msg/CompressedImage"
+    ],
+    "/robot/sensors/cameras/status/robot_head_camera": [
+      "std_msgs/msg/String"
+    ],
+    "/robot/sensors/cameras/status/robot_wrist_cameras": [
+      "std_msgs/msg/String"
+    ],
+    "/rosout": [
+      "rcl_interfaces/msg/Log"
+    ]
+  },
+  "publishers": {
+    "/robot/sensors/cameras/head/color/image_raw/compressed": [
+      {
+        "node": "robot_head_camera",
+        "reliability": "BEST_EFFORT",
+        "durability": "VOLATILE",
+        "depth": 0
+      }
+    ],
+    "/robot/sensors/cameras/left_wrist/color/image_raw/compressed": [
+      {
+        "node": "robot_wrist_cameras",
+        "reliability": "BEST_EFFORT",
+        "durability": "VOLATILE",
+        "depth": 0
+      }
+    ],
+    "/robot/sensors/cameras/right_wrist/color/image_raw/compressed": [
+      {
+        "node": "robot_wrist_cameras",
+        "reliability": "BEST_EFFORT",
+        "durability": "VOLATILE",
+        "depth": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,3 @@
+# Perform a fresh full IO read; this does not return a cached value.
+---
+m050_ros/IOState state

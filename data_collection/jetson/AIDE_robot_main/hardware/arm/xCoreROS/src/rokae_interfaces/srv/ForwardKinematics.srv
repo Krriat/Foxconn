@@ -1,0 +1,12 @@
+# Seven joint positions in radians.
+float64[7] joints
+---
+bool success
+string message
+# TCP pose relative to the robot's configured external-reference frame.
+geometry_msgs/Pose pose
+# Seven-axis arm angle returned by the SDK, in radians.
+float64 elbow
+bool has_elbow
+# SDK joint-configuration data, when available.
+int32[] configuration

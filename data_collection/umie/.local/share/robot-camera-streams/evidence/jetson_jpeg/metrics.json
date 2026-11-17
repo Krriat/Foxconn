@@ -1,0 +1,78 @@
+{
+  "transport": "jpeg",
+  "duration_sec": 20.0,
+  "cameras": {
+    "head": {
+      "frames": 299,
+      "bytes": 5452529,
+      "errors": [],
+      "last_stamp_ns": 1794445714922632874,
+      "non_increasing_stamps": 0,
+      "frame_id": "head_color_optical_frame",
+      "shape": [
+        480,
+        640,
+        3
+      ],
+      "mean": 124.85,
+      "std": 35.62,
+      "camera_info": {
+        "width": 640,
+        "height": 480,
+        "calibrated": false,
+        "frame_id": "head_color_optical_frame"
+      },
+      "received_fps": 14.99,
+      "payload_mbps": 2.194,
+      "last_frame_age_sec": 0.067
+    },
+    "left_wrist": {
+      "frames": 300,
+      "bytes": 7374253,
+      "errors": [],
+      "last_stamp_ns": 1794445714952186732,
+      "non_increasing_stamps": 0,
+      "frame_id": "left_wrist_color_optical_frame",
+      "shape": [
+        480,
+        640,
+        3
+      ],
+      "mean": 129.58,
+      "std": 55.78,
+      "camera_info": {
+        "width": 640,
+        "height": 480,
+        "calibrated": true,
+        "frame_id": "left_wrist_color_optical_frame"
+      },
+      "received_fps": 14.97,
+      "payload_mbps": 2.953,
+      "last_frame_age_sec": 0.019
+    },
+    "right_wrist": {
+      "frames": 299,
+      "bytes": 9143058,
+      "errors": [],
+      "last_stamp_ns": 1794445714938651947,
+      "non_increasing_stamps": 0,
+      "frame_id": "right_wrist_color_optical_frame",
+      "shape": [
+        480,
+        640,
+        3
+      ],
+      "mean": 142.18,
+      "std": 65.78,
+      "camera_info": {
+        "width": 640,
+        "height": 480,
+        "calibrated": true,
+        "frame_id": "right_wrist_color_optical_frame"
+      },
+      "received_fps": 14.96,
+      "payload_mbps": 3.671,
+      "last_frame_age_sec": 0.007
+    }
+  }
+}

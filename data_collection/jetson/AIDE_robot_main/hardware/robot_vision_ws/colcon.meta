@@ -1,0 +1,9 @@
+{
+  "names": {
+    "realsense2_camera": {
+      "cmake-args": [
+        "-DBUILD_TESTING=OFF"
+      ]
+    }
+  }
+}

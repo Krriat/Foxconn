@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=71,<81"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lerobot_robot_xcore"
+version = "0.1.0"
+description = "LeRobot 0.4.3 adapters for ROKAE xCore 7-axis arms"
+requires-python = ">=3.10,<3.11"
+dependencies = ["lerobot==0.4.3", "numpy"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["lerobot_robot_xcore*", "roi_act_runtime*", "xcore_teach_recording*"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}

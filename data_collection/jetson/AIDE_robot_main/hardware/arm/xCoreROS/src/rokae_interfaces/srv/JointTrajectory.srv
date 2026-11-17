@@ -1,0 +1,27 @@
+# Supported arm modes only; other bitmask combinations are not supported.
+int8 LEFT_ARM=1
+int8 RIGHT_ARM=2
+int8 DUAL_ARM=3
+
+# Target waypoints, 2..100 points; radians. Length determined by arm_type.
+rokae_interfaces/Joints[] path
+
+# Seconds from trajectory execution start (after preparation) to final point.
+# Must be finite and >=0. Positive time overrides timestamp completely.
+# time=0 requires timestamp. Preparation/power-on time is not included.
+float64 time
+
+# Used only when time=0. One finite time per point, strictly increasing,
+# first >0. Current measured pose is the implicit starting point at t=0.
+float64[] timestamp
+
+# true: return after acceptance; false: wait for execution to finish.
+# Async success does not mean the motion has completed.
+bool is_async
+
+# 1=left (7 joints), 2=right (7 joints), 3=both (14 joints, left then right).
+int8 arm_type
+---
+# Request/command result, NOT an independent measurement of target arrival.
+bool success
+string message

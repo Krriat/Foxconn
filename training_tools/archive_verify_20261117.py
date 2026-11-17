@@ -122,11 +122,12 @@ def main():
     for path in (REPO / 'scripts/download_assets.sh', REPO / 'training_tools/jetson_dual_act_20261116/run_sequence.sh',
                  REPO / 'training_tools/jetson_dual_act_20261116/stop_sequence.sh'):
         subprocess.run(['bash', '-n', str(path)], check=True)
-    # Preserve original capture bytes, including final blank lines in config
-    # snapshots and the old README; reject other whitespace errors in all
-    # branch changes, including files that were originally untracked.
+    # Preserve original capture bytes, including original device-source
+    # whitespace. Device copies are verified by hashes, not reformatted.
+    # Check authored changes against the baseline, including new files.
     subprocess.run(['git', '-C', str(REPO), '-c', 'core.whitespace=-blank-at-eof',
-                    'diff', '--check', 'a7e15b19a74f064e8d9fde2bf03753845b68cf04', '--'], check=True)
+                    'diff', '--check', 'a7e15b19a74f064e8d9fde2bf03753845b68cf04', '--', '.',
+                    ':(exclude)data_collection/jetson/**', ':(exclude)data_collection/umie/**'], check=True)
     (REPO / 'manifests/source-files.json').write_text(json.dumps(source_files, indent=2) + '\n')
     report = {'verified_at': datetime.now(ZoneInfo('Asia/Shanghai')).isoformat(),
               'source_files': len(source_files), 'credential_scan': 'no high-confidence matches',
@@ -134,7 +135,7 @@ def main():
               'assets': reports, 'robot_motion_requested': False, 'device_service_changes': False,
               'checks': ['archive SHA-256 and sizes', 'per-file model/runtime index', 'both complete successful runs',
                          'safe archive paths; no symlinks', 'JSON parsing', 'launcher bash syntax',
-                         'git diff --check against baseline (original capture EOF blank lines preserved)']}
+                         'git diff --check against baseline (original device captures checked by hash; EOF blank lines preserved)']}
     (REPO / 'manifests/archive-verification.json').write_text(json.dumps(report, indent=2) + '\n')
     (OUT / 'verification.json').write_text(json.dumps(report, indent=2) + '\n')
     print(json.dumps({'complete': True, 'source_files': len(source_files), 'assets': len(reports)}), flush=True)

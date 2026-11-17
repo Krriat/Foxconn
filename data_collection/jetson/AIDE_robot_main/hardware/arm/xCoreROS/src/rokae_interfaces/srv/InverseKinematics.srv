@@ -1,0 +1,14 @@
+# TCP target relative to the robot's configured external-reference frame.
+geometry_msgs/Pose pose
+# Optionally constrain the redundant seven-axis solution with an arm angle.
+bool use_elbow
+float64 elbow
+---
+bool success
+string message
+# IK result in radians.
+float64[7] joints
+# FK result calculated from joints using the same active tool/workobject.
+geometry_msgs/Pose solved_pose
+float64 position_error_m
+float64 orientation_error_rad

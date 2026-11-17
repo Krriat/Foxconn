@@ -1,0 +1,35 @@
+# Absolute TCP position in the robot external-reference frame, metres.
+float64[3] position
+# Required absolute XYZ Euler orientation in radians.
+float64[3] orientation_rpy
+# Set true to use the requested seven-axis arm angle. False preserves the
+# controller's current elbow/configuration data.
+bool use_elbow
+# Seven-axis arm angle in radians; ignored when use_elbow is false.
+float64 elbow
+# TCP linear speed in mm/s.
+float64 speed_mm_s
+# Blending radius in mm; use 0 for an exact stop.
+float64 zone_mm
+# Optional SDK configuration data; empty preserves the current configuration.
+int32[] conf_data
+# Scoped TCP selection, restored after the arm confirms idle.
+string tcp_type "sdk_tcp"
+bool use_current_pose false
+bool use_current_orientation false
+# Zero monitor values retain the node parameters (legacy clients).
+float64 position_tolerance_m 0.0
+float64 orientation_tolerance_rad 0.0
+uint32 stable_samples 3
+uint32 poll_interval_ms 100
+float64 timeout_s 0.0
+# Wall-clock deadline for collected ROS resources; zero disables the check.
+float64 resource_valid_until_unix_s 0.0
+bool check_current_pose false
+geometry_msgs/Pose expected_current_pose
+# Add position to the current selected TCP position in endInRef. Orientation
+# remains an absolute target; false preserves the existing absolute API.
+bool position_is_relative false
+---
+bool success
+string message

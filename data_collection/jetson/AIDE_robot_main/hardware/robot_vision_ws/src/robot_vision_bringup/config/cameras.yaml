@@ -1,0 +1,309 @@
+schema_version: "1.3"
+api_version: "v1"
+
+camera_namespace: "robot/sensors/cameras"
+
+cameras:
+
+
+# -------------头部相机--------------------
+  head:
+    enabled: true
+    verified: true
+    camera_name: "head"
+    semantic_location: "head"
+    model: "D435i"
+    serial_no: "263022075613"
+
+    streams:
+      enable_color: true
+      enable_depth: true
+      align_depth: true
+      pointcloud: false
+      enable_sync: true
+
+    profiles:
+      # Three cameras share a USB 2.0 hub on this robot.
+      color: "640x480x6"
+      depth: "640x480x6"
+    
+    
+    diagnostics_period: 1.0
+
+    interface:
+      primary_usage: "global_scene_perception"
+
+      consumers:
+        - "vision"
+        - "navigation"
+        - "task_planning"
+
+      topics:
+        color_image: "color/image_raw"
+        color_info: "color/camera_info"
+        depth_image: "depth/image_rect_raw"
+        depth_info: "depth/camera_info"
+        aligned_depth: "aligned_depth_to_color/image_raw"
+        aligned_depth_info: "aligned_depth_to_color/camera_info"
+        color_metadata: "color/metadata"
+        depth_metadata: "depth/metadata"
+        depth_to_color_extrinsics: "extrinsics/depth_to_color"
+
+      planned_target_frames:
+        - "base_link"
+        - "map"
+
+    frames:
+      color_optical: "head_color_optical_frame"
+      aligned_depth_optical: "head_color_optical_frame"
+      depth_optical: "head_depth_optical_frame"
+
+    depth:
+      encoding: "16UC1"
+      scale_m_per_unit: 0.001
+      invalid_value: 0
+      window_size: 5
+      minimum_valid_pixels: 5
+
+    extrinsics:
+      calibrated: false
+      mounting_parent_frame: ""
+      available_target_frames: []
+
+
+# -------------左手腕部相机--------------------
+  left_wrist:
+    enabled: true
+    verified: true
+    camera_name: "left_wrist"
+    semantic_location: "left_wrist"
+    model: "D405"
+    serial_no: "352122274013"
+
+    streams:
+      enable_color: true
+      enable_depth: true
+      align_depth: true
+      pointcloud: false
+      enable_sync: true
+
+    profiles:
+      color: "640x480x5"
+      depth: "640x480x5"
+
+    diagnostics_period: 1.0
+
+    interface:
+      primary_usage: "left_arm_close_range_perception"
+
+      consumers:
+        - "vision"
+        - "control"
+        - "manipulation"
+
+      topics:
+        color_image: "color/image_raw"
+        color_info: "color/camera_info"
+        depth_image: "depth/image_rect_raw"
+        depth_info: "depth/camera_info"
+        aligned_depth: "aligned_depth_to_color/image_raw"
+        aligned_depth_info: "aligned_depth_to_color/camera_info"
+        color_metadata: "color/metadata"
+        depth_metadata: "depth/metadata"
+        depth_to_color_extrinsics: "extrinsics/depth_to_color"
+
+      planned_target_frames:
+        - "base_link"
+
+    frames:
+      color_optical: "left_wrist_color_optical_frame"
+      aligned_depth_optical: "left_wrist_color_optical_frame"
+      depth_optical: "left_wrist_depth_optical_frame"
+
+    depth:
+      encoding: "16UC1"
+      scale_m_per_unit: 0.001
+      invalid_value: 0
+      window_size: 5
+      minimum_valid_pixels: 5
+
+    extrinsics:
+      calibrated: false
+      mounting_parent_frame: ""
+      available_target_frames: []
+
+
+# -------------胸部相机--------------------
+  chest:
+    enabled: false
+    verified: false
+    camera_name: "chest"
+    semantic_location: "chest"
+    model: "D435i"
+    serial_no: "REPLACE_CHEST_SERIAL"
+
+    streams:
+      enable_color: true
+      enable_depth: true
+      align_depth: true
+      pointcloud: false
+      enable_sync: true
+
+    profiles:
+      color: "640x480x15"
+      depth: "640x480x15"
+
+    diagnostics_period: 1.0
+
+    interface:
+      primary_usage: "front_scene_perception"
+
+      consumers:
+        - "vision"
+        - "task_planning"
+
+      topics:
+        color_image: "color/image_raw"
+        color_info: "color/camera_info"
+        depth_image: "depth/image_rect_raw"
+        depth_info: "depth/camera_info"
+        aligned_depth: "aligned_depth_to_color/image_raw"
+        aligned_depth_info: "aligned_depth_to_color/camera_info"
+
+      planned_target_frames:
+        - "base_link"
+
+    frames:
+      color_optical: ""
+      aligned_depth_optical: ""
+      depth_optical: ""
+
+    depth:
+      encoding: "16UC1"
+      scale_m_per_unit: null
+      invalid_value: 0
+      window_size: 5
+      minimum_valid_pixels: 5
+
+    extrinsics:
+      calibrated: false
+      mounting_parent_frame: ""
+      available_target_frames: []
+
+
+# -------------底盘相机--------------------
+  base:
+    enabled: false
+    verified: false
+    camera_name: "base"
+    semantic_location: "base"
+    model: "D435i"
+    serial_no: "REPLACE_BASE_SERIAL"
+
+    streams:
+      enable_color: true
+      enable_depth: true
+      align_depth: false
+      pointcloud: false
+      enable_sync: true
+
+    profiles:
+      color: "640x480x15"
+      depth: "640x480x15"
+
+    diagnostics_period: 1.0
+
+    interface:
+      primary_usage: "navigation_and_obstacle_perception"
+
+      consumers:
+        - "vision"
+        - "navigation"
+
+      topics:
+        color_image: "color/image_raw"
+        color_info: "color/camera_info"
+        depth_image: "depth/image_rect_raw"
+        depth_info: "depth/camera_info"
+        aligned_depth: "aligned_depth_to_color/image_raw"
+        aligned_depth_info: "aligned_depth_to_color/camera_info"
+
+      planned_target_frames:
+        - "base_link"
+        - "map"
+
+    frames:
+      color_optical: ""
+      aligned_depth_optical: ""
+      depth_optical: ""
+
+    depth:
+      encoding: "16UC1"
+      scale_m_per_unit: null
+      invalid_value: 0
+      window_size: 5
+      minimum_valid_pixels: 5
+
+    extrinsics:
+      calibrated: false
+      mounting_parent_frame: ""
+      available_target_frames: []
+
+
+# -------------右手腕部相机--------------------
+  right_wrist:
+    enabled: true
+    verified: true
+    camera_name: "right_wrist"
+    semantic_location: "right_wrist"
+    model: "D405"
+    serial_no: "352122274535"
+
+    streams:
+      enable_color: true
+      enable_depth: true
+      align_depth: true
+      pointcloud: false
+      enable_sync: true
+
+    profiles:
+      color: "640x480x5"
+      depth: "640x480x5"
+
+    diagnostics_period: 1.0
+
+    interface:
+      primary_usage: "right_arm_close_range_perception"
+
+      consumers:
+        - "vision"
+        - "control"
+        - "manipulation"
+
+      topics:
+        color_image: "color/image_raw"
+        color_info: "color/camera_info"
+        depth_image: "depth/image_rect_raw"
+        depth_info: "depth/camera_info"
+        aligned_depth: "aligned_depth_to_color/image_raw"
+        aligned_depth_info: "aligned_depth_to_color/camera_info"
+
+      planned_target_frames:
+        - "base_link"
+
+    frames:
+      color_optical: "right_wrist_color_optical_frame"
+      aligned_depth_optical: "right_wrist_color_optical_frame"
+      depth_optical: "right_wrist_depth_optical_frame"
+
+    depth:
+      encoding: "16UC1"
+      scale_m_per_unit: 0.001
+      invalid_value: 0
+      window_size: 5
+      minimum_valid_pixels: 5
+
+    extrinsics:
+      calibrated: false
+      mounting_parent_frame: ""
+      available_target_frames: []

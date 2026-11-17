@@ -1,0 +1,215 @@
+# These are conservative initial values, not certified safety parameters.
+# Verify controller limits, workspace clearance and current joint feedback
+# before sending any action goal.
+
+/robot_02/upperlimb/joint_motion:
+  ros__parameters:
+    left_arm:
+      robot_ip: "192.168.1.160"
+      local_ip: "192.168.1.10"
+      speed_mm_s: 50.0
+      joint_speed_scale: 0.05
+      zone_mm: 0.0
+      timeout_s: 60.0
+      soft_limit_margin_rad: 0.08
+      max_goal_delta_rad: 2.3
+      max_joint_speed_rad_s: 0.40
+      goal_tolerance_rad: 0.01
+
+    right_arm:
+      robot_ip: "192.168.2.160"
+      local_ip: "192.168.2.10"
+      speed_mm_s: 50.0
+      joint_speed_scale: 0.05
+      zone_mm: 0.0
+      timeout_s: 60.0
+      soft_limit_margin_rad: 0.08
+      max_goal_delta_rad: 2.3
+      max_joint_speed_rad_s: 0.40
+      goal_tolerance_rad: 0.01
+
+/robot_02/upperlimb/joint_motion_service:
+  ros__parameters:
+    joint_speed_scale: 0.10
+    timeout_s: 60.0
+    motion_start_timeout_s: 3.0
+    max_speed_mm_s: 4000.0
+    max_zone_mm: 200.0
+    soft_limit_margin_rad: 0.08
+    max_goal_delta_rad: 2.3
+    left_arm.j3_max_goal_delta_rad: 2.5 # 仅放宽左臂 J3 的相邻关节目标变化（约 143.24°）。
+    left_arm.j5_max_goal_delta_rad: 3.490658503988659 # 仅左臂 J5，相邻目标最大变化 200°；控制器软限位仍生效。
+    right_arm.j5_max_goal_delta_rad: 3.490658503988659 # 仅右臂 J5，相邻目标最大变化 200°；控制器软限位仍生效。
+    max_joint_speed_rad_s: 0.60
+    goal_tolerance_rad: 0.01
+    left_arm.robot_ip: "192.168.1.160"
+    left_arm.local_ip: "192.168.1.10"
+    right_arm.robot_ip: "192.168.2.160"
+    right_arm.local_ip: "192.168.2.10"
+
+/robot_02/upperlimb/cartesian_motion:
+  ros__parameters:
+    left_arm:
+      robot_ip: "192.168.1.160"
+      local_ip: "192.168.1.10"
+      expected_base_frame: [0.0, 0.105, 0.0, -1.570796327, 0.1308996939, 0.0]
+      timeout_s: 60.0
+      max_translation_delta_m: 0.50
+      max_rotation_delta_rad: 1.0
+      max_speed_mm_s: 250.0
+      max_zone_mm: 20.0
+      motion_start_timeout_s: 3.0
+      goal_position_tolerance_m: 0.002
+      goal_rotation_tolerance_rad: 0.02
+
+    right_arm:
+      robot_ip: "192.168.2.160"
+      local_ip: "192.168.2.10"
+      expected_base_frame: [0.0, -0.105, 0.0, 1.570796327, 0.1308996939, 0.0]
+      timeout_s: 60.0
+      max_translation_delta_m: 0.50
+      max_rotation_delta_rad: 1.0
+      max_speed_mm_s: 250.0
+      max_zone_mm: 20.0
+      motion_start_timeout_s: 3.0
+      goal_position_tolerance_m: 0.002
+      goal_rotation_tolerance_rad: 0.02
+
+/robot_02/upperlimb/joint_path:
+  ros__parameters:
+    speed_mm_s: 80.0
+    joint_speed_scale: 0.10
+    zone_mm: 5.0
+    timeout_s: 120.0
+    soft_limit_margin_rad: 0.08
+    max_waypoint_delta_rad: 0.35
+    max_cartesian_joint_delta_rad: 2.3
+    goal_tolerance_rad: 0.02
+    left_arm.robot_ip: "192.168.1.160"
+    left_arm.local_ip: "192.168.1.10"
+    right_arm.robot_ip: "192.168.2.160"
+    right_arm.local_ip: "192.168.2.10"
+
+/robot_02/upperlimb/hand_controller:
+  ros__parameters:
+    left_hand:
+      robot_ip: "192.168.1.160"
+      local_ip: "192.168.1.10"
+      can_id: 40  # 0x28
+      receive_timeout_ms: 200
+      receive_attempts: 3
+      reply_delay_ms: 1000
+
+    right_hand:
+      robot_ip: "192.168.2.160"
+      local_ip: "192.168.2.10"
+      can_id: 39  # 0x27
+      receive_timeout_ms: 200
+      receive_attempts: 3
+      reply_delay_ms: 1000
+
+/robot_02/upperlimb/initializer:
+  ros__parameters:
+    # Match the currently deployed cxl/op.cpp network configuration.
+    left_arm:
+      robot_ip: "192.168.1.160"
+      local_ip: "192.168.1.10"
+
+    right_arm:
+      robot_ip: "192.168.2.160"
+      local_ip: "192.168.2.10"
+
+/robot_02/upperlimb/cartesian_teach:
+  ros__parameters:
+    left_arm.robot_ip: "192.168.1.160"
+    left_arm.local_ip: "192.168.1.10"
+    right_arm.robot_ip: "192.168.2.160"
+    right_arm.local_ip: "192.168.2.10"
+
+/robot_02/upperlimb/kinematics:
+  ros__parameters:
+    left_arm.robot_ip: "192.168.1.160"
+    left_arm.local_ip: "192.168.1.10"
+    right_arm.robot_ip: "192.168.2.160"
+    right_arm.local_ip: "192.168.2.10"
+    ik_verify_position_tolerance_m: 0.0001
+    ik_verify_orientation_tolerance_rad: 0.001
+
+/robot_02/upperlimb/home_controller:
+  ros__parameters:
+    left_arm.robot_ip: "192.168.1.160"
+    left_arm.local_ip: "192.168.1.10"
+    left_arm.home_positions: [1.712167996, 1.570796327, -1.570796327, 0.0, 0.0, 0.0, 0.0]
+    right_arm.robot_ip: "192.168.2.160"
+    right_arm.local_ip: "192.168.2.10"
+    right_arm.home_positions: [1.7121, -1.570796327, -1.570796327, 0.0, 0.0, 0.0, 0.0]
+    speed_mm_s: 50.0
+    joint_speed_scale: 0.05
+    zone_mm: 0.0
+    timeout_s: 60.0
+    soft_limit_margin_rad: 0.08
+    max_goal_delta_rad: 2.3
+    max_joint_speed_rad_s: 0.40
+    goal_tolerance_rad: 0.01
+
+/robot_02/upperlimb/cartesian_servo:
+  ros__parameters:
+    left_arm.robot_ip: "192.168.1.160"
+    left_arm.local_ip: "192.168.1.10"
+    right_arm.robot_ip: "192.168.2.160"
+    right_arm.local_ip: "192.168.2.10"
+    period_s: 0.01
+    lookahead_s: 0.01
+    gain: 0.0
+    command_timeout_s: 0.10
+    state_timeout_s: 0.10
+    max_cycle_lateness_s: 0.04
+    max_translation_step_m: 0.0005
+    max_rotation_step_rad: 0.004363323129985824
+    max_target_jump_m: 0.10
+    max_target_jump_rad: 0.7853981633974483
+    soft_limit_margin_rad: 0.08
+    initial_alignment_timeout_s: 2.0
+    rt_network_tolerance_percent: 20
+
+/robot_02/upperlimb/joint_servo:
+  ros__parameters:
+    left_arm.robot_ip: "192.168.1.160"
+    left_arm.local_ip: "192.168.1.10"
+    right_arm.robot_ip: "192.168.2.160"
+    right_arm.local_ip: "192.168.2.10"
+    period_s: 0.01  # 100 Hz，与 Python 轨迹客户端一致
+    lookahead_s: 0.02
+    gain: 0.0
+    command_timeout_s: 0.10
+    max_command_step_rad: 0.01  # 10 ms 下保留原有变化速率边界
+    soft_limit_margin_rad: 0.08
+
+bt_target_server:
+  ros__parameters:
+    vision_points_topic: "/yolo_vision/front_points_base_json"
+    wall_angle_topic: "/yolo_vision/wall_angle"
+    mode5_points_topic: "/yolo_vision/mode5_points_json"
+    vision_control_topic: "/yolo_vision/control"
+    target_labels_topic: "/yolo_vision/target_labels"
+    small_box_frame_id: "base_link"
+    detection_timeout_s: 5.0
+    post_detection_delay_s: 1.0
+
+/robot_02/upperlimb/left/state_publisher:
+  ros__parameters:
+    arm_name: "left"
+    robot_ip: "192.168.1.160"
+    local_ip: "192.168.1.10"
+    frame_id: "left_external_ref"
+    rate_hz: 20.0
+    publish_jacobian: true
+
+/robot_02/upperlimb/right/state_publisher:
+  ros__parameters:
+    arm_name: "right"
+    robot_ip: "192.168.2.160"
+    local_ip: "192.168.2.10"
+    frame_id: "right_external_ref"
+    rate_hz: 20.0
+    publish_jacobian: true

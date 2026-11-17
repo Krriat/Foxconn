@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "checks": {
+    "python": 197,
+    "shell": 27,
+    "json": 10,
+    "device_files": 589
+  },
+  "hardware_execution": false
+}

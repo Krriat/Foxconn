@@ -1,0 +1,22 @@
+# One arm, N=1..100 joint-space waypoints, flattened as [q1..q7, ...], radians.
+float64[] joint_positions
+# Optional Cartesian input for type=movej / mode=path-moveabsj.
+# All poses are complete TCP targets in SDK endInRef; joint_positions must be empty.
+# The driver solves and validates EVERY target before appending MoveAbsJCommand.
+bool use_cartesian_targets false
+geometry_msgs/Pose[] poses
+bool[] use_elbows
+float64[] elbows
+string tcp_type "sdk_tcp"
+# Exactly N speed fractions and blending radii, preserving each waypoint.
+float64[] joint_speed_scales
+float64[] zones_mm
+# The last zone must be zero: wait for final idle and stable joint feedback.
+float64 speed_mm_s 4000.0
+float64 joint_tolerance_rad 0.0
+uint32 stable_samples 3
+uint32 poll_interval_ms 100
+float64 timeout_s 0.0
+---
+bool success
+string message

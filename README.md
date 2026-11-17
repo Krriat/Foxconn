@@ -19,6 +19,10 @@
 
 详见 [版本差异](docs/CHANGES_20261117.md) 和 [旧版原始说明](docs/SNAPSHOT_20261116_BASELINE.md)。
 
+## 补充：示教数采源码
+
+同分支已补入 [data_collection/](data_collection/README.md)：Jetson 键盘示教、数据写入/校验/导出、双臂和头相机驱动，以及 umie 网络腕相机与继电器桥接。该目录保留设备原路径，并附启动说明和逐文件来源哈希；与本页成功推理快照分开保存，未改动 `devices/` 中的成功配置。数采使用原有 Domain 0，推理仍使用 Domain 1。
+
 ## 成功实机记录
 
 | 试验 | 右臂等待约束 | 远盖阶段 | 近盖阶段 | 结果 |

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>rokae_motion</name>
+  <version>0.1.0</version>
+  <description>[DEPRECATED / 已废弃] Application logic retained for reference only.
+    YAML behavior-tree orchestration and motion clients for Rokae.
+  </description>
+
+  <maintainer email="tolbayoma6@gmail.com">niic</maintainer>
+  <license>Proprietary</license>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <exec_depend>action_msgs</exec_depend>
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>box_detection_interfaces</exec_depend>
+  <exec_depend>control_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>python3-yaml</exec_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>rokae_interfaces</exec_depend>
+  <exec_depend>seer_interfaces</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>std_srvs</exec_depend>
+  <exec_depend>trajectory_msgs</exec_depend>
+
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <deprecated>Deprecated: this workspace ROS integration is no longer used. Application logic is retained for reference only.</deprecated>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

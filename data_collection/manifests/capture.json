@@ -1,0 +1,22 @@
+{
+  "captured_at": "2026-11-17T17:21:14.948566+08:00",
+  "parent_inference_commit": "9a4b58123289864564c943dd0ea513d0eabbf6e3",
+  "scope": "teaching/collection sources, their drivers, camera and relay support",
+  "source_files": 589,
+  "source_bytes": 4514966,
+  "all_source_files_match_device_sha256": true,
+  "services_started_or_stopped": false,
+  "robot_or_suction_commands_sent": false,
+  "omitted": [
+    "raw datasets",
+    "model weights",
+    "virtual environments",
+    "build/install output",
+    "old backups and logs",
+    "SSH/GitHub credentials"
+  ],
+  "restore_layout": {
+    "jetson": "/home/jetson/",
+    "umie": "/home/umie/"
+  }
+}

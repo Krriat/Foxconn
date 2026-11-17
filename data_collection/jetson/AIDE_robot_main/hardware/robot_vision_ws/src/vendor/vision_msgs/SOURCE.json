@@ -1,0 +1,27 @@
+{
+  "repository": "https://github.com/ros-perception/vision_msgs",
+  "commit": "e77fa2d97d69abaaa546592892d2d5d16cec9977",
+  "included_files": [
+    "LICENSE",
+    "vision_msgs/CHANGELOG.rst",
+    "vision_msgs/CMakeLists.txt",
+    "vision_msgs/include/vision_msgs/create_aabb.hpp",
+    "vision_msgs/msg/BoundingBox2D.msg",
+    "vision_msgs/msg/BoundingBox2DArray.msg",
+    "vision_msgs/msg/BoundingBox3D.msg",
+    "vision_msgs/msg/BoundingBox3DArray.msg",
+    "vision_msgs/msg/Classification.msg",
+    "vision_msgs/msg/Detection2D.msg",
+    "vision_msgs/msg/Detection2DArray.msg",
+    "vision_msgs/msg/Detection3D.msg",
+    "vision_msgs/msg/Detection3DArray.msg",
+    "vision_msgs/msg/LabelInfo.msg",
+    "vision_msgs/msg/ObjectHypothesis.msg",
+    "vision_msgs/msg/ObjectHypothesisWithPose.msg",
+    "vision_msgs/msg/Point2D.msg",
+    "vision_msgs/msg/Pose2D.msg",
+    "vision_msgs/msg/VisionClass.msg",
+    "vision_msgs/msg/VisionInfo.msg",
+    "vision_msgs/package.xml"
+  ]
+}
